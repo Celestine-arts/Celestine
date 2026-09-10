@@ -13,8 +13,8 @@ import Parser from "rss-parser";
 const SOURCES_PATH = "news-sources.json";
 const NEWS_JSON_PATH = "news.json";
 const NEWS_HTML_PATH = "news.html";
-const MAX_ITEMS_KEPT = 12;
-const MAX_NEW_ITEMS_PER_RUN = 6;
+const MAX_ITEMS_KEPT = 30;
+const MAX_NEW_ITEMS_PER_RUN = 10;
 
 // Google AI Studio "-latest" alias — check https://ai.google.dev/gemini-api/docs/models
 // occasionally in case Google retires this alias; swap in a current model name if so.
@@ -35,6 +35,14 @@ function stripHtml(str = "") {
   return str.replace(/<[^>]*>/g, "").replace(/\s+/g, " ").trim();
 }
 
+function escapeHtml(str = "") {
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
 function guessCategory(sourceName = "") {
   const n = sourceName.toLowerCase();
   if (n.includes("film")) return "Film";
@@ -44,6 +52,18 @@ function guessCategory(sourceName = "") {
 
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+function extractImage(item) {
+  // Common RSS image locations, in order of likelihood
+  if (item.enclosure?.url) return item.enclosure.url;
+  if (item["media:content"]?.["$"]?.url) return item["media:content"]["$"].url;
+  if (item["media:thumbnail"]?.["$"]?.url) return item["media:thumbnail"]["$"].url;
+
+  // Fallback: pull the first <img src="..."> out of the raw content HTML
+  const html = item.content || item["content:encoded"] || "";
+  const match = html.match(/<img[^>]+src=["']([^"']+)["']/i);
+  return match ? match[1] : null;
 }
 
 async function summarizeWithGemini(headline, rawText) {
@@ -86,6 +106,7 @@ async function fetchRssItems(source) {
     link: item.link,
     headline: item.title || source.name,
     rawText: stripHtml(item.contentSnippet || item.content || item.title || ""),
+    image: extractImage(item),
     category: guessCategory(source.name),
     publishedAt: item.isoDate || item.pubDate || new Date().toISOString(),
   }));
@@ -97,9 +118,16 @@ function renderCard(entry) {
     month: "short",
     day: "numeric",
   });
+
+  const thumb = entry.image
+    ? `<div class="thumb t-news" style="background-image:url('${escapeHtml(entry.image)}');background-size:cover;background-position:center;">
+         <span>${entry.category.toUpperCase()}</span>
+       </div>`
+    : `<div class="thumb t-news"><span>${entry.category.toUpperCase()}</span></div>`;
+
   return `<a class="card c-span-2" href="${entry.link}" target="_blank" rel="noopener">
-      <div class="thumb t-news"><span>${entry.category.toUpperCase()}</span></div>
-      <div class="body"><h3>${entry.headline}</h3><p>${entry.summary}</p><div class="meta">${entry.sourceName} · ${date}</div></div>
+      ${thumb}
+      <div class="body"><h3>${escapeHtml(entry.headline)}</h3><p>${escapeHtml(entry.summary)}</p><div class="meta">${escapeHtml(entry.sourceName)} · ${date}</div></div>
     </a>`;
 }
 
@@ -138,6 +166,7 @@ async function main() {
       headline: item.headline,
       summary: aiSummary || (fallback ? `${fallback}…` : "Read the full story at the source."),
       category: item.category,
+      image: item.image,
       publishedAt: item.publishedAt,
     });
     await sleep(3000); // be gentle with the free-tier rate limit
