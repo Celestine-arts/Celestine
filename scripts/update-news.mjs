@@ -1,25 +1,21 @@
-// scripts/update-news.mjs
+// scripts/update-news.mjs  (FREE VERSION — no AI API needed)
 //
-// Fetches items from news-sources.json (RSS or plain HTML pages), asks Claude
-// to write a short original summary + headline for any item not already in
-// news.json, then regenerates the news card markup inside news.html between
-// two marker comments.
+// Fetches items from news-sources.json (RSS feeds only), takes the title +
+// a short excerpt directly from each feed, and regenerates the news card
+// markup inside news.html between two marker comments.
 //
-// Requires (package.json): "rss-parser", "cheerio", "@anthropic-ai/sdk"
-// Requires env var: ANTHROPIC_API_KEY
+// Requires (package.json): "rss-parser"
+// No API key needed — completely free to run.
 
 import fs from "node:fs/promises";
 import Parser from "rss-parser";
-import * as cheerio from "cheerio";
-import Anthropic from "@anthropic-ai/sdk";
 
 const SOURCES_PATH = "news-sources.json";
 const NEWS_JSON_PATH = "news.json";
 const NEWS_HTML_PATH = "news.html";
 const MAX_ITEMS_KEPT = 12;
-const MAX_NEW_ITEMS_PER_RUN = 6; // cost/safety cap per run
+const MAX_NEW_ITEMS_PER_RUN = 6;
 
-const anthropic = new Anthropic(); // reads ANTHROPIC_API_KEY from env
 const rssParser = new Parser();
 
 async function loadJson(path, fallback) {
@@ -30,56 +26,30 @@ async function loadJson(path, fallback) {
   }
 }
 
+function stripHtml(str = "") {
+  return str.replace(/<[^>]*>/g, "").replace(/\s+/g, " ").trim();
+}
+
+function guessCategory(sourceName = "") {
+  const n = sourceName.toLowerCase();
+  if (n.includes("film")) return "Film";
+  if (n.includes("music") || n.includes("label")) return "Music";
+  return "Art";
+}
+
 async function fetchRssItems(source) {
   const feed = await rssParser.parseURL(source.url);
-  return (feed.items || []).slice(0, 5).map((item) => ({
-    sourceName: source.name,
-    link: item.link,
-    title: item.title,
-    rawText: (item.contentSnippet || item.content || "").slice(0, 3000),
-    publishedAt: item.isoDate || item.pubDate || new Date().toISOString(),
-  }));
-}
-
-async function fetchHtmlItems(source) {
-  const res = await fetch(source.url, {
-    headers: { "User-Agent": "CelestineNewsBot/1.0" },
-  });
-  const html = await res.text();
-  const $ = cheerio.load(html);
-  $("script,style,nav,footer,header").remove();
-  const text = $("body").text().replace(/\s+/g, " ").trim().slice(0, 4000);
-  return [
-    {
+  return (feed.items || []).slice(0, 5).map((item) => {
+    const excerpt = stripHtml(item.contentSnippet || item.content || "").slice(0, 160);
+    return {
       sourceName: source.name,
-      link: source.url,
-      title: $("title").text().trim() || source.name,
-      rawText: text,
-      publishedAt: new Date().toISOString(),
-    },
-  ];
-}
-
-async function summarizeItem(item) {
-  const prompt = `You are writing a short news card for Celestine Studio's website (art, music, and film).
-Summarize the following source material into ONE short original news blurb — do not copy sentences verbatim.
-
-Source name: ${item.sourceName}
-Source title: ${item.title}
-Source text: ${item.rawText}
-
-Respond ONLY with JSON, no markdown fences, in this exact shape:
-{"headline": "short headline, under 8 words", "summary": "1-2 sentence original summary, under 40 words, factual, no hype adjectives", "category": "Art" | "Music" | "Film"}`;
-
-  const res = await anthropic.messages.create({
-    model: "claude-sonnet-4-6",
-    max_tokens: 300,
-    messages: [{ role: "user", content: prompt }],
+      link: item.link,
+      headline: item.title || source.name,
+      summary: excerpt ? `${excerpt}${excerpt.length >= 160 ? "…" : ""}` : "Read the full story at the source.",
+      category: guessCategory(source.name),
+      publishedAt: item.isoDate || item.pubDate || new Date().toISOString(),
+    };
   });
-
-  const text = res.content.map((b) => (b.type === "text" ? b.text : "")).join("").trim();
-  const clean = text.replace(/^```json|```$/g, "").trim();
-  return JSON.parse(clean);
 }
 
 function renderCard(entry) {
@@ -101,10 +71,9 @@ async function main() {
 
   const candidates = [];
   for (const source of sources) {
+    if (source.type !== "rss") continue; // free version: RSS sources only
     try {
-      const items = source.type === "rss"
-        ? await fetchRssItems(source)
-        : await fetchHtmlItems(source);
+      const items = await fetchRssItems(source);
       for (const item of items) {
         if (!knownLinks.has(item.link)) candidates.push(item);
       }
@@ -113,21 +82,7 @@ async function main() {
     }
   }
 
-  const toSummarize = candidates.slice(0, MAX_NEW_ITEMS_PER_RUN);
-  const newEntries = [];
-  for (const item of toSummarize) {
-    try {
-      const summary = await summarizeItem(item);
-      newEntries.push({
-        ...summary,
-        link: item.link,
-        sourceName: item.sourceName,
-        publishedAt: item.publishedAt,
-      });
-    } catch (err) {
-      console.error(`Failed to summarize ${item.link}:`, err.message);
-    }
-  }
+  const newEntries = candidates.slice(0, MAX_NEW_ITEMS_PER_RUN);
 
   if (newEntries.length === 0) {
     console.log("No new items found this run.");
@@ -145,7 +100,7 @@ async function main() {
   );
 
   if (updated === html) {
-    console.warn("Markers not found in news.html — cards were not injected. See setup notes.");
+    console.warn("Markers not found in news.html — cards were not injected.");
   } else {
     await fs.writeFile(NEWS_HTML_PATH, updated);
   }
