@@ -9,4 +9,30 @@
     "url": "https://variety.com/feed/",
     "type": "rss"
   }
+  {
+    "name": "Hyperallergic",
+    "url": "https://hyperallergic.com/feed/",
+    "type": "rss"
+  }
+  {
+    "name": "Colossal",
+    "url": "https://www.thisiscolossal.com/feed/",
+    "type": "rss"
+  }
+    {
+    "name": "Pitchfork",
+    "url": "https://pitchfork.com/feed/rss",
+    "type": "rss"
+  }
+    {
+    "name": "NME",
+    "url": "https://www.nme.com/feed",
+    "type": "rss"
+  }
+    {
+    "name": "IndieWire",
+    "url": "https://www.indiewire.com/feed/",
+    "type": "rss"
+  }
 ]
+
