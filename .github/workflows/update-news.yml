@@ -23,12 +23,14 @@ jobs:
 
       - name: Run news update script
         run: node scripts/update-news.mjs
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
 
       - name: Open pull request with changes
         uses: peter-evans/create-pull-request@v6
         with:
-          commit-message: "Auto: update news from RSS sources"
+          commit-message: "Auto: update news from RSS sources (AI-summarized)"
           title: "News update — new items for review"
-          body: "Automated run pulled new items from tracked RSS sources. Review each card before merging."
+          body: "Automated run pulled new items from tracked RSS sources and summarized them with Gemini. Review each card before merging."
           branch: auto/news-update
           delete-branch: true
