@@ -45,9 +45,11 @@ function escapeHtml(str = "") {
 
 function guessCategory(sourceName = "") {
   const n = sourceName.toLowerCase();
-  if (n.includes("film")) return "Film";
-  if (n.includes("music") || n.includes("label")) return "Music";
-  return "Art";
+  const filmSources = ["variety", "indiewire", "film"];
+  const musicSources = ["pitchfork", "nme", "soompi", "music", "label"];
+  if (filmSources.some((s) => n.includes(s))) return "Film";
+  if (musicSources.some((s) => n.includes(s))) return "Music";
+  return "Art"; // Hyperallergic, Colossal, Vanity Fair, Vogue, NYT Arts default here
 }
 
 function sleep(ms) {
