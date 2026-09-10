@@ -152,8 +152,7 @@ async function main() {
   const picked = candidates.slice(0, MAX_NEW_ITEMS_PER_RUN);
 
   if (picked.length === 0) {
-    console.log("No new items found this run.");
-    return;
+  console.log("No new items found this run — re-rendering existing cards only.");
   }
 
   const newEntries = [];
