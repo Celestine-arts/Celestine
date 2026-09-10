@@ -3,8 +3,7 @@
 // Fetches items from news-sources.json (RSS feeds only), asks Gemini to
 // write a short original summary of each new item, and regenerates the
 // news card markup inside news.html between two marker comments.
-// Also generates feed.xml (an RSS feed of the site's own news items) so
-// Buttondown can send subscribers a weekly digest.
+// Also generates feed.xml (an RSS feed of the site's own news items).
 //
 // Requires (package.json): "rss-parser"
 // Requires a GEMINI_API_KEY secret (free, from Google AI Studio).
@@ -20,12 +19,19 @@ const SITE_URL = "https://celestinestudio.com.lk";
 const MAX_ITEMS_KEPT = 30;
 const MAX_NEW_ITEMS_PER_RUN = 10;
 
-// Google AI Studio "-latest" alias — check https://ai.google.dev/gemini-api/docs/models
-// occasionally in case Google retires this alias; swap in a current model name if so.
 const GEMINI_MODEL = "gemini-flash-lite-latest";
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 
-const rssParser = new Parser();
+// IMPORTANT: without this customFields config, rss-parser silently drops
+// <media:content> and <media:thumbnail> tags, which is why images never showed up.
+const rssParser = new Parser({
+  customFields: {
+    item: [
+      ["media:content", "media:content", { keepArray: true }],
+      ["media:thumbnail", "media:thumbnail"],
+    ],
+  },
+});
 
 async function loadJson(path, fallback) {
   try {
@@ -69,47 +75,46 @@ function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
+// Pulls an image out of the RSS item itself (enclosure, media:content, media:thumbnail,
+// or an <img> tag hiding in the full content). Returns null if the feed has nothing.
 function extractImage(item) {
-  // Common RSS image locations, in order of likelihood
   if (item.enclosure?.url) return item.enclosure.url;
-  if (item["media:content"]?.["$"]?.url) return item["media:content"]["$"].url;
-  if (item["media:thumbnail"]?.["$"]?.url) return item["media:thumbnail"]["$"].url;
 
-  // Fallback: pull the first <img src="..."> out of the raw content HTML
+  const mediaContent = item["media:content"];
+  if (mediaContent) {
+    const arr = Array.isArray(mediaContent) ? mediaContent : [mediaContent];
+    const found = arr.find((m) => m?.$?.url);
+    if (found) return found.$.url;
+  }
+
+  const mediaThumbnail = item["media:thumbnail"];
+  if (mediaThumbnail?.$?.url) return mediaThumbnail.$.url;
+
   const html = item.content || item["content:encoded"] || "";
   const match = html.match(/<img[^>]+src=["']([^"']+)["']/i);
   return match ? match[1] : null;
 }
 
-async function summarizeWithGemini(headline, rawText) {
-  if (!GEMINI_API_KEY) return null;
-
-  const prompt = `Summarize this arts/culture news item in exactly one punchy sentence (max 30 words), for a curated news feed. Do not add opinions or quotes, just state what happened. Headline: "${headline}". Source text: "${rawText.slice(0, 1500)}"`;
-
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
-
+// Fallback for feeds (like Soompi's) that carry no image info at all: fetch the
+// actual article page and pull its og:image meta tag. Only called for items that
+// still have no image after extractImage(), and only for items we're actually keeping.
+async function fetchOgImage(url) {
   try {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 8000);
     const res = await fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "x-goog-api-key": GEMINI_API_KEY,
-      },
-      body: JSON.stringify({
-        contents: [{ parts: [{ text: prompt }] }],
-      }),
+      signal: controller.signal,
+      headers: { "User-Agent": "Mozilla/5.0 (compatible; CelestineBot/1.0)" },
     });
-
-    if (!res.ok) {
-      console.error("Gemini API error:", res.status, await res.text());
-      return null;
-    }
-
-    const data = await res.json();
-    const text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
-    return text ? text.trim() : null;
+    clearTimeout(timeout);
+    if (!res.ok) return null;
+    const html = await res.text();
+    const match =
+      html.match(/<meta[^>]+property=["']og:image["'][^>]+content=["']([^"']+)["']/i) ||
+      html.match(/<meta[^>]+content=["']([^"']+)["'][^>]+property=["']og:image["']/i);
+    return match ? match[1] : null;
   } catch (err) {
-    console.error("Gemini call failed:", err.message);
+    console.error(`Could not fetch og:image for ${url}:`, err.message);
     return null;
   }
 }
@@ -176,26 +181,48 @@ async function main() {
   const existing = await loadJson(NEWS_JSON_PATH, []);
   const knownLinks = new Set(existing.map((e) => e.link));
 
-  const candidates = [];
+  // Fetch each source's new items separately (don't merge yet)
+  const perSourceCandidates = [];
   for (const source of sources) {
-    if (source.type !== "rss") continue; // RSS sources only
+    if (source.type !== "rss") continue;
     try {
       const items = await fetchRssItems(source);
-      for (const item of items) {
-        if (!knownLinks.has(item.link)) candidates.push(item);
-      }
+      const newItems = items.filter((item) => !knownLinks.has(item.link));
+      if (newItems.length) perSourceCandidates.push(newItems);
     } catch (err) {
       console.error(`Failed to fetch ${source.name}:`, err.message);
     }
   }
 
-  const picked = candidates.slice(0, MAX_NEW_ITEMS_PER_RUN);
+  // Round-robin interleave: one item from each source per round, so early
+  // sources in the list (Soompi, Variety) can't crowd out the rest.
+  const candidates = [];
+  let round = 0;
+  while (
+    candidates.length < MAX_NEW_ITEMS_PER_RUN &&
+    perSourceCandidates.some((arr) => arr.length > round)
+  ) {
+    for (const arr of perSourceCandidates) {
+      if (arr[round] && candidates.length < MAX_NEW_ITEMS_PER_RUN) {
+        candidates.push(arr[round]);
+      }
+    }
+    round++;
+  }
+
+  const picked = candidates;
   const newEntries = [];
 
   if (picked.length === 0) {
     console.log("No new items found this run — re-rendering existing cards only.");
   } else {
     for (const item of picked) {
+      // If the feed itself had no image, try grabbing it from the article page.
+      let image = item.image;
+      if (!image) {
+        image = await fetchOgImage(item.link);
+      }
+
       const aiSummary = await summarizeWithGemini(item.headline, item.rawText);
       const fallback = item.rawText.slice(0, 160);
       newEntries.push({
@@ -204,7 +231,7 @@ async function main() {
         headline: item.headline,
         summary: aiSummary || (fallback ? `${fallback}…` : "Read the full story at the source."),
         category: item.category,
-        image: item.image,
+        image,
         publishedAt: item.publishedAt,
       });
       await sleep(3000); // be gentle with the free-tier rate limit
@@ -229,6 +256,39 @@ async function main() {
   }
 
   console.log(`Added ${newEntries.length} new item(s).`);
+}
+
+async function summarizeWithGemini(headline, rawText) {
+  if (!GEMINI_API_KEY) return null;
+
+  const prompt = `Summarize this arts/culture news item in exactly one punchy sentence (max 30 words), for a curated news feed. Do not add opinions or quotes, just state what happened. Headline: "${headline}". Source text: "${rawText.slice(0, 1500)}"`;
+
+  const url = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
+
+  try {
+    const res = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "x-goog-api-key": GEMINI_API_KEY,
+      },
+      body: JSON.stringify({
+        contents: [{ parts: [{ text: prompt }] }],
+      }),
+    });
+
+    if (!res.ok) {
+      console.error("Gemini API error:", res.status, await res.text());
+      return null;
+    }
+
+    const data = await res.json();
+    const text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
+    return text ? text.trim() : null;
+  } catch (err) {
+    console.error("Gemini call failed:", err.message);
+    return null;
+  }
 }
 
 main().catch((err) => {
