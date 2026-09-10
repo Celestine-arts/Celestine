@@ -34,7 +34,10 @@ async function main() {
     day: "numeric",
   });
 
-  const lines = [`This week on Celestine — your art, music, and film roundup for ${dateLabel}.`, ""];
+  const lines = [
+    `This week on Celestine — your art, music, and film roundup for ${dateLabel}.`,
+    "",
+  ];
 
   for (const item of recentItems) {
     lines.push(`## ${item.headline}`);
