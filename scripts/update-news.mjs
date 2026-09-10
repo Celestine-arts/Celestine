@@ -3,6 +3,8 @@
 // Fetches items from news-sources.json (RSS feeds only), asks Gemini to
 // write a short original summary of each new item, and regenerates the
 // news card markup inside news.html between two marker comments.
+// Also generates feed.xml (an RSS feed of the site's own news items) so
+// Buttondown can send subscribers a weekly digest.
 //
 // Requires (package.json): "rss-parser"
 // Requires a GEMINI_API_KEY secret (free, from Google AI Studio).
@@ -13,6 +15,8 @@ import Parser from "rss-parser";
 const SOURCES_PATH = "news-sources.json";
 const NEWS_JSON_PATH = "news.json";
 const NEWS_HTML_PATH = "news.html";
+const FEED_XML_PATH = "feed.xml";
+const SITE_URL = "https://celestinestudio.com.lk";
 const MAX_ITEMS_KEPT = 30;
 const MAX_NEW_ITEMS_PER_RUN = 10;
 
@@ -41,6 +45,15 @@ function escapeHtml(str = "") {
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;");
+}
+
+function escapeXml(str = "") {
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&apos;");
 }
 
 function guessCategory(sourceName = "") {
@@ -133,6 +146,31 @@ function renderCard(entry) {
     </a>`;
 }
 
+function generateRssFeed(entries) {
+  const items = entries
+    .map(
+      (e) => `
+    <item>
+      <title>${escapeXml(e.headline)}</title>
+      <link>${escapeXml(e.link)}</link>
+      <guid>${escapeXml(e.link)}</guid>
+      <pubDate>${new Date(e.publishedAt).toUTCString()}</pubDate>
+      <description>${escapeXml(e.summary)}</description>
+    </item>`
+    )
+    .join("");
+
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Celestine — Art, Music &amp; Film News</title>
+    <link>${SITE_URL}/news.html</link>
+    <description>What's happening right now across art, music, and film.</description>
+    ${items}
+  </channel>
+</rss>`;
+}
+
 async function main() {
   const sources = await loadJson(SOURCES_PATH, []);
   const existing = await loadJson(NEWS_JSON_PATH, []);
@@ -152,29 +190,30 @@ async function main() {
   }
 
   const picked = candidates.slice(0, MAX_NEW_ITEMS_PER_RUN);
+  const newEntries = [];
 
   if (picked.length === 0) {
-  console.log("No new items found this run — re-rendering existing cards only.");
-  }
-
-  const newEntries = [];
-  for (const item of picked) {
-    const aiSummary = await summarizeWithGemini(item.headline, item.rawText);
-    const fallback = item.rawText.slice(0, 160);
-    newEntries.push({
-      sourceName: item.sourceName,
-      link: item.link,
-      headline: item.headline,
-      summary: aiSummary || (fallback ? `${fallback}…` : "Read the full story at the source."),
-      category: item.category,
-      image: item.image,
-      publishedAt: item.publishedAt,
-    });
-    await sleep(3000); // be gentle with the free-tier rate limit
+    console.log("No new items found this run — re-rendering existing cards only.");
+  } else {
+    for (const item of picked) {
+      const aiSummary = await summarizeWithGemini(item.headline, item.rawText);
+      const fallback = item.rawText.slice(0, 160);
+      newEntries.push({
+        sourceName: item.sourceName,
+        link: item.link,
+        headline: item.headline,
+        summary: aiSummary || (fallback ? `${fallback}…` : "Read the full story at the source."),
+        category: item.category,
+        image: item.image,
+        publishedAt: item.publishedAt,
+      });
+      await sleep(3000); // be gentle with the free-tier rate limit
+    }
   }
 
   const merged = [...newEntries, ...existing].slice(0, MAX_ITEMS_KEPT);
   await fs.writeFile(NEWS_JSON_PATH, JSON.stringify(merged, null, 2));
+  await fs.writeFile(FEED_XML_PATH, generateRssFeed(merged));
 
   const cardsHtml = merged.map(renderCard).join("\n");
   const html = await fs.readFile(NEWS_HTML_PATH, "utf8");
