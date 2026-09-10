@@ -1,22 +1,12 @@
 [
   {
-    "name": "Example Artist Official Site",
-    "url": "https://example-artist.com/feed.xml",
+    "name": "Soompi",
+    "url": "https://www.soompi.com/feed",
     "type": "rss"
   },
   {
-    "name": "Example Label Instagram (via RSS bridge, see notes)",
-    "url": "https://rsshub.app/instagram/user/example_label",
+    "name": "Variety",
+    "url": "https://variety.com/feed/",
     "type": "rss"
-  },
-  {
-    "name": "Example Film News Outlet",
-    "url": "https://example-filmnews.com/rss",
-    "type": "rss"
-  },
-  {
-    "name": "Example Music Outlet (no RSS, fallback HTML)",
-    "url": "https://example-musicoutlet.com/news",
-    "type": "html"
   }
 ]
