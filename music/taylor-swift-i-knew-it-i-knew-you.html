@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I Knew It, I Knew You — Taylor Swift | Celestine Song Reviews</title>
+<meta name="description" content="A close reading of Taylor Swift's 'I Knew It, I Knew You,' written for Toy Story 5 — what a song for a cowgirl doll says about the rest of us.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Caveat:wght@500;600&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F1ECDD;
+    --denim:#3C5A73;
+    --denim-deep:#2A4157;
+    --mustard:#D9A441;
+    --rust:#9C4632;
+    --sage:#7C8B6F;
+    --ink:#2C2620;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    background-image:
+      repeating-linear-gradient(0deg, rgba(60,90,115,0.05) 0px, rgba(60,90,115,0.05) 1px, transparent 1px, transparent 26px),
+      repeating-linear-gradient(90deg, rgba(60,90,115,0.05) 0px, rgba(60,90,115,0.05) 1px, transparent 1px, transparent 26px);
+    color:var(--ink);
+    font-family:'Nunito Sans', sans-serif;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2{ font-family:'Fraunces', serif; font-weight:600; color:var(--denim-deep); }
+  .script{ font-family:'Caveat', cursive; }
+  a{ color:var(--rust); }
+  ::selection{ background:var(--mustard); color:var(--ink); }
+
+  .topline{
+    display:flex; justify-content:space-between; align-items:center;
+    max-width:760px; margin:0 auto; padding:26px 20px 0;
+    font-size:0.82rem;
+  }
+  .topline a{ color:var(--denim-deep); text-decoration:none; border-bottom:1px solid rgba(44,38,32,0.3); }
+  .topline span{ color:var(--sage); font-family:'Caveat',cursive; font-size:1.15rem; }
+
+  header.hero{
+    max-width:760px; margin:30px auto 0; padding:0 20px;
+    text-align:center;
+  }
+  .ticket{
+    display:inline-block;
+    transform:rotate(-1.4deg);
+    background:#fff;
+    border:1px solid rgba(44,38,32,0.12);
+    box-shadow: 0 14px 28px rgba(44,38,32,0.12);
+    padding:38px 40px 30px;
+    position:relative;
+  }
+  .ticket::before, .ticket::after{
+    content:"";
+    position:absolute; width:14px; height:14px; border-radius:50%;
+    background:var(--paper);
+    top:50%; transform:translateY(-50%);
+    box-shadow:0 0 0 1px rgba(44,38,32,0.12);
+  }
+  .ticket::before{ left:-8px; }
+  .ticket::after{ right:-8px; }
+  .kicker{ font-family:'Caveat',cursive; font-size:1.4rem; color:var(--rust); margin:0 0 6px; }
+  h1{ font-size:clamp(2.4rem,7vw,3.6rem); margin:0; line-height:1.02; }
+  .subline{ max-width:44ch; margin:18px auto 0; font-size:1.02rem; color:#4a4136; }
+  .stamp{
+    margin-top:22px; display:inline-flex; gap:16px; flex-wrap:wrap; justify-content:center;
+    font-size:0.78rem; color:var(--denim);
+    border-top:1px dashed rgba(44,38,32,0.25);
+    padding-top:14px;
+  }
+
+  main{ max-width:640px; margin:70px auto 0; padding:0 22px 100px; }
+
+  .polaroid{
+    background:#fff;
+    padding:16px 16px 46px;
+    box-shadow:0 18px 30px rgba(44,38,32,0.14);
+    margin:0 auto 48px;
+    max-width:420px;
+  }
+  .polaroid.left{ transform:rotate(-2.6deg); margin-left:0; margin-right:auto; }
+  .polaroid.right{ transform:rotate(2.2deg); margin-right:0; margin-left:auto; }
+  .art{ width:100%; aspect-ratio:4/3; display:block; }
+  .polaroid figcaption{
+    font-family:'Caveat',cursive; font-size:1.25rem; color:var(--denim-deep);
+    text-align:center; margin-top:10px;
+  }
+
+  .lede{ font-family:'Fraunces', serif; font-size:1.35rem; font-weight:400; color:var(--denim-deep); margin:0 0 50px; }
+
+  .chapter{ margin-top:56px; }
+  .chapter h2{ font-size:clamp(1.5rem,4vw,2rem); margin:0 0 18px; }
+  .chapter h2 .script{ color:var(--rust); font-size:1.25em; }
+  p{ margin:0 0 18px; color:#3b342b; }
+
+  .pull{
+    font-family:'Caveat', cursive;
+    font-size:1.7rem;
+    line-height:1.35;
+    color:var(--rust);
+    background:#fff;
+    border:1px solid rgba(44,38,32,0.1);
+    box-shadow:0 10px 20px rgba(44,38,32,0.1);
+    padding:24px 26px;
+    margin:34px 0;
+    transform:rotate(-0.8deg);
+  }
+  .pull cite{
+    display:block; margin-top:10px; font-family:'Nunito Sans',sans-serif; font-style:normal;
+    font-size:0.78rem; color:var(--sage);
+  }
+
+  .stitch{
+    height:1px; border:none; border-top:2px dashed rgba(60,90,115,0.3);
+    margin:60px 0;
+  }
+
+  .facts{
+    display:grid; grid-template-columns:1fr 1fr; gap:16px;
+    margin:36px 0;
+    font-size:0.86rem;
+  }
+  .facts div{
+    background:rgba(255,255,255,0.55);
+    border:1px solid rgba(44,38,32,0.1);
+    padding:14px 16px;
+  }
+  .facts b{ display:block; color:var(--denim-deep); font-family:'Fraunces',serif; font-size:1.1rem; font-weight:600; }
+
+  footer{
+    max-width:640px; margin:0 auto; padding:40px 22px 70px;
+    border-top:1px dashed rgba(60,90,115,0.3);
+  }
+  .sources{ font-size:0.8rem; color:#6b6152; line-height:1.8; }
+  .sources b{ color:#4a4136; }
+  .back-home{ display:inline-block; margin-top:22px; font-family:'Caveat',cursive; font-size:1.2rem; color:var(--rust); text-decoration:none; border-bottom:1px solid rgba(156,70,50,0.4); }
+</style>
+</head>
+<body>
+
+<div class="topline">
+  <a href="https://celestinestudio.com.lk/music.html">← Song Reviews</a>
+  <span>from a summer scrapbook</span>
+</div>
+
+<header class="hero">
+  <div class="ticket">
+    <p class="kicker">for Toy Story 5</p>
+    <h1>I Knew It,<br>I Knew You</h1>
+    <p class="subline">A song about the specific joy of recognizing someone — written for an animated cowgirl doll, and somehow about everyone who's ever come back.</p>
+    <div class="stamp">
+      <span>Taylor Swift</span>
+      <span>with Jack Antonoff</span>
+      <span>Released June 5, 2026</span>
+    </div>
+  </div>
+</header>
+
+<main>
+  <p class="lede">Every "Toy Story" film eventually asks the same question — what happens to the thing you loved when time moves on without asking permission. Swift's contribution to the fifth film doesn't answer it so much as it remembers what it felt like the first time love came back anyway.</p>
+
+  <figure class="polaroid left">
+    <svg class="art" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+      <rect width="400" height="300" fill="#EFE7D2"/>
+      <path d="M0,210 Q100,170 200,210 T400,210 L400,300 L0,300 Z" fill="#9BAE8A"/>
+      <circle cx="330" cy="60" r="34" fill="#D9A441"/>
+      <path d="M60,150 L90,90 L120,150 Z" fill="none" stroke="#3C5A73" stroke-width="3"/>
+      <path d="M60,150 L60,110 M120,150 L120,110" stroke="#3C5A73" stroke-width="2" stroke-dasharray="4 5"/>
+    </svg>
+    <figcaption>grass, gone gold in July</figcaption>
+  </figure>
+
+  <div class="chapter">
+    <p class="chapter-num"></p>
+    <h2><span class="script">Written for Jessie,</span> shaped by a lifetime of Toy Story</h2>
+    <p>Swift confirmed her involvement in "Toy Story 5" on June 1, 2026, after a week of easter eggs, and released the single four days later. She has described a personal thread running underneath the assignment: she's been, in her own words, a Toy Story kid since she was five years old, and writing something for Jessie — the cowgirl doll defined by having been left behind and loved again — felt like "a musical departure and coming home at the same time."</p>
+    <p>Co-written and co-produced with her longtime collaborator Jack Antonoff, the track marks a deliberate return to a more countrified sound after years of denser, atmospheric production — pared-back guitar, her voice sitting close to the mic, layered vocals only arriving as the song builds toward its climax. It mirrors, quite literally, the shape of remembering something: quiet at first, then everything arriving at once.</p>
+  </div>
+
+  <div class="pull">"Writing this song felt like a musical departure and coming home at the same time."<cite>Taylor Swift, on Instagram, June 2026</cite></div>
+
+  <hr class="stitch">
+
+  <div class="chapter">
+    <h2>A door built to open twice</h2>
+    <p>The song's structure is a reunion in miniature: a narrator who assumed a relationship — romantic, platonic, or simply a piece of someone's own childhood — was over, only to find it waiting, unchanged, in a window's worth of afternoon light. Swift has since confirmed on country radio that several lines were written with deliberate double meanings, built to work as both a specific beat in the film's plot and a more universal memory of nostalgia the listener supplies themselves.</p>
+    <p>That doubling is the song's real craft. A soundtrack cue has to serve a two-hour film in under three minutes; a Taylor Swift single has to survive completely outside of it. "I Knew It, I Knew You" does both by refusing to over-specify — it never quite says whether the "you" is a person, a childhood, or a version of yourself you thought you'd outgrown.</p>
+  </div>
+
+  <figure class="polaroid right">
+    <svg class="art" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+      <rect width="400" height="300" fill="#3C5A73"/>
+      <rect x="40" y="40" width="320" height="220" fill="#F1ECDD" opacity="0.9"/>
+      <rect x="70" y="70" width="80" height="80" fill="#D9A441"/>
+      <rect x="170" y="70" width="80" height="80" fill="#9C4632" opacity="0.8"/>
+      <rect x="270" y="70" width="60" height="80" fill="#7C8B6F"/>
+      <line x1="70" y1="180" x2="330" y2="180" stroke="#2C2620" stroke-width="2" stroke-dasharray="6 6"/>
+    </svg>
+    <figcaption>a window, a smile, "man it's been a while"</figcaption>
+  </figure>
+
+  <div class="facts">
+    <div><b>#1</b>Hot 100, twelfth chart-topper</div>
+    <div><b>2:58</b>Runtime — brisk, on purpose</div>
+    <div><b>Country-pop</b>Genre — a stated "return to country"</div>
+    <div><b>Disney/Pixar</b>Written for Toy Story 5's soundtrack</div>
+  </div>
+
+  <div class="chapter">
+    <h2>Why a doll's song lands like a memory</h2>
+    <p>It would have been easy to write something purely functional — a soundtrack single engineered for a trailer moment and nothing more. Instead, the song leans into a very specific, very ordinary kind of joy: not the drama of falling in love, but the quieter relief of realizing someone you thought you'd lost still recognizes you too, and you them.</p>
+    <p>That's a smaller emotion than most Swift singles reach for, and it's exactly why it works as well outside the movie as inside it. Everyone has their own version of the window, the smile, the "it's been a while." The song doesn't need Toy Story to make sense. It just borrows Jessie's story to give a very common feeling a very specific shape.</p>
+  </div>
+</main>
+
+<footer>
+  <p class="sources"><b>Sources:</b> Holler, "'I Knew It, I Knew You' by Taylor Swift – Lyrics & Meaning"; Today.com, on the song's Toy Story 5 origins; Bustle, on the track's imagery and nostalgia; Capital FM and Just Jared, on Swift's September 2026 comments about the song's double meanings; Wikipedia, "I Knew It, I Knew You." Quotes are paraphrased from Swift's own public statements; lyrics are not reproduced.</p>
+  <a class="back-home" href="https://celestinestudio.com.lk/music.html">back to Celestine Song Reviews</a>
+</footer>
+
+</body>
+</html>

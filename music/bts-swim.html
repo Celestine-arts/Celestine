@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Swim — BTS | Celestine Song Reviews</title>
+<meta name="description" content="A close reading of BTS's 'Swim,' the lead single from ARIRANG — what the water is really carrying.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --tide-deep:#0B2B3A;
+    --tide-mid:#123B4E;
+    --foam:#F3F7F6;
+    --ink:#07161D;
+    --gold:#E8A94C;
+    --gold-soft:#F0C784;
+    --line: rgba(243,247,246,0.14);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--tide-deep);
+    color:var(--foam);
+    font-family:'Manrope', sans-serif;
+    font-weight:400;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,.serif{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:400;
+    letter-spacing:0.01em;
+  }
+  a{color:var(--gold-soft);}
+  ::selection{background:var(--gold); color:var(--ink);}
+
+  .topline{
+    position:relative;
+    z-index:5;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    max-width:1040px;
+    margin:0 auto;
+    padding:28px clamp(20px,5vw,40px) 0;
+    font-size:0.8rem;
+    letter-spacing:0.02em;
+  }
+  .topline a{
+    color:var(--foam);
+    opacity:0.7;
+    text-decoration:none;
+    border-bottom:1px solid rgba(243,247,246,0.3);
+    padding-bottom:2px;
+  }
+  .topline a:hover{opacity:1;}
+  .topline span{opacity:0.45;}
+
+  /* HERO */
+  .hero{
+    position:relative;
+    min-height:78vh;
+    display:flex;
+    align-items:flex-end;
+    overflow:hidden;
+    padding-bottom:clamp(40px,8vw,90px);
+  }
+  .hero::before{
+    content:"";
+    position:absolute; inset:0;
+    background:
+      radial-gradient(ellipse at 70% 15%, rgba(232,169,76,0.22), transparent 55%),
+      linear-gradient(180deg, var(--tide-deep) 0%, var(--tide-mid) 60%, var(--tide-deep) 100%);
+  }
+  .waves{
+    position:absolute; left:0; right:0; bottom:0; width:100%; height:46%;
+    z-index:1;
+  }
+  .waves svg{width:100%; height:100%; display:block;}
+  .wave-path{ animation: drift 18s linear infinite; }
+  .wave-path.two{ animation-duration: 26s; animation-direction:reverse; opacity:0.55;}
+  .wave-path.three{ animation-duration: 34s; opacity:0.32;}
+  @keyframes drift{
+    0%{ transform:translateX(0); }
+    100%{ transform:translateX(-400px); }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .wave-path{ animation:none; }
+  }
+
+  .hero-inner{
+    position:relative; z-index:2;
+    max-width:1040px;
+    margin:0 auto;
+    padding:0 clamp(20px,5vw,40px);
+    width:100%;
+  }
+  .kicker{
+    font-size:0.95rem;
+    color:var(--gold-soft);
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    margin:0 0 10px;
+  }
+  h1.title{
+    font-size:clamp(3.2rem, 10vw, 6.4rem);
+    margin:0;
+    line-height:0.95;
+    color:var(--foam);
+  }
+  .subline{
+    max-width:46ch;
+    margin:22px 0 0;
+    font-size:1.08rem;
+    color:rgba(243,247,246,0.82);
+  }
+  .meta-row{
+    margin-top:30px;
+    display:flex;
+    gap:26px;
+    flex-wrap:wrap;
+    font-size:0.85rem;
+    color:rgba(243,247,246,0.55);
+  }
+  .meta-row div{ border-left:1px solid rgba(243,247,246,0.25); padding-left:12px; }
+
+  /* ARTICLE */
+  main{
+    max-width:680px;
+    margin:0 auto;
+    padding:0 clamp(20px,6vw,24px) 100px;
+  }
+  .lede{
+    font-family:'Cormorant Garamond', serif;
+    font-size:1.5rem;
+    line-height:1.5;
+    color:var(--foam);
+    margin:64px 0 0;
+    font-weight:400;
+  }
+  .chapter{ margin-top:76px; }
+  .chapter-num{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    color:var(--gold-soft);
+    font-size:1.05rem;
+    margin:0 0 6px;
+  }
+  h2{
+    font-size:clamp(1.7rem,4vw,2.3rem);
+    margin:0 0 22px;
+    color:var(--foam);
+    font-weight:500;
+  }
+  p{
+    margin:0 0 20px;
+    font-size:1.02rem;
+    color:rgba(243,247,246,0.88);
+  }
+  .pull{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:1.4rem;
+    line-height:1.5;
+    color:var(--gold-soft);
+    border-left:1px solid var(--gold);
+    padding-left:22px;
+    margin:36px 0;
+  }
+  .pull cite{
+    display:block;
+    margin-top:10px;
+    font-family:'Manrope',sans-serif;
+    font-style:normal;
+    font-size:0.8rem;
+    color:rgba(243,247,246,0.5);
+  }
+  .divider{
+    margin:70px 0;
+    height:26px;
+    opacity:0.5;
+  }
+  .divider svg{width:100%; height:100%;}
+
+  .stats{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+    margin:40px 0 10px;
+    padding:28px 0;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .stat b{
+    display:block;
+    font-family:'Cormorant Garamond', serif;
+    font-size:2.2rem;
+    color:var(--gold-soft);
+    font-weight:500;
+  }
+  .stat span{
+    font-size:0.8rem;
+    color:rgba(243,247,246,0.6);
+  }
+  @media (max-width:560px){ .stats{grid-template-columns:1fr 1fr; } }
+
+  footer{
+    max-width:680px;
+    margin:0 auto;
+    padding:50px clamp(20px,6vw,24px) 70px;
+    border-top:1px solid var(--line);
+  }
+  .sources{
+    font-size:0.82rem;
+    color:rgba(243,247,246,0.55);
+    line-height:1.8;
+  }
+  .sources b{ color:rgba(243,247,246,0.75); font-weight:600; }
+  .back-home{
+    display:inline-block;
+    margin-top:26px;
+    font-size:0.85rem;
+    color:var(--gold-soft);
+    text-decoration:none;
+    border-bottom:1px solid rgba(232,169,76,0.4);
+  }
+</style>
+</head>
+<body>
+
+<div class="topline">
+  <a href="https://celestinestudio.com.lk/music.html">← Song Reviews</a>
+  <span>Celestine · Vol. VII</span>
+</div>
+
+<header class="hero">
+  <div class="waves" aria-hidden="true">
+    <svg viewBox="0 0 800 140" preserveAspectRatio="none">
+      <path class="wave-path" d="M0,80 C 100,40 200,120 300,80 C 400,40 500,120 600,80 C 700,40 800,120 900,80 C 1000,40 1100,120 1200,80 L1200,140 L0,140 Z" fill="#E8A94C" opacity="0.18"/>
+      <path class="wave-path two" d="M0,90 C 120,60 220,110 340,90 C 460,60 560,110 680,90 C 800,60 900,110 1020,90 C 1140,60 1240,110 1360,90 L1360,140 L0,140 Z" fill="#F3F7F6" opacity="0.12"/>
+      <path class="wave-path three" d="M0,100 C 140,70 260,120 400,100 C 540,70 660,120 800,100 C 940,70 1060,120 1200,100 L1200,140 L0,140 Z" fill="#123B4E" opacity="0.6"/>
+    </svg>
+  </div>
+  <div class="hero-inner">
+    <p class="kicker">Song Review — Alternative pop, 2:39</p>
+    <h1 class="title">Swim</h1>
+    <p class="subline">BTS spent four years apart. They came back with a song that refuses to fight the current — and asks you to be patient with it.</p>
+    <div class="meta-row">
+      <div>BTS</div>
+      <div>ARIRANG, 2026</div>
+      <div>Produced by Tyler Spry &amp; Leclair</div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <p class="lede">There is no bridge in "Swim." No key change, no dramatic drop, nothing built to trend for fifteen seconds. For a group returning from a four-year, group-wide military hiatus — the longest silence of their career — that restraint is the whole statement.</p>
+
+  <div class="chapter">
+    <p class="chapter-num">I.</p>
+    <h2>A comeback that doesn't perform urgency</h2>
+    <p>On January 4, 2026, BigHit Music confirmed what ARMY had waited years to hear: all seven members were back, and a new album was coming. What arrived on March 20 wasn't a victory lap. "Swim," the lead single, is a sun-bleached, deliberately unhurried pop track — two minutes and thirty-nine seconds, no bridge, built around a single image repeated until it becomes a philosophy: water, and the choice to move through it rather than against it.</p>
+    <p>The songwriting credits read like a genuine international room — James Essien, Sean Foreman, Tyler Spry, Jamison Baken, Ryan Tedder, Kirsten Spencer, Derrick Milano and Pdogg all worked alongside BTS's own RM. Musically it's closer to warm, unbothered synth-pop than the maximalist EDM-pop BTS built their earlier eras on. That's a deliberate gamble. A song designed to ask for patience, released after four years of silence, risks testing exactly the people it's trying to reach.</p>
+    <div class="pull">"If the album speaks about our roots and deep emotions, 'Swim' represents present — where we are right now."<cite>Jimin, in a message shared with fans on the album's release</cite></div>
+  </div>
+
+  <div class="divider" aria-hidden="true">
+    <svg viewBox="0 0 400 20" preserveAspectRatio="none"><path d="M0,10 Q25,0 50,10 T100,10 T150,10 T200,10 T250,10 T300,10 T350,10 T400,10" fill="none" stroke="#E8A94C" stroke-width="1"/></svg>
+  </div>
+
+  <div class="chapter">
+    <p class="chapter-num">II.</p>
+    <h2>The word underneath the title</h2>
+    <p>Nothing about the album's name is decorative. Arirang is Korea's most widely recognized folk song — a piece that exists in hundreds of regional variations, sung for generations about separation, longing, and the pull to return home. UNESCO lists it as part of the world's intangible cultural heritage. Naming a comeback record after it, then opening with an English-language pop song about staying afloat, is BTS drawing a direct line between a centuries-old story of forced parting and their own: seven members scattered into individual military service, an industry that moved on without them, and the question of whether a group built in their twenties could still mean the same thing in their thirties.</p>
+    <p>"Swim" doesn't resolve that tension so much as sit inside it. The verses open on unease — waking up disoriented in an unfamiliar, "mad" world, searching for a place stable enough to simply breathe — before the chorus turns that disorientation into motion instead of panic. The song's answer to four years of forced stillness isn't triumph. It's the decision to keep moving at your own pace, and to trust that persistence is its own kind of love.</p>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><b>No.1</b><span>Hot 100 debut, seventh for BTS</span></div>
+    <div class="stat"><b>4 yrs</b><span>Between full-group releases</span></div>
+    <div class="stat"><b>14</b><span>Tracks on ARIRANG</span></div>
+  </div>
+
+  <div class="chapter">
+    <p class="chapter-num">III.</p>
+    <h2>A ship called Arirang</h2>
+    <p>The music video, featuring a cameo from actress Lili Reinhart studying a model ship in a museum, extends the metaphor literally — the seven members appear aboard a vessel named, of course, the Arirang, dressed as sailors navigating open water rather than fighting it. It's a small, almost stubborn piece of world-building: the video doesn't dramatize the hiatus, or milestone the reunion with fireworks. It just puts them back on the water together and lets the current do the talking.</p>
+    <p>That restraint is arguably the most honest thing about "Swim." A louder song would have been easier to market and easier to love on first listen. Instead, BTS chose a track that "mirrors life itself" — their own words — betting that a quieter kind of resilience would resonate more than spectacle with an audience who spent four years waiting, and learning some version of patience themselves.</p>
+    <p>For ARMY, that's arguably the whole point. The song isn't asking to be the most exciting comeback in K-pop history. It's asking to be believed — a promise, set to a slow tide, that they're still moving forward, together, at their own pace.</p>
+  </div>
+</main>
+
+<footer>
+  <p class="sources"><b>Sources:</b> Billboard ("Here Are the Lyrics to BTS' 'SWIM'"; Hot 100 chart data); Wikipedia, "Swim (BTS song)" and "Arirang (album)"; Rolling Stone Australia, ARIRANG tracklist coverage; Her Campus, on the "Swim" music video; AOL/People, on Jimin's comeback statement; KBizoom, lyric and meaning analysis. Quotes are paraphrased from press statements and official album materials; lyrics are not reproduced.</p>
+  <a class="back-home" href="https://celestinestudio.com.lk/music.html">Back to Celestine Song Reviews</a>
+</footer>
+
+</body>
+</html>

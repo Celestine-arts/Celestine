@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ordinary — Alex Warren | Celestine Song Reviews</title>
+<meta name="description" content="A close reading of Alex Warren's 'Ordinary' — a love song borrowed from worship music, written for one real, specific person.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;1,400&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ivory:#F8F5EE;
+    --gold:#D9B36C;
+    --rose:#C99A9A;
+    --navy:#26324A;
+    --sky:#DCE6EC;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--ivory);
+    color:var(--navy);
+    font-family:'Source Sans 3', sans-serif;
+    font-weight:300;
+    line-height:1.85;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2{ font-family:'Spectral', serif; font-weight:400; color:var(--navy); }
+  a{ color:var(--rose); }
+  ::selection{ background:var(--gold); color:var(--navy); }
+
+  .topline{
+    display:flex; justify-content:space-between; align-items:center;
+    max-width:680px; margin:0 auto; padding:28px 22px 0;
+    font-size:0.82rem;
+  }
+  .topline a{ color:var(--navy); text-decoration:none; opacity:0.65; border-bottom:1px solid rgba(38,50,74,0.25); }
+  .topline span{ opacity:0.45; }
+
+  header.hero{
+    position:relative;
+    max-width:760px; margin:0 auto;
+    padding:100px 22px 70px;
+    text-align:center;
+    overflow:hidden;
+  }
+  .halo{
+    position:absolute; top:-10%; left:50%; transform:translateX(-50%);
+    width:700px; height:700px;
+    background: radial-gradient(circle, rgba(217,179,108,0.35) 0%, rgba(217,179,108,0.08) 45%, transparent 70%);
+    z-index:0; pointer-events:none;
+  }
+  .rays{ position:absolute; inset:0; z-index:0; pointer-events:none; opacity:0.5; }
+  .rays svg{ width:100%; height:100%; }
+
+  .hero-inner{ position:relative; z-index:1; }
+  .kicker{ font-family:'Spectral', serif; font-style:italic; font-size:1rem; color:var(--rose); margin:0 0 14px; }
+  h1{ font-size:clamp(2.8rem,9vw,5rem); margin:0; line-height:1.05; }
+  .subline{ max-width:42ch; margin:26px auto 0; font-size:1.05rem; color:#3f4a60; }
+  .meta-row{ margin-top:32px; display:flex; justify-content:center; gap:24px; flex-wrap:wrap; font-size:0.8rem; color:#6b7488; }
+
+  .arch-divider{ max-width:680px; margin:0 auto; padding:0 22px; text-align:center; }
+  .arch-divider svg{ width:80px; height:40px; opacity:0.5; }
+
+  main{ max-width:600px; margin:0 auto; padding:20px 22px 60px; }
+
+  .lede{ font-family:'Spectral', serif; font-style:italic; font-size:1.3rem; color:var(--navy); text-align:center; margin:0 0 56px; }
+
+  .chapter{ margin-top:64px; }
+  h2{ font-size:clamp(1.6rem,4.5vw,2.1rem); margin:0 0 22px; text-align:center; }
+  p{ margin:0 0 20px; color:#3f4a60; font-weight:300; }
+
+  .pull{
+    font-family:'Spectral', serif; font-style:italic; font-size:1.4rem; line-height:1.6;
+    color:var(--rose); text-align:center; margin:46px 0; padding:0 10px;
+  }
+  .pull cite{ display:block; margin-top:14px; font-family:'Source Sans 3',sans-serif; font-style:normal; font-size:0.75rem; color:#8a92a3; }
+
+  .note{
+    background:rgba(217,179,108,0.1);
+    border:1px solid rgba(217,179,108,0.35);
+    padding:26px 24px;
+    margin:40px 0;
+    text-align:center;
+  }
+  .note h3{ font-family:'Spectral',serif; font-style:italic; font-size:1.05rem; margin:0 0 10px; color:var(--navy); }
+  .note p{ margin:0; font-size:0.95rem; }
+
+  footer{ max-width:600px; margin:0 auto; padding:44px 22px 80px; border-top:1px solid rgba(38,50,74,0.15); text-align:center; }
+  .sources{ font-size:0.78rem; color:#7a8296; line-height:1.85; text-align:left; }
+  .sources b{ color:var(--navy); }
+  .back-home{ display:inline-block; margin-top:24px; font-size:0.85rem; color:var(--rose); text-decoration:none; border-bottom:1px solid rgba(201,154,154,0.4); }
+</style>
+</head>
+<body>
+
+<div class="topline">
+  <a href="https://celestinestudio.com.lk/music.html">← Song Reviews</a>
+  <span>Celestine</span>
+</div>
+
+<header class="hero">
+  <div class="halo" aria-hidden="true"></div>
+  <div class="rays" aria-hidden="true">
+    <svg viewBox="0 0 760 500"><g stroke="#D9B36C" stroke-width="1" opacity="0.4"><line x1="380" y1="0" x2="120" y2="500"/><line x1="380" y1="0" x2="260" y2="500"/><line x1="380" y1="0" x2="380" y2="500"/><line x1="380" y1="0" x2="500" y2="500"/><line x1="380" y1="0" x2="640" y2="500"/></g></svg>
+  </div>
+  <div class="hero-inner">
+    <p class="kicker">a wedding song before it was ever released as one</p>
+    <h1>Ordinary</h1>
+    <p class="subline">Alex Warren borrows the language of worship music to describe falling in love with one person — his own wife, by name, in every quiet way that matters.</p>
+    <div class="meta-row">
+      <span>Alex Warren</span>
+      <span>You'll Be Alright, Kid</span>
+      <span>10 weeks, Global No. 1</span>
+    </div>
+  </div>
+</header>
+
+<div class="arch-divider" aria-hidden="true">
+  <svg viewBox="0 0 80 40"><path d="M2,38 L2,18 A38,38 0 0,1 78,18 L78,38" fill="none" stroke="#D9B36C" stroke-width="1"/></svg>
+</div>
+
+<main>
+  <p class="lede">You're taking me out of the ordinary.</p>
+
+  <div class="chapter">
+    <h2>A love letter that happens to rhyme</h2>
+    <p>"Ordinary" is, by Alex Warren's own account, about exactly one person: his wife, Kouvr Annon, whom he met at eighteen and who stayed by his side, sleeping in a car with him, before either of them had anything close to stability. Warren has described their relationship as the kind of rare, uncomplicated love he thinks is genuinely harder to find in a phone-saturated world — and "Ordinary" as his attempt to put language to it worthy of the feeling.</p>
+    <p>Written with producer Adam Yaron and co-writers Cal Shapiro and Mags Duval — the latter a fellow Christian songwriter — the track leans deliberately on worship-music vocabulary: holy water, angels, a sanctuary. Warren, who is Catholic, has said the biblical references weren't an aesthetic choice so much as the most honest available language for a feeling that size. Some of the song's specific imagery, he's admitted, started as an off-hand joke between friends before it found its way, half-seriously, into the final lyric.</p>
+  </div>
+
+  <div class="pull">the angels up in the clouds are jealous<cite>the song's central, unapologetically large claim</cite></div>
+
+  <div class="chapter">
+    <h2>Almost cut, then impossible to cut</h2>
+    <p>Warren has been candid that he didn't like "Ordinary" when it was first written — just an acoustic guitar and vocals, sounding, in his words, like nothing he'd actually release. It wasn't until production added a choir on top of the arrangement that the song clicked for him: what had felt small and unfinished suddenly sounded, in his own description, "insane." That grandiosity is now the song's signature — a chamber-pop ballad that starts hushed and swells into something closer to a congregation singing along.</p>
+  </div>
+
+  <div class="note">
+    <h3>a note on the reception</h3>
+    <p>Critics have been split — some finding the religious imagery genuinely moving, others calling it overwrought. What's not in dispute is the song's reach: ten consecutive weeks atop the Billboard Global 200, and an eighteen-week (and counting) run leading the Radio Songs chart, among the longest in the chart's history.</p>
+  </div>
+
+  <div class="chapter">
+    <h2>Why "ordinary" is the word that carries it</h2>
+    <p>The title does more work than it first appears to. Warren isn't claiming his life became extraordinary because of fame, or money, or any of the usual markers. He's claiming the opposite — that an ordinary life, with an ordinary person, stopped feeling ordinary the moment the right person was in it. That's a small, almost old-fashioned idea to build a stadium-sized ballad around. It's also, probably, why it's ended up soundtracking so many actual weddings: it doesn't promise magic. It promises that the person across from you can make the everyday feel like enough.</p>
+  </div>
+</main>
+
+<footer>
+  <p class="sources"><b>Sources:</b> Today.com, "'Ordinary' Lyrics Meaning: Alex Warren, Wife Kouvr Annon"; Songfacts, "Ordinary by Alex Warren," on the song's writing process; Plugged In, on the track's biblical imagery; Wikipedia, "Ordinary (Alex Warren song)," including critical reception and chart data; SongContext, on the song's chart performance. Quotes are paraphrased from Warren's own interviews; lyrics are not reproduced.</p>
+  <a class="back-home" href="https://celestinestudio.com.lk/music.html">Back to Celestine Song Reviews</a>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Boston — Stella Lefty | Celestine Song Reviews</title>
+<meta name="description" content="A close reading of Stella Lefty's 'Boston' — a song about breaking your own pattern, one train ride at a time.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400&family=Special+Elite&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F2EAD8;
+    --rust:#B5522E;
+    --green:#2E4A3D;
+    --ink:#2B2925;
+    --brass:#B08D57;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    background-image: radial-gradient(rgba(43,41,37,0.04) 1px, transparent 1px);
+    background-size: 4px 4px;
+    color:var(--ink);
+    font-family:'Work Sans', sans-serif;
+    font-weight:300;
+    line-height:1.8;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2{ font-family:'Crimson Pro', serif; font-weight:600; color:var(--green); }
+  .mono{ font-family:'Special Elite', cursive; }
+  a{ color:var(--rust); }
+  ::selection{ background:var(--brass); color:var(--paper); }
+
+  .topline{
+    display:flex; justify-content:space-between; align-items:center;
+    max-width:640px; margin:0 auto; padding:26px 22px 0;
+    font-family:'Special Elite', cursive; font-size:0.78rem;
+  }
+  .topline a{ color:var(--ink); text-decoration:none; opacity:0.7; }
+  .topline span{ opacity:0.5; }
+
+  header.hero{ max-width:640px; margin:40px auto 0; padding:0 22px; }
+  .ticket{
+    position:relative;
+    background:#FBF7EC;
+    border:1px solid rgba(43,41,37,0.25);
+    box-shadow:0 10px 24px rgba(43,41,37,0.14);
+    padding:34px 30px;
+  }
+  .ticket::before{
+    content:"";
+    position:absolute; left:0; top:0; bottom:0; width:0;
+    border-left:2px dashed rgba(43,41,37,0.3);
+    left:118px;
+  }
+  @media (max-width:480px){ .ticket::before{ display:none; } }
+  .route{
+    font-family:'Special Elite', cursive; font-size:0.72rem; color:var(--rust);
+    text-transform:uppercase; letter-spacing:0.08em; margin:0 0 6px;
+  }
+  h1{ font-size:clamp(2.4rem,8vw,3.8rem); margin:0; line-height:1; }
+  .subline{ max-width:42ch; margin:18px 0 0; font-size:1.02rem; color:#4a453c; }
+  .stub-row{
+    margin-top:26px; padding-top:20px; border-top:1px dashed rgba(43,41,37,0.3);
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;
+    font-family:'Special Elite', cursive; font-size:0.75rem; color:var(--green);
+  }
+  .stamp{
+    position:absolute; top:26px; right:26px;
+    width:64px; height:64px; border-radius:50%;
+    border:2px solid var(--rust); opacity:0.55;
+    display:flex; align-items:center; justify-content:center;
+    transform:rotate(-12deg);
+    font-family:'Special Elite',cursive; font-size:0.6rem; text-align:center; color:var(--rust);
+    line-height:1.2;
+  }
+  @media (max-width:480px){ .stamp{ display:none; } }
+
+  .route-line{ max-width:640px; margin:0 auto; padding:0 22px; }
+  .route-line svg{ width:100%; height:30px; display:block; }
+
+  main{ max-width:580px; margin:0 auto; padding:30px 22px 60px; }
+
+  .lede{ font-family:'Crimson Pro', serif; font-style:italic; font-size:1.3rem; color:var(--green); margin:0 0 50px; }
+
+  .chapter{ margin-top:58px; }
+  h2{ font-size:clamp(1.5rem,4vw,2rem); margin:0 0 18px; }
+  p{ margin:0 0 20px; color:#3d3a32; font-weight:300; }
+
+  .pull{
+    font-family:'Crimson Pro', serif; font-style:italic; font-size:1.35rem; line-height:1.55;
+    color:var(--rust);
+    border-top:1px solid rgba(43,41,37,0.25); border-bottom:1px solid rgba(43,41,37,0.25);
+    padding:24px 0; margin:38px 0; text-align:center;
+  }
+  .pull cite{ display:block; margin-top:12px; font-family:'Special Elite',cursive; font-style:normal; font-size:0.7rem; color:var(--green); }
+
+  .perforation{ display:flex; gap:6px; justify-content:center; margin:56px 0; }
+  .perforation span{ width:6px; height:6px; border-radius:50%; background:rgba(43,41,37,0.25); }
+
+  .stub{
+    background:rgba(46,74,61,0.06);
+    border:1px solid rgba(46,74,61,0.2);
+    padding:22px 24px;
+    margin:40px 0;
+  }
+  .stub h3{ font-family:'Special Elite',cursive; font-size:0.85rem; color:var(--green); margin:0 0 10px; text-transform:uppercase; letter-spacing:0.05em; }
+  .stub p{ margin:0; font-size:0.95rem; }
+
+  footer{ max-width:580px; margin:0 auto; padding:40px 22px 70px; border-top:1px dashed rgba(43,41,37,0.3); }
+  .sources{ font-size:0.8rem; color:#6b665a; line-height:1.85; }
+  .sources b{ color:var(--ink); }
+  .back-home{ display:inline-block; margin-top:22px; font-family:'Special Elite',cursive; font-size:0.85rem; color:var(--rust); text-decoration:none; border-bottom:1px solid rgba(181,82,46,0.4); }
+</style>
+</head>
+<body>
+
+<div class="topline">
+  <a href="https://celestinestudio.com.lk/music.html">← Song Reviews</a>
+  <span>Celestine — ticket no. 08</span>
+</div>
+
+<header class="hero">
+  <div class="ticket">
+    <div class="stamp">PLAYED<br>ON REPEAT</div>
+    <p class="route">Chicago → Boston</p>
+    <h1>Boston</h1>
+    <p class="subline">A love song written by someone who usually leaves right on cue — and, this time, stayed on the train instead.</p>
+    <div class="stub-row">
+      <span>Stella Lefty</span>
+      <span>Released Mar 27, 2026</span>
+      <span>Peak: No. 2, Hot 100</span>
+    </div>
+  </div>
+</header>
+
+<div class="route-line" aria-hidden="true">
+  <svg viewBox="0 0 640 30"><line x1="0" y1="15" x2="640" y2="15" stroke="#B5522E" stroke-width="1.5" stroke-dasharray="3 8"/><circle cx="20" cy="15" r="4" fill="#2E4A3D"/><circle cx="620" cy="15" r="4" fill="#B5522E"/></svg>
+</div>
+
+<main>
+  <p class="lede">"I like it when you're nice. Like it when you're nice to me."</p>
+
+  <div class="chapter">
+    <h2>A pattern, interrupted</h2>
+    <p>Stella Lefty — real name Stella Lefkofsky, from Chicago — built "Boston" around a very specific kind of surprise: falling for someone and staying, when every instinct she's built up says to leave the moment things start to feel real. The song follows a narrator on a literal train, watching a relationship accelerate past the point where she'd normally pull the emergency brake, and choosing, against her own habit, to let it keep moving.</p>
+    <p>Lefty co-wrote the track with Grace Enger, Jacob Kasher Hindlin, and Joe Reeves, and it also interpolates Noah Kahan's "Stick Season," who received a co-writing credit once the connection became public. The title itself has a small, almost absurd origin story: Lefty wrote the song at a piano stamped "Boston" by its manufacturer, without initially registering the brand name, only realizing the coincidence weeks later — around the same time she happened to be touring through the actual city.</p>
+  </div>
+
+  <div class="pull">this the part where I'd run<cite>the moment the whole song hinges on — and doesn't take</cite></div>
+
+  <div class="chapter">
+    <h2>The bar so low it became a rallying cry</h2>
+    <p>The song is genuinely about Lefty's real relationship with fellow country artist Vincent Mason — who is not, in fact, from Boston, but from a suburb of Atlanta. The title bends the facts slightly for the sake of the story; the emotion underneath it doesn't need to. One line in particular — a simple statement that she likes it when he's nice to her — has taken on a life of its own online, with listeners, especially women, pointing out how low a bar that should be, and how rarely it gets cleared.</p>
+    <p>That's the quiet tension "Boston" runs on: relief dressed up as romance. The narrator isn't describing a grand gesture. She's describing basic decency landing like a revelation, precisely because she's used to it being optional.</p>
+  </div>
+
+  <div class="stub">
+    <h3>Ticket note</h3>
+    <p>Lefty has said the song captures her at "the peak of Love Mountain" — before any of the inevitable highs and lows that come after. It's a song written from inside the good part, on purpose, without waiting to see how the story ends.</p>
+  </div>
+
+  <div class="perforation" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+
+  <div class="chapter">
+    <h2>Why a song about a train ride became this big</h2>
+    <p>Part of the appeal is craft — a tightly strummed acoustic guitar functioning as the literal "engine" of the track, pedal steel floating overhead like the scenery blurring past a window. But most of it is emotional honesty: "Boston" isn't a fantasy of perfect love. It's the far more relatable story of someone who's been burned enough times to expect the worst, catching herself hoping anyway, and deciding — for once — not to talk herself out of it before the train even leaves the station.</p>
+  </div>
+</main>
+
+<footer>
+  <p class="sources"><b>Sources:</b> Wikipedia, "Boston (Stella Lefty song)"; Songfacts, "Boston by Stella Lefty," on the song's origin and Vincent Mason connection; Music and Culture (Substack), on the track's production and imagery; Holler, "'Boston' by Stella Lefty – Lyrics & Meaning"; Taste of Country, on the song's viral reception. Quotes are paraphrased from Lefty's interviews; lyrics are not reproduced.</p>
+  <a class="back-home" href="https://celestinestudio.com.lk/music.html">Back to Celestine Song Reviews</a>
+</footer>
+
+</body>
+</html>

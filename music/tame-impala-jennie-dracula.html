@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dracula — Tame Impala &amp; JENNIE | Celestine Song Reviews</title>
+<meta name="description" content="A close reading of 'Dracula' by Tame Impala featuring JENNIE — a song about never wanting the night to end, and what that avoidance is really hiding.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700;800&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --void:#0D0B1A;
+    --violet:#6E3FA3;
+    --teal:#2FD9C4;
+    --plum:#5C1A3A;
+    --silver:#D9D6E8;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--void);
+    color:var(--silver);
+    font-family:'Sora', sans-serif;
+    font-weight:300;
+    line-height:1.8;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2{ font-family:'Syne', sans-serif; font-weight:700; color:#fff; letter-spacing:-0.01em; }
+  a{ color:var(--teal); }
+  ::selection{ background:var(--violet); color:#fff; }
+
+  .aura{
+    position:fixed; inset:-20% -20%; z-index:0; pointer-events:none;
+    background:
+      radial-gradient(38% 30% at 20% 15%, rgba(110,63,163,0.45), transparent 60%),
+      radial-gradient(30% 26% at 82% 30%, rgba(92,26,58,0.5), transparent 60%),
+      radial-gradient(34% 30% at 50% 85%, rgba(47,217,196,0.12), transparent 60%);
+    animation: auraShift 24s ease-in-out infinite alternate;
+    filter: blur(6px);
+  }
+  @keyframes auraShift{
+    0%{ transform: translate(0,0) scale(1); }
+    100%{ transform: translate(2%, -3%) scale(1.08); }
+  }
+  @media (prefers-reduced-motion: reduce){ .aura{ animation:none; } }
+
+  .grain{
+    position:fixed; inset:0; z-index:1; pointer-events:none; opacity:0.05;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .content{ position:relative; z-index:2; }
+
+  .topline{
+    display:flex; justify-content:space-between; align-items:center;
+    max-width:720px; margin:0 auto; padding:26px 22px 0;
+    font-size:0.78rem; letter-spacing:0.04em;
+  }
+  .topline a{ color:var(--silver); text-decoration:none; opacity:0.6; border-bottom:1px solid rgba(217,214,232,0.25); }
+  .topline span{ opacity:0.4; }
+
+  header.hero{ max-width:760px; margin:0 auto; padding:100px 22px 70px; text-align:center; }
+  .kicker{ font-size:0.85rem; color:var(--teal); letter-spacing:0.06em; margin:0 0 16px; }
+  h1{
+    font-size:clamp(3rem,11vw,6.5rem);
+    margin:0; line-height:0.92;
+    background:linear-gradient(120deg, #fff 20%, var(--teal) 50%, var(--violet) 80%);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  .subline{ max-width:44ch; margin:28px auto 0; font-size:1.05rem; color:rgba(217,214,232,0.85); }
+  .meta-row{ margin-top:34px; display:flex; justify-content:center; gap:24px; flex-wrap:wrap; font-size:0.8rem; color:rgba(217,214,232,0.55); }
+
+  main{ max-width:600px; margin:0 auto; padding:0 22px 60px; }
+
+  .lede{ font-family:'Syne',sans-serif; font-weight:600; font-size:1.4rem; color:#fff; text-align:center; margin:0 0 56px; line-height:1.4; }
+
+  .chapter{ margin-top:66px; }
+  h2{ font-size:clamp(1.6rem,4.5vw,2.1rem); margin:0 0 22px; }
+  p{ margin:0 0 20px; color:rgba(217,214,232,0.88); font-weight:300; }
+  p b{ color:#fff; font-weight:500; }
+
+  .pull{
+    font-family:'Syne', sans-serif; font-weight:600; font-size:1.3rem; line-height:1.5;
+    color:var(--teal); text-align:center; margin:46px 0;
+    padding:30px 24px;
+    border:1px solid rgba(47,217,196,0.25);
+    background:rgba(47,217,196,0.04);
+  }
+  .pull cite{ display:block; margin-top:12px; font-family:'Sora',sans-serif; font-weight:300; font-style:normal; font-size:0.75rem; color:rgba(217,214,232,0.5); }
+
+  .moon{ text-align:center; margin:64px 0; opacity:0.7; }
+
+  footer{ max-width:600px; margin:0 auto; padding:44px 22px 60px; border-top:1px solid rgba(217,214,232,0.15); }
+  .sources{ font-size:0.78rem; color:rgba(217,214,232,0.5); line-height:1.85; }
+  .sources b{ color:rgba(217,214,232,0.8); }
+  .back-home{ display:inline-block; margin-top:24px; font-size:0.85rem; color:var(--teal); text-decoration:none; border-bottom:1px solid rgba(47,217,196,0.4); }
+
+  .daylight{
+    position:relative; z-index:2;
+    background:linear-gradient(180deg, #E8DFF5 0%, #FBF6E8 100%);
+    color:#2A2436;
+    padding:70px 22px;
+    text-align:center;
+  }
+  .daylight p{ max-width:44ch; margin:0 auto; font-family:'Syne',sans-serif; font-weight:600; font-size:1.15rem; color:#2A2436; }
+</style>
+</head>
+<body>
+
+<div class="aura" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+
+<div class="content">
+<div class="topline">
+  <a href="https://celestinestudio.com.lk/music.html">← Song Reviews</a>
+  <span>Celestine</span>
+</div>
+
+<header class="hero">
+  <p class="kicker">Psychedelic electropop</p>
+  <h1>Dracula</h1>
+  <p class="subline">Tame Impala and JENNIE built a song about never wanting the night to end. The daylight it's running from isn't sunrise — it's everything sunrise makes you deal with.</p>
+  <div class="meta-row">
+    <span>Kevin Parker &amp; JENNIE</span>
+    <span>From Deadbeat</span>
+    <span>Remix released Feb 2026</span>
+  </div>
+</header>
+
+<main>
+  <p class="lede">A vampire doesn't fear the sun because of the light. It fears what the light ends.</p>
+
+  <div class="chapter">
+    <h2>One song, two eras of pop</h2>
+    <p>"Dracula" started as the third single from Tame Impala's fifth album <em>Deadbeat</em>, released in September 2025 — a hypnotic, disco-inflected track from Kevin Parker's home studio in Western Australia. Five months later, JENNIE of BLACKPINK joined for a remix that didn't rewrite the song so much as sharpen it, layering new verses over the same nocturnal groove. Parker and JENNIE have joked about being geographic cousins — she was raised in New Zealand, next door to his native Australia — but the real connection is sonic: both artists work in modes built on repetition, atmosphere, and the feeling of time dissolving on a dance floor.</p>
+    <p>The track's structure barely changes across the two versions, and that's the point. JENNIE's verses don't redirect the song. They add another voice to the same room, at the same late hour, chasing the same reluctance to let the night end.</p>
+  </div>
+
+  <div class="pull">daylight makes me feel like Dracula<cite>the song's central image — the sun as the real threat</cite></div>
+
+  <div class="chapter">
+    <h2>The metaphor isn't really about vampires</h2>
+    <p>Strip away the gothic dressing and "Dracula" is a song about nightlife as a form of hiding. The narrator isn't drawn to darkness because it's dangerous or romantic in the old sense — it's drawn to darkness because darkness doesn't ask anything of you. No responsibility, no routine, no version of yourself that has to answer to daylight's expectations. Running from the sun becomes a stand-in for running from whatever the morning represents: consequences, clarity, the return of ordinary life.</p>
+    <p>The official video, directed by Julian Klincewicz, extends that idea into an isolated desert rave where the crowd drifts almost trance-like behind Parker, fleeing an advancing sunrise as if outrunning daylight were a literal, physical possibility. It's staged less like a party than like a ritual — a group agreement to keep pretending morning isn't coming.</p>
+  </div>
+
+  <div class="moon" aria-hidden="true">
+    <svg width="70" height="70" viewBox="0 0 70 70"><circle cx="35" cy="35" r="28" fill="none" stroke="#D9D6E8" stroke-width="1" opacity="0.5"/><path d="M35,7 A28,28 0 1,0 35,63 A22,22 0 1,1 35,7 Z" fill="#D9D6E8" opacity="0.35"/></svg>
+  </div>
+
+  <div class="chapter">
+    <h2>What JENNIE's verse changes</h2>
+    <p>Where Parker's original plays the fantasy relatively straight — seduced by the dark, unwilling to leave the floor — JENNIE's added verses bring a cooler, more self-aware edge, referencing the glamour of the scene almost as armor rather than pure abandon. The temperature of the song shifts without its meaning changing: escapism dressed up as confidence, a party that has started to look less like freedom and more like a place someone doesn't quite know how to leave.</p>
+    <p>That tension — wanting the night to be permanent, knowing it can't be — is what keeps "Dracula" from being just another dance-floor anthem. It's a song about the specific exhaustion of a good time you're using to avoid something, sung by two artists who know exactly how good a party can sound while it's happening.</p>
+  </div>
+</main>
+
+<footer>
+  <p class="sources"><b>Sources:</b> Wikipedia, "Dracula (Tame Impala song)"; Billboard, "Jennie Sinks Her Teeth Into Tame Impala's 'Dracula' Remix"; Lyrics.me, on the song's nightlife themes and Julian Klincewicz's video direction; KBizoom and Korae, on the vampire-as-escapism reading. Quotes are paraphrased critical interpretation; lyrics are not reproduced.</p>
+  <a class="back-home" href="https://celestinestudio.com.lk/music.html">back to Celestine Song Reviews</a>
+</footer>
+</div>
+
+<div class="daylight">
+  <p>and then, always, the sun comes up anyway.</p>
+</div>
+
+</body>
+</html>
