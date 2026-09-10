@@ -1,11 +1,11 @@
-// scripts/update-news.mjs  (FREE VERSION — no AI API needed)
+// scripts/update-news.mjs  (RSS + free Gemini AI summaries)
 //
-// Fetches items from news-sources.json (RSS feeds only), takes the title +
-// a short excerpt directly from each feed, and regenerates the news card
-// markup inside news.html between two marker comments.
+// Fetches items from news-sources.json (RSS feeds only), asks Gemini to
+// write a short original summary of each new item, and regenerates the
+// news card markup inside news.html between two marker comments.
 //
 // Requires (package.json): "rss-parser"
-// No API key needed — completely free to run.
+// Requires a GEMINI_API_KEY secret (free, from Google AI Studio).
 
 import fs from "node:fs/promises";
 import Parser from "rss-parser";
@@ -15,6 +15,11 @@ const NEWS_JSON_PATH = "news.json";
 const NEWS_HTML_PATH = "news.html";
 const MAX_ITEMS_KEPT = 12;
 const MAX_NEW_ITEMS_PER_RUN = 6;
+
+// Google AI Studio "-latest" alias — check https://ai.google.dev/gemini-api/docs/models
+// occasionally in case Google retires this alias; swap in a current model name if so.
+const GEMINI_MODEL = "gemini-flash-lite-latest";
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 
 const rssParser = new Parser();
 
@@ -37,19 +42,53 @@ function guessCategory(sourceName = "") {
   return "Art";
 }
 
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function summarizeWithGemini(headline, rawText) {
+  if (!GEMINI_API_KEY) return null;
+
+  const prompt = `Summarize this arts/culture news item in exactly one punchy sentence (max 30 words), for a curated news feed. Do not add opinions or quotes, just state what happened. Headline: "${headline}". Source text: "${rawText.slice(0, 1500)}"`;
+
+  const url = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
+
+  try {
+    const res = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "x-goog-api-key": GEMINI_API_KEY,
+      },
+      body: JSON.stringify({
+        contents: [{ parts: [{ text: prompt }] }],
+      }),
+    });
+
+    if (!res.ok) {
+      console.error("Gemini API error:", res.status, await res.text());
+      return null;
+    }
+
+    const data = await res.json();
+    const text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
+    return text ? text.trim() : null;
+  } catch (err) {
+    console.error("Gemini call failed:", err.message);
+    return null;
+  }
+}
+
 async function fetchRssItems(source) {
   const feed = await rssParser.parseURL(source.url);
-  return (feed.items || []).slice(0, 5).map((item) => {
-    const excerpt = stripHtml(item.contentSnippet || item.content || "").slice(0, 160);
-    return {
-      sourceName: source.name,
-      link: item.link,
-      headline: item.title || source.name,
-      summary: excerpt ? `${excerpt}${excerpt.length >= 160 ? "…" : ""}` : "Read the full story at the source.",
-      category: guessCategory(source.name),
-      publishedAt: item.isoDate || item.pubDate || new Date().toISOString(),
-    };
-  });
+  return (feed.items || []).slice(0, 5).map((item) => ({
+    sourceName: source.name,
+    link: item.link,
+    headline: item.title || source.name,
+    rawText: stripHtml(item.contentSnippet || item.content || item.title || ""),
+    category: guessCategory(source.name),
+    publishedAt: item.isoDate || item.pubDate || new Date().toISOString(),
+  }));
 }
 
 function renderCard(entry) {
@@ -71,7 +110,7 @@ async function main() {
 
   const candidates = [];
   for (const source of sources) {
-    if (source.type !== "rss") continue; // free version: RSS sources only
+    if (source.type !== "rss") continue; // RSS sources only
     try {
       const items = await fetchRssItems(source);
       for (const item of items) {
@@ -82,11 +121,26 @@ async function main() {
     }
   }
 
-  const newEntries = candidates.slice(0, MAX_NEW_ITEMS_PER_RUN);
+  const picked = candidates.slice(0, MAX_NEW_ITEMS_PER_RUN);
 
-  if (newEntries.length === 0) {
+  if (picked.length === 0) {
     console.log("No new items found this run.");
     return;
+  }
+
+  const newEntries = [];
+  for (const item of picked) {
+    const aiSummary = await summarizeWithGemini(item.headline, item.rawText);
+    const fallback = item.rawText.slice(0, 160);
+    newEntries.push({
+      sourceName: item.sourceName,
+      link: item.link,
+      headline: item.headline,
+      summary: aiSummary || (fallback ? `${fallback}…` : "Read the full story at the source."),
+      category: item.category,
+      publishedAt: item.publishedAt,
+    });
+    await sleep(3000); // be gentle with the free-tier rate limit
   }
 
   const merged = [...newEntries, ...existing].slice(0, MAX_ITEMS_KEPT);
