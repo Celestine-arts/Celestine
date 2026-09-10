@@ -88,12 +88,10 @@ function renderCard(entry) {
     month: "short",
     day: "numeric",
   });
-  return `<a class="news-card" href="${entry.link}" target="_blank" rel="noopener">
-  <span class="news-category">${entry.category}</span>
-  <h3>${entry.headline}</h3>
-  <p>${entry.summary}</p>
-  <span class="news-source">${entry.sourceName} · ${date}</span>
-</a>`;
+  return `<a class="card c-span-2" href="${entry.link}" target="_blank" rel="noopener">
+      <div class="thumb t-news"><span>${entry.category.toUpperCase()}</span></div>
+      <div class="body"><h3>${entry.headline}</h3><p>${entry.summary}</p><div class="meta">${entry.sourceName} · ${date}</div></div>
+    </a>`;
 }
 
 async function main() {
