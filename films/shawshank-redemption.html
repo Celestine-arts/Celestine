@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Shawshank Redemption — The Wall Has a Crack | Celestine Film Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --grey-cold:#3a4450;
+    --concrete:#5b6169;
+    --hope:#d9a63e;
+    --rust:#7a4a2a;
+    --near-white:#eef0ea;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--grey-cold);
+    color:var(--near-white);
+    font-family:'PT Serif', serif;
+    line-height:1.85;
+    font-size:1.06rem;
+    transition:none;
+  }
+  h1,h2{font-family:'Big Shoulders Display', sans-serif; text-transform:uppercase;}
+  a{color:var(--hope);}
+  .back{
+    position:fixed; top:20px; left:20px; z-index:60;
+    font-size:.7rem; letter-spacing:.1em; text-transform:uppercase;
+    text-decoration:none; color:var(--near-white);
+    border-bottom:1px solid rgba(238,240,234,.3);
+    padding-bottom:2px;
+  }
+  .back:hover{color:var(--hope);}
+
+  .page{
+    background:linear-gradient(to bottom,
+      #333c46 0%,
+      #3a4450 18%,
+      #4c5058 38%,
+      #6b6350 58%,
+      #96803f 78%,
+      var(--hope) 100%);
+  }
+
+  header.wall{
+    max-width:700px;
+    margin:0 auto;
+    padding:130px 30px 50px;
+    position:relative;
+  }
+  .tally{
+    position:absolute;
+    top:130px; right:30px;
+    display:flex; gap:4px;
+    opacity:.35;
+  }
+  .tally span{display:block; width:2px; height:26px; background:var(--near-white);}
+  header.wall .kicker{
+    display:block;
+    font-size:.72rem;
+    letter-spacing:.2em;
+    text-transform:uppercase;
+    color:var(--concrete);
+    margin-bottom:16px;
+  }
+  header.wall h1{
+    font-size:clamp(2.4rem, 7.5vw, 4.2rem);
+    font-weight:700;
+    line-height:1;
+    margin:0 0 18px;
+    max-width:14ch;
+  }
+  header.wall p{
+    font-style:italic;
+    max-width:34ch;
+    color:#dfe2da;
+    font-size:1.12rem;
+    margin:0;
+  }
+
+  main{
+    max-width:660px;
+    margin:0 auto;
+    padding:10px 30px 40px;
+  }
+
+  .meta-strip{
+    display:flex; flex-wrap:wrap; gap:20px 30px;
+    padding-bottom:26px;
+    margin-bottom:50px;
+    border-bottom:1px solid rgba(238,240,234,.18);
+    font-size:.85rem;
+  }
+  .meta-strip .k{display:block; font-size:.66rem; letter-spacing:.1em; text-transform:uppercase; color:#c9cdc4; margin-bottom:3px;}
+
+  section{margin-bottom:54px;}
+  section h2{
+    font-size:1.55rem;
+    font-weight:700;
+    margin:0 0 18px;
+  }
+  section p{
+    max-width:64ch;
+    margin:0 0 16px;
+    color:#f0f1ea;
+  }
+
+  .callout{
+    padding:28px 0;
+    border-top:1px solid rgba(217,166,62,.5);
+    border-bottom:1px solid rgba(217,166,62,.5);
+    margin:44px 0;
+  }
+  .callout p{
+    font-style:italic;
+    font-size:1.22rem;
+    margin:0;
+    max-width:54ch;
+  }
+
+  .verdict{
+    margin-top:16px;
+    padding:30px 0 0;
+  }
+  .verdict .tag{
+    font-size:.7rem; letter-spacing:.16em; text-transform:uppercase;
+    display:block; margin-bottom:14px;
+  }
+  .verdict p{font-size:1.1rem; max-width:60ch;}
+
+  footer{
+    max-width:660px; margin:0 auto;
+    padding:40px 30px 100px;
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:14px;
+    font-size:.72rem; letter-spacing:.08em; text-transform:uppercase;
+    color:#3a2f16;
+  }
+  footer a{color:#241c0d; text-decoration:none; border-bottom:1px solid #241c0d;}
+
+  @media (max-width:560px){
+    header.wall{padding-top:96px;}
+    .tally{display:none;}
+    section h2{font-size:1.3rem;}
+  }
+</style>
+</head>
+<body>
+
+<a class="back" href="https://celestinestudio.com.lk/film.html">◂ Celestine / Film</a>
+
+<div class="page">
+
+  <header class="wall">
+    <div class="tally"><span></span><span></span><span></span><span></span><span></span></div>
+    <span class="kicker">Frank Darabont, 1994</span>
+    <h1>The Shawshank Redemption</h1>
+    <p>A box-office failure that quietly became the most beloved film ever made, one rental at a time.</p>
+  </header>
+
+  <main>
+
+    <div class="meta-strip">
+      <div><span class="k">Based on</span>Stephen King novella</div>
+      <div><span class="k">Cast</span>Robbins, Freeman</div>
+      <div><span class="k">Cinematography</span>Roger Deakins</div>
+    </div>
+
+    <section>
+      <h2>The narrator was never the hero</h2>
+      <p>It's easy to forget, on the tenth rewatch, that this isn't really Andy Dufresne's story to tell — it belongs to Red, the lifer who's seen a hundred men come through Shawshank and learned exactly how much hope a person can survive on before it starts to hurt more than it helps. That choice of narrator is the film's smartest and least discussed decision. Andy's escape plan unfolds slowly enough, and quietly enough, that we experience nearly all of it the way Red does: as a rumor, a guess, a thing you don't dare believe in until the rock hammer and the poster of Rita Hayworth turn out to have meant something all along.</p>
+      <p>Morgan Freeman's narration carries the film's actual thesis, delivered plainly enough that it's easy to undersell how good the writing is: that institutions don't just punish you, they eventually convince you that you need them — and that the only real crime left to commit, after enough years inside, is still wanting something on the outside.</p>
+    </section>
+
+    <div class="callout">
+      <p>Get busy living, or get busy dying. The line has become a poster-shop cliché, which is a strange fate for what is, in context, one of the bleaker sentences in the film.</p>
+    </div>
+
+    <section>
+      <h2>Roger Deakins' patience</h2>
+      <p>Deakins shoots the prison the way you'd shoot a cathedral you weren't sure deserved the reverence — long, still frames, natural light rationed out like everything else inside Shawshank. The one shot the film spends its whole runtime earning, Andy standing in the rain with his arms out after the escape, works purely because of how starved the rest of the film has kept you for open sky.</p>
+      <p>The famous flop-to-favorite arc — a film that underperformed badly at the box office before becoming, over years of cable reruns and video rentals, one of the most consistently top-ranked films on audience polls — says less about the film's quality than about how word-of-mouth used to work before opening weekends decided everything. It needed time most modern films never get.</p>
+    </section>
+
+    <section>
+      <h2>The one convenient turn</h2>
+      <p>The film's late plotting leans on a genuinely large coincidence to clear Andy's conscience for the audience — the dying inmate who happens to confess the real killer's identity, on cue, right when the story needs him to. It's a soft spot in an otherwise patient, unhurried script, forgivable mostly because everything else earns the trust to get away with it.</p>
+    </section>
+
+    <div class="verdict">
+      <span class="tag">Standing Verdict</span>
+      <p><strong>Earns it, fully.</strong> Not the flashiest filmmaking of its decade, but the most patient — a film that understood hope is more dangerous, and more necessary, than the walls built to keep it out.</p>
+    </div>
+
+  </main>
+
+  <footer>
+    <span>Celestine Film Notes</span>
+    <a href="https://celestinestudio.com.lk/film.html">Back to all reviews →</a>
+  </footer>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fight Club — Xerox Copy | Celestine Film Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Narrow:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#e8e1cf;
+    --grime:#c7a227;
+    --soap:#b97985;
+    --bruise:#4a3350;
+    --concrete:#43413c;
+    --black:#131211;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    background-image:
+      repeating-linear-gradient(0deg, rgba(0,0,0,0.025) 0px, rgba(0,0,0,0.025) 1px, transparent 1px, transparent 3px);
+    color:var(--black);
+    font-family:'Archivo Narrow', sans-serif;
+    line-height:1.6;
+  }
+  a{color:var(--bruise);}
+  .back{
+    position:fixed; top:16px; left:16px; z-index:60;
+    font-size:.72rem; font-weight:700; letter-spacing:.02em;
+    text-decoration:none;
+    background:var(--black); color:var(--paper);
+    padding:6px 11px;
+    transform:rotate(-1deg);
+  }
+  .back:hover{background:var(--bruise);}
+
+  header.rip{
+    max-width:780px;
+    margin:70px auto 0;
+    padding:0 26px 40px;
+    position:relative;
+  }
+  .torn{
+    position:relative;
+    background:#efe9db;
+    padding:44px 34px 40px;
+    box-shadow:0 2px 0 rgba(0,0,0,.08), 0 14px 24px rgba(0,0,0,.15);
+    clip-path: polygon(0% 2%, 4% 0%, 12% 1.5%, 22% 0%, 33% 1%, 45% 0%, 58% 1.3%, 70% 0%, 82% 1%, 92% 0%, 100% 2%, 100% 96%, 93% 100%, 82% 98.5%, 70% 100%, 58% 98.7%, 44% 100%, 30% 98.5%, 18% 100%, 8% 98.5%, 0% 100%);
+    transform:rotate(-0.6deg);
+  }
+  .stamp-tag{
+    display:inline-block;
+    font-family:'Archivo Narrow', sans-serif;
+    font-weight:700;
+    font-size:.68rem;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    border:2px solid var(--black);
+    padding:3px 9px;
+    transform:rotate(-3deg);
+    margin-bottom:18px;
+  }
+  h1.title{
+    font-family:'Anton', sans-serif;
+    font-size:clamp(2.6rem, 9vw, 5.4rem);
+    text-transform:uppercase;
+    line-height:.92;
+    margin:0 0 16px;
+    letter-spacing:.01em;
+    color:var(--black);
+    text-shadow: 2px 2px 0 var(--soap);
+  }
+  .tagline{
+    font-size:1.1rem;
+    font-weight:700;
+    max-width:34ch;
+    margin:0;
+    color:var(--bruise);
+  }
+
+  main{
+    max-width:700px;
+    margin:0 auto;
+    padding:20px 26px 40px;
+  }
+
+  .meta-strip{
+    display:flex; flex-wrap:wrap; gap:16px 26px;
+    margin:36px 0 44px;
+    padding:14px 0;
+    border-top:2px dashed var(--black);
+    border-bottom:2px dashed var(--black);
+    font-size:.78rem;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+  }
+
+  section.entry{margin-bottom:52px;}
+  section.entry h2{
+    font-family:'Anton', sans-serif;
+    font-size:1.9rem;
+    text-transform:uppercase;
+    color:var(--bruise);
+    margin:0 0 16px;
+    letter-spacing:.01em;
+  }
+  section.entry p{
+    font-size:1.08rem;
+    max-width:64ch;
+    margin:0 0 14px;
+  }
+
+  .rules{
+    background:var(--black);
+    color:var(--paper);
+    padding:30px 30px;
+    margin:44px 0;
+    transform:rotate(0.4deg);
+  }
+  .rules .rules-tag{
+    font-family:'Anton', sans-serif;
+    font-size:1.2rem;
+    text-transform:uppercase;
+    color:var(--grime);
+    margin:0 0 16px;
+    display:block;
+  }
+  .rules ol{
+    margin:0; padding-left:22px;
+    font-size:1.02rem;
+  }
+  .rules li{margin-bottom:8px;}
+
+  .callout{
+    background:var(--soap);
+    color:#2a1518;
+    padding:26px 28px;
+    margin:44px 0;
+    font-weight:700;
+    font-size:1.12rem;
+    transform:rotate(-0.5deg);
+  }
+
+  .verdict{
+    border:3px solid var(--black);
+    padding:28px 26px;
+    margin-top:20px;
+    background:#efe9db;
+  }
+  .verdict .tag{
+    font-family:'Anton', sans-serif;
+    font-size:.85rem;
+    text-transform:uppercase;
+    letter-spacing:.06em;
+    color:var(--bruise);
+    display:block;
+    margin-bottom:12px;
+  }
+  .verdict p{margin:0; font-size:1.08rem;}
+
+  footer{
+    max-width:700px; margin:0 auto;
+    padding:30px 26px 100px;
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;
+    font-weight:700; font-size:.78rem; text-transform:uppercase;
+  }
+  footer a{color:var(--black); text-decoration:none; border-bottom:2px solid var(--grime);}
+
+  @media (max-width:560px){
+    header.rip{margin-top:56px;}
+    .torn{padding:34px 22px;}
+    section.entry h2{font-size:1.5rem;}
+  }
+</style>
+</head>
+<body>
+
+<a class="back" href="https://celestinestudio.com.lk/film.html">◂ CELESTINE / FILM</a>
+
+<header class="rip">
+  <div class="torn">
+    <span class="stamp-tag">3rd generation photocopy</span>
+    <h1 class="title">Fight Club</h1>
+    <p class="tagline">The most quoted movie about not listening to it that anyone has ever made.</p>
+  </div>
+</header>
+
+<main>
+
+  <div class="meta-strip">
+    <span>David Fincher, 1999</span>
+    <span>Norton / Pitt / Bonham Carter</span>
+    <span>Box office: a flop, then a cult</span>
+  </div>
+
+  <section class="entry">
+    <h2>The film everyone half-remembers</h2>
+    <p>Fight Club has the strange distinction of being simultaneously overrated and underrated, depending on which half of the audience you ask. To the people who never watch past the fight scenes, it's a nihilist how-to guide, all soap bars and bare-knuckle catharsis, quoted on gym walls with none of the irony intact. To the people who watch the whole thing, it's something closer to the opposite: a two-hour tantrum thrown by a man whose "solution" to consumerist emptiness is to build a cult that ends in domestic terrorism, and whose narrator spends the entire third act realizing, too late, that his imaginary best friend has been lying to him the whole time.</p>
+    <p>Fincher isn't subtle about which reading he intends. The film keeps splicing in single frames of Tyler Durden before he's properly introduced — a trick that only works on rewatch, once you know what you're looking for, which is exactly the kind of joke a film makes when it expects you to eventually catch it.</p>
+  </section>
+
+  <div class="rules">
+    <span class="rules-tag">What the film actually argues</span>
+    <ol>
+      <li>Jack's loneliness is real, and the film never mocks that part.</li>
+      <li>Tyler's fix for it is not a fix. It's a symptom with better abs.</li>
+      <li>The soap company, the condos, the fine dining napkins — Tyler is just as branded as the catalog he claims to hate.</li>
+      <li>The ending, a skyline of exploding buildings held hand in hand with Marla, isn't a triumph. It's a man finally admitting the plan was never his to control.</li>
+    </ol>
+  </div>
+
+  <section class="entry">
+    <h2>The satire that got adopted by its own target</h2>
+    <p>The film's afterlife is the most interesting thing about it now. A movie built specifically to mock a certain kind of aggrieved masculinity became, for a chunk of its audience, an aesthetic reference for exactly that masculinity — soap-bar merch, "the first rule of fight club" as a personality, none of it particularly interested in the part where that worldview gets the narrator's face blown half off. It's not a flaw in the film. It's a flaw in how efficiently irony travels once it's been turned into a poster.</p>
+  </section>
+
+  <div class="callout">
+    Helena Bonham Carter's Marla is doing the film's most underappreciated job: she's the only character who was never fooled by Tyler for a second, and the movie barely gives her the credit for it.
+  </div>
+
+  <div class="verdict">
+    <span class="tag">Standing Verdict</span>
+    <p>Earns it, on the film's own terms — Fincher's control of tone and Norton's slow unraveling still hold up scene for scene. Whether the culture around it earned the point being made is a separate, much less flattering review.</p>
+  </div>
+
+</main>
+
+<footer>
+  <span>Celestine Film Notes</span>
+  <a href="https://celestinestudio.com.lk/film.html">Back to all reviews →</a>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Odyssey — The Wine-Dark Sea | Celestine Film Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --aegean:#1c3a4c;
+    --aegean-deep:#0e2029;
+    --marble:#ece5d6;
+    --bronze:#a97a42;
+    --wine:#5c1c22;
+    --night:#0a1116;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--night);
+    color:var(--marble);
+    font-family:'Lora', serif;
+    line-height:1.85;
+    font-size:1.05rem;
+  }
+  h1,h2{font-family:'Cinzel', serif;}
+  a{color:var(--bronze);}
+  .back{
+    position:fixed; top:20px; left:20px; z-index:60;
+    font-size:.68rem; letter-spacing:.12em; text-transform:uppercase;
+    text-decoration:none; color:var(--marble);
+    border-bottom:1px solid rgba(236,229,214,.35);
+    padding-bottom:2px;
+  }
+  .back:hover{color:var(--bronze);}
+
+  .sea{
+    height:70vh;
+    position:relative;
+    overflow:hidden;
+    background:linear-gradient(to bottom, var(--night) 0%, var(--aegean-deep) 45%, var(--aegean) 100%);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .sea svg{
+    position:absolute; bottom:0; left:0; width:100%; height:40%;
+    opacity:.55;
+  }
+  .sea-title{
+    position:relative; z-index:3;
+    text-align:center;
+    padding:0 20px;
+  }
+  .sea-title .kicker{
+    display:block;
+    font-size:.7rem;
+    letter-spacing:.3em;
+    text-transform:uppercase;
+    color:var(--bronze);
+    margin-bottom:20px;
+  }
+  .sea-title h1{
+    font-size:clamp(2.6rem, 8vw, 5.2rem);
+    font-weight:600;
+    letter-spacing:.04em;
+    margin:0;
+    text-transform:uppercase;
+    color:var(--marble);
+  }
+
+  main{
+    max-width:660px;
+    margin:0 auto;
+    padding:64px 30px 40px;
+  }
+
+  .route{
+    display:flex;
+    flex-wrap:wrap;
+    gap:0;
+    margin-bottom:52px;
+    padding-bottom:30px;
+    border-bottom:1px solid rgba(236,229,214,.14);
+  }
+  .route .stop{
+    font-size:.72rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--bronze);
+    padding-right:14px;
+    margin-right:14px;
+    border-right:1px solid rgba(169,122,66,.4);
+  }
+  .route .stop:last-child{border-right:none;}
+
+  section{margin-bottom:56px;}
+  section h2{
+    font-size:1.55rem;
+    font-weight:500;
+    letter-spacing:.02em;
+    color:var(--bronze);
+    text-transform:uppercase;
+    margin:0 0 20px;
+  }
+  section p{
+    max-width:64ch;
+    color:#e2dac6;
+    margin:0 0 18px;
+  }
+
+  .callout{
+    padding:34px 0;
+    border-top:1px solid rgba(92,28,34,.5);
+    border-bottom:1px solid rgba(92,28,34,.5);
+    margin:44px 0;
+  }
+  .callout p{
+    font-style:italic;
+    font-size:1.25rem;
+    color:var(--marble);
+    max-width:56ch;
+    margin:0;
+  }
+
+  .verdict{
+    margin-top:14px;
+    padding:32px 0 0;
+  }
+  .verdict .tag{
+    font-family:'Cinzel', serif;
+    font-size:.7rem;
+    letter-spacing:.2em;
+    text-transform:uppercase;
+    color:var(--bronze);
+    display:block;
+    margin-bottom:14px;
+  }
+  .verdict p{max-width:60ch; font-size:1.1rem;}
+
+  footer{
+    max-width:660px; margin:0 auto;
+    padding:40px 30px 100px;
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:14px;
+    font-family:'Cinzel', serif;
+    font-size:.66rem; letter-spacing:.1em; text-transform:uppercase;
+    color:#6c7f8a;
+  }
+  footer a{color:var(--marble); text-decoration:none; border-bottom:1px solid rgba(236,229,214,.35);}
+
+  @media (max-width:560px){
+    .sea{height:52vh;}
+    section h2{font-size:1.3rem;}
+  }
+</style>
+</head>
+<body>
+
+<a class="back" href="https://celestinestudio.com.lk/film.html">◂ Celestine / Film</a>
+
+<div class="sea">
+  <svg viewBox="0 0 800 200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,120 C100,90 150,150 250,120 C350,90 400,150 500,120 C600,90 650,150 750,120 L800,120 L800,200 L0,200 Z" fill="#0e2029"/>
+    <path d="M0,150 C120,130 200,170 320,150 C440,130 520,170 640,150 C700,140 760,155 800,150 L800,200 L0,200 Z" fill="#1c3a4c" opacity="0.7"/>
+  </svg>
+  <div class="sea-title">
+    <span class="kicker">Christopher Nolan, 2026</span>
+    <h1>The Odyssey</h1>
+  </div>
+</div>
+
+<main>
+
+  <div class="route">
+    <span class="stop">Troy</span>
+    <span class="stop">Cyclops</span>
+    <span class="stop">Circe</span>
+    <span class="stop">The Sirens</span>
+    <span class="stop">Ithaca</span>
+  </div>
+
+  <section>
+    <h2>A homework assignment nobody else would take</h2>
+    <p>Adapting Homer for the screen has a long, mostly unremarkable history — costume dramas that treat the gods as set dressing and the monsters as excuses for a fight scene. Nolan's version, shot across Scotland, Iceland, Morocco, Greece, and Italy on newly developed IMAX film stock, is the first to seriously bet that the poem's oldest trick — a man telling his own survival story, and quietly rewriting himself as the hero of it — is more interesting than any single monster along the way.</p>
+    <p>Matt Damon's Odysseus is not a swashbuckler. He's a soldier who has started to enjoy his own legend a little too much, and the film lets that vanity cost him — the Cyclops sequence exists specifically because Odysseus can't resist telling Polyphemus his real name on the way out, trading safety for a good story. Nolan has always been drawn to men undone by the stories they tell themselves; here he finally has a text that was built the same way three thousand years earlier.</p>
+  </section>
+
+  <div class="callout">
+    <p>Every stop on the voyage home is really a test of whether Odysseus can stand to be an ordinary man again. He mostly fails, and the film is honest about the cost of that to everyone waiting for him.</p>
+  </div>
+
+  <section>
+    <h2>The two halves of Ithaca</h2>
+    <p>Anne Hathaway's Penelope and Tom Holland's Telemachus carry the film's quieter half — a household holding itself together through twenty years of unwanted suitors and diminishing hope — and it's a smart structural choice to keep cutting back to Ithaca rather than treating it as a punchline waiting at the end of the voyage. Zendaya's Athena, meanwhile, gets to be genuinely unsettling in a way divine characters rarely are on screen: helpful, yes, but never once on anyone's side but her own.</p>
+    <p>Shot largely with practical scale — real coastlines, real crowds, minimal green screen — the film's monsters feel closer to weather than to spectacle, which is exactly the register the poem calls for and blockbusters this size almost never attempt.</p>
+  </section>
+
+  <section>
+    <h2>Worth the size of the claim</h2>
+    <p>Early critical response placed this as Nolan's best-reviewed film to date, ahead of both Oppenheimer and The Dark Knight on some aggregators — a genuinely startling claim for a nearly three-hour poem adaptation to earn. The reviews that pushed back called parts of the back half uneven, and the ensemble occasionally thin outside its central four, criticisms that hold up on a second viewing without doing much to dent the film's best sequences.</p>
+  </section>
+
+  <div class="verdict">
+    <span class="tag">Standing verdict</span>
+    <p><strong>Earns it.</strong> Not flawless — the cameo-heavy midsection strains under its own cast list — but it's the rare literary epic that trusts its oldest ideas as much as its biggest images, and comes away from that bet looking justified.</p>
+  </div>
+
+</main>
+
+<footer>
+  <span>Celestine Film Notes</span>
+  <a href="https://celestinestudio.com.lk/film.html">Back to all reviews →</a>
+</footer>
+
+</body>
+</html>

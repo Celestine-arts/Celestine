@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Good Will Hunting — Chalk Dust | Celestine Film Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,400;0,500;0,600;1,400&family=Caveat:wght@500;700&family=Literata:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --board:#1e2a24;
+    --board-dark:#131d18;
+    --chalk:#eef1ea;
+    --chalk-yellow:#e6d688;
+    --brick:#8a3a2c;
+    --brass:#a9895a;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:#f4efe4;
+    color:#221d16;
+    font-family:'Literata', serif;
+    line-height:1.8;
+    font-size:1.06rem;
+  }
+  h1,h2{font-family:'Zilla Slab', serif;}
+  a{color:var(--brick);}
+  .back{
+    position:fixed; top:18px; left:18px; z-index:60;
+    font-size:.7rem; letter-spacing:.1em; text-transform:uppercase;
+    text-decoration:none; color:var(--board);
+    border-bottom:1px solid rgba(30,42,36,.3);
+    padding-bottom:2px;
+  }
+  .back:hover{color:var(--brick);}
+
+  .board-hero{
+    background:var(--board);
+    background-image:
+      radial-gradient(ellipse at 20% 20%, rgba(255,255,255,.04), transparent 40%),
+      radial-gradient(ellipse at 80% 60%, rgba(255,255,255,.03), transparent 45%);
+    color:var(--chalk);
+    padding:130px 8vw 70px;
+    position:relative;
+    overflow:hidden;
+  }
+  .board-hero .scrawl{
+    position:absolute;
+    font-family:'Caveat', cursive;
+    color:rgba(238,241,234,.28);
+    font-size:1.6rem;
+    white-space:nowrap;
+  }
+  .scrawl.s1{top:14%; left:6%; transform:rotate(-4deg);}
+  .scrawl.s2{top:70%; left:62%; transform:rotate(3deg); font-size:1.3rem;}
+  .scrawl.s3{top:30%; left:70%; transform:rotate(-2deg); font-size:1.4rem;}
+  .board-hero .kicker{
+    display:block;
+    font-family:'Caveat', cursive;
+    font-size:1.4rem;
+    color:var(--chalk-yellow);
+    margin-bottom:6px;
+    position:relative; z-index:2;
+  }
+  .board-hero h1{
+    font-size:clamp(2.4rem, 7vw, 4rem);
+    font-weight:500;
+    margin:0 0 16px;
+    position:relative; z-index:2;
+    max-width:16ch;
+  }
+  .board-hero p{
+    max-width:36ch;
+    font-family:'Literata', serif;
+    font-style:italic;
+    color:#cfd6cb;
+    font-size:1.12rem;
+    position:relative; z-index:2;
+    margin:0;
+  }
+
+  main{
+    max-width:660px;
+    margin:0 auto;
+    padding:56px 30px 40px;
+  }
+
+  .meta-strip{
+    display:flex; flex-wrap:wrap; gap:20px 30px;
+    padding-bottom:26px;
+    margin-bottom:48px;
+    border-bottom:2px solid var(--brass);
+  }
+  .meta-strip .k{font-size:.68rem; letter-spacing:.08em; text-transform:uppercase; color:var(--brick); display:block; margin-bottom:3px;}
+  .meta-strip .v{font-family:'Zilla Slab', serif; font-weight:500; font-size:1rem;}
+
+  section{margin-bottom:52px;}
+  section h2{
+    font-size:1.6rem;
+    font-weight:500;
+    color:var(--board);
+    margin:0 0 18px;
+  }
+  section p{
+    max-width:66ch;
+    color:#2c2519;
+    margin:0 0 16px;
+  }
+
+  .callout{
+    background:var(--board);
+    color:var(--chalk);
+    padding:30px 28px;
+    margin:44px 0;
+    font-family:'Caveat', cursive;
+    font-size:1.5rem;
+    line-height:1.4;
+  }
+
+  .verdict{
+    border-top:3px solid var(--brick);
+    padding:30px 0 0;
+    margin-top:16px;
+  }
+  .verdict .tag{
+    font-size:.7rem; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--brick); display:block; margin-bottom:12px;
+  }
+  .verdict p{font-size:1.08rem; max-width:62ch;}
+
+  footer{
+    max-width:660px; margin:0 auto;
+    padding:36px 30px 100px;
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:14px;
+    font-size:.72rem; letter-spacing:.06em; text-transform:uppercase;
+    color:#8a7f6a;
+  }
+  footer a{color:var(--board); text-decoration:none; border-bottom:1px solid var(--brass);}
+
+  @media (max-width:560px){
+    .board-hero{padding-top:96px;}
+    section h2{font-size:1.35rem;}
+    .scrawl{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<a class="back" href="https://celestinestudio.com.lk/film.html">◂ Celestine / Film</a>
+
+<div class="board-hero">
+  <span class="scrawl s1">y = mx + b</span>
+  <span class="scrawl s3">Σ</span>
+  <span class="scrawl s2">homology of graphs</span>
+  <span class="kicker">South Boston, 1997</span>
+  <h1>Good Will Hunting</h1>
+  <p>A janitor solves the hallway equation. The film spends two hours on the harder one nobody assigned him.</p>
+</div>
+
+<main>
+
+  <div class="meta-strip">
+    <div><span class="k">Director</span><span class="v">Gus Van Sant</span></div>
+    <div><span class="k">Writers</span><span class="v">Damon &amp; Affleck</span></div>
+    <div><span class="k">Cast</span><span class="v">Damon, Williams, Driver</span></div>
+  </div>
+
+  <section>
+    <h2>The equation was never the hard part</h2>
+    <p>Will Hunting solves an MIT graduate-level problem left on a hallway chalkboard the way most people solve a crossword — quickly, privately, and without telling anyone, because being seen as gifted has only ever gotten him hurt. That's the film's real subject, and it's a smarter one than the "genius discovered" premise it wears on the poster. Math is the thing Will is good at. It is not the thing the film is about.</p>
+    <p>What the film is actually interested in is the specific defense mechanism of a kid who grew up in foster care and got hit enough to learn that leaving people first beats being left — a pattern the script, written by Matt Damon and Ben Affleck in their twenties, understands with an intimacy that a more polished screenplay might have sanded down.</p>
+  </section>
+
+  <section>
+    <h2>Robin Williams, doing the least he'd ever done on screen</h2>
+    <p>Williams' Sean Maguire is deliberately the stillest performance of his career up to that point, and it's exactly the right choice — a therapist whose entire method is refusing to be impressed by Will's intelligence, because intelligence was never what Will needed anyone to notice. The park-bench monologue about Vietnam, about staying up all night in a hospital, works because Williams plays it without a single joke reflex, letting a genuinely funny actor sit in a scene with nothing to perform.</p>
+  </section>
+
+  <div class="callout">
+    "It's not your fault." Four words, repeated until they finally land — the film's whole argument compressed into the one sentence Will can't out-argue his way past.
+  </div>
+
+  <section>
+    <h2>Where the script simplifies</h2>
+    <p>Skylar, Minnie Driver's character, is written mostly as a device to expose Will's fear of being truly known rather than as a person with her own trajectory — a fair complaint that's true of a lot of scripts from this era, and one the film doesn't fully escape even with a strong performance underneath it. The ending's optimism — Will driving west to go "see about a girl" — is a little tidier than the rest of the film has earned, though it's the kind of tidiness the film has spent two hours making you want.</p>
+  </section>
+
+  <div class="verdict">
+    <span class="tag">Standing Verdict</span>
+    <p><strong>Earns it.</strong> A script written by twenty-somethings that somehow avoided all the twenty-something mistakes about genius and trauma, carried the rest of the way by two performances doing the quiet work under the showy premise.</p>
+  </div>
+
+</main>
+
+<footer>
+  <span>Celestine Film Notes</span>
+  <a href="https://celestinestudio.com.lk/film.html">Back to all reviews →</a>
+</footer>
+
+</body>
+</html>

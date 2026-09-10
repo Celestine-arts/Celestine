@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>American Psycho — A Note on Cream, Eggshell, and Bone | Celestine Film Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;1,400&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ivory:#ece6da;
+    --black:#0c0c0d;
+    --blood:#7a1620;
+    --chrome:#9aa0a3;
+    --gold:#b79a58;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--ivory);
+    color:var(--black);
+    font-family:'Work Sans', sans-serif;
+    font-weight:400;
+    line-height:1.7;
+  }
+  h1,h2,.serif{font-family:'Cormorant', serif;}
+  a{color:var(--blood);}
+  .back{
+    position:fixed; top:20px; left:20px; z-index:50;
+    font-size:.68rem; letter-spacing:.14em; text-transform:uppercase;
+    text-decoration:none; color:var(--black);
+    border-bottom:1px solid var(--black);
+    padding-bottom:2px;
+  }
+  .back:hover{color:var(--blood); border-color:var(--blood);}
+
+  .card-hero{
+    max-width:760px;
+    margin:0 auto;
+    padding:140px 30px 60px;
+  }
+  .business-card{
+    background:#faf7f0;
+    border:1px solid rgba(0,0,0,.14);
+    box-shadow:0 24px 48px rgba(0,0,0,.14);
+    padding:56px 48px;
+    text-align:center;
+    position:relative;
+  }
+  .business-card .eng-line{
+    height:1px; width:64px;
+    background:var(--gold);
+    margin:0 auto 26px;
+  }
+  .business-card .kicker{
+    font-size:.68rem;
+    letter-spacing:.24em;
+    text-transform:uppercase;
+    color:var(--chrome);
+    margin-bottom:18px;
+    display:block;
+  }
+  .business-card h1{
+    font-size:clamp(2.6rem,7vw,4.2rem);
+    font-weight:500;
+    margin:0 0 10px;
+    letter-spacing:.02em;
+  }
+  .business-card .role{
+    font-size:.95rem;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:#5b5650;
+    margin-bottom:26px;
+  }
+  .business-card .specs{
+    display:flex; justify-content:center; gap:30px;
+    font-size:.78rem;
+    letter-spacing:.05em;
+    color:#7a756c;
+    flex-wrap:wrap;
+  }
+  .business-card .specs span strong{display:block; color:var(--black); font-weight:600; letter-spacing:0;}
+
+  main{
+    max-width:640px;
+    margin:0 auto;
+    padding:10px 30px 40px;
+  }
+
+  section{margin-bottom:56px;}
+  section h2{
+    font-size:1.9rem;
+    font-weight:500;
+    margin:0 0 20px;
+    letter-spacing:.01em;
+  }
+  section p{
+    font-size:1.06rem;
+    color:#20191b;
+    max-width:66ch;
+    margin:0 0 16px;
+  }
+
+  .divider{
+    width:100%; height:1px;
+    background:linear-gradient(to right, transparent, rgba(0,0,0,.2), transparent);
+    margin:52px 0;
+  }
+
+  .compare{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:1px;
+    background:rgba(0,0,0,.14);
+    margin:36px 0;
+  }
+  .compare div{
+    background:#faf7f0;
+    padding:26px 24px;
+    text-align:center;
+  }
+  .compare .name{font-family:'Cormorant', serif; font-size:1.5rem; margin-bottom:8px;}
+  .compare .desc{font-size:.82rem; color:#6f6a62; letter-spacing:.03em;}
+
+  .callout{
+    border-top:1px solid var(--black);
+    border-bottom:1px solid var(--black);
+    padding:30px 0;
+    margin:44px 0;
+    text-align:center;
+  }
+  .callout p{
+    font-family:'Cormorant', serif;
+    font-style:italic;
+    font-size:1.35rem;
+    margin:0;
+    max-width:52ch;
+    margin:0 auto;
+  }
+
+  .verdict{
+    margin-top:16px;
+    padding:32px 0 0;
+    border-top:3px solid var(--blood);
+  }
+  .verdict .tag{
+    font-size:.68rem; letter-spacing:.2em; text-transform:uppercase;
+    color:var(--blood); display:block; margin-bottom:14px;
+  }
+  .verdict p{font-size:1.08rem; max-width:60ch;}
+
+  footer{
+    max-width:640px; margin:0 auto;
+    padding:40px 30px 100px;
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:14px;
+    font-size:.7rem; letter-spacing:.1em; text-transform:uppercase; color:#8b857a;
+  }
+  footer a{color:var(--black); text-decoration:none; border-bottom:1px solid var(--black);}
+
+  @media (max-width:560px){
+    .card-hero{padding-top:96px;}
+    .business-card{padding:40px 24px;}
+    .compare{grid-template-columns:1fr;}
+    section h2{font-size:1.5rem;}
+  }
+</style>
+</head>
+<body>
+
+<a class="back" href="https://celestinestudio.com.lk/film.html">◂ Celestine / Film</a>
+
+<div class="card-hero">
+  <div class="business-card">
+    <span class="kicker">Celestine Film Notes — Reviewed</span>
+    <h1>American Psycho</h1>
+    <div class="eng-line"></div>
+    <div class="role">A satire, mistaken for aspiration, since the year 2000</div>
+    <div class="specs">
+      <span><strong>Mary Harron</strong>Director</span>
+      <span><strong>Christian Bale</strong>Patrick Bateman</span>
+      <span><strong>1987</strong>Setting</span>
+    </div>
+  </div>
+</div>
+
+<main>
+
+  <section>
+    <h2>The thesis is on a business card</h2>
+    <p>Before the murders, before the chainsaw hallway, before the "returning some videotapes," American Psycho hands you its entire argument in a scene about typeface and paper stock. Four investment bankers compare business cards under restaurant lighting, and the tiniest gradations — eggshell versus bone, a watermark, a font called Silian Rail — produce more genuine panic in Patrick Bateman than anything involving an actual body ever will. Status has replaced conscience so completely that a font can trigger a homicidal rage he otherwise keeps admirably composed.</p>
+    <p>Everything after that scene is really a demonstration of the same idea at increasing volume: a man whose interior life has been so thoroughly replaced by branding, workout routines, and skincare monologues that murder barely registers as a moral event to him, only as one more activity he narrates with the same flat enthusiasm as his evening routine.</p>
+  </section>
+
+  <div class="compare">
+    <div>
+      <div class="name">Bone</div>
+      <div class="desc">subtle off-white, eggshell finish</div>
+    </div>
+    <div>
+      <div class="name">Silian Rail</div>
+      <div class="desc">the font that started a war</div>
+    </div>
+  </div>
+
+  <section>
+    <h2>Christian Bale's control</h2>
+    <p>Bale's performance is a masterclass in never once breaking the character's own self-regard, even at his most unhinged — the panic always registers as vanity, never as guilt. It's a hard tone to sustain for ninety minutes, harder still to make funny without undercutting the horror, and Bale does both at once, which is why the performance has outlived most of the films around it in cultural memory.</p>
+    <p>Mary Harron's direction, adapting Bret Easton Ellis's novel with co-writer Guinevere Turner, brings something the source material doesn't have on its own: a clear authorial distance from Bateman, shot through a female gaze that finds him pathetic well before it finds him frightening. That distance is the difference between satire and glorification, and it's entirely a directing and writing choice, not something inherent to the premise.</p>
+  </section>
+
+  <div class="callout">
+    <p>Whether the murders happened or were fantasy was never really the point. Either way, no one around him would have noticed the difference.</p>
+  </div>
+
+  <section>
+    <h2>The joke that keeps landing on the wrong side</h2>
+    <p>Like Fight Club, released the year before, American Psycho has had the strange fortune of becoming aesthetic shorthand for exactly the kind of hollow status-chasing it was built to mock — "Sigma male" edits set to its dialogue are their own small industry now, almost entirely humor-free. The film survives this because the craft underneath the meme is simply better than the meme allows: a genuinely funny, genuinely unsettling satire, told from a perspective clear-eyed enough to know Bateman was never someone worth admiring.</p>
+  </section>
+
+  <div class="verdict">
+    <span class="tag">Standing Verdict</span>
+    <p><strong>Earns it.</strong> A tight, controlled satire that has had the misfortune of being loudest with the audience that least understood the joke — which, on reflection, is exactly the kind of irony the film would have found funny.</p>
+  </div>
+
+</main>
+
+<footer>
+  <span>Celestine Film Notes</span>
+  <a href="https://celestinestudio.com.lk/film.html">Back to all reviews →</a>
+</footer>
+
+</body>
+</html>

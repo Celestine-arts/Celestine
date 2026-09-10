@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oppenheimer — Trinity | Celestine Film Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Spectral:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --void:#0a0a0b;
+    --cream:#ece6d6;
+    --flash:#eea23f;
+    --blue:#38495c;
+    --warn:#8a1f1f;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--void);
+    color:var(--cream);
+    font-family:'Spectral', serif;
+    line-height:1.85;
+    font-size:1.05rem;
+  }
+  a{color:var(--flash);}
+  .mono{font-family:'IBM Plex Mono', monospace;}
+  .back{
+    position:fixed; top:20px; left:20px; z-index:60;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:.68rem; letter-spacing:.06em; text-transform:uppercase;
+    text-decoration:none; color:var(--cream);
+    border-bottom:1px solid rgba(236,230,214,.3);
+    padding-bottom:2px;
+  }
+  .back:hover{color:var(--flash);}
+
+  .trinity{
+    min-height:74vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:120px 24px 60px;
+    position:relative;
+    overflow:hidden;
+    background:radial-gradient(circle at 50% 62%, rgba(238,162,63,.16), transparent 55%);
+  }
+  .countdown{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:.85rem;
+    letter-spacing:.2em;
+    color:var(--flash);
+    margin-bottom:26px;
+  }
+  .trinity h1{
+    font-size:clamp(2.8rem, 9vw, 5.6rem);
+    font-weight:400;
+    margin:0 0 18px;
+    letter-spacing:.02em;
+    color:var(--cream);
+  }
+  .trinity p.sub{
+    font-style:italic;
+    color:#b9b09a;
+    max-width:38ch;
+    font-size:1.15rem;
+    margin:0;
+  }
+  .flash-ring{
+    position:absolute;
+    width:420px; height:420px;
+    border-radius:50%;
+    border:1px solid rgba(238,162,63,.25);
+    top:50%; left:50%;
+    transform:translate(-50%,-50%);
+    z-index:0;
+  }
+
+  main{
+    max-width:660px;
+    margin:0 auto;
+    padding:40px 30px 40px;
+  }
+
+  .meta-strip{
+    display:flex; flex-wrap:wrap; gap:20px 30px;
+    padding-bottom:26px;
+    margin-bottom:52px;
+    border-bottom:1px solid rgba(236,230,214,.14);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:.72rem;
+    letter-spacing:.04em;
+    text-transform:uppercase;
+    color:#b9b09a;
+  }
+
+  section{margin-bottom:56px;}
+  section .label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:.68rem;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--flash);
+    display:block;
+    margin-bottom:12px;
+  }
+  section h2{
+    font-size:1.55rem;
+    font-weight:500;
+    margin:0 0 20px;
+    color:var(--cream);
+    font-family:'Spectral', serif;
+  }
+  section p{
+    max-width:64ch;
+    color:#d9d2bd;
+    margin:0 0 18px;
+  }
+
+  /* fission/fusion duality section rendered desaturated */
+  .fusion{
+    filter:grayscale(0.85);
+    background:#12130f;
+    padding:38px 32px;
+    margin:0 -32px 56px;
+    border-top:1px solid rgba(236,230,214,.12);
+    border-bottom:1px solid rgba(236,230,214,.12);
+  }
+  .fusion .label{color:#9a968a;}
+  .fusion h2{color:#dedad0;}
+  .fusion p{color:#b7b2a4;}
+
+  .callout{
+    padding:32px 0;
+    border-top:1px solid rgba(138,31,31,.5);
+    border-bottom:1px solid rgba(138,31,31,.5);
+    margin:44px 0;
+  }
+  .callout p{
+    font-style:italic;
+    font-size:1.22rem;
+    color:var(--cream);
+    max-width:56ch;
+    margin:0;
+  }
+
+  .verdict{
+    margin-top:16px;
+    padding:32px 0 0;
+  }
+  .verdict .label{color:var(--flash);}
+  .verdict p{font-size:1.1rem; max-width:60ch; color:var(--cream);}
+
+  footer{
+    max-width:660px; margin:0 auto;
+    padding:40px 30px 100px;
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:14px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:.66rem; letter-spacing:.06em; text-transform:uppercase;
+    color:#5c5847;
+  }
+  footer a{color:var(--cream); text-decoration:none; border-bottom:1px solid rgba(236,230,214,.3);}
+
+  @media (max-width:600px){
+    .fusion{margin:0 -18px 56px; padding:32px 22px;}
+    .trinity{min-height:60vh;}
+    section h2{font-size:1.3rem;}
+  }
+</style>
+</head>
+<body>
+
+<a class="back" href="https://celestinestudio.com.lk/film.html">◂ CELESTINE / FILM</a>
+
+<div class="trinity">
+  <div class="flash-ring"></div>
+  <span class="countdown mono">T MINUS 00:00:00 — JULY 16, 1945</span>
+  <h1>Oppenheimer</h1>
+  <p class="sub">Christopher Nolan, 2023 — three hours built around a silence that arrives late on purpose.</p>
+</div>
+
+<main>
+
+  <div class="meta-strip">
+    <span>Cillian Murphy — J. Robert Oppenheimer</span>
+    <span>Robert Downey Jr. — Lewis Strauss</span>
+    <span>Shot on IMAX 65mm &amp; large-format monochrome</span>
+  </div>
+
+  <section>
+    <span class="label mono">Fission</span>
+    <h2>The bomb goes off in total silence</h2>
+    <p>Nolan's most disciplined formal choice in Oppenheimer is also its most famous: when the Trinity test finally detonates, roughly two hours into the film, the screen goes white and stays silent for several long seconds before the sound catches up — mimicking the actual physical delay between a blast's light and its shockwave. It's a trick a lesser film would have used once for spectacle. Here it's doing structural work, forcing an audience that has been trained by two hours of overlapping, anxious dialogue to sit in a wholly unfamiliar quiet, right at the one moment the film has been building toward since its first scene.</p>
+    <p>Ludwig Göransson's score spends most of the runtime as a kind of ticking anxiety — strings that never quite resolve, a persistent low thrum under scenes of pure conversation — so that the eventual arrival of true silence lands as the most disturbing sound the film has to offer.</p>
+  </section>
+
+  <div class="fusion">
+    <span class="label mono">Fusion</span>
+    <h2>Two men, two film stocks</h2>
+    <p>The film is built around a split perspective: Oppenheimer's own memory, shot in color, and Lewis Strauss's later account, shot in black and white — a formal device that turns a three-hour biopic into something closer to a cross-examination, where the same events get told twice and never quite agree. Robert Downey Jr.'s Strauss, coldly rational and quietly vindictive, gives the monochrome sections their tension; he's the film's best evidence that petty institutional grudges have caused as much damage in this story as any physics ever did.</p>
+  </div>
+
+  <section>
+    <span class="label mono">Chain reaction</span>
+    <h2>A hearing room as the real climax</h2>
+    <p>The film's structural gamble is treating Oppenheimer's 1954 security clearance hearing — a closed-door, procedurally dry affair — as more dramatically important than the bomb itself, and it works because Nolan shoots interrogation the way other directors shoot combat: tight, relentless, cutting for maximum discomfort. Cillian Murphy's performance holds the film together across both timelines, playing a man who is never quite certain, even to himself, whether his guilt is really about the deaths at Hiroshima and Nagasaki or about his own vanity in wanting to be the one who made it possible.</p>
+    <p>Emily Blunt, as Kitty Oppenheimer, gets one of the film's sharpest scenes doing almost nothing — sitting silently through her husband's hearing until she's finally allowed to speak, and dismantling the prosecution's case in under two minutes once she is.</p>
+  </section>
+
+  <div class="callout">
+    <p>The film never lets Oppenheimer off the hook for wanting the bomb to work, and it never lets the men who punished him for its consequences look like they did it for the right reasons either.</p>
+  </div>
+
+  <section>
+    <span class="label mono">Half-life</span>
+    <h2>The one drag on an otherwise tight film</h2>
+    <p>At three hours, the middle stretch covering Los Alamos administration and the sprawling supporting cast of physicists occasionally loses the thread that makes the hearing-room scenes so gripping — a few characters exist mainly to be named for historical completeness rather than dramatic necessity. It's a minor cost for a film this ambitious about compressing a genuinely complicated life into one sitting.</p>
+  </section>
+
+  <div class="verdict">
+    <span class="label mono">Standing Verdict</span>
+    <p><strong>Earns it, decisively.</strong> A biographical thriller that treats moral injury with the same rigor Nolan usually reserves for time and physics — which, for a film about the man who helped build the bomb, turns out to be exactly the right instrument.</p>
+  </div>
+
+</main>
+
+<footer>
+  <span>Celestine Film Notes</span>
+  <a href="https://celestinestudio.com.lk/film.html">Back to all reviews →</a>
+</footer>
+
+</body>
+</html>

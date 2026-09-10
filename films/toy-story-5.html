@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Toy Story 5 — Two Kinds of Glow | Celestine Film Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --wood:#7a5636;
+    --wood-dark:#5b3f27;
+    --toy-red:#c1443b;
+    --sun:#e8b23d;
+    --cream:#f6ecd9;
+    --tablet:#3aa7c4;
+    --tablet-deep:#1c4756;
+    --ink:#2c221a;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Nunito Sans', sans-serif;
+    line-height:1.7;
+  }
+  h1,h2{font-family:'Baloo 2', sans-serif;}
+  a{color:inherit;}
+  .back{
+    position:fixed; top:16px; left:16px; z-index:60;
+    font-size:.72rem; letter-spacing:.02em;
+    text-decoration:none;
+    background:rgba(255,255,255,.75);
+    color:var(--wood-dark);
+    padding:7px 12px;
+    border-radius:20px;
+    font-weight:700;
+  }
+  .back:hover{background:#fff;}
+
+  .hero{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    min-height:78vh;
+    position:relative;
+  }
+  .hero .side{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:60px 6vw;
+    position:relative;
+    overflow:hidden;
+  }
+  .side.analog{
+    background:linear-gradient(160deg, var(--wood) 0%, var(--wood-dark) 100%);
+    color:#f6ead2;
+  }
+  .side.digital{
+    background:linear-gradient(200deg, var(--tablet) 0%, var(--tablet-deep) 100%);
+    color:#eafcff;
+  }
+  .side::after{
+    content:"";
+    position:absolute; inset:0;
+    background:radial-gradient(circle at 70% 30%, rgba(255,255,255,.10), transparent 55%);
+  }
+  .side .eyebrow{
+    font-size:.78rem;
+    font-weight:800;
+    letter-spacing:.02em;
+    opacity:.85;
+    margin-bottom:10px;
+  }
+  .side h1{
+    font-size:clamp(2.1rem, 5vw, 3rem);
+    font-weight:800;
+    margin:0 0 14px;
+    line-height:1.05;
+  }
+  .side p{
+    max-width:34ch;
+    font-size:1.02rem;
+    opacity:.92;
+    margin:0;
+  }
+  .seam{
+    position:absolute; left:50%; top:0; bottom:0;
+    width:2px;
+    background:rgba(255,255,255,.35);
+    transform:translateX(-1px);
+    z-index:5;
+  }
+  .seam-tag{
+    position:absolute; left:50%; top:50%;
+    transform:translate(-50%,-50%);
+    background:var(--sun);
+    color:#3a2a10;
+    font-family:'Baloo 2', sans-serif;
+    font-weight:700;
+    font-size:.85rem;
+    padding:10px 18px;
+    border-radius:999px;
+    box-shadow:0 6px 18px rgba(0,0,0,.25);
+    z-index:6;
+    white-space:nowrap;
+  }
+
+  main{
+    max-width:700px;
+    margin:0 auto;
+    padding:64px 28px 40px;
+  }
+  .meta-strip{
+    display:flex; flex-wrap:wrap; gap:20px 30px;
+    margin-bottom:48px;
+    padding-bottom:24px;
+    border-bottom:2px dashed #d8c6a3;
+  }
+  .meta-strip div{display:flex; flex-direction:column; gap:2px;}
+  .meta-strip .k{font-size:.7rem; font-weight:800; color:var(--toy-red); text-transform:uppercase; letter-spacing:.04em;}
+  .meta-strip .v{font-weight:700; color:var(--wood-dark);}
+
+  section.block{margin-bottom:52px;}
+  section.block h2{
+    font-size:1.5rem;
+    font-weight:700;
+    color:var(--wood-dark);
+    margin:0 0 16px;
+  }
+  section.block p{
+    font-size:1.05rem;
+    color:#3a2f24;
+    max-width:64ch;
+    margin:0 0 14px;
+  }
+
+  .callout{
+    background:#fff;
+    border:2px solid var(--sun);
+    border-radius:18px;
+    padding:26px 26px;
+    margin:36px 0;
+    box-shadow:0 8px 0 #e3cf9d;
+  }
+  .callout p{margin:0; font-weight:700; color:var(--wood-dark); font-size:1.05rem;}
+
+  .verdict{
+    background:linear-gradient(135deg, var(--toy-red), #9c2f28);
+    color:#fff2ea;
+    border-radius:20px;
+    padding:32px 28px;
+    margin-top:20px;
+  }
+  .verdict .tag{font-size:.72rem; font-weight:800; letter-spacing:.06em; opacity:.85; display:block; margin-bottom:10px; text-transform:uppercase;}
+  .verdict p{margin:0; font-size:1.08rem;}
+
+  footer{
+    max-width:700px; margin:0 auto;
+    padding:30px 28px 90px;
+    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;
+  }
+  footer .brand{font-size:.75rem; color:#8a7458; font-weight:700;}
+  footer a.next{font-weight:800; color:var(--wood-dark); text-decoration:none; border-bottom:2px solid var(--sun);}
+
+  @media (max-width:720px){
+    .hero{grid-template-columns:1fr; min-height:auto;}
+    .side{padding:56px 7vw; min-height:44vh;}
+    .seam{display:none;}
+    .seam-tag{top:auto; left:50%; bottom:-20px; transform:translate(-50%,0);}
+  }
+</style>
+</head>
+<body>
+
+<a class="back" href="https://celestinestudio.com.lk/film.html">◂ Celestine / Film</a>
+
+<div class="hero">
+  <div class="side analog">
+    <div class="eyebrow">Since 1995</div>
+    <h1>Toy Story 5</h1>
+    <p>Woody, Buzz, and Jessie belong to a kid's floor, a closet, a windowsill. That's the world they were built to win at.</p>
+  </div>
+  <div class="side digital">
+    <div class="eyebrow">Bonnie is 8 now</div>
+    <h1>Meet Lilypad</h1>
+    <p>A tablet that talks back, thinks for itself, and doesn't need a hand to hold it. That's the world it's built to win at instead.</p>
+  </div>
+  <div class="seam"></div>
+  <div class="seam-tag">two kinds of glow</div>
+</div>
+
+<main>
+
+  <div class="meta-strip">
+    <div><span class="k">Director</span><span class="v">Andrew Stanton</span></div>
+    <div><span class="k">Released</span><span class="v">June 19, 2026</span></div>
+    <div><span class="k">Studio</span><span class="v">Pixar / Disney</span></div>
+    <div><span class="k">Center of gravity</span><span class="v">Jessie</span></div>
+  </div>
+
+  <section class="block">
+    <h2>The pitch that could have gone wrong</h2>
+    <p>"Toys versus a tablet" is the kind of premise that reads like a lecture waiting to happen, and for the first act, Toy Story 5 flirts with becoming exactly that. Bonnie, now eight and struggling to make friends, is given Lilypad — a tablet voiced with unsettling warmth by Greta Lee — and promptly stops noticing the toys under her bed. The film could have made this a simple morality tale about screens being bad. It mostly doesn't, and that restraint is the best decision in the movie.</p>
+    <p>Instead it does something the franchise has always been quietly good at: it takes the anxiety of the adults in the room — will kids still play with toys, will kids still play at all — and routes it through characters who have no power to fix it and every reason to try anyway. Jessie, promoted to true lead for the first time in the series, becomes the audience's way into that helplessness.</p>
+  </section>
+
+  <section class="block">
+    <h2>Jessie's movie, finally</h2>
+    <p>The film spends real time on Jessie's history with Emily, her first owner, using it not as a tacked-on flashback but as the emotional argument for why she, more than Woody, is the one who can't accept being set down. It's the strongest character work the series has done since the original trilogy, and Joan Cusack earns every second of it.</p>
+    <p>Randy Newman's score, now five films deep into this world, leans into that history rather than repeating the old cues, and it's one of the quieter pleasures of the film — a composer who has grown up with these characters almost as much as the audience has.</p>
+  </section>
+
+  <div class="callout">
+    <p>The film is at its best exactly when it forgets it's supposed to be "about technology," and simply asks what it costs a toy to be loved less than it used to be.</p>
+  </div>
+
+  <section class="block">
+    <h2>Where the reviews actually split</h2>
+    <p>Critical reception has been genuinely divided, and not along the lines you'd expect from a fifth sequel. Several major outlets called it the best entry since the original trilogy and praised its emotional honesty; a comparable number called it the weakest of the five, arguing the franchise has finally run out of new things to say about being left behind, and that the tech-panic messaging is broader than the character work around it deserves. Both readings are defensible in the same screening — the film's highs are genuinely high, and its thesis is thinner than its heart.</p>
+  </section>
+
+  <div class="verdict">
+    <span class="tag">Standing verdict</span>
+    <p><strong>Mostly earns it.</strong> Not as a piece of technology commentary — that part is closer to a worried parent's talking points than a real argument — but as a Jessie story, which is what it actually is underneath the premise. Worth the ticket for the fifteen minutes that have nothing to do with tablets at all.</p>
+  </div>
+
+</main>
+
+<footer>
+  <span class="brand">Celestine Film Notes</span>
+  <a class="next" href="https://celestinestudio.com.lk/film.html">Back to all reviews →</a>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Dark Knight — Case File | Celestine Film Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0e1013;
+    --gunmetal:#242a31;
+    --paper:#e9e3d3;
+    --paper-dim:#d8d0bc;
+    --brass:#b8862f;
+    --blood:#7c2a26;
+    --line: rgba(233,227,211,0.14);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--ink);
+    color:var(--paper);
+    font-family:'Source Serif 4', Georgia, serif;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--brass);}
+  .stamp{
+    font-family:'JetBrains Mono', monospace;
+    letter-spacing:.04em;
+    font-size:.72rem;
+    color:var(--brass);
+  }
+  .back{
+    position:fixed;
+    top:18px; left:18px;
+    z-index:50;
+    font-family:'JetBrains Mono', monospace;
+    font-size:.68rem;
+    letter-spacing:.03em;
+    color:var(--paper-dim);
+    text-decoration:none;
+    border:1px solid var(--line);
+    padding:6px 10px;
+    background:rgba(14,16,19,0.7);
+    backdrop-filter: blur(2px);
+  }
+  .back:hover{color:var(--brass); border-color:var(--brass);}
+
+  header.case{
+    max-width:760px;
+    margin:0 auto;
+    padding:110px 28px 40px;
+    border-bottom:1px solid var(--line);
+  }
+  .classification{
+    display:inline-block;
+    border:1.5px solid var(--blood);
+    color:#e8b3ad;
+    padding:3px 10px;
+    font-family:'JetBrains Mono', monospace;
+    font-size:.68rem;
+    letter-spacing:.12em;
+    transform:rotate(-2deg);
+    margin-bottom:22px;
+  }
+  h1.title{
+    font-family:'Oswald', sans-serif;
+    font-weight:700;
+    font-size:clamp(2.4rem, 7vw, 4.4rem);
+    text-transform:uppercase;
+    letter-spacing:.01em;
+    line-height:1.02;
+    margin:0 0 14px;
+    color:#f4efe4;
+  }
+  .tagline{
+    font-size:1.15rem;
+    font-style:italic;
+    color:var(--paper-dim);
+    max-width:32ch;
+    margin:0 0 26px;
+  }
+  .meta-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:22px 34px;
+  }
+  .meta-item{display:flex; flex-direction:column; gap:4px;}
+  .meta-item .k{font-family:'JetBrains Mono', monospace; font-size:.65rem; letter-spacing:.1em; color:#8b8f78; text-transform:uppercase;}
+  .meta-item .v{font-family:'Oswald', sans-serif; font-size:.95rem; color:var(--paper);}
+
+  /* coin */
+  .interrogation{
+    max-width:760px;
+    margin:0 auto;
+    padding:56px 28px 64px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:18px;
+    border-bottom:1px solid var(--line);
+  }
+  .interrogation p.prompt{
+    font-family:'JetBrains Mono', monospace;
+    font-size:.75rem;
+    letter-spacing:.06em;
+    color:#9a9d8b;
+    text-align:center;
+    max-width:38ch;
+  }
+  .coin-scene{
+    width:150px; height:150px;
+    perspective:900px;
+  }
+  .coin{
+    width:100%; height:100%;
+    position:relative;
+    cursor:pointer;
+    transition:transform 0.7s cubic-bezier(.2,.8,.2,1);
+    transform-style:preserve-3d;
+  }
+  .coin.flipped{transform:rotateY(180deg);}
+  .face{
+    position:absolute; inset:0;
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    text-align:center;
+    backface-visibility:hidden;
+    font-family:'Oswald', sans-serif;
+    font-weight:600;
+    letter-spacing:.06em;
+    font-size:.85rem;
+    text-transform:uppercase;
+    padding:14px;
+  }
+  .face.order{
+    background:radial-gradient(circle at 35% 30%, #cfd6da, #7d8a92 70%, #4c565c);
+    color:#12181c;
+    box-shadow: inset 0 0 0 3px rgba(0,0,0,.15);
+  }
+  .face.chaos{
+    background:radial-gradient(circle at 35% 30%, #8a4a44, #5a1f1c 70%, #2f0e0c);
+    color:#f2ded6;
+    transform:rotateY(180deg);
+    box-shadow: inset 0 0 0 3px rgba(0,0,0,.3);
+  }
+  .coin-scene:hover .coin:not(.flipped){transform:rotateY(8deg);}
+  .flip-note{
+    font-family:'JetBrains Mono', monospace;
+    font-size:.68rem;
+    color:var(--brass);
+    letter-spacing:.05em;
+  }
+
+  main{
+    max-width:720px;
+    margin:0 auto;
+    padding:8px 28px 40px;
+  }
+  .exhibit{
+    padding:44px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .exhibit:last-of-type{border-bottom:none;}
+  .exhibit .tag{
+    font-family:'JetBrains Mono', monospace;
+    font-size:.68rem;
+    letter-spacing:.14em;
+    color:var(--brass);
+    text-transform:uppercase;
+    display:block;
+    margin-bottom:10px;
+  }
+  .exhibit h2{
+    font-family:'Oswald', sans-serif;
+    font-weight:600;
+    font-size:1.7rem;
+    margin:0 0 18px;
+    color:#f4efe4;
+    text-transform:uppercase;
+    letter-spacing:.01em;
+  }
+  .exhibit p{
+    font-size:1.06rem;
+    color:#d9d2bf;
+    max-width:66ch;
+    margin:0 0 16px;
+  }
+  .redact{
+    display:inline-block;
+    background:#151719;
+    color:transparent;
+    padding:0 6px;
+    user-select:none;
+  }
+
+  .verdict{
+    margin-top:20px;
+    padding:32px 30px;
+    background:var(--gunmetal);
+    border-left:4px solid var(--brass);
+  }
+  .verdict .tag{color:var(--brass); font-family:'JetBrains Mono', monospace; font-size:.7rem; letter-spacing:.14em; text-transform:uppercase; display:block; margin-bottom:12px;}
+  .verdict p{color:#efe9db; font-size:1.08rem; margin:0;}
+  .verdict strong{color:#f4efe4;}
+
+  footer{
+    max-width:720px;
+    margin:0 auto;
+    padding:40px 28px 90px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:12px;
+  }
+  footer .brand{font-family:'JetBrains Mono', monospace; font-size:.7rem; color:#6f7263; letter-spacing:.05em;}
+  footer a.next{font-family:'Oswald',sans-serif; font-size:.85rem; letter-spacing:.04em; text-transform:uppercase; text-decoration:none; color:var(--paper-dim); border-bottom:1px solid var(--line); padding-bottom:2px;}
+  footer a.next:hover{color:var(--brass); border-color:var(--brass);}
+
+  @media (max-width:560px){
+    header.case{padding-top:90px;}
+    .meta-row{gap:16px 24px;}
+    .exhibit h2{font-size:1.4rem;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .coin{transition:none;}
+  }
+</style>
+</head>
+<body>
+
+<a class="back" href="https://celestinestudio.com.lk/film.html">◂ CELESTINE / FILM</a>
+
+<header class="case">
+  <span class="classification">CASE FILE — REOPENED</span>
+  <h1 class="title">The Dark Knight</h1>
+  <p class="tagline">A city interrogates its own morality, and a clown submits the exam.</p>
+  <div class="meta-row">
+    <div class="meta-item"><span class="k">Director</span><span class="v">Christopher Nolan</span></div>
+    <div class="meta-item"><span class="k">Year</span><span class="v">2008</span></div>
+    <div class="meta-item"><span class="k">Runtime</span><span class="v">152 min</span></div>
+    <div class="meta-item"><span class="k">Filed as</span><span class="v">Crime / Case Study</span></div>
+  </div>
+</header>
+
+<section class="interrogation">
+  <p class="prompt">Two ferries, one detonator, sixty seconds on the clock. The film keeps returning to this proposition. Turn the coin over.</p>
+  <div class="coin-scene">
+    <div class="coin" id="coin" role="button" tabindex="0" aria-label="Flip the coin">
+      <div class="face order">Order<br>Holds</div>
+      <div class="face chaos">Chaos<br>Wins</div>
+    </div>
+  </div>
+  <span class="flip-note" id="flipNote">— click to flip —</span>
+</section>
+
+<main>
+
+  <article class="exhibit">
+    <span class="tag">Exhibit A</span>
+    <h2>The Proposition</h2>
+    <p>Strip away the cape and the sonar phones and what's left is an argument, run as an experiment on an entire city. The Joker doesn't want Gotham's money or its skyline — he wants proof that its decency is a costume too, one people will shed under enough pressure. Every set piece is really a version of the same trial: the hospital, the interrogation room, the two ferries wired to blow. The film's nerve is that it lets the experiment run long enough to actually be in doubt. Harvey Dent fails it. The ferry passengers, against most narrative logic, don't.</p>
+    <p>That structure is why the film reads as a thriller about ethics rather than a thriller about a bomb. Batman's one rule — the refusal to kill, held even when killing the Joker would plainly save lives — is treated the same way: not as a superhero's code, but as a hypothesis about what a city can be persuaded to believe in, if someone is willing to take the blame for it.</p>
+  </article>
+
+  <article class="exhibit">
+    <span class="tag">Exhibit B</span>
+    <h2>The Performance</h2>
+    <p>Heath Ledger's Joker doesn't behave like a villain with a plan, because he isn't one — that's the whole point of him. He improvises visibly, revises his own backstory mid-scene, laughs at the wrong moments on purpose. The <span class="redact">falsified</span> jitter in the walk, the tongue working at the inside of his cheek, the voice pitched just above a whisper until it isn't — none of it reads as actorly flourish so much as a genuinely unstable presence dropped into a well-ordered movie. It's a performance built to make the audience as unmoored as the characters on screen, and it mostly succeeds even on a fifteenth viewing, which is not something you can say about most turns this heavily quoted.</p>
+    <p>The posthumous Oscar that followed has occasionally overshadowed the discussion of why the performance works, reducing it to tragedy-adjacent legend. It's worth watching the film again just to notice the craft underneath the myth: the comic timing, the way he tilts his head a half-second before he lies.</p>
+  </article>
+
+  <article class="exhibit">
+    <span class="tag">Exhibit C</span>
+    <h2>The Machinery</h2>
+    <p>Nolan shoots the film like a heist picture that occasionally remembers it's a comic book adaptation. The opening bank robbery, filmed practically for IMAX, still has more genuine tension than most modern blockbusters manage across their entire runtime, largely because it's cut for spatial clarity rather than speed — you can always tell where everyone is. The semi-truck flip, the Hong Kong extraction, the two-way interrogation-room negotiation: each is staged as a problem with a physical solution, not a CG event to be marvelled at.</p>
+    <p>Hans Zimmer and James Newton Howard's score does real structural work here too — the Joker's cue is famously a single dissonant string note, stretched until it becomes unbearable, which is a much stranger and more effective choice than a conventional villain theme would have been.</p>
+  </article>
+
+  <article class="exhibit">
+    <span class="tag">Exhibit D</span>
+    <h2>The Crack</h2>
+    <p>The film's honesty about its own seams is part of why it holds up, so it's worth naming them plainly. Harvey Dent's collapse into Two-Face happens in roughly the time it takes to apply the makeup — the character needed either more screen time earlier or a smaller ending, and he gets neither. Rachel Dawes exists mostly to be endangered on a schedule that serves other characters' arcs. And the sonar-phone surveillance subplot, which Batman deploys to spy on the entire city, gets raised as a moral problem and then resolved by having Lucius Fox object to it in one scene before it's used anyway — a shortcut the film doesn't fully earn the right to take.</p>
+  </article>
+
+  <div class="verdict">
+    <span class="tag">Standing Verdict</span>
+    <p><strong>It earns the reputation.</strong> Not because it transcends the genre it was born from, but because it's one of the few blockbusters willing to let its ideas be the load-bearing structure rather than the decoration. The cracks are real, but they're the kind you get from a building that's actually holding weight.</p>
+  </div>
+
+</main>
+
+<footer>
+  <span class="brand">Celestine Film Notes</span>
+  <a class="next" href="https://celestinestudio.com.lk/film.html">Back to all reviews →</a>
+</footer>
+
+<script>
+  const coin = document.getElementById('coin');
+  const note = document.getElementById('flipNote');
+  let flipped = false;
+  function toggle(){
+    flipped = !flipped;
+    coin.classList.toggle('flipped', flipped);
+    note.textContent = flipped ? '— heads was never the point —' : '— click to flip —';
+  }
+  coin.addEventListener('click', toggle);
+  coin.addEventListener('keydown', (e)=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); toggle(); }});
+</script>
+
+</body>
+</html>

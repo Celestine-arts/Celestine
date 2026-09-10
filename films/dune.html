@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dune — The Long Shadow of Arrakis | Celestine Film Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Spectral:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sand:#cbac7c;
+    --sand-deep:#a9814f;
+    --dusk:#463655;
+    --obsidian:#161210;
+    --bone:#efe6d4;
+    --spice:#b85c2a;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--obsidian);
+    color:var(--bone);
+    font-family:'Spectral', serif;
+    line-height:1.85;
+    font-size:1.06rem;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2{font-family:'Cinzel', serif;}
+  a{color:var(--spice);}
+  .back{
+    position:fixed; top:20px; left:20px; z-index:50;
+    font-size:.7rem; letter-spacing:.12em; text-transform:uppercase;
+    text-decoration:none;
+    color:var(--sand);
+    border-bottom:1px solid rgba(203,172,124,.4);
+    padding-bottom:2px;
+  }
+  .back:hover{color:var(--bone);}
+
+  .horizon{
+    height:64vh;
+    position:relative;
+    overflow:hidden;
+    background:
+      linear-gradient(to top, var(--sand-deep) 0%, var(--sand) 30%, #6b4f30 32%, var(--obsidian) 33%, var(--obsidian) 100%);
+    display:flex;
+    align-items:flex-end;
+    justify-content:center;
+  }
+  .horizon .dune-ridge{
+    position:absolute;
+    left:0; right:0; bottom:32%;
+    height:14vh;
+    background:radial-gradient(ellipse 60% 100% at 30% 100%, var(--sand) 0%, transparent 70%),
+               radial-gradient(ellipse 50% 100% at 75% 100%, var(--sand-deep) 0%, transparent 70%);
+    opacity:.7;
+  }
+  .horizon-title{
+    position:relative;
+    z-index:3;
+    text-align:center;
+    padding-bottom:8vh;
+    color:var(--bone);
+  }
+  .horizon-title .kicker{
+    display:block;
+    font-family:'Cinzel', serif;
+    letter-spacing:.28em;
+    font-size:.68rem;
+    color:var(--obsidian);
+    margin-bottom:16px;
+    text-transform:uppercase;
+  }
+  .horizon-title h1{
+    font-size:clamp(2.6rem, 8vw, 5rem);
+    letter-spacing:.06em;
+    margin:0;
+    font-weight:600;
+    color:var(--obsidian);
+    text-transform:uppercase;
+  }
+
+  main{
+    max-width:660px;
+    margin:0 auto;
+    padding:70px 30px 40px;
+  }
+
+  .meta-line{
+    display:flex; flex-wrap:wrap; gap:26px;
+    padding-bottom:30px;
+    margin-bottom:50px;
+    border-bottom:1px solid rgba(239,230,212,.15);
+    font-family:'Cinzel', serif;
+    font-size:.72rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--sand);
+  }
+
+  section{margin-bottom:56px;}
+  section h2{
+    font-size:1.5rem;
+    font-weight:500;
+    letter-spacing:.03em;
+    color:var(--sand);
+    margin:0 0 20px;
+    text-transform:uppercase;
+  }
+  section p{
+    max-width:64ch;
+    color:#e3d9c4;
+    margin:0 0 18px;
+  }
+  section p em{color:var(--bone); font-style:italic;}
+
+  .rule{
+    border:none;
+    border-top:1px solid rgba(239,230,212,.15);
+    margin:56px 0;
+  }
+
+  .callout{
+    padding:30px 0;
+    border-top:1px solid rgba(184,92,42,.4);
+    border-bottom:1px solid rgba(184,92,42,.4);
+    margin:44px 0;
+  }
+  .callout p{
+    font-size:1.2rem;
+    font-style:italic;
+    color:var(--bone);
+    margin:0;
+    max-width:56ch;
+  }
+
+  .verdict{
+    margin-top:10px;
+    padding:34px 0 0;
+  }
+  .verdict .tag{
+    font-family:'Cinzel', serif;
+    font-size:.7rem;
+    letter-spacing:.2em;
+    text-transform:uppercase;
+    color:var(--spice);
+    display:block;
+    margin-bottom:14px;
+  }
+  .verdict p{color:var(--bone); font-size:1.1rem; max-width:60ch;}
+
+  footer{
+    max-width:660px; margin:0 auto;
+    padding:40px 30px 100px;
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:14px;
+    font-family:'Cinzel', serif;
+    font-size:.68rem;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:#8a7c62;
+  }
+  footer a{color:var(--sand); text-decoration:none; border-bottom:1px solid rgba(203,172,124,.4);}
+
+  @media (max-width:560px){
+    .horizon{height:50vh;}
+    section h2{font-size:1.25rem;}
+  }
+</style>
+</head>
+<body>
+
+<a class="back" href="https://celestinestudio.com.lk/film.html">◂ Celestine / Film</a>
+
+<div class="horizon">
+  <div class="dune-ridge"></div>
+  <div class="horizon-title">
+    <span class="kicker">Denis Villeneuve, 2021 — 2024</span>
+    <h1>Dune</h1>
+  </div>
+</div>
+
+<main>
+
+  <div class="meta-line">
+    <span>Director — Denis Villeneuve</span>
+    <span>Cast — Chalamet, Ferguson, Zendaya, Bardem, Momoa</span>
+    <span>Score — Hans Zimmer</span>
+  </div>
+
+  <section>
+    <h2>A planet you can hear</h2>
+    <p>Most science fiction builds a world through what it shows you. Villeneuve's Dune builds Arrakis through what it does to your ears first — the sub-bass drone of a spacecraft entering atmosphere, the dry static of wind moving sand, the horn-like Fremen war cries that Hans Zimmer's score treats less like instruments and more like geology. By the time a sandworm actually surfaces, the film has already spent an hour convincing you the desert itself is the main character, and the worm is just its temper.</p>
+    <p>That patience is the film's real gamble. Part One is largely scaffolding — court intrigue, a family's slow walk into a trap they can see coming — and it asks for trust that Part Two will be worth the wait. It is. The back half of the story finally lets Paul Atreides' rise stop looking like destiny and start looking like the thing the film has quietly been warning about the whole time.</p>
+  </section>
+
+  <div class="callout">
+    <p>The story is not shy about what it's doing: dressing a colonizer's fantasy in the clothes of a chosen-one epic, then letting the audience enjoy it exactly long enough to feel complicit.</p>
+  </div>
+
+  <section>
+    <h2>Faith as a weapon system</h2>
+    <p>The politics are the part most blockbusters this scale would flatten, and Villeneuve doesn't. The Bene Gesserit's manufactured prophecies, the Fremen's genuine desperation, Paul's slow, willing surrender to becoming a messiah he knows is a lie built for someone else's purposes — the film keeps all of that in frame even during its biggest action sequences. Zendaya's Chani is given the hardest job in the story: to be the one character who never stops seeing the con for what it is, even as she loves the person running it.</p>
+  </section>
+
+  <hr class="rule">
+
+  <section>
+    <h2>Where it thins out</h2>
+    <p>The film's scale occasionally costs it intimacy. Secondary Houses and their politics get compressed to the point of confusion for anyone who hasn't read the source novel, and a few performances — Bardem's Stilgar chief among them — are asked to carry more comic relief than the surrounding film's tone comfortably supports. It's a small tax on an otherwise disciplined adaptation.</p>
+  </section>
+
+  <div class="verdict">
+    <span class="tag">Standing verdict</span>
+    <p><strong>Earns it, and then some.</strong> This is the version of Dune that finally matches Frank Herbert's skepticism of its own hero to the images on screen, rather than just his sandworms. Dune: Part Three, adapting Dune Messiah, is set for December 2026 — the first real test of whether Villeneuve can make an audience unlearn the hero it just spent two films building.</p>
+  </div>
+
+</main>
+
+<footer>
+  <span>Celestine Film Notes</span>
+  <a href="https://celestinestudio.com.lk/film.html">Back to all reviews →</a>
+</footer>
+
+</body>
+</html>
