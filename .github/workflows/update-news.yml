@@ -1,0 +1,36 @@
+name: Update News
+
+on:
+  schedule:
+    - cron: "0 6 * * *"   # daily at 06:00 UTC — adjust as you like
+  workflow_dispatch: {}    # lets you trigger it manually from the Actions tab
+
+jobs:
+  update-news:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install rss-parser cheerio @anthropic-ai/sdk
+
+      - name: Run news update script
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node scripts/update-news.mjs
+
+      - name: Open pull request with changes
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "Auto: update news with AI-summarized items"
+          title: "News update — new items for review"
+          body: "Automated run pulled and summarized new items from tracked sources. Review each card before merging."
+          branch: auto/news-update
+          delete-branch: true
