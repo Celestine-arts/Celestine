@@ -19,18 +19,16 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
-        run: npm install rss-parser cheerio @anthropic-ai/sdk
+        run: npm install rss-parser
 
       - name: Run news update script
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: node scripts/update-news.mjs
 
       - name: Open pull request with changes
         uses: peter-evans/create-pull-request@v6
         with:
-          commit-message: "Auto: update news with AI-summarized items"
+          commit-message: "Auto: update news from RSS sources"
           title: "News update — new items for review"
-          body: "Automated run pulled and summarized new items from tracked sources. Review each card before merging."
+          body: "Automated run pulled new items from tracked RSS sources. Review each card before merging."
           branch: auto/news-update
           delete-branch: true
