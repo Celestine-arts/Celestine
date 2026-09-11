@@ -1,6 +1,96 @@
 [
   {
     "sourceName": "Soompi",
+    "link": "https://www.soompi.com/article/1868903wpp/the-affair-was-just-the-beginning",
+    "headline": "3 Unexpected Events That Shook Things Up In The Finale Of “The Affair Was Just The Beginning”",
+    "summary": "Chaos has completely overtaken and turned the lives of Kyung Hee (Kim Hye Soo), Jae Hong (Kim Ji Hun), Soo Jung (Cho Yeo Jeong), and Bo Sung(Kim Jae Chul) upsid…",
+    "category": "Music",
+    "image": "https://0.soompi.io/wp-content/uploads/2026/09/08084649/The-Affair-Was-Just-the-Beginning-11.jpg",
+    "publishedAt": "2026-09-11T04:01:47.000Z"
+  },
+  {
+    "sourceName": "Variety",
+    "link": "https://variety.com/2026/tv/news/jimmy-kimmel-pulled-james-talarico-inteview-youtube-watch-1236857444/",
+    "headline": "Jimmy Kimmel’s Pulled TV Interview With James Talarico Drops on YouTube as Texas Senate Candidate Says: ‘They’re Worried We’re Going to Win This Race’",
+    "summary": "After ABC pulled his broadcast over FCC fears, Jimmy Kimmel released his interview with Texas Senate candidate James Talarico on YouTube.",
+    "category": "Film",
+    "image": "https://variety.com/wp-content/uploads/2026/09/img-c98c0f0c-91dc-4a93-b937-8a104b82d5f8.png",
+    "publishedAt": "2026-09-11T05:04:50.000Z"
+  },
+  {
+    "sourceName": "Hyperallergic",
+    "link": "https://hyperallergic.com/kathleen-v-jameson-named-speed-museum-director/",
+    "headline": "Kathleen V. Jameson Named Speed Museum Director",
+    "summary": "Kathleen V. Jameson has been appointed as the new director of the Speed Art Museum.",
+    "category": "Art",
+    "image": "https://storage.ghost.io/c/51/f8/51f871d8-b6be-4a73-b958-0ca4fff0110a/content/images/2026/09/Kathleen-Portrait-3-Alex-Brumley---PC-1.jpg",
+    "publishedAt": "2026-09-10T21:32:52.000Z"
+  },
+  {
+    "sourceName": "Colossal",
+    "link": "https://www.thisiscolossal.com/2026/09/hannah-beuchler-loom-bands-wool-reliefs/",
+    "headline": "Hannah Beuchler Loops Thousands of Colorful Loom Bands like Brushstrokes",
+    "summary": "Artist Hannah Beuchler uses thousands of colorful rubber loom bands to create intricate artworks that mimic traditional brushstrokes.",
+    "category": "Art",
+    "image": "https://www.thisiscolossal.com/wp-content/uploads/2026/09/beuchler-8.jpg",
+    "publishedAt": "2026-09-10T13:50:03.000Z"
+  },
+  {
+    "sourceName": "Pitchfork",
+    "link": "https://pitchfork.com/story/kendrick-lamar-joins-jhene-aiko-on-new-song-so-good/",
+    "headline": "Kendrick Lamar Joins Jhené Aiko on New Song “So Good”",
+    "summary": "Kendrick Lamar and Jhené Aiko reunited after 13 years to collaborate on the new track “So Good” from her album *Westside Whimsy*.",
+    "category": "Music",
+    "image": "https://media.pitchfork.com/photos/6aa2e95083657f6731165cdc/master/pass/kendrick-lamar-jhene-aiko-new-song-so-good-2.jpeg",
+    "publishedAt": "2026-09-11T04:15:08.000Z"
+  },
+  {
+    "sourceName": "NME",
+    "link": "https://www.nme.com/guides/gaming-guides/heres-the-wordle-answer-for-today-3171240?utm_source=rss&utm_medium=rss&utm_campaign=heres-the-wordle-answer-for-today",
+    "headline": "Today’s Wordle answer and hints for #1900 on September 11",
+    "summary": "Hints and the correct solution for Wordle puzzle #1900 on September 11 have been published.",
+    "category": "Music",
+    "image": "https://www.nme.com/wp-content/uploads/2023/10/Wordle-credit-Jakub-PorzyckiNurPhoto-via-Getty@2000x1270.jpg",
+    "publishedAt": "2026-09-10T23:01:34.000Z"
+  },
+  {
+    "sourceName": "IndieWire",
+    "link": "https://www.indiewire.com/criticism/movies/being-heumann-review-sian-heder-biopic-judy-1235213657/",
+    "headline": "‘Being Heumann’ Review: Siân Heder’s ‘CODA’ Follow-Up Is an Essential Biopic That’s Not Afraid to Have Some Fun",
+    "summary": "Siân Heder’s TIFF biopic *Being Heumann* stars Ruth Madeley in a life-affirming, fun look at the activist’s remarkable work.",
+    "category": "Film",
+    "image": "https://www.indiewire.com/wp-content/uploads/2026/08/images-3-1.jpeg?w=632",
+    "publishedAt": "2026-09-11T03:44:41.000Z"
+  },
+  {
+    "sourceName": "Vanity Fair",
+    "link": "https://www.vanityfair.com/story/leon-black-jeffrey-epstein-cohan-puck-new-york-times",
+    "headline": "The $158-Million Question: What Was Leon Black Paying Jeffrey Epstein For?",
+    "summary": "A new book on Wall Street billionaire Leon Black explores his $158 million in payments to Jeffrey Epstein, though the author admits the true purpose may never be known.",
+    "category": "Art",
+    "image": "https://media.vanityfair.com/photos/6aa316b09ec629acc6838284/master/pass/unnamed%20(1)%20(1).png",
+    "publishedAt": "2026-09-10T21:10:42.000Z"
+  },
+  {
+    "sourceName": "Vogue",
+    "link": "https://www.vogue.com/article/the-scoop-with-nordic-poetrys-ameli-lindgren-on-a-rare-alexander-mcqueen-piece-and-building-an-archive",
+    "headline": "The Scoop With Nordic Poetry’s Ameli Lindgren: On a Rare Alexander McQueen Piece and Building an Archive",
+    "summary": "This week’s guest is Ameli Lindgren, owner of Nordic Poetry, which, according to British Vogue, is one of the best vintage stores in the world and, according to…",
+    "category": "Art",
+    "image": "https://assets.vogue.com/photos/6aa2e2195f8a15611339ef81/master/pass/-story%20(49).jpg",
+    "publishedAt": "2026-09-11T04:30:00.000Z"
+  },
+  {
+    "sourceName": "NYT Arts",
+    "link": "https://www.nytimes.com/2026/09/10/arts/music/gustavo-dudamel-starts-job-at-new-york-philharmonic.html",
+    "headline": "Dudamel Lands in New York, With Big Ambitions and a Packed Schedule",
+    "summary": "“This is not a job — it is a mission,” the new conductor of the New York Philharmonic said, starting a month of performances before taking the orchestra on a Eu…",
+    "category": "Art",
+    "image": "https://static01.nyt.com/images/2026/09/11/multimedia/10cul-dudamel-arrival-01-jhbm/10cul-dudamel-arrival-01-jhbm-mediumSquareAt3X.jpg",
+    "publishedAt": "2026-09-10T16:33:15.000Z"
+  },
+  {
+    "sourceName": "Soompi",
     "link": "https://www.soompi.com/article/1869606wpp/ryu-jun-yeol-jung-ho-yeon-hong-kyung-and-more-confirmed-to-star-in-new-mystery-thriller-drama",
     "headline": "Ryu Jun Yeol, Jung Ho Yeon, Hong Kyung, And More Confirmed To Star In New Mystery Thriller Drama",
     "summary": "Netflix announced the star-studded cast, including Ryu Jun Yeol and Jung Ho Yeon, for its upcoming mystery thriller drama \"Outback.\"",
