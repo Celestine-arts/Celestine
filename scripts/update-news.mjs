@@ -22,6 +22,22 @@ const MAX_NEW_ITEMS_PER_RUN = 10;
 const GEMINI_MODEL = "gemini-flash-lite-latest";
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 
+// Keywords that mean "not an art/music/film story" — items matching these
+// (in headline or body text) are skipped before they're ever added as a
+// candidate. Not perfect (a legit "war photography exhibit" story could get
+// caught), so check the Action logs for "Skipped (off-topic)" lines and
+// adjust this list if you notice false positives.
+const BLOCKED_KEYWORDS = [
+  "trump", "biden", "election", "congress", "senate", "president",
+  "democrat", "republican", "midterm", "war in", "invasion", "ceasefire",
+  "politics", "political", "campaign", "shooting", "indictment",
+];
+
+function isOffTopic(headline = "", rawText = "") {
+  const text = `${headline} ${rawText}`.toLowerCase();
+  return BLOCKED_KEYWORDS.some((word) => text.includes(word));
+}
+
 // IMPORTANT: without this customFields config, rss-parser silently drops
 // <media:content> and <media:thumbnail> tags, which is why images never showed up.
 const rssParser = new Parser({
@@ -187,7 +203,14 @@ async function main() {
     if (source.type !== "rss") continue;
     try {
       const items = await fetchRssItems(source);
-      const newItems = items.filter((item) => !knownLinks.has(item.link));
+      const newItems = items.filter((item) => {
+        if (knownLinks.has(item.link)) return false;
+        if (isOffTopic(item.headline, item.rawText)) {
+          console.log(`Skipped (off-topic): ${item.headline}`);
+          return false;
+        }
+        return true;
+      });
       if (newItems.length) perSourceCandidates.push(newItems);
     } catch (err) {
       console.error(`Failed to fetch ${source.name}:`, err.message);
