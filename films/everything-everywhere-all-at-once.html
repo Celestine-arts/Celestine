@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Everything Everywhere All at Once — The Bagel | Celestine Film Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Karla:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --beige:#e8ddc4;
+    --hotpink:#e0468a;
+    --lime:#8fbf3f;
+    --sky:#3ea3c9;
+    --void:#100d18;
+    --ink:#221c2c;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--beige);
+    color:var(--ink);
+    font-family:'Karla', sans-serif;
+    line-height:1.75;
+  }
+  h1,h2{font-family:'Space Grotesk', sans-serif;}
+  a{color:var(--hotpink);}
+  .back{
+    position:fixed; top:16px; left:16px; z-index:60;
+    font-size:.7rem; letter-spacing:.06em; text-transform:uppercase;
+    text-decoration:none; color:var(--ink);
+    background:#fff;
+    padding:6px 12px;
+    border:2px solid var(--ink);
+  }
+
+  .multiverse-hero{
+    min-height:64vh;
+    position:relative;
+    overflow:hidden;
+    background:var(--void);
+    display:flex; align-items:center; justify-content:center;
+    text-align:center;
+  }
+  .bagel{
+    position:absolute;
+    width:280px; height:280px;
+    border-radius:50%;
+    top:50%; left:50%;
+    transform:translate(-50%,-50%);
+    background:radial-gradient(circle, #000 0%, #000 22%, transparent 23%),
+               conic-gradient(from 0deg, var(--hotpink), var(--sky), var(--lime), var(--hotpink));
+    opacity:.9;
+    filter:blur(0.4px);
+    animation:spin 30s linear infinite;
+  }
+  @keyframes spin{ to{ transform:translate(-50%,-50%) rotate(360deg); } }
+  .multi-copy{position:relative; z-index:3; padding:0 26px;}
+  .multi-copy .kicker{display:block; font-family:'Space Grotesk', sans-serif; font-weight:600; font-size:.72rem; letter-spacing:.18em; text-transform:uppercase; color:var(--lime); margin-bottom:16px;}
+  .multi-copy h1{font-size:clamp(2.2rem, 7vw, 3.8rem); color:#f2ecd9; margin:0 0 16px; max-width:16ch; margin-left:auto; margin-right:auto;}
+  .multi-copy p{color:#c9c0d6; max-width:36ch; margin:0 auto; font-style:italic;}
+
+  main{max-width:680px; margin:0 auto; padding:56px 28px 40px;}
+
+  section{margin-bottom:52px;}
+  section h2{font-size:1.6rem; margin:0 0 18px; color:var(--hotpink);}
+  section p{max-width:66ch; margin:0 0 16px;}
+
+  .verse-strip{
+    display:flex; flex-wrap:wrap; gap:10px;
+    margin-bottom:48px;
+  }
+  .verse-strip span{
+    font-family:'Space Grotesk', sans-serif;
+    font-size:.75rem;
+    padding:7px 13px;
+    border:2px solid var(--ink);
+    background:#fff;
+  }
+  .verse-strip span:nth-child(2){background:var(--lime);}
+  .verse-strip span:nth-child(3){background:var(--sky); color:#fff;}
+  .verse-strip span:nth-child(4){background:var(--hotpink); color:#fff;}
+
+  .callout{
+    background:var(--ink);
+    color:var(--beige);
+    padding:28px 26px;
+    margin:44px 0;
+    font-style:italic;
+    font-size:1.14rem;
+    border-radius:4px;
+  }
+
+  .verdict{border-top:3px solid var(--hotpink); padding:30px 0 0; margin-top:16px;}
+  .verdict .tag{font-family:'Space Grotesk', sans-serif; font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; color:var(--hotpink); display:block; margin-bottom:12px;}
+  .verdict p{font-size:1.08rem; max-width:60ch;}
+
+  footer{
+    max-width:680px; margin:0 auto; padding:34px 28px 100px;
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:14px;
+    font-size:.72rem; letter-spacing:.04em; text-transform:uppercase; color:#7a7263;
+  }
+  footer a{color:var(--ink); text-decoration:none; border-bottom:2px solid var(--hotpink);}
+
+  @media (max-width:560px){
+    .multiverse-hero{min-height:50vh;}
+    section h2{font-size:1.3rem;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .bagel{animation:none;}
+  }
+</style>
+</head>
+<body>
+
+<a class="back" href="https://celestinestudio.com.lk/film.html">◂ CELESTINE / FILM</a>
+
+<div class="multiverse-hero">
+  <div class="bagel"></div>
+  <div class="multi-copy">
+    <span class="kicker">Daniels, 2022</span>
+    <h1>Everything Everywhere All at Once</h1>
+    <p>A laundromat, a tax audit, and the entire multiverse, all somehow the same argument.</p>
+  </div>
+</div>
+
+<main>
+
+  <div class="verse-strip">
+    <span>Universe: Laundromat</span>
+    <span>Universe: Hot Dog Fingers</span>
+    <span>Universe: Silent Rocks</span>
+    <span>Universe: Kung Fu Movie Star</span>
+  </div>
+
+  <section>
+    <h2>Nihilism, argued with, sincerely</h2>
+    <p>The film's antagonist, Jobu Tupaki, has experienced every possible version of every possible life and concluded, reasonably, that nothing means anything if everything is equally possible. That's a real philosophical position, not a cartoon villain motive, and Everything Everywhere All at Once spends its increasingly unhinged runtime — inflatable-glove nunchucks, sentient rocks, a universe run entirely by raccoons — actually trying to argue with it. The film's answer isn't a rebuttal so much as a demonstration: choosing to care about one small, exhausting, mundane life, on purpose, in a universe of infinite alternatives, might be the only act that means anything specifically because it doesn't have to.</p>
+    <p>Michelle Yeoh's Evelyn is the film's real center of gravity, playing a woman failing at her marriage, her business, and her relationship with her daughter across every single universe she visits, until the multiverse chaos becomes less an action gimmick and more a way of finally seeing her own life's smallness for what it actually offers instead of what it's failed to become.</p>
+  </section>
+
+  <div class="callout">
+    Every strange universe in the film exists to build toward one very ordinary conversation between a mother and a daughter neither one knows how to have directly.
+  </div>
+
+  <section>
+    <h2>Joy Wang, and the film's real stakes</h2>
+    <p>Stephanie Hsu's Joy carries the emotional core underneath all the formal invention: a queer daughter whose mother has never fully accepted her partner, driven, across infinite versions of herself, to the same despair regardless of how much power or possibility she accumulates. The film's insistence that Evelyn's small act of acceptance matters more than any cosmic power is its most sincere and least ironic idea, delivered inside its most absurd packaging.</p>
+  </section>
+
+  <div class="verdict">
+    <span class="tag">Standing Verdict</span>
+    <p><strong>Earns it.</strong> A film that uses maximalist absurdity to arrive at one of the more understated, hard-won points about family that recent American cinema has managed.</p>
+  </div>
+
+</main>
+
+<footer>
+  <span>Celestine Film Notes</span>
+  <a href="https://celestinestudio.com.lk/film.html">Back to all reviews →</a>
+</footer>
+
+</body>
+</html>
