@@ -20,6 +20,47 @@
     position:relative;
     z-index:2;
   }
+
+  /* Search bar */
+  .film-search-wrap{
+    max-width:900px;
+    margin:0 auto 6px;
+    padding:0 24px;
+  }
+  .film-search{
+    width:100%;
+    box-sizing:border-box;
+    font-family:'Inter', sans-serif;
+    font-size:1rem;
+    padding:14px 20px;
+    border:2px solid var(--ink, #1a1a1a);
+    border-radius:999px;
+    background:#fff;
+    color:#1a1a1a;
+    outline:none;
+  }
+  .film-search::placeholder{ color:#8a8a8a; }
+  .film-search:focus{ border-color:#8a1f1f; }
+  .search-count{
+    max-width:900px;
+    margin:10px auto 0;
+    padding:0 26px;
+    font-family:'Inter', sans-serif;
+    font-size:.8rem;
+    letter-spacing:.04em;
+    color:#7a7a7a;
+    text-transform:uppercase;
+  }
+  .no-results{
+    display:none;
+    max-width:900px;
+    margin:50px auto;
+    padding:0 24px;
+    text-align:center;
+    font-family:'Inter', sans-serif;
+    color:#777;
+    font-size:1.05rem;
+  }
 </style>
 </head>
 <body>
@@ -40,8 +81,13 @@
   <p class="dek">Honest, well-researched takes on film — the craft, the context, and whether it earns its reputation.</p>
 </div>
 
+<div class="film-search-wrap">
+  <input type="search" id="filmSearch" class="film-search" placeholder="Search films, directors, or years…" aria-label="Search film reviews">
+</div>
+<div class="search-count" id="searchCount"></div>
+
 <section class="section">
-  <div class="grid">
+  <div class="grid" id="filmGrid">
     <a class="card c-span-2" href="films/dark-knight.html">
       <div class="thumb t-film"><img src="images/images.jpeg" alt="The Dark Knight"><span>FILM REVIEW</span></div>
       <div class="body"><h3>The Dark Knight</h3><p>A city interrogates its own morality, and a clown submits the exam.</p><div class="meta">Christopher Nolan · 2008</div></div>
@@ -51,7 +97,7 @@
       <div class="body"><h3>Toy Story 5</h3><p>Two kinds of glow, one kid's bedroom, and a franchise finally out of easy answers.</p><div class="meta">Andrew Stanton · 2026</div></div>
     </a>
     <a class="card c-span-2" href="films/dune.html">
-      <div class="thumb t-film"><img src="images/images (1).jpeg" alt="Dune"><span>FILM REVIEW</span></div>
+      <div class="thumb t-film"><img src="images/images%20(1).jpeg" alt="Dune"><span>FILM REVIEW</span></div>
       <div class="body"><h3>Dune</h3><p>A planet you can hear before you can see, and a hero worth doubting.</p><div class="meta">Denis Villeneuve · 2021–2024</div></div>
     </a>
     <a class="card c-span-2" href="films/fight-club.html">
@@ -78,29 +124,73 @@
       <div class="thumb t-film"><img src="images/images-6.jpeg" alt="The Shawshank Redemption"><span>FILM REVIEW</span></div>
       <div class="body"><h3>The Shawshank Redemption</h3><p>A box-office failure that quietly became the most beloved film ever made.</p><div class="meta">Frank Darabont · 1994</div></div>
     </a>
-    <a class="card c-span-2" href="films/the-social-network.html">
-      <div class="thumb t-film"><img src="images/the-social-network.jpg" alt="Oppenheimer"><span>FILM REVIEW</span></div>
+    <a class="card c-span-2" href="films/oppenheimer.html">
+      <div class="thumb t-film"><img src="images/example.jpg" alt="Oppenheimer"><span>FILM REVIEW</span></div>
       <div class="body"><h3>Oppenheimer</h3><p>Three hours built around a silence that arrives late on purpose.</p><div class="meta">Christopher Nolan · 2023</div></div>
     </a>
-    <a class="card c-span-2" href="films/mad-max-fury-road.html">
-      <div class="thumb t-film"><img src="images/mad-max-fury-road.jpg" alt="Oppenheimer"><span>FILM REVIEW</span></div>
-      <div class="body"><h3>Oppenheimer</h3><p>Three hours built around a silence that arrives late on purpose.</p><div class="meta">Christopher Nolan · 2023</div></div>
+    <a class="card c-span-2" href="films/the-godfather.html">
+      <div class="thumb t-film"><img src="images/example.jpg" alt="The Godfather"><span>FILM REVIEW</span></div>
+      <div class="body"><h3>The Godfather</h3><p>A wedding on the surface. A succession, underneath.</p><div class="meta">Francis Ford Coppola · 1972</div></div>
     </a>
-    <a class="card c-span-2" href="films/everything-everywhere-all-at-once.html">
-      <div class="thumb t-film"><img src="images/everything-everywhere-all-at-once.jpeg" alt="Oppenheimer"><span>FILM REVIEW</span></div>
-      <div class="body"><h3>Oppenheimer</h3><p>Three hours built around a silence that arrives late on purpose.</p><div class="meta">Christopher Nolan · 2023</div></div>
+    <a class="card c-span-2" href="films/pulp-fiction.html">
+      <div class="thumb t-film"><img src="images/example.jpg" alt="Pulp Fiction"><span>FILM REVIEW</span></div>
+      <div class="body"><h3>Pulp Fiction</h3><p>Three stories, told out of order, that only make sense once you stop trying to fix that.</p><div class="meta">Quentin Tarantino · 1994</div></div>
     </a>
-    <a class="card c-span-2" href="films/casablanca.html">
-      <div class="thumb t-film"><img src="images/casablanca.jpeg" alt="Oppenheimer"><span>FILM REVIEW</span></div>
-      <div class="body"><h3>Oppenheimer</h3><p>Three hours built around a silence that arrives late on purpose.</p><div class="meta">Christopher Nolan · 2023</div></div>
+    <a class="card c-span-2" href="films/parasite.html">
+      <div class="thumb t-film"><img src="images/example.jpg" alt="Parasite"><span>FILM REVIEW</span></div>
+      <div class="body"><h3>Parasite</h3><p>A house with a basement nobody mentions, and a family that only fits in it by pretending.</p><div class="meta">Bong Joon-ho · 2019</div></div>
+    </a>
+    <a class="card c-span-2" href="films/whiplash.html">
+      <div class="thumb t-film"><img src="images/example.jpg" alt="Whiplash"><span>FILM REVIEW</span></div>
+      <div class="body"><h3>Whiplash</h3><p>Not quite my tempo — and the cost of closing that gap.</p><div class="meta">Damien Chazelle · 2014</div></div>
+    </a>
+    <a class="card c-span-2" href="films/the-grand-budapest-hotel.html">
+      <div class="thumb t-film"><img src="images/example.jpg" alt="The Grand Budapest Hotel"><span>FILM REVIEW</span></div>
+      <div class="body"><h3>The Grand Budapest Hotel</h3><p>A perfectly symmetrical film about a world that stopped being symmetrical long ago.</p><div class="meta">Wes Anderson · 2014</div></div>
+    </a>
+    <a class="card c-span-2" href="films/get-out.html">
+      <div class="thumb t-film"><img src="images/example.jpg" alt="Get Out"><span>FILM REVIEW</span></div>
+      <div class="body"><h3>Get Out</h3><p>The politest weekend a boyfriend has ever survived. Barely.</p><div class="meta">Jordan Peele · 2017</div></div>
     </a>
     <a class="card c-span-2" href="films/blade-runner-2049.html">
-      <div class="thumb t-film"><img src="images/blade-runner-2049.jpeg" alt="Oppenheimer"><span>FILM REVIEW</span></div>
-      <div class="body"><h3>Oppenheimer</h3><p>Three hours built around a silence that arrives late on purpose.</p><div class="meta">Christopher Nolan · 2023</div></div>
+      <div class="thumb t-film"><img src="images/blade-runner-2049.jpeg" alt="Blade Runner 2049"><span>FILM REVIEW</span></div>
+      <div class="body"><h3>Blade Runner 2049</h3><p>A memory can be manufactured. The ache it produces apparently cannot.</p><div class="meta">Denis Villeneuve · 2017</div></div>
     </a>
-
-    
+    <a class="card c-span-2" href="films/mad-max-fury-road.html">
+      <div class="thumb t-film"><img src="images/mad-max-fury-road.jpg" alt="Mad Max: Fury Road"><span>FILM REVIEW</span></div>
+      <div class="body"><h3>Mad Max: Fury Road</h3><p>A two-hour chase scene that somehow finds room for a real political argument.</p><div class="meta">George Miller · 2015</div></div>
+    </a>
+    <a class="card c-span-2" href="films/everything-everywhere-all-at-once.html">
+      <div class="thumb t-film"><img src="images/everything-everywhere-all-at-once.jpeg" alt="Everything Everywhere All at Once"><span>FILM REVIEW</span></div>
+      <div class="body"><h3>Everything Everywhere All at Once</h3><p>A laundromat, a tax audit, and the entire multiverse, all somehow the same argument.</p><div class="meta">Daniels · 2022</div></div>
+    </a>
+    <a class="card c-span-2" href="films/the-social-network.html">
+      <div class="thumb t-film"><img src="images/the-social-network.jpg" alt="The Social Network"><span>FILM REVIEW</span></div>
+      <div class="body"><h3>The Social Network</h3><p>A company built on the idea of friendship, founded by a man who has almost none.</p><div class="meta">David Fincher · 2010</div></div>
+    </a>
+    <a class="card c-span-2" href="films/casablanca.html">
+      <div class="thumb t-film"><img src="images/casablanca.jpeg" alt="Casablanca"><span>FILM REVIEW</span></div>
+      <div class="body"><h3>Casablanca</h3><p>A love story where the most romantic act available is letting someone go.</p><div class="meta">Michael Curtiz · 1942</div></div>
+    </a>
+    <a class="card c-span-2" href="films/12-angry-men.html">
+      <div class="thumb t-film"><img src="images/example.jpg" alt="12 Angry Men"><span>FILM REVIEW</span></div>
+      <div class="body"><h3>12 Angry Men</h3><p>One room, one afternoon, and eleven men who thought this would be quick.</p><div class="meta">Sidney Lumet · 1957</div></div>
+    </a>
+    <a class="card c-span-2" href="films/spirited-away.html">
+      <div class="thumb t-film"><img src="images/example.jpg" alt="Spirited Away"><span>FILM REVIEW</span></div>
+      <div class="body"><h3>Spirited Away</h3><p>A ten-year-old loses her name and gets it back through work, not magic.</p><div class="meta">Hayao Miyazaki · 2001</div></div>
+    </a>
+    <a class="card c-span-2" href="films/no-country-for-old-men.html">
+      <div class="thumb t-film"><img src="images/example.jpg" alt="No Country for Old Men"><span>FILM REVIEW</span></div>
+      <div class="body"><h3>No Country for Old Men</h3><p>A man finds two million dollars in the desert. The desert wants it back.</p><div class="meta">Joel &amp; Ethan Coen · 2007</div></div>
+    </a>
+    <a class="card c-span-2" href="films/the-matrix.html">
+      <div class="thumb t-film"><img src="images/example.jpg" alt="The Matrix"><span>FILM REVIEW</span></div>
+      <div class="body"><h3>The Matrix</h3><p>A simulation convincing enough that most people inside it would rather not know.</p><div class="meta">The Wachowskis · 1999</div></div>
+    </a>
   </div>
+
+  <p class="no-results" id="noResultsMsg">No reviews match that search. Try a different title, director, or year.</p>
 </section>
 
 <footer>
@@ -112,6 +202,40 @@
   </div>
   <div class="fine">© 2026 Celestine Studio. All rights reserved.</div>
 </footer>
+
+<script>
+(function(){
+  var input = document.getElementById('filmSearch');
+  var cards = Array.prototype.slice.call(document.querySelectorAll('#filmGrid .card'));
+  var noResults = document.getElementById('noResultsMsg');
+  var countEl = document.getElementById('searchCount');
+  var total = cards.length;
+
+  function runSearch(){
+    var q = input.value.trim().toLowerCase();
+    var visible = 0;
+    cards.forEach(function(card){
+      var titleEl = card.querySelector('h3');
+      var descEl = card.querySelector('p');
+      var metaEl = card.querySelector('.meta');
+      var haystack = [
+        titleEl ? titleEl.textContent : '',
+        descEl ? descEl.textContent : '',
+        metaEl ? metaEl.textContent : ''
+      ].join(' ').toLowerCase();
+      var match = !q || haystack.indexOf(q) !== -1;
+      card.style.display = match ? '' : 'none';
+      if(match) visible++;
+    });
+    noResults.style.display = visible === 0 ? 'block' : 'none';
+    countEl.textContent = q ? (visible + ' of ' + total + ' reviews') : '';
+  }
+
+  if(input){
+    input.addEventListener('input', runSearch);
+  }
+})();
+</script>
 
 </body>
 </html>
