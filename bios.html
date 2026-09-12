@@ -7,6 +7,48 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<style>
+  /* Search bar */
+  .film-search-wrap{
+    max-width:900px;
+    margin:0 auto 6px;
+    padding:0 24px;
+  }
+  .film-search{
+    width:100%;
+    box-sizing:border-box;
+    font-family:'Inter', sans-serif;
+    font-size:1rem;
+    padding:14px 20px;
+    border:2px solid var(--ink, #1a1a1a);
+    border-radius:999px;
+    background:#fff;
+    color:#1a1a1a;
+    outline:none;
+  }
+  .film-search::placeholder{ color:#8a8a8a; }
+  .film-search:focus{ border-color:#8a1f1f; }
+  .search-count{
+    max-width:900px;
+    margin:10px auto 0;
+    padding:0 26px;
+    font-family:'Inter', sans-serif;
+    font-size:.8rem;
+    letter-spacing:.04em;
+    color:#7a7a7a;
+    text-transform:uppercase;
+  }
+  .no-results{
+    display:none;
+    max-width:900px;
+    margin:50px auto;
+    padding:0 24px;
+    text-align:center;
+    font-family:'Inter', sans-serif;
+    color:#777;
+    font-size:1.05rem;
+  }
+</style>
 </head>
 <body>
 
@@ -26,8 +68,13 @@
   <p class="dek">The complete, chapter-by-chapter documentaries — the people behind the art, told in full.</p>
 </div>
 
+<div class="film-search-wrap">
+  <input type="search" id="bioSearch" class="film-search" placeholder="Search artists, groups, or categories…" aria-label="Search artist bios">
+</div>
+<div class="search-count" id="searchCount"></div>
+
 <section class="section">
-  <div class="grid">
+  <div class="grid" id="bioGrid">
     <a class="card c-span-3" href="v-kim-taehyung.html">
       <div class="thumb t-art"><span>ARTIST BIO</span></div>
       <div class="body">
@@ -37,7 +84,7 @@
       </div>
     </a>
     <a class="card c-span-2" href="jisoo.html">
-      <div class="thumb t-art"><span>ARTIST BIO</span></div>
+      <div class="thumb t-music"><span>ARTIST BIO</span></div>
       <div class="body">
         <h3>Jisoo — The Visual Who Set Her Own Pace</h3>
         <p>Patience as a career strategy: the BLACKPINK member playing the longest game.</p>
@@ -45,7 +92,7 @@
       </div>
     </a>
     <a class="card c-span-2" href="jennie.html">
-      <div class="thumb t-art"><span>ARTIST BIO</span></div>
+      <div class="thumb t-music"><span>ARTIST BIO</span></div>
       <div class="body">
         <h3>Jennie — The One Who Made Solo Look Easy</h3>
         <p>First to go solo, first to make it look effortless.</p>
@@ -53,7 +100,7 @@
       </div>
     </a>
     <a class="card c-span-2" href="rose.html">
-      <div class="thumb t-art"><span>ARTIST BIO</span></div>
+      <div class="thumb t-music"><span>ARTIST BIO</span></div>
       <div class="body">
         <h3>Rosé — The Balladeer Who Went Pop</h3>
         <p>A folk-singer's ache inside one of the biggest pop songs of the decade.</p>
@@ -61,7 +108,7 @@
       </div>
     </a>
     <a class="card c-span-2" href="lisa.html">
-      <div class="thumb t-art"><span>ARTIST BIO</span></div>
+      <div class="thumb t-music"><span>ARTIST BIO</span></div>
       <div class="body">
         <h3>Lisa — The Performer Who Refused to Sit Still</h3>
         <p>Dancer, rapper, label founder, now actress — all at once.</p>
@@ -237,17 +284,53 @@
       </div>
     </a>
   </div>
+
+  <p class="no-results" id="noResultsMsg">No bios match that search. Try a different name, group, or category.</p>
 </section>
 
 <footer>
   <a href="index.html" class="logo">Celestine<span></span></a>
   <div class="socials">
-    <a href="#" target="_blank">YouTube</a>
-    <a href="#" target="_blank">Instagram</a>
-    <a href="#" target="_blank">Facebook</a>
+    <a href="https://youtube.com/@celestinestudio?si=4g26nV9T_dcX9Jxi" target="_blank">YouTube</a>
+    <a href="https://www.instagram.com/celestine_studio_" target="_blank">Instagram</a>
+    <a href="https://web.facebook.com/profile.php?id=61594418093291" target="_blank">Facebook</a>
   </div>
   <div class="fine">© 2026 Celestine Studio. All rights reserved.</div>
 </footer>
+
+<script>
+(function(){
+  var input = document.getElementById('bioSearch');
+  var cards = Array.prototype.slice.call(document.querySelectorAll('#bioGrid .card'));
+  var noResults = document.getElementById('noResultsMsg');
+  var countEl = document.getElementById('searchCount');
+  var total = cards.length;
+
+  function runSearch(){
+    var q = input.value.trim().toLowerCase();
+    var visible = 0;
+    cards.forEach(function(card){
+      var titleEl = card.querySelector('h3');
+      var descEl = card.querySelector('p');
+      var metaEl = card.querySelector('.meta');
+      var haystack = [
+        titleEl ? titleEl.textContent : '',
+        descEl ? descEl.textContent : '',
+        metaEl ? metaEl.textContent : ''
+      ].join(' ').toLowerCase();
+      var match = !q || haystack.indexOf(q) !== -1;
+      card.style.display = match ? '' : 'none';
+      if(match) visible++;
+    });
+    noResults.style.display = visible === 0 ? 'block' : 'none';
+    countEl.textContent = q ? (visible + ' of ' + total + ' bios') : '';
+  }
+
+  if(input){
+    input.addEventListener('input', runSearch);
+  }
+})();
+</script>
 
 </body>
 </html>
