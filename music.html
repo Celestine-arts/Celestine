@@ -10,6 +10,51 @@
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-96x96.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
+<style>
+  .song-search-wrap{
+    max-width:640px;
+    margin:0 auto;
+    padding:28px 24px 6px;
+  }
+  .song-search-box{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    border:1.5px solid var(--ink);
+    border-radius:999px;
+    padding:12px 20px;
+    background:transparent;
+  }
+  .song-search-box svg{ flex-shrink:0; opacity:0.6; }
+  #songSearch{
+    flex:1;
+    border:none;
+    outline:none;
+    background:transparent;
+    font-family:'Inter', sans-serif;
+    font-size:1rem;
+    color:var(--ink);
+  }
+  #songSearch::placeholder{ color:var(--ink); opacity:0.45; }
+  #searchCount{
+    text-align:center;
+    font-family:'Inter', sans-serif;
+    font-size:0.82rem;
+    color:var(--ink);
+    opacity:0.55;
+    margin:10px 0 0;
+  }
+  #noResults{
+    display:none;
+    text-align:center;
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-size:1.15rem;
+    color:var(--ink);
+    opacity:0.7;
+    padding:60px 20px;
+  }
+</style>
 </head>
 <body>
 
@@ -29,8 +74,19 @@
   <p class="dek">Track-by-track breakdowns — what's actually happening in the music, not just star ratings.</p>
 </div>
 
+<div class="song-search-wrap">
+  <div class="song-search-box">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/>
+      <line x1="21" y1="21" x2="16.65" y2="16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+    <input type="text" id="songSearch" placeholder="Search by song, artist, or genre…" aria-label="Search song reviews">
+  </div>
+  <p id="searchCount"></p>
+</div>
+
 <section class="section">
-  <div class="grid">
+  <div class="grid" id="songGrid">
 
     <a class="card c-span-2" href="music/bts-swim.html">
       <div class="thumb t-music" style="position:relative;overflow:hidden;">
@@ -112,8 +168,89 @@
       <div class="body"><h3>Ordinary</h3><p>A love song borrowed from worship music, written for one real person.</p><div class="meta">Alex Warren</div></div>
     </a>
 
+    <a class="card c-span-2" href="music/luke-combs-the-way-i-am.html">
+      <div class="thumb t-music" style="position:relative;overflow:hidden;">
+        <img src="images/luke-combs-the-way-i-am.svg" alt="Illustration for Luke Combs's The Way I Am — a warm vinyl groove" style="display:block;width:100%;height:100%;object-fit:cover;">
+        <span style="position:absolute;top:10px;left:10px;background:rgba(0,0,0,0.55);color:#fff;font-size:11px;letter-spacing:0.06em;padding:4px 9px;border-radius:3px;text-transform:uppercase;">Country</span>
+      </div>
+      <div class="body"><h3>The Way I Am</h3><p>Being loved through every version of the one you already are.</p><div class="meta">Luke Combs</div></div>
+    </a>
+
+    <a class="card c-span-2" href="music/zara-larsson-midnight-sun.html">
+      <div class="thumb t-music" style="position:relative;overflow:hidden;">
+        <img src="images/zara-larsson-midnight-sun.svg" alt="Illustration for Zara Larsson's Midnight Sun — a glowing sunset" style="display:block;width:100%;height:100%;object-fit:cover;">
+        <span style="position:absolute;top:10px;left:10px;background:rgba(0,0,0,0.55);color:#fff;font-size:11px;letter-spacing:0.06em;padding:4px 9px;border-radius:3px;text-transform:uppercase;">Electropop</span>
+      </div>
+      <div class="body"><h3>Midnight Sun</h3><p>A Swedish summer night, and the freedom of one that never has to end.</p><div class="meta">Zara Larsson</div></div>
+    </a>
+
+    <a class="card c-span-2" href="music/raye-where-is-my-husband.html">
+      <div class="thumb t-music" style="position:relative;overflow:hidden;">
+        <img src="images/raye-where-is-my-husband.svg" alt="Illustration for RAYE's WHERE IS MY HUSBAND! — a gold hourglass" style="display:block;width:100%;height:100%;object-fit:cover;">
+        <span style="position:absolute;top:10px;left:10px;background:rgba(0,0,0,0.55);color:#fff;font-size:11px;letter-spacing:0.06em;padding:4px 9px;border-radius:3px;text-transform:uppercase;">Soul</span>
+      </div>
+      <div class="body"><h3>WHERE IS MY HUSBAND!</h3><p>A brassy demand that turns out to be one of the more sincere songs about dating in years.</p><div class="meta">RAYE</div></div>
+    </a>
+
+    <a class="card c-span-2" href="music/dave-tems-raindance.html">
+      <div class="thumb t-music" style="position:relative;overflow:hidden;">
+        <img src="images/dave-tems-raindance.svg" alt="Illustration for Dave and Tems's Raindance — slate blue rain streaks" style="display:block;width:100%;height:100%;object-fit:cover;">
+        <span style="position:absolute;top:10px;left:10px;background:rgba(0,0,0,0.55);color:#fff;font-size:11px;letter-spacing:0.06em;padding:4px 9px;border-radius:3px;text-transform:uppercase;">UK Rap</span>
+      </div>
+      <div class="body"><h3>Raindance</h3><p>A love song with its guard halfway down, afraid to wreck what's finally real.</p><div class="meta">Dave &amp; Tems</div></div>
+    </a>
+
+    <a class="card c-span-2" href="music/chappell-roan-the-subway.html">
+      <div class="thumb t-music" style="position:relative;overflow:hidden;">
+        <img src="images/chappell-roan-the-subway.svg" alt="Illustration for Chappell Roan's The Subway — a city transit route" style="display:block;width:100%;height:100%;object-fit:cover;">
+        <span style="position:absolute;top:10px;left:10px;background:rgba(0,0,0,0.55);color:#fff;font-size:11px;letter-spacing:0.06em;padding:4px 9px;border-radius:3px;text-transform:uppercase;">Synth-Pop</span>
+      </div>
+      <div class="body"><h3>The Subway</h3><p>Waiting for someone's ghost to finally become just another stranger.</p><div class="meta">Chappell Roan</div></div>
+    </a>
+
+    <a class="card c-span-2" href="music/zach-bryan-say-why.html">
+      <div class="thumb t-music" style="position:relative;overflow:hidden;">
+        <img src="images/zach-bryan-say-why.svg" alt="Illustration for Zach Bryan's Say Why — a dusty desert horizon" style="display:block;width:100%;height:100%;object-fit:cover;">
+        <span style="position:absolute;top:10px;left:10px;background:rgba(0,0,0,0.55);color:#fff;font-size:11px;letter-spacing:0.06em;padding:4px 9px;border-radius:3px;text-transform:uppercase;">Americana</span>
+      </div>
+      <div class="body"><h3>Say Why</h3><p>Spending the last of your money on the thing that's hurting you.</p><div class="meta">Zach Bryan</div></div>
+    </a>
+
+    <a class="card c-span-2" href="music/billie-eilish-wildflower.html">
+      <div class="thumb t-music" style="position:relative;overflow:hidden;">
+        <img src="images/billie-eilish-wildflower.svg" alt="Illustration for Billie Eilish's Wildflower — a simple sage-green flower" style="display:block;width:100%;height:100%;object-fit:cover;">
+        <span style="position:absolute;top:10px;left:10px;background:rgba(0,0,0,0.55);color:#fff;font-size:11px;letter-spacing:0.06em;padding:4px 9px;border-radius:3px;text-transform:uppercase;">Folk-Pop</span>
+      </div>
+      <div class="body"><h3>Wildflower</h3><p>The guilt of loving someone your friend once loved too.</p><div class="meta">Billie Eilish</div></div>
+    </a>
+
+    <a class="card c-span-2" href="music/bad-bunny-dtmf.html">
+      <div class="thumb t-music" style="position:relative;overflow:hidden;">
+        <img src="images/bad-bunny-dtmf.svg" alt="Illustration for Bad Bunny's DTMF — a polaroid on a Caribbean gradient" style="display:block;width:100%;height:100%;object-fit:cover;">
+        <span style="position:absolute;top:10px;left:10px;background:rgba(0,0,0,0.55);color:#fff;font-size:11px;letter-spacing:0.06em;padding:4px 9px;border-radius:3px;text-transform:uppercase;">Plena</span>
+      </div>
+      <div class="body"><h3>DTMF</h3><p>Wishing you'd taken more photos before everything changed.</p><div class="meta">Bad Bunny</div></div>
+    </a>
+
+    <a class="card c-span-2" href="music/doechii-anxiety.html">
+      <div class="thumb t-music" style="position:relative;overflow:hidden;">
+        <img src="images/doechii-anxiety.svg" alt="Illustration for Doechii's Anxiety — a looping anxious line" style="display:block;width:100%;height:100%;object-fit:cover;">
+        <span style="position:absolute;top:10px;left:10px;background:rgba(0,0,0,0.55);color:#fff;font-size:11px;letter-spacing:0.06em;padding:4px 9px;border-radius:3px;text-transform:uppercase;">Pop Rap</span>
+      </div>
+      <div class="body"><h3>Anxiety</h3><p>A bedroom demo that made a very private feeling danceable.</p><div class="meta">Doechii</div></div>
+    </a>
+
+    <a class="card c-span-2" href="music/kendrick-sza-luther.html">
+      <div class="thumb t-music" style="position:relative;overflow:hidden;">
+        <img src="images/kendrick-sza-luther.svg" alt="Illustration for Luther by Kendrick Lamar and SZA — a gold halo on navy" style="display:block;width:100%;height:100%;object-fit:cover;">
+        <span style="position:absolute;top:10px;left:10px;background:rgba(0,0,0,0.55);color:#fff;font-size:11px;letter-spacing:0.06em;padding:4px 9px;border-radius:3px;text-transform:uppercase;">R&amp;B</span>
+      </div>
+      <div class="body"><h3>Luther</h3><p>A love generous enough, they suggest, to reshape the whole world.</p><div class="meta">Kendrick Lamar &amp; SZA</div></div>
+    </a>
 
   </div>
+
+  <p id="noResults">No songs match that search — try a different title, artist, or genre.</p>
 </section>
 
 <footer>
@@ -125,6 +262,31 @@
   </div>
   <div class="fine">© 2026 Celestine Studio. All rights reserved.</div>
 </footer>
+
+<script>
+  (function() {
+    var input = document.getElementById('songSearch');
+    var cards = Array.prototype.slice.call(document.querySelectorAll('#songGrid .card'));
+    var noResults = document.getElementById('noResults');
+    var countLabel = document.getElementById('searchCount');
+    var total = cards.length;
+
+    function runSearch() {
+      var q = input.value.trim().toLowerCase();
+      var visible = 0;
+      cards.forEach(function(card) {
+        var text = card.textContent.toLowerCase();
+        var match = q === '' || text.indexOf(q) !== -1;
+        card.style.display = match ? '' : 'none';
+        if (match) visible++;
+      });
+      noResults.style.display = visible === 0 ? 'block' : 'none';
+      countLabel.textContent = q === '' ? '' : (visible + ' of ' + total + ' reviews match "' + input.value.trim() + '"');
+    }
+
+    input.addEventListener('input', runSearch);
+  })();
+</script>
 
 </body>
 </html>
