@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>12 Angry Men — Reasonable Doubt | Celestine Film Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Domine:wght@400;500;600;700&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --heat:#d9b25a;
+    --heat-deep:#a97e2f;
+    --grey:#3a3630;
+    --black:#161310;
+    --cream:#f0e8d4;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:#e8dcb8;
+    color:#221d15;
+    font-family:'Public Sans', sans-serif;
+    line-height:1.75;
+  }
+  h1,h2{font-family:'Domine', serif;}
+  a{color:var(--heat-deep);}
+  .back{
+    position:fixed; top:16px; left:16px; z-index:60;
+    font-size:.7rem; letter-spacing:.06em; text-transform:uppercase;
+    text-decoration:none; color:#221d15;
+    border-bottom:1px solid #221d15;
+    padding-bottom:2px;
+  }
+
+  .room-hero{
+    background:linear-gradient(160deg, var(--heat) 0%, var(--heat-deep) 100%);
+    padding:130px 26px 70px;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .room-hero .fan{
+    position:absolute;
+    top:20%; right:8%;
+    width:70px; height:70px;
+    border:3px solid rgba(34,29,21,.3);
+    border-radius:50%;
+    animation:spin 3.4s linear infinite;
+  }
+  .room-hero .fan::before, .room-hero .fan::after{
+    content:"";
+    position:absolute;
+    top:50%; left:50%;
+    width:60px; height:12px;
+    background:rgba(34,29,21,.3);
+    transform:translate(-50%,-50%);
+  }
+  .room-hero .fan::after{ transform:translate(-50%,-50%) rotate(90deg); }
+  @keyframes spin{ to{ transform:rotate(360deg); } }
+  .room-hero .kicker{
+    display:block;
+    font-size:.72rem;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:#3a2c10;
+    margin-bottom:16px;
+  }
+  .room-hero h1{
+    font-size:clamp(2.4rem, 7vw, 4rem);
+    margin:0 0 16px;
+    color:#251c0d;
+  }
+  .room-hero p{
+    max-width:36ch;
+    margin:0 auto;
+    color:#2f230f;
+    font-weight:500;
+  }
+
+  main{max-width:660px; margin:0 auto; padding:56px 28px 40px;}
+
+  .vote-track{
+    display:flex; align-items:center; gap:6px;
+    margin-bottom:48px;
+    padding-bottom:24px;
+    border-bottom:2px solid var(--heat-deep);
+    flex-wrap:wrap;
+  }
+  .vote-track .dot{
+    width:16px; height:16px;
+    border-radius:50%;
+    background:var(--grey);
+  }
+  .vote-track .dot.cleared{background:var(--heat-deep);}
+  .vote-track span.label{
+    font-size:.72rem; letter-spacing:.05em; text-transform:uppercase; color:#5a4f38;
+    margin-left:10px;
+  }
+
+  section{margin-bottom:52px;}
+  section h2{font-size:1.55rem; color:#3a2c10; margin:0 0 18px;}
+  section p{max-width:64ch; color:#2c2415; margin:0 0 16px;}
+
+  .callout{
+    background:var(--black);
+    color:var(--cream);
+    padding:28px 26px;
+    margin:44px 0;
+    font-style:italic;
+    font-size:1.14rem;
+  }
+
+  .verdict{border-top:3px solid var(--heat-deep); padding:30px 0 0; margin-top:16px;}
+  .verdict .tag{font-family:'Domine', serif; font-size:.85rem; letter-spacing:.06em; text-transform:uppercase; color:var(--heat-deep); display:block; margin-bottom:12px;}
+  .verdict p{font-size:1.08rem; max-width:60ch;}
+
+  footer{
+    max-width:660px; margin:0 auto; padding:34px 28px 100px;
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:14px;
+    font-size:.72rem; letter-spacing:.06em; text-transform:uppercase; color:#6b5f43;
+  }
+  footer a{color:#221d15; text-decoration:none; border-bottom:1px solid #221d15;}
+
+  @media (max-width:560px){
+    .room-hero{padding-top:96px;}
+    section h2{font-size:1.3rem;}
+    .fan{display:none;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .fan{animation:none;}
+  }
+</style>
+</head>
+<body>
+
+<a class="back" href="https://celestinestudio.com.lk/film.html">◂ CELESTINE / FILM</a>
+
+<div class="room-hero">
+  <div class="fan"></div>
+  <span class="kicker">Sidney Lumet, 1957</span>
+  <h1>12 Angry Men</h1>
+  <p>One room, one afternoon, and eleven men who thought this would be quick.</p>
+</div>
+
+<main>
+
+  <div class="vote-track">
+    <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+    <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+    <div class="dot cleared"></div>
+    <span class="label">first vote: 11 to 1</span>
+  </div>
+
+  <section>
+    <h2>A courtroom drama with no courtroom</h2>
+    <p>12 Angry Men takes place almost entirely inside a single, sweltering jury deliberation room, and it stakes its entire structure on a single act of stubbornness: one juror, unconvinced of a young defendant's guilt, refuses to sign off on a unanimous guilty verdict simply because the evidence bothered him enough to want to talk it through first. That's the whole premise, and the film never leaves the building to justify it — the case unravels entirely through argument, memory, and the slow, visible discomfort of men forced to examine their own assumptions in a room too hot to hide in.</p>
+    <p>What makes the film hold up is that it never pretends the other eleven jurors are simply wrong or foolish. Several of them have understandable, even sympathetic reasons for wanting a fast conviction — a Yankees game to get to, personal prejudice dressed up as common sense, a genuine if lazy trust in the system to have already done its job. The film indicts the shortcuts, not the people taking them, which is a harder and more useful argument than a simple morality tale would make.</p>
+  </section>
+
+  <div class="callout">
+    Reasonable doubt, in this film, isn't a legal technicality. It's the discipline of staying uncomfortable long enough to actually think something through.
+  </div>
+
+  <section>
+    <h2>A single room, doing all the staging</h2>
+    <p>Cinematographer Boris Kaufman lowers the camera angle and tightens the lens as the film progresses, making the room feel smaller and the men more physically boxed in as the tension rises — a purely visual escalation that never needs a line of dialogue to land. It's one of the cleanest examples of blocking and lensing doing dramatic work usually left to a script.</p>
+  </section>
+
+  <div class="verdict">
+    <span class="tag">Standing Verdict</span>
+    <p><strong>Earns it, completely.</strong> A film with almost no plot mechanics beyond talking, that still manages to be as tense as anything with a ticking clock.</p>
+  </div>
+
+</main>
+
+<footer>
+  <span>Celestine Film Notes</span>
+  <a href="https://celestinestudio.com.lk/film.html">Back to all reviews →</a>
+</footer>
+
+</body>
+</html>

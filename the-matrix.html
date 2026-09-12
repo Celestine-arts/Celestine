@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Matrix — Choose a Pill | Celestine Film Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --green:#3ddc74;
+    --green-dim:#1c6b3a;
+    --void:#050706;
+    --red:#c0392b;
+    --blue:#2e6fbf;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--void);
+    color:#cfe8d6;
+    font-family:'IBM Plex Mono', monospace;
+    line-height:1.8;
+    font-size:1rem;
+  }
+  h1,h2{font-family:'Chakra Petch', sans-serif; text-transform:uppercase;}
+  a{color:var(--green);}
+  .back{
+    position:fixed; top:16px; left:16px; z-index:60;
+    font-size:.68rem; letter-spacing:.06em; text-transform:uppercase;
+    text-decoration:none; color:#cfe8d6;
+    border-bottom:1px solid rgba(207,232,214,.3);
+    padding-bottom:2px;
+  }
+
+  .code-hero{
+    min-height:64vh;
+    position:relative;
+    overflow:hidden;
+    background:var(--void);
+    display:flex; align-items:center; justify-content:center;
+    text-align:center;
+  }
+  .code-col{
+    position:absolute;
+    top:-20%;
+    width:16px;
+    font-size:13px;
+    color:var(--green-dim);
+    line-height:1.1;
+    white-space:pre;
+    opacity:.55;
+    animation:fall linear infinite;
+  }
+  @keyframes fall{ from{ transform:translateY(0); } to{ transform:translateY(60vh); } }
+  .code-copy{position:relative; z-index:3; padding:0 26px;}
+  .code-copy .kicker{display:block; font-size:.7rem; letter-spacing:.2em; color:var(--green); margin-bottom:18px;}
+  .code-copy h1{font-size:clamp(2.4rem, 7.5vw, 4.4rem); color:#eafff0; margin:0 0 16px; font-family:'Chakra Petch', sans-serif;}
+  .code-copy p{color:#9fd6ae; max-width:36ch; margin:0 auto; font-style:italic; font-family:'IBM Plex Mono', monospace;}
+
+  main{max-width:660px; margin:0 auto; padding:56px 28px 40px;}
+
+  .pill-row{
+    display:flex; gap:14px; margin-bottom:48px;
+  }
+  .pill-row div{
+    flex:1;
+    padding:16px;
+    text-align:center;
+    font-size:.72rem;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    border-radius:999px;
+  }
+  .pill-row .red{background:rgba(192,57,43,.18); border:1px solid var(--red); color:#f3b6ab;}
+  .pill-row .blue{background:rgba(46,111,191,.18); border:1px solid var(--blue); color:#a9c8ec;}
+
+  section{margin-bottom:52px;}
+  section h2{font-size:1.5rem; color:var(--green); margin:0 0 18px;}
+  section p{max-width:64ch; color:#c3d8c8; margin:0 0 16px; font-family:'IBM Plex Mono', monospace; font-size:.96rem; line-height:1.85;}
+
+  .callout{
+    border:1px solid var(--green-dim);
+    padding:26px 24px;
+    margin:44px 0;
+    background:rgba(61,220,116,.05);
+  }
+  .callout p{
+    font-style:italic;
+    font-size:1.08rem;
+    color:#eafff0;
+    margin:0;
+  }
+
+  .verdict{border-top:2px solid var(--green); padding:30px 0 0; margin-top:16px;}
+  .verdict .tag{font-family:'Chakra Petch', sans-serif; font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; color:var(--green); display:block; margin-bottom:12px;}
+  .verdict p{font-size:1.02rem; max-width:60ch; font-family:'IBM Plex Mono', monospace;}
+
+  footer{
+    max-width:660px; margin:0 auto; padding:34px 28px 100px;
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:14px;
+    font-size:.68rem; letter-spacing:.05em; text-transform:uppercase; color:#5a7a62;
+  }
+  footer a{color:#cfe8d6; text-decoration:none; border-bottom:1px solid rgba(207,232,214,.3);}
+
+  @media (max-width:560px){
+    .code-hero{min-height:50vh;}
+    section h2{font-size:1.25rem;}
+    .code-col{display:none;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .code-col{animation:none;}
+  }
+</style>
+</head>
+<body>
+
+<a class="back" href="https://celestinestudio.com.lk/film.html">◂ CELESTINE / FILM</a>
+
+<div class="code-hero">
+  <div class="code-col" style="left:8%; animation-duration:6s;">01011010001</div>
+  <div class="code-col" style="left:22%; animation-duration:8s;">10100101101</div>
+  <div class="code-col" style="left:38%; animation-duration:5s;">00110101010</div>
+  <div class="code-col" style="left:55%; animation-duration:7s;">11001010011</div>
+  <div class="code-col" style="left:70%; animation-duration:6.5s;">01010011010</div>
+  <div class="code-col" style="left:86%; animation-duration:9s;">10101100101</div>
+  <div class="code-copy">
+    <span class="kicker">The Wachowskis, 1999</span>
+    <h1>The Matrix</h1>
+    <p>A simulation convincing enough that most of the people inside it would rather not know.</p>
+  </div>
+</div>
+
+<main>
+
+  <div class="pill-row">
+    <div class="red">Stay and know</div>
+    <div class="blue">Forget and comply</div>
+  </div>
+
+  <section>
+    <h2>A philosophy lecture disguised as an action film</h2>
+    <p>The Matrix's premise — humanity unknowingly plugged into a simulated 1999 while machines harvest their bodies for energy — is really a vehicle for a much older question dressed up in leather trench coats and bullet time: if a comfortable illusion feels indistinguishable from reality, does it matter that it's false? Neo's choice between the red and blue pill is the film's clearest thesis statement, offered without much subtlety and landing anyway, because the film commits to it completely rather than treating it as a throwaway gimmick.</p>
+    <p>What still holds up, decades and countless imitators later, is how disciplined the action design is in service of that idea. Bullet time doesn't exist to look cool for its own sake — it exists because Neo, once he understands the simulation's rules, can bend and eventually ignore them, and the visual language of the fights changes to show his growing disbelief in the world's limits made literal.</p>
+  </section>
+
+  <div class="callout">
+    <p>Morpheus never promises Neo comfort. He promises the truth, which the film is honest enough to admit is a much harder sell.</p>
+  </div>
+
+  <section>
+    <h2>Where the sequels complicated the read</h2>
+    <p>Decades of internet appropriation have turned "red-pilled" into shorthand for a completely different, often reactionary worldview than anything the film itself argues — a drift in meaning the original Matrix has no control over and increasingly gets read through regardless. It's worth separating the film's actual argument, about consensual illusion and hard-won awareness, from the phrase's unrelated afterlife.</p>
+  </section>
+
+  <div class="verdict">
+    <span class="tag">Standing Verdict</span>
+    <p><strong>Earns it.</strong> A film whose action innovations are still being copied and whose central question is still being argued about, for entirely different and occasionally unrelated reasons than the ones it actually raised.</p>
+  </div>
+
+</main>
+
+<footer>
+  <span>Celestine Film Notes</span>
+  <a href="https://celestinestudio.com.lk/film.html">Back to all reviews →</a>
+</footer>
+
+</body>
+</html>
