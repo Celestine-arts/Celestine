@@ -7,6 +7,51 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<style>
+  .song-search-wrap{
+    max-width:640px;
+    margin:0 auto;
+    padding:28px 24px 6px;
+  }
+  .song-search-box{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    border:1.5px solid var(--ink);
+    border-radius:999px;
+    padding:12px 20px;
+    background:transparent;
+  }
+  .song-search-box svg{ flex-shrink:0; opacity:0.6; }
+  #bio-search{
+    flex:1;
+    border:none;
+    outline:none;
+    background:transparent;
+    font-family:'Inter', sans-serif;
+    font-size:1rem;
+    color:var(--ink);
+  }
+  #bio-search::placeholder{ color:var(--ink); opacity:0.45; }
+  #searchCount{
+    text-align:center;
+    font-family:'Inter', sans-serif;
+    font-size:0.82rem;
+    color:var(--ink);
+    opacity:0.55;
+    margin:10px 0 0;
+  }
+  #no-results{
+    display:none;
+    text-align:center;
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-size:1.15rem;
+    color:var(--ink);
+    opacity:0.7;
+    padding:60px 20px;
+  }
+</style>
 </head>
 <body>
 
@@ -25,13 +70,19 @@
   <span class="tag">Section</span>
   <h1>Artist <em>Bios</em></h1>
   <p class="dek">The complete, chapter-by-chapter documentaries — the people behind the art, told in full.</p>
-  <div class="search-wrap">
-    <input type="text" id="bio-search" placeholder="Search artists — try &quot;BLACKPINK&quot; or &quot;film&quot;..." autocomplete="off">
+  <div class="song-search-wrap">
+    <div class="song-search-box">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/>
+        <line x1="21" y1="21" x2="16.65" y2="16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <input type="text" id="bio-search" placeholder="Search by artist, group, or category…" aria-label="Search artist bios" autocomplete="off">
+    </div>
+    <p id="searchCount"></p>
   </div>
 </div>
 
 <section class="section">
-  <p id="no-results" style="display:none;font-size:1.05rem;color:#75708a;margin:0 0 30px;">No artists match that search.</p>
   <div class="grid" id="bio-grid">
     <a class="card c-span-2" href="v-kim-taehyung.html" data-name="v — the complete story">
       <div class="thumb t-art" style="background-image:url('images/BTS-Kim-Taehyung.jpg');background-size:cover;background-position:center;">
@@ -287,6 +338,8 @@
       </div>
     </a>
   </div>
+
+  <p id="no-results">No artists match that search — try a different name, group, or category.</p>
 </section>
 
 <footer>
@@ -300,23 +353,28 @@
 </footer>
 
 <script>
-  const searchInput = document.getElementById('bio-search');
-  const grid = document.getElementById('bio-grid');
-  const cards = Array.from(grid.querySelectorAll('.card'));
-  const noResults = document.getElementById('no-results');
+  (function() {
+    var input = document.getElementById('bio-search');
+    var cards = Array.prototype.slice.call(document.querySelectorAll('#bio-grid .card'));
+    var noResults = document.getElementById('no-results');
+    var countLabel = document.getElementById('searchCount');
+    var total = cards.length;
 
-  searchInput.addEventListener('input', () => {
-    const q = searchInput.value.trim().toLowerCase();
-    let visibleCount = 0;
-    cards.forEach(card => {
-      const name = card.getAttribute('data-name') || '';
-      const meta = card.querySelector('.meta') ? card.querySelector('.meta').textContent.toLowerCase() : '';
-      const match = !q || name.includes(q) || meta.includes(q);
-      card.style.display = match ? '' : 'none';
-      if (match) visibleCount++;
-    });
-    noResults.style.display = visibleCount === 0 ? 'block' : 'none';
-  });
+    function runSearch() {
+      var q = input.value.trim().toLowerCase();
+      var visible = 0;
+      cards.forEach(function(card) {
+        var text = card.textContent.toLowerCase();
+        var match = q === '' || text.indexOf(q) !== -1;
+        card.style.display = match ? '' : 'none';
+        if (match) visible++;
+      });
+      noResults.style.display = visible === 0 ? 'block' : 'none';
+      countLabel.textContent = q === '' ? '' : (visible + ' of ' + total + ' artists match "' + input.value.trim() + '"');
+    }
+
+    input.addEventListener('input', runSearch);
+  })();
 </script>
 
 </body>
