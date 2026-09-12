@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Whiplash — Tempo | Celestine Film Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blood:#7a1418;
+    --blood-dark:#420b0d;
+    --brass:#b8902f;
+    --black:#0e0d0c;
+    --cream:#ece5d5;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--black);
+    color:var(--cream);
+    font-family:'Newsreader', serif;
+    line-height:1.8;
+    font-size:1.06rem;
+  }
+  h1,h2{font-family:'Oswald', sans-serif; text-transform:uppercase;}
+  a{color:var(--brass);}
+  .back{
+    position:fixed; top:18px; left:18px; z-index:60;
+    font-family:'Oswald', sans-serif;
+    font-size:.68rem; letter-spacing:.1em; text-transform:uppercase;
+    text-decoration:none; color:var(--cream);
+    border-bottom:1px solid rgba(236,229,213,.3);
+    padding-bottom:2px;
+  }
+  .back:hover{color:var(--brass);}
+
+  .metronome-hero{
+    min-height:62vh;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    text-align:center;
+    padding:100px 26px 50px;
+    background:radial-gradient(circle at 50% 40%, var(--blood-dark), var(--black) 70%);
+    position:relative;
+    overflow:hidden;
+  }
+  .tick-row{
+    display:flex; gap:6px; margin-bottom:28px;
+  }
+  .tick-row span{
+    width:8px; height:34px;
+    background:var(--brass);
+    opacity:.25;
+    animation:tick 2.4s ease-in-out infinite;
+  }
+  .tick-row span:nth-child(1){animation-delay:0s;}
+  .tick-row span:nth-child(2){animation-delay:.2s;}
+  .tick-row span:nth-child(3){animation-delay:.4s;}
+  .tick-row span:nth-child(4){animation-delay:.6s;}
+  .tick-row span:nth-child(5){animation-delay:.8s;}
+  @keyframes tick{ 0%,100%{opacity:.2;} 50%{opacity:1;} }
+  .metronome-hero .kicker{
+    font-family:'Oswald', sans-serif;
+    font-size:.72rem;
+    letter-spacing:.16em;
+    color:var(--brass);
+    display:block;
+    margin-bottom:16px;
+  }
+  .metronome-hero h1{
+    font-size:clamp(2.6rem, 8vw, 5rem);
+    margin:0 0 16px;
+    color:var(--cream);
+  }
+  .metronome-hero p{
+    font-style:italic;
+    color:#c9beab;
+    max-width:36ch;
+    margin:0 auto;
+  }
+
+  main{
+    max-width:680px;
+    margin:0 auto;
+    padding:60px 28px 40px;
+  }
+
+  section{margin-bottom:54px;}
+  section h2{
+    font-size:1.6rem;
+    color:var(--brass);
+    margin:0 0 18px;
+  }
+  section p{
+    max-width:64ch;
+    color:#dcd4c2;
+    margin:0 0 16px;
+  }
+
+  .callout{
+    background:var(--blood);
+    color:#f7e6e2;
+    padding:28px 26px;
+    margin:44px 0;
+    font-style:italic;
+    font-size:1.15rem;
+  }
+
+  .verdict{
+    border-top:3px solid var(--brass);
+    padding:30px 0 0;
+    margin-top:16px;
+  }
+  .verdict .tag{
+    font-family:'Oswald', sans-serif;
+    font-size:.72rem; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--brass); display:block; margin-bottom:12px;
+  }
+  .verdict p{font-size:1.08rem; max-width:60ch;}
+
+  footer{
+    max-width:680px; margin:0 auto;
+    padding:34px 28px 100px;
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:14px;
+    font-family:'Oswald', sans-serif;
+    font-size:.68rem; letter-spacing:.06em; text-transform:uppercase;
+    color:#7a7263;
+  }
+  footer a{color:var(--cream); text-decoration:none; border-bottom:1px solid rgba(236,229,213,.3);}
+
+  @media (max-width:560px){
+    .metronome-hero{min-height:50vh;}
+    section h2{font-size:1.3rem;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .tick-row span{animation:none; opacity:.6;}
+  }
+</style>
+</head>
+<body>
+
+<a class="back" href="https://celestinestudio.com.lk/film.html">◂ CELESTINE / FILM</a>
+
+<div class="metronome-hero">
+  <div class="tick-row"><span></span><span></span><span></span><span></span><span></span></div>
+  <span class="kicker">Damien Chazelle, 2014</span>
+  <h1>Whiplash</h1>
+  <p>Not quite my tempo, and the film spends its whole runtime asking what that phrase is actually worth.</p>
+</div>
+
+<main>
+
+  <section>
+    <h2>A drum kit as a torture device</h2>
+    <p>Whiplash is structured almost entirely around escalating punishment disguised as mentorship. Terence Fletcher, the conservatory bandleader, throws chairs, humiliates students by name in front of their peers, and drives at least one former pupil to suicide — and the film never lets you fully dismiss him as simply a monster, because it also shows you the moments his brutal method produces something genuinely extraordinary. That refusal to resolve the tension is the film's real nerve. It's not asking whether greatness is worth suffering for. It's asking whether you can actually tell the difference between the suffering that produces greatness and the suffering that just breaks people, from inside the room.</p>
+    <p>Miles Teller's Andrew starts the film as a talented, ordinary kid and ends it having sacrificed a relationship, his physical health, and most of his ability to enjoy the thing he loves, in exchange for one transcendent performance. The film shoots that final drum solo like a triumph — the editing, the swelling brass, the look on Fletcher's face — and that's the most unsettling choice in the whole movie.</p>
+  </section>
+
+  <div class="callout">
+    The film wants you to feel the exhilaration of the ending and the horror of what it cost, at exactly the same time, and refuses to tell you which reaction is the correct one.
+  </div>
+
+  <section>
+    <h2>Editing as a drumbeat</h2>
+    <p>Tom Cross's editing, cutting on the beat of the music rather than the rhythm of dialogue, is doing as much storytelling as the script. Scenes build tension the way a drum fill builds toward a crash, and the film's rehearsal-room sequences have a genuine physical intensity that most sports movies would envy — blood on cymbals, sweat on brass, a body being used as an instrument until it breaks down.</p>
+  </section>
+
+  <section>
+    <h2>The one simplification</h2>
+    <p>The film's insistence on treating "great" as a fixed, self-evident category — one Andrew either reaches or doesn't — flattens a more interesting question about what greatness even means outside of a single competition performance. It's a narrow verdict on artistry, dressed up as the film's whole worldview.</p>
+  </section>
+
+  <div class="verdict">
+    <span class="tag">Standing Verdict</span>
+    <p><strong>Earns it, uneasily.</strong> A film that's honest about the cost of its own ending, even while it can't quite resist being thrilled by it.</p>
+  </div>
+
+</main>
+
+<footer>
+  <span>Celestine Film Notes</span>
+  <a href="https://celestinestudio.com.lk/film.html">Back to all reviews →</a>
+</footer>
+
+</body>
+</html>
