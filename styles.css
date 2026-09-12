@@ -413,3 +413,29 @@ blockquote cite{
 @media (max-width:700px){
   .pullstat div{min-width:120px;}
 }
+
+/* ---------- search bar ---------- */
+.search-wrap{
+  margin-top:30px;
+  max-width:480px;
+}
+.search-wrap input{
+  width:100%;
+  padding:16px 20px;
+  border:3px solid var(--ink);
+  background:var(--paper);
+  font-family:'Inter';
+  font-size:1rem;
+  font-weight:500;
+  color:var(--ink);
+  box-shadow:5px 5px 0 var(--ink);
+}
+.search-wrap input:focus{
+  outline:none;
+  box-shadow:7px 7px 0 var(--violet);
+  border-color:var(--violet);
+}
+.search-wrap input::placeholder{
+  color:#9a94ac;
+  font-weight:400;
+}

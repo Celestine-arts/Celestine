@@ -7,48 +7,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
-<style>
-  /* Search bar */
-  .film-search-wrap{
-    max-width:900px;
-    margin:0 auto 6px;
-    padding:0 24px;
-  }
-  .film-search{
-    width:100%;
-    box-sizing:border-box;
-    font-family:'Inter', sans-serif;
-    font-size:1rem;
-    padding:14px 20px;
-    border:2px solid var(--ink, #1a1a1a);
-    border-radius:999px;
-    background:#fff;
-    color:#1a1a1a;
-    outline:none;
-  }
-  .film-search::placeholder{ color:#8a8a8a; }
-  .film-search:focus{ border-color:#8a1f1f; }
-  .search-count{
-    max-width:900px;
-    margin:10px auto 0;
-    padding:0 26px;
-    font-family:'Inter', sans-serif;
-    font-size:.8rem;
-    letter-spacing:.04em;
-    color:#7a7a7a;
-    text-transform:uppercase;
-  }
-  .no-results{
-    display:none;
-    max-width:900px;
-    margin:50px auto;
-    padding:0 24px;
-    text-align:center;
-    font-family:'Inter', sans-serif;
-    color:#777;
-    font-size:1.05rem;
-  }
-</style>
 </head>
 <body>
 
@@ -59,6 +17,7 @@
     <a href="film.html">Film</a>
     <a href="music.html">Music</a>
     <a href="news.html">News</a>
+    <a href="about.html">About</a>
   </nav>
 </header>
 
@@ -66,217 +25,261 @@
   <span class="tag">Section</span>
   <h1>Artist <em>Bios</em></h1>
   <p class="dek">The complete, chapter-by-chapter documentaries — the people behind the art, told in full.</p>
+  <div class="search-wrap">
+    <input type="text" id="bio-search" placeholder="Search artists — try &quot;BLACKPINK&quot; or &quot;film&quot;..." autocomplete="off">
+  </div>
 </div>
-
-<div class="film-search-wrap">
-  <input type="search" id="bioSearch" class="film-search" placeholder="Search artists, groups, or categories…" aria-label="Search artist bios">
-</div>
-<div class="search-count" id="searchCount"></div>
 
 <section class="section">
-  <div class="grid" id="bioGrid">
-    <a class="card c-span-3" href="v-kim-taehyung.html">
-      <div class="thumb t-art"><span>ARTIST BIO</span></div>
+  <p id="no-results" style="display:none;font-size:1.05rem;color:#75708a;margin:0 0 30px;">No artists match that search.</p>
+  <div class="grid" id="bio-grid">
+    <a class="card c-span-2" href="v-kim-taehyung.html" data-name="v — the complete story">
+      <div class="thumb t-art" style="background-image:url('images/BTS-Kim-Taehyung.jpg');background-size:cover;background-position:center;">
+        <span>ARTIST BIO</span>
+      </div>
       <div class="body">
         <h3>V — The Complete Story</h3>
         <p>From a farmer's son in Geochang to the world's most searched artist.</p>
         <div class="meta">Vol. I</div>
       </div>
     </a>
-    <a class="card c-span-2" href="jisoo.html">
-      <div class="thumb t-music"><span>ARTIST BIO</span></div>
+    <a class="card c-span-2" href="jisoo.html" data-name="jisoo — the visual who set her own pace">
+      <div class="thumb t-art" style="background-image:url('images/12515146.webp.jpeg');background-size:cover;background-position:center;">
+        <span>ARTIST BIO</span>
+      </div>
       <div class="body">
         <h3>Jisoo — The Visual Who Set Her Own Pace</h3>
         <p>Patience as a career strategy: the BLACKPINK member playing the longest game.</p>
         <div class="meta">BLACKPINK</div>
       </div>
     </a>
-    <a class="card c-span-2" href="jennie.html">
-      <div class="thumb t-music"><span>ARTIST BIO</span></div>
+    <a class="card c-span-2" href="jennie.html" data-name="jennie — the one who made solo look easy">
+      <div class="thumb t-art" style="background-image:url('images/images-10.jpeg');background-size:cover;background-position:center;">
+        <span>ARTIST BIO</span>
+      </div>
       <div class="body">
         <h3>Jennie — The One Who Made Solo Look Easy</h3>
         <p>First to go solo, first to make it look effortless.</p>
         <div class="meta">BLACKPINK</div>
       </div>
     </a>
-    <a class="card c-span-2" href="rose.html">
-      <div class="thumb t-music"><span>ARTIST BIO</span></div>
+    <a class="card c-span-2" href="rose.html" data-name="rosé — the balladeer who went pop">
+      <div class="thumb t-art" style="background-image:url('images/images-9.jpeg');background-size:cover;background-position:center;">
+        <span>ARTIST BIO</span>
+      </div>
       <div class="body">
         <h3>Rosé — The Balladeer Who Went Pop</h3>
         <p>A folk-singer's ache inside one of the biggest pop songs of the decade.</p>
         <div class="meta">BLACKPINK</div>
       </div>
     </a>
-    <a class="card c-span-2" href="lisa.html">
-      <div class="thumb t-music"><span>ARTIST BIO</span></div>
+    <a class="card c-span-2" href="lisa.html" data-name="lisa — the performer who refused to sit still">
+      <div class="thumb t-art" style="background-image:url('images/images-8.jpeg');background-size:cover;background-position:center;">
+        <span>ARTIST BIO</span>
+      </div>
       <div class="body">
         <h3>Lisa — The Performer Who Refused to Sit Still</h3>
         <p>Dancer, rapper, label founder, now actress — all at once.</p>
         <div class="meta">BLACKPINK</div>
       </div>
     </a>
-    <a class="card c-span-2" href="jungkook.html">
-      <div class="thumb t-music"><span>ARTIST BIO</span></div>
+    <a class="card c-span-2" href="jungkook.html" data-name="jungkook — the golden maknae, off duty and back again">
+      <div class="thumb t-music" style="background-image:url('images/jungkook-seven-review.jpg');background-size:cover;background-position:center;">
+        <span>ARTIST BIO</span>
+      </div>
       <div class="body">
         <h3>Jungkook — The Golden Maknae, Off Duty and Back Again</h3>
         <p>Enlisted at his solo peak. Came back to a chart record untouched.</p>
         <div class="meta">BTS</div>
       </div>
     </a>
-    <a class="card c-span-2" href="jimin.html">
-      <div class="thumb t-music"><span>ARTIST BIO</span></div>
+    <a class="card c-span-2" href="jimin.html" data-name="jimin — the dancer who made vulnerability look powerful">
+      <div class="thumb t-music" style="background-image:url('images/27193152-bts-jimin-liveperformance-hybe-00009-2f6b6018-3a53-4c73-8970-dd2e0804b57e_cover_1333x872.jpg');background-size:cover;background-position:center;">
+        <span>ARTIST BIO</span>
+      </div>
       <div class="body">
         <h3>Jimin — The Dancer Who Made Vulnerability Look Powerful</h3>
         <p>Built a solo identity out of the thing idols are told to hide.</p>
         <div class="meta">BTS</div>
       </div>
     </a>
-    <a class="card c-span-2" href="dicaprio.html">
-      <div class="thumb t-film"><span>ARTIST BIO</span></div>
+    <a class="card c-span-2" href="dicaprio.html" data-name="leonardo dicaprio — the actor who waited">
+      <div class="thumb t-film" style="background-image:url('images/images-7.jpeg');background-size:cover;background-position:center;">
+        <span>ARTIST BIO</span>
+      </div>
       <div class="body">
         <h3>Leonardo DiCaprio — The Actor Who Waited</h3>
         <p>Three decades of choosing scripts like he still has something to prove.</p>
         <div class="meta">Film</div>
       </div>
     </a>
-    <a class="card c-span-2" href="chalamet.html">
-      <div class="thumb t-film"><span>ARTIST BIO</span></div>
+    <a class="card c-span-2" href="chalamet.html" data-name="timothée chalamet — prestige cinema, young again">
+      <div class="thumb t-film" style="background-image:url('images/GettyImages-1421550297.jpg.webp');background-size:cover;background-position:center;">
+        <span>ARTIST BIO</span>
+      </div>
       <div class="body">
         <h3>Timothée Chalamet — Prestige Cinema, Young Again</h3>
         <p>From Call Me By Your Name to Bob Dylan to a ping-pong champion.</p>
         <div class="meta">Film</div>
       </div>
     </a>
-    <a class="card c-span-2" href="zendaya.html">
-      <div class="thumb t-film"><span>ARTIST BIO</span></div>
+    <a class="card c-span-2" href="zendaya.html" data-name="zendaya — the multihyphenate">
+      <div class="thumb t-film" style="background-image:url('images/zendaya louis vuitton look da sposa nuovo taglio di capelli GettyImages-2265272424.jpg.webp');background-size:cover;background-position:center;">
+        <span>ARTIST BIO</span>
+      </div>
       <div class="body">
         <h3>Zendaya — The Multihyphenate</h3>
         <p>Youngest two-time Emmy winner, and this is still the middle of the story.</p>
         <div class="meta">Film & TV</div>
       </div>
     </a>
-    <a class="card c-span-2" href="tom-holland.html">
-      <div class="thumb t-film"><span>ARTIST BIO</span></div>
+    <a class="card c-span-2" href="tom-holland.html" data-name="tom holland — grew up on screen">
+      <div class="thumb t-film" style="background-image:url('images/gettyimages-2287310851.jpg');background-size:cover;background-position:center;">
+        <span>ARTIST BIO</span>
+      </div>
       <div class="body">
         <h3>Tom Holland — Grew Up On Screen</h3>
         <p>Cast at 19 to play a teenager. Spent a decade growing into the role.</p>
         <div class="meta">Film</div>
       </div>
     </a>
-    <a class="card c-span-2" href="bruno-mars.html">
-      <div class="thumb t-music"><span>ARTIST BIO</span></div>
+
+    <!-- ===== Trending Now batch ===== -->
+
+    <a class="card c-span-2" href="bruno-mars.html" data-name="bruno mars — the showman who never left the charts">
+      <div class="thumb t-music" style="background-image:url('images/bruno.jpeg.avif');background-size:cover;background-position:center;">
+        <span>ARTIST BIO</span>
+      </div>
       <div class="body">
         <h3>Bruno Mars — The Showman Who Never Left the Charts</h3>
         <p>Sixteen years in, still the rare star who can headline a stadium and a jazz club.</p>
         <div class="meta">Trending Now</div>
       </div>
     </a>
-    <a class="card c-span-2" href="olivia-rodrigo.html">
-      <div class="thumb t-music"><span>ARTIST BIO</span></div>
+    <a class="card c-span-2" href="olivia-rodrigo.html" data-name="olivia rodrigo — the voice gen z didn't know it needed">
+      <div class="thumb t-music" style="background-image:url('images/olivia.jpeg.avif');background-size:cover;background-position:center;">
+        <span>ARTIST BIO</span>
+      </div>
       <div class="body">
         <h3>Olivia Rodrigo — The Voice Gen Z Didn't Know It Needed</h3>
         <p>One breakup ballad turned a Disney actress into pop's most trusted diarist.</p>
         <div class="meta">Trending Now</div>
       </div>
     </a>
-    <a class="card c-span-2" href="sabrina-carpenter.html">
-      <div class="thumb t-music"><span>ARTIST BIO</span></div>
+    <a class="card c-span-2" href="sabrina-carpenter.html" data-name="sabrina carpenter — the opener who became the headliner">
+      <div class="thumb t-music" style="background-image:url('images/sabina.jpg.webp');background-size:cover;background-position:center;">
+        <span>ARTIST BIO</span>
+      </div>
       <div class="body">
         <h3>Sabrina Carpenter — The Opener Who Became the Headliner</h3>
         <p>Six albums of paying dues, then suddenly everywhere at once.</p>
         <div class="meta">Trending Now</div>
       </div>
     </a>
-    <a class="card c-span-2" href="taylor-swift.html">
-      <div class="thumb t-music"><span>ARTIST BIO</span></div>
+    <a class="card c-span-2" href="taylor-swift.html" data-name="taylor swift — the storyteller who keeps rewriting the rules">
+      <div class="thumb t-music" style="background-image:url('images/taylor.jpg.webp');background-size:cover;background-position:center;">
+        <span>ARTIST BIO</span>
+      </div>
       <div class="body">
         <h3>Taylor Swift — The Storyteller Who Keeps Rewriting the Rules</h3>
         <p>Two decades in, still the artist the industry measures its biggest moments against.</p>
         <div class="meta">Trending Now</div>
       </div>
     </a>
-    <a class="card c-span-2" href="doechii.html">
-      <div class="thumb t-music"><span>ARTIST BIO</span></div>
+    <a class="card c-span-2" href="doechii.html" data-name="doechii — the swamp princess rewriting rap's rulebook">
+      <div class="thumb t-music" style="background-image:url('images/Doechii.jpg.webp');background-size:cover;background-position:center;">
+        <span>ARTIST BIO</span>
+      </div>
       <div class="body">
         <h3>Doechii — The Swamp Princess Rewriting Rap's Rulebook</h3>
         <p>First woman signed to TDE since SZA, and she's proved it wasn't a fluke.</p>
         <div class="meta">Trending Now</div>
       </div>
     </a>
-    <a class="card c-span-2" href="tyla.html">
-      <div class="thumb t-music"><span>ARTIST BIO</span></div>
+    <a class="card c-span-2" href="tyla.html" data-name="tyla — the voice bringing amapiano to the world">
+      <div class="thumb t-music" style="background-image:url('images/tyla.jpeg');background-size:cover;background-position:center;">
+        <span>ARTIST BIO</span>
+      </div>
       <div class="body">
         <h3>Tyla — The Voice Bringing Amapiano to the World</h3>
         <p>One song turned a South African teenager into a global genre ambassador.</p>
         <div class="meta">Trending Now</div>
       </div>
     </a>
-    <a class="card c-span-2" href="raye.html">
-      <div class="thumb t-music"><span>ARTIST BIO</span></div>
+    <a class="card c-span-2" href="raye.html" data-name="raye — the songwriter who walked away, then swept the room">
+      <div class="thumb t-music" style="background-image:url('images/raye.jpeg');background-size:cover;background-position:center;">
+        <span>ARTIST BIO</span>
+      </div>
       <div class="body">
         <h3>RAYE — The Songwriter Who Walked Away, Then Swept the Room</h3>
         <p>Years ghostwriting hits for others, then a record-setting night of her own.</p>
         <div class="meta">Trending Now</div>
       </div>
     </a>
-    <a class="card c-span-2" href="addison-rae.html">
-      <div class="thumb t-music"><span>ARTIST BIO</span></div>
+    <a class="card c-span-2" href="addison-rae.html" data-name="addison rae — the influencer who made pop take her seriously">
+      <div class="thumb t-music" style="background-image:url('images/addison.jpeg');background-size:cover;background-position:center;"><span>ARTIST BIO</span></div>
       <div class="body">
         <h3>Addison Rae — The Influencer Who Made Pop Take Her Seriously</h3>
         <p>Dismissed for years — until the music made that dismissal impossible.</p>
         <div class="meta">Trending Now</div>
       </div>
     </a>
-    <a class="card c-span-2" href="sombr.html">
-      <div class="thumb t-music"><span>ARTIST BIO</span></div>
+    <a class="card c-span-2" href="sombr.html" data-name="sombr — the bedroom-pop voice streaming couldn't ignore">
+      <div class="thumb t-music" style="background-image:url('images/sombar.jpeg');background-size:cover;background-position:center;"><span>ARTIST BIO</span></div>
       <div class="body">
         <h3>sombr — The Bedroom-Pop Voice Streaming Couldn't Ignore</h3>
         <p>No label machine — just a falsetto and songs that spread on their own.</p>
         <div class="meta">Trending Now</div>
       </div>
     </a>
-    <a class="card c-span-2" href="alex-warren.html">
-      <div class="thumb t-music"><span>ARTIST BIO</span></div>
+    <a class="card c-span-2" href="alex-warren.html" data-name="alex warren — the creator whose ballad became a global anthem">
+      <div class="thumb t-music" style="background-image:url('images/alex.jpeg');background-size:cover;background-position:center;"><span>ARTIST BIO</span></div>
       <div class="body">
         <h3>Alex Warren — The Creator Whose Ballad Became a Global Anthem</h3>
         <p>Built an audience online first — then "Ordinary" made him a chart force.</p>
         <div class="meta">Trending Now</div>
       </div>
     </a>
-    <a class="card c-span-2" href="noah-kahan.html">
-      <div class="thumb t-music"><span>ARTIST BIO</span></div>
+    <a class="card c-span-2" href="noah-kahan.html" data-name="noah kahan — the folk singer who made homesickness a genre">
+      <div class="thumb t-music" style="background-image:url('images/Noah-Kahan.jpg.webp');background-size:cover;background-position:center;">
+        <span>ARTIST BIO</span>
+      </div>
       <div class="body">
         <h3>Noah Kahan — The Folk Singer Who Made Homesickness a Genre</h3>
         <p>"Stick Season" turned small-town ache into a genuine mass phenomenon.</p>
         <div class="meta">Trending Now</div>
       </div>
     </a>
-    <a class="card c-span-2" href="zara-larsson.html">
-      <div class="thumb t-music"><span>ARTIST BIO</span></div>
+    <a class="card c-span-2" href="zara-larsson.html" data-name="zara larsson — the pop star having her second wind">
+      <div class="thumb t-music" style="background-image:url('images/zara.jpeg');background-size:cover;background-position:center;"><span>ARTIST BIO</span></div>
       <div class="body">
         <h3>Zara Larsson — The Pop Star Having Her Second Wind</h3>
         <p>A decade after her first hits, suddenly everywhere again.</p>
         <div class="meta">Trending Now</div>
       </div>
     </a>
-    <a class="card c-span-2" href="djo.html">
-      <div class="thumb t-music"><span>ARTIST BIO</span></div>
+    <a class="card c-span-2" href="djo.html" data-name="djo — the actor whose side project became the main story">
+      <div class="thumb t-music" style="background-image:url('images/dijo.jpeg');background-size:cover;background-position:center;"><span>ARTIST BIO</span></div>
       <div class="body">
         <h3>Djo — The Actor Whose Side Project Became the Main Story</h3>
         <p>Stranger Things' Joe Keery, and the two-year-late viral moment nobody expected.</p>
         <div class="meta">Trending Now</div>
       </div>
     </a>
-    <a class="card c-span-2" href="madonna.html">
-      <div class="thumb t-music"><span>ARTIST BIO</span></div>
+    <a class="card c-span-2" href="madonna.html" data-name="madonna — the original reinvention machine">
+      <div class="thumb t-music" style="background-image:url('images/madona.jpeg');background-size:cover;background-position:center;">
+        <span>ARTIST BIO</span>
+      </div>
       <div class="body">
         <h3>Madonna — The Original Reinvention Machine</h3>
         <p>Four decades of pop stars have borrowed her playbook. She's still rewriting it.</p>
         <div class="meta">Trending Now</div>
       </div>
     </a>
-    <a class="card c-span-2" href="harry-styles.html">
-      <div class="thumb t-music"><span>ARTIST BIO</span></div>
+    <a class="card c-span-2" href="harry-styles.html" data-name="harry styles — the boy band graduate who rewrote the ending">
+      <div class="thumb t-music" style="background-image:url('images/harry.jpg.webp');background-size:cover;background-position:center;">
+        <span>ARTIST BIO</span>
+      </div>
       <div class="body">
         <h3>Harry Styles — The Boy Band Graduate Who Rewrote the Ending</h3>
         <p>Most solo boy-band careers fade. His kept getting stranger and better.</p>
@@ -284,14 +287,12 @@
       </div>
     </a>
   </div>
-
-  <p class="no-results" id="noResultsMsg">No bios match that search. Try a different name, group, or category.</p>
 </section>
 
 <footer>
   <a href="index.html" class="logo">Celestine<span></span></a>
   <div class="socials">
-    <a href="https://youtube.com/@celestinestudio?si=4g26nV9T_dcX9Jxi" target="_blank">YouTube</a>
+    <a href="https://youtube.com/@celestinestudio" target="_blank">YouTube</a>
     <a href="https://www.instagram.com/celestine_studio_" target="_blank">Instagram</a>
     <a href="https://web.facebook.com/profile.php?id=61594418093291" target="_blank">Facebook</a>
   </div>
@@ -299,37 +300,23 @@
 </footer>
 
 <script>
-(function(){
-  var input = document.getElementById('bioSearch');
-  var cards = Array.prototype.slice.call(document.querySelectorAll('#bioGrid .card'));
-  var noResults = document.getElementById('noResultsMsg');
-  var countEl = document.getElementById('searchCount');
-  var total = cards.length;
+  const searchInput = document.getElementById('bio-search');
+  const grid = document.getElementById('bio-grid');
+  const cards = Array.from(grid.querySelectorAll('.card'));
+  const noResults = document.getElementById('no-results');
 
-  function runSearch(){
-    var q = input.value.trim().toLowerCase();
-    var visible = 0;
-    cards.forEach(function(card){
-      var titleEl = card.querySelector('h3');
-      var descEl = card.querySelector('p');
-      var metaEl = card.querySelector('.meta');
-      var haystack = [
-        titleEl ? titleEl.textContent : '',
-        descEl ? descEl.textContent : '',
-        metaEl ? metaEl.textContent : ''
-      ].join(' ').toLowerCase();
-      var match = !q || haystack.indexOf(q) !== -1;
+  searchInput.addEventListener('input', () => {
+    const q = searchInput.value.trim().toLowerCase();
+    let visibleCount = 0;
+    cards.forEach(card => {
+      const name = card.getAttribute('data-name') || '';
+      const meta = card.querySelector('.meta') ? card.querySelector('.meta').textContent.toLowerCase() : '';
+      const match = !q || name.includes(q) || meta.includes(q);
       card.style.display = match ? '' : 'none';
-      if(match) visible++;
+      if (match) visibleCount++;
     });
-    noResults.style.display = visible === 0 ? 'block' : 'none';
-    countEl.textContent = q ? (visible + ' of ' + total + ' bios') : '';
-  }
-
-  if(input){
-    input.addEventListener('input', runSearch);
-  }
-})();
+    noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+  });
 </script>
 
 </body>
