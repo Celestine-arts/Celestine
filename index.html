@@ -1,165 +1,366 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta property="og:title" content="Celestine Studio — Visual Arts Archive">
+<meta property="og:description" content="A high-concept digital research series and cultural archive.">
+<meta property="og:image" content="https://celestinestudio.com.lk/assets/preview-cover.jpg">
+<meta property="og:url" content="https://celestinestudio.com.lk/">
+<meta property="og:type" content="website">
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Celestine — Art, Music & Film, Told Right</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
-<link rel="icon" type="image/x-icon" href="favicon.ico">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-96x96.png">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>V — Kim Taehyung · The Complete Story | K.N.S. Entertainment</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400&family=Noto+Serif+KR:wght@300;400;700&display=swap" rel="stylesheet">
 <style>
-  /* Slight celestial-blue wash tying the hero back to the brand name */
-  .hero-copy{
-    background:
-      radial-gradient(circle at 85% 10%, rgba(142,203,235,0.28), transparent 42%),
-      radial-gradient(circle at 15% 90%, rgba(255,45,111,0.08), transparent 40%),
-      var(--bg);
-  }
-  .logo span{
-    background:radial-gradient(circle at 30% 30%, #BFE6F7, #5B2FE0 75%);
-    box-shadow:0 0 8px rgba(142,203,235,0.7);
-  }
+:root{--gold:#C9A84C;--gm:#7A6228;--gl:#E8C46A;--pur:#7B5EA7;--pd:#4A3272;--pg:rgba(123,94,167,.13);
+--ink:#0A0A0F;--im:#14121C;--ic:#1C1928;--ib:#2E2840;
+--cr:#F4EFE6;--cd:#C8BFB5;--cdm:#B0A89E;
+--fd:"Playfair Display",Georgia,serif;--fb:"Inter",system-ui,sans-serif;
+--fm:"JetBrains Mono",monospace;--fk:"Noto Serif KR",serif;--gap:2px}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{background:var(--ink);color:var(--cr);font-family:var(--fb);font-size:16px;line-height:1.8;overflow-x:hidden}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar{width:6px;background-color:var(--ink)}
+::-webkit-scrollbar-track{background:var(--ink)}
+::-webkit-scrollbar-thumb{background:linear-gradient(180deg,var(--gm),var(--gold),var(--gl));border-radius:10px;border:2px solid var(--ink)}
+::-webkit-scrollbar-thumb:hover{background:var(--gl);box-shadow:0 0 10px var(--gl)}
+*{scrollbar-width:thin;scrollbar-color:var(--gold) var(--ink)}
+
+.rail{position:fixed;top:0;left:0;width:25px;height:100vh;background:var(--im);border-right:2px solid var(--ib);z-index:200;display:flex;flex-direction:column;align-items:center;padding:8px 0;gap:8px;overflow:hidden}
+.hole{width:11px;height:7px;background:var(--ink);border:0.1px solid var(--gm);border-radius:2px;flex-shrink:0}
+
+/* Top Navigation Bar */
+nav{position:fixed;top:0;right:0;width:calc(100% - 25px);height:62px;background:rgba(10,10,15,.97);border-bottom:1px solid var(--ib);z-index:190;backdrop-filter:blur(20px);display:flex;align-items:center;justify-content:space-between;padding:0 36px 0 18px}
+.nlogo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0;z-index:1001}
+.nlogo img{height:42px;width:42px;object-fit:contain;border-radius:4px}
+.nbrand-t{font-family:var(--fd);font-size:14px;font-weight:700;color:var(--gold);letter-spacing:.1em;line-height:1}
+.nbrand-s{font-family:var(--fm);font-size:11px;color:var(--cdm);letter-spacing:.22em;text-transform:uppercase;margin-top:2px}
+
+/* Navigation Links */
+.nlinks{display:flex;gap:16px;list-style:none;flex-shrink:1;align-items:center}
+.nlinks a{font-family:var(--fm);font-size:12px;color:var(--cdm);text-decoration:none;letter-spacing:.13em;text-transform:uppercase;transition:color .3s, border-color .3s;padding-bottom:2px;border-bottom:2px solid transparent}
+.nlinks a:hover{color:var(--gold);border-bottom-color:var(--gold)}
+.nlinks a.active{color:var(--gold);border-bottom:2px solid var(--gold)}
+
+/* Mobile Hamburger Button */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+}
+.hamburger span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: var(--gold);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 2px;
+    transform-origin: center;
+}
+
+/* Hamburger Active/Open State Transformation */
+.hamburger.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.hamburger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+/* Celestine Sub-Header Ambient Glow Line */
+.celestine-glow-line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), var(--pur), transparent);
+    opacity: 0.6;
+    animation: celestialPulse 4s infinite ease-in-out;
+}
+
+@keyframes celestialPulse {
+    0%, 100% { opacity: 0.3; filter: drop-shadow(0 0 2px var(--gold)); }
+    50% { opacity: 0.8; filter: drop-shadow(0 0 8px var(--pur)); }
+}
+
+/* Scroll Progress Bar */
+#progress-container {
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: rgba(201, 168, 76, 0.1);
+    overflow: visible; 
+}
+#progress-bar {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, var(--gm), var(--gl), var(--gold));
+    box-shadow: 0 2px 10px var(--gl);
+    clip-path: inset(0px -100px -100px -100px);
+    filter: brightness(1.2);
+    transition: width 0.1s ease-out;
+}
+
+/* Responsive Navigation Styles */
+@media (max-width: 768px) {
+    .hamburger { display: flex; }
+    .nlinks {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%; height: 100vh;
+        background: rgba(10, 8, 20, 0.98);
+        backdrop-filter: blur(25px);
+        justify-content: center;
+        align-items: center;
+        gap: 28px;
+        z-index: 999;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity 0.4s ease, visibility 0.4s ease;
+    }
+    .nlinks.open {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+    .nlinks a { font-size: 1.1rem; letter-spacing: 0.18em; }
+}
+
+@media (min-width: 769px) {
+    .hamburger { display: none !important; }
+    .nlinks {
+        display: flex !important;
+        position: static;
+        flex-direction: row;
+        height: auto;
+        background: none;
+        width: auto;
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1100px) {
+    .nlinks { gap: 10px; }
+    .nlinks a { font-size: 10px; letter-spacing: 0.08em; }
+    nav { padding: 0 20px 0 12px; }
+}
+
+/* Main Layout & Content */
+main{margin-left:25px;padding-top:62px}
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 420px;background:var(--ink);position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(123,94,167,.07),transparent 70%);pointer-events:none}
+.hc{display:flex;flex-direction:column;justify-content:center;padding:100px 56px 80px 48px;z-index:2}
+.hkick{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.hkl{width:26px;height:1px;background:var(--gold);flex-shrink:0}
+.hkt{font-family:var(--fm);font-size:10px;letter-spacing:.32em;color:var(--gold);text-transform:uppercase}
+.hkor{font-family:var(--fk);font-size:18px;color:var(--pur);font-weight:300;letter-spacing:.4em;margin-bottom:10px}
+.hname{font-family:var(--fd);font-size:clamp(48px,5.8vw,88px);line-height:.92;font-weight:700;margin-bottom:8px;letter-spacing: -0.04em;}
+.l1{color:var(--gold);display:block}.l2{color:var(--cr);display:block}.l3{color:transparent;-webkit-text-stroke:1.5px var(--pur);display:block;font-style:italic}
+.htag{font-family:var(--fd);font-size:15px;font-style:italic;color:var(--cdm);margin-bottom:8px}
+.hsuper{font-family:var(--fm);background:var(--im);font-size:20px;letter-spacing:.24em;color:var(--pur);text-transform:uppercase;margin-bottom:24px;border-left:3px solid var(--pur);padding-left:12px}
+.hintro{font-size:15px;color:var(--cd);line-height:1.9;max-width:460px;margin-bottom:36px}
+.stats{display:grid;grid-template-columns:repeat(4,auto);gap:24px;width:fit-content}
+.sv{font-family:var(--fd);font-size:26px;font-weight:600;color:var(--gold);line-height:1}
+.sl{font-family:var(--fm);font-size:11px;letter-spacing:.14em;color:var(--cd);text-transform:uppercase;line-height:1.4;margin-top:4px}
+.himg{position:relative;overflow:hidden;background:var(--im);display:flex;align-items:center;justify-content:center}
+.himg img{width:100%;height:100%;object-fit:contain;object-position:center top;display:block;max-height:100vh}
+
+/* Wand Cursor & Particles */
+body, a, button, .pc { cursor: none !important; }
+.wand {
+  position: fixed;
+  width: 55px; height: 55px;
+  pointer-events: none; z-index: 10000;
+  transform: translate(-25%, -25%) rotate(22deg); 
+  transform-origin: 30px 30px;
+  filter: drop-shadow(0 0 2px #fff) drop-shadow(0 0 10px rgba(201, 168, 76, 0.8));
+  transition: opacity 0.3s ease;
+}
+.star-particle {
+  position: fixed; pointer-events: none;
+  background: #fff; box-shadow: 0 0 8px #E8C46A;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  z-index: 9999; animation: magicDrift 1.2s forwards ease-out;
+}
+@keyframes magicDrift {
+  0% { transform: translate(0, 0) scale(1) rotate(0deg); opacity: 1; }
+  100% { transform: translate(10px, 20px) scale(0) rotate(180deg); opacity: 0; }
+}
+
+@media (max-width: 768px) {
+  #magic-wand, #particle-container { display: none !important; }
+  body, a, button, .pc { cursor: auto !important; }
+  .hero{grid-template-columns:1fr}.himg{display:none}
+  .hc{padding:60px 24px}
+  main { margin-left: 25px; }
+}
 </style>
 </head>
 <body>
 
-<header>
-  <a href="index.html" class="logo">Celestine<span></span></a>
-  <nav>
-    <a href="bios.html">Artist bios</a>
-    <a href="film.html">Film</a>
-    <a href="music.html">Music</a>
-    <a href="news.html">News</a>
-    <a href="about.html">About</a>
-  </nav>
-</header>
+<!-- Custom Wand Cursor -->
+<div id="magic-wand" class="wand">
+  <svg width="70" height="70" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#7A6228" /> 
+        <stop offset="50%" style="stop-color:#E8C46A" /> 
+        <stop offset="100%" style="stop-color:#C9A84C" /> 
+      </linearGradient>
+    </defs>
+    <path d="M85 85 L32 32" stroke="#000000" stroke-width="6" stroke-linecap="round" />
+    <path d="M82 82 L92 92" stroke="url(#goldGrad)" stroke-width="7" stroke-linecap="round" />
+    <circle cx="30" cy="30" r="5" fill="url(#goldGrad)" />
+  </svg>
+</div>
+<div id="particle-container"></div>
 
-<section class="hero">
-  <div class="hero-copy">
-    <span class="kicker">Now streaming as a story</span>
-    <h1>Where art, music,<br>and film get the <em>full</em><br>documentary treatment.</h1>
-    <p>Celestine tells the complete, formal story behind the artists and work you love — deeply researched, unapologetically fan-hearted, never a Wikipedia rewrite.</p>
-    <a class="hero-cta" href="v-kim-taehyung.html">Read the flagship story →</a>
-  </div>
-  <div class="hero-visual" style="background-image:url('images/v-hero.jpg');background-size:cover;background-position:center;">
-    <div>
-      <span class="tag">Research Series · Vol. I</span>
-      <div class="caption">The Complete Story of V</div>
-    </div>
-  </div>
-</section>
-
-<nav class="cats">
-  <a class="cat music" href="music.html">Song reviews</a>
-  <a class="cat film" href="film.html">Film reviews</a>
-  <a class="cat art" href="bios.html">Artist bios</a>
-  <a class="cat news" href="news.html">News</a>
-</nav>
-
-<section class="section" id="bios">
-  <div class="section-head">
-    <h2>Artist bios</h2>
-    <a href="bios.html">View all bios</a>
-  </div>
-  <div class="grid">
-    <a class="card c-span-3" href="v-kim-taehyung.html">
-      <div class="thumb t-art" style="background-image:url('images/BTS-Kim-Taehyung.jpg');background-size:cover;background-position:center;"><span>ARTIST BIO</span></div>
-      <div class="body">
-        <h3>V — The Complete Story</h3>
-        <p>From a farmer's son in Geochang to the world's most searched artist: the full chronology, chapter by chapter.</p>
-        <div class="meta">Research Series · Vol. I</div>
-      </div>
-    </a>
-    <a class="card c-span-3" href="jungkook.html">
-      <div class="thumb t-music" style="background-image:url('images/jungkook-seven-review.jpg');background-size:cover;background-position:center;"><span>ARTIST BIO</span></div>
-      <div class="body">
-        <h3>Jungkook — The Golden Maknae, Off Duty and Back Again</h3>
-        <p>Enlisted at his solo peak, discharged to a chart record still untouched.</p>
-        <div class="meta">BTS</div>
-      </div>
-    </a>
-  </div>
-</section>
-
-<section class="section" id="film" style="background:#FBF8FF;">
-  <div class="section-head">
-    <h2>Film reviews</h2>
-    <a href="film.html">View all reviews</a>
-  </div>
-  <div class="grid">
-    <a class="card c-span-2" href="films/dark-knight.html">
-      <div class="thumb t-film"><img src="images/images.jpeg" alt="The Dark Knight"><span>FILM REVIEW</span></div>
-      <div class="body"><h3>The Dark Knight</h3><p>A city interrogates its own morality, and a clown submits the exam.</p><div class="meta">Christopher Nolan · 2008</div></div>
-    </a>
-    <a class="card c-span-2" href="films/toy-story-5.html">
-      <div class="thumb t-film"><img src="images/woody-returns-in-toy-story-5.avif" alt="Toy Story 5"><span>FILM REVIEW</span></div>
-      <div class="body"><h3>Toy Story 5</h3><p>Two kinds of glow, one kid's bedroom, and a franchise finally out of easy answers.</p><div class="meta">Andrew Stanton · 2026</div></div>
-    </a>
-    <a class="card c-span-2" href="films/dune.html">
-      <div class="thumb t-film"><img src="images/images%20(1).jpeg" alt="Dune"><span>FILM REVIEW</span></div>
-      <div class="body"><h3>Dune</h3><p>A planet you can hear before you can see, and a hero worth doubting.</p><div class="meta">Denis Villeneuve · 2021–2024</div></div>
-    </a>
-  </div>
-</section>
-
-<section class="section" id="music">
-  <div class="section-head">
-    <h2>Song reviews</h2>
-    <a href="music.html">View all reviews</a>
-  </div>
-  <div class="grid">
-    <a class="card c-span-2" href="music/bts-swim.html">
-      <div class="thumb t-music" style="position:relative;overflow:hidden;">
-        <img src="images/face1e99-7cd0-4e37-9111-7591a4098bbb.png.avif" alt="Illustration for BTS's Swim — tidal waves and a sun glint" style="display:block;width:100%;height:100%;object-fit:cover;">
-        <span style="position:absolute;top:10px;left:10px;background:rgba(0,0,0,0.55);color:#fff;font-size:11px;letter-spacing:0.06em;padding:4px 9px;border-radius:3px;text-transform:uppercase;">K-POP</span>
-      </div>
-      <div class="body"><h3>Swim</h3><p>Four years apart, and a comeback that refuses to rush the reunion.</p><div class="meta">BTS</div></div>
-    </a>
-    <a class="card c-span-2" href="music/taylor-swift-i-knew-it-i-knew-you.html">
-      <div class="thumb t-music" style="position:relative;overflow:hidden;">
-        <img src="images/images-11.jpeg" alt="Illustration for Taylor Swift's I Knew It, I Knew You — golden grass and a parachute" style="display:block;width:100%;height:100%;object-fit:cover;">
-        <span style="position:absolute;top:10px;left:10px;background:rgba(0,0,0,0.55);color:#fff;font-size:11px;letter-spacing:0.06em;padding:4px 9px;border-radius:3px;text-transform:uppercase;">Country Pop</span>
-      </div>
-      <div class="body"><h3>I Knew It, I Knew You</h3><p>Written for a cowgirl doll in Toy Story 5 — and everyone who's ever come back.</p><div class="meta">Taylor Swift</div></div>
-    </a>
-    <a class="card c-span-2" href="music/ariana-grande-hate-that-i-made-you-love-me.html">
-      <div class="thumb t-music" style="position:relative;overflow:hidden;">
-        <img src="images/images-12.jpeg" alt="Illustration for Ariana Grande's hate that i made you love me — a dark spotlight" style="display:block;width:100%;height:100%;object-fit:cover;">
-        <span style="position:absolute;top:10px;left:10px;background:rgba(0,0,0,0.55);color:#fff;font-size:11px;letter-spacing:0.06em;padding:4px 9px;border-radius:3px;text-transform:uppercase;">Pop</span>
-      </div>
-      <div class="body"><h3>hate that i made you love me</h3><p>A breakup song aimed less at an ex than at everyone watching.</p><div class="meta">Ariana Grande</div></div>
-    </a>
-  </div>
-</section>
-
-<section class="section" id="news" style="background:#FBF8FF;border-bottom:none;">
-  <div class="section-head">
-    <h2>News</h2>
-    <a href="news.html">View all news</a>
-  </div>
-  
-</section>
-
-<div class="band">
-  <h2>Get the next story <em>before</em> everyone else.</h2>
-  <form action="https://buttondown.com/api/emails/embed-subscribe/celestine" method="post" target="popupwindow" onsubmit="window.open('https://buttondown.com/celestine', 'popupwindow')" class="embeddable-buttondown-form">
-    <input type="email" name="email" placeholder="you@email.com" required>
-    <button type="submit">Subscribe</button>
-  </form>
+<!-- Film Strip Rail -->
+<div class="rail" aria-hidden="true">
+  <div class="hole"></div><div class="hole"></div><div class="hole"></div><div class="hole"></div>
+  <div class="hole"></div><div class="hole"></div><div class="hole"></div><div class="hole"></div>
+  <div class="hole"></div><div class="hole"></div><div class="hole"></div><div class="hole"></div>
+  <div class="hole"></div><div class="hole"></div><div class="hole"></div><div class="hole"></div>
 </div>
 
-<footer>
-  <a href="index.html" class="logo">Celestine<span></span></a>
-  <div class="socials">
-    <a href="https://youtube.com/@celestinestudio?si=4g26nV9T_dcX9Jxi" target="_blank">YouTube</a>
-    <a href="https://www.instagram.com/celestine_studio_" target="_blank">Instagram</a>
-    <a href="https://web.facebook.com/profile.php?id=61594418093291" target="_blank">Facebook</a>
+<!-- Header Navigation -->
+<nav>
+  <a href="#" class="nlogo">
+    <div class="nbrand">
+      <div class="nbrand-t">CELESTINE</div>
+      <div class="nbrand-s">STUDIO ARCHIVE</div>
+    </div>
+  </a>
+
+  <!-- Hamburger Menu Button -->
+  <button class="hamburger" id="hamburger-btn" aria-label="Toggle Navigation Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <!-- Navigation Links -->
+  <ul class="nlinks" id="nav-links">
+    <li><a href="#overview" class="active">Overview</a></li>
+    <li><a href="#chronology">Chronology</a></li>
+    <li><a href="#discography">Discography</a></li>
+    <li><a href="#artistry">Artistry</a></li>
+    <li><a href="#archive">Archive</a></li>
+  </ul>
+
+  <!-- Ambient Celestine Glow Line -->
+  <div class="celestine-glow-line"></div>
+
+  <!-- Scroll Progress Bar -->
+  <div id="progress-container">
+    <div id="progress-bar"></div>
   </div>
-  <div class="fine">© 2026 Celestine Studio. All rights reserved.</div>
-</footer>
+</nav>
+
+<main>
+  <section class="hero" id="overview">
+    <div class="hc">
+      <div class="hkick">
+        <div class="hkl"></div>
+        <div class="hkt">Research Series · Vol. I</div>
+      </div>
+      <div class="hkor">김태형</div>
+      <h1 class="hname">
+        <span class="l1">KIM</span>
+        <span class="l2">TAEHYUNG</span>
+        <span class="l3">V</span>
+      </h1>
+      <div class="htag">The Complete Story & Visual Cultural Archive</div>
+      <div class="hsuper">Celestine Deep Dive</div>
+      <p class="hintro">An exhaustive research feature documenting the trajectory, vocal range, aesthetic influence, and artistic milestones of Kim Taehyung.</p>
+      
+      <div class="stats">
+        <div>
+          <div class="sv">100+</div>
+          <div class="sl">Accolades</div>
+        </div>
+        <div>
+          <div class="sv">Vol. I</div>
+          <div class="sl">Edition</div>
+        </div>
+        <div>
+          <div class="sv">2026</div>
+          <div class="sl">Archive</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="himg">
+      <img src="https://celestinestudio.com.lk/assets/preview-cover.jpg" alt="V Kim Taehyung Visual Cover">
+    </div>
+  </section>
+</main>
+
+<script>
+  // Mobile Hamburger Toggle Logic
+  const hamburger = document.getElementById('hamburger-btn');
+  const navLinks = document.getElementById('nav-links');
+  const navItems = document.querySelectorAll('.nlinks a');
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    navLinks.classList.toggle('open');
+  });
+
+  // Close mobile menu when a navigation item is clicked
+  navItems.forEach(item => {
+    item.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      navLinks.classList.remove('open');
+    });
+  });
+
+  // Reading Scroll Progress Indicator
+  window.addEventListener('scroll', () => {
+    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+    document.getElementById('progress-bar').style.width = scrolled + '%';
+  });
+
+  // Cursor Wand Trail Animation (Desktop Only)
+  if (window.innerWidth > 768) {
+    const wand = document.getElementById('magic-wand');
+    const particleContainer = document.getElementById('particle-container');
+
+    window.addEventListener('mousemove', (e) => {
+      wand.style.left = e.clientX + 'px';
+      wand.style.top = e.clientY + 'px';
+
+      if (Math.random() < 0.25) {
+        const star = document.createElement('div');
+        star.className = 'star-particle';
+        star.style.left = (e.clientX - 10) + 'px';
+        star.style.top = (e.clientY - 10) + 'px';
+        
+        const size = Math.random() * 6 + 4;
+        star.style.width = size + 'px';
+        star.style.height = size + 'px';
+
+        particleContainer.appendChild(star);
+        setTimeout(() => star.remove(), 1200);
+      }
+    });
+  }
+</script>
 
 </body>
 </html>
