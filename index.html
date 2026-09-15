@@ -11,21 +11,12 @@
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-96x96.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <style>
-  /* Slight celestial-blue wash tying the hero back to the brand name */
-  .hero-copy{
-    background:
-      radial-gradient(circle at 85% 10%, rgba(142,203,235,0.28), transparent 42%),
-      radial-gradient(circle at 15% 90%, rgba(255,45,111,0.08), transparent 40%),
-      var(--bg);
-  }
+  /* Slight celestial-blue wash tying the hero back to the brand name.
+     The drift animation and the Charts hover fix now live in styles.css,
+     alongside their siblings, instead of being duplicated here. */
   .logo span{
     background:radial-gradient(circle at 30% 30%, #BFE6F7, #5B2FE0 75%);
     box-shadow:0 0 8px rgba(142,203,235,0.7);
-  }
-  /* Category Pill style for Charts */
-  .cat.charts {
-    background: #EAE3FF;
-    color: #4A154B;
   }
 
   /* Hamburger Menu Styles */
@@ -119,6 +110,8 @@
       pointer-events: auto !important;
     }
   }
+
+
 </style>
 </head>
 <body>
@@ -151,6 +144,9 @@
     <a class="hero-cta" href="v-kim-taehyung.html">Read the flagship story →</a>
   </div>
   <div class="hero-visual" style="background-image:url('images/v-hero.jpg');background-size:cover;background-position:center;">
+    <div class="star-field" aria-hidden="true">
+      <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+    </div>
     <div>
       <span class="tag">Research Series · Vol. I</span>
       <div class="caption">The Complete Story of V</div>
@@ -251,7 +247,7 @@
     <a class="card c-span-6" href="charts.html" style="text-decoration:none; color:inherit;">
       <div class="body" style="padding:28px; background:#fff; border-radius:8px; border:1px solid rgba(0,0,0,0.06);">
         <span class="meta" style="color:#5B2FE0; font-weight:700; text-transform:uppercase; letter-spacing:0.05em;">Updated Daily • Global Data</span>
-        <h3 style="font-size:24px; margin:10px 0 8px 0;">Track the World’s Top 100 Music Releases</h3>
+        <h3 style="font-size:24px; margin:10px 0 8px 0;">Track the World's Top 100 Music Releases</h3>
         <p style="margin-bottom:0;">Explore daily ranking movements, peak positions, chart duration, and editorial breakdowns of the biggest hits around the globe.</p>
       </div>
     </a>
