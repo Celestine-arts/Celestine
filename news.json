@@ -1,6 +1,96 @@
 [
   {
     "sourceName": "Soompi",
+    "link": "https://www.soompi.com/article/1871900wpp/song-kang-and-lee-jun-youngs-collaboration-gets-off-to-a-rocky-start-in-four-hands-two-sonatas",
+    "headline": "Song Kang And Lee Jun Young’s Collaboration Gets Off To A Rocky Start In “Four Hands, Two Sonatas”",
+    "summary": "Will Song Kang be able to break out of his slump on “Four Hands, Two Sonatas”? tvN’s “Four Hands, Two Sonatas” is a drama that follows the friendship, love, riv…",
+    "category": "Music",
+    "image": "https://0.soompi.io/wp-content/uploads/2026/09/19230106/Lee-Jun-Young-Song-Kang-1.jpeg",
+    "publishedAt": "2026-09-20T06:07:16.000Z"
+  },
+  {
+    "sourceName": "Variety",
+    "link": "https://variety.com/2026/tv/global/sett-javier-ponce-maria-coronado-how-sett-works-and-why-1236869707/",
+    "headline": "Ready, SETT, Go: SETT Execs Drill Down on the Spanish Sovereign Venture Capital Fund That Will Drive Industry Conversation at San Sebastián",
+    "summary": "One of the major industry narratives at this year’s San Sebastián Festival, running Sept. 18-26, will be the presentation of SETT, the venture capital fund of S…",
+    "category": "Film",
+    "image": "https://variety.com/wp-content/uploads/2026/09/Javier-Ponce-Alta_Maria-Coronado.jpg",
+    "publishedAt": "2026-09-20T05:43:25.000Z"
+  },
+  {
+    "sourceName": "Hyperallergic",
+    "link": "https://hyperallergic.com/the-cathedral-of-joy/",
+    "headline": "The Cathedral of Joy",
+    "summary": "One-on-one with Alfredo Jaar, Damien Hirst’s secret life, Anish Kapoor's optical trickery, and another BS \"most influential\" list.…",
+    "category": "Art",
+    "image": "https://storage.ghost.io/c/51/f8/51f871d8-b6be-4a73-b958-0ca4fff0110a/content/images/2026/09/IMG_5016.JPG",
+    "publishedAt": "2026-09-19T10:00:19.000Z"
+  },
+  {
+    "sourceName": "Colossal",
+    "link": "https://www.thisiscolossal.com/2026/09/another-view-the-vibrant-world-of-contemporary-black-artists/",
+    "headline": "Step Inside the Studios of 20 Contemporary Black Artists in ‘Another View’",
+    "summary": "Featuring Nick Cave, Nina Chanel Abney, Hank Willis Thomas, Carrie Mae Weems, Kerry James Marshall, and many more. Do stories and artists like this matter to yo…",
+    "category": "Art",
+    "image": "https://www.thisiscolossal.com/wp-content/uploads/2026/09/view-5.jpg",
+    "publishedAt": "2026-09-18T21:05:38.000Z"
+  },
+  {
+    "sourceName": "Pitchfork",
+    "link": "https://pitchfork.com/reviews/albums/various-artists-easy-rider-music-from-the-soundtrack/",
+    "headline": "Easy Rider (Music From the Soundtrack)",
+    "summary": "Each Sunday, Pitchfork takes an in-depth look at a significant album from the past, and any record not in our archives is eligible. Today, we revisit the blockb…",
+    "category": "Music",
+    "image": "https://media.pitchfork.com/photos/6aad3db35d1e10272ab0f0da/master/pass/Easy%20Rider%20(Music%20From%20the%20Soundtrack).jpg",
+    "publishedAt": "2026-09-20T04:00:00.000Z"
+  },
+  {
+    "sourceName": "NME",
+    "link": "https://www.nme.com/guides/gaming-guides/connections-answers-hints-groups-today-3557066?utm_source=rss&utm_medium=rss&utm_campaign=connections-answers-hints-groups-today",
+    "headline": "‘Connections’ answers and hints for today, September 20",
+    "summary": "Here are hints, groups and answers for 'Connections' #1197 The post ‘Connections’ answers and hints for today, September 20 appeared first on NME.…",
+    "category": "Music",
+    "image": "https://www.nme.com/wp-content/uploads/2023/12/NYT-Connections-answers-and-hints.jpg",
+    "publishedAt": "2026-09-19T23:00:27.000Z"
+  },
+  {
+    "sourceName": "IndieWire",
+    "link": "https://www.indiewire.com/news/breaking-news/the-other-bennet-sister-donal-finn-return-christmas-special-1235217829/",
+    "headline": "‘The Other Bennet Sister’ Fans, Rejoice! Dónal Finn Will Be Back for Three-Part Christmas Special",
+    "summary": "Mary Bennet's beloved husband, Tom Hayward, is officially back for the much-anticipated special. But so is his rival!…",
+    "category": "Film",
+    "image": "https://www.indiewire.com/wp-content/uploads/2026/09/TOBSSpecial_First-look_JamesPardon94.jpg?w=650",
+    "publishedAt": "2026-09-19T15:00:00.000Z"
+  },
+  {
+    "sourceName": "Vanity Fair",
+    "link": "https://www.vanityfair.com/story/lady-gaga-new-baby-name",
+    "headline": "Why Lady Gaga and Michael Polansky Named Their New Baby “Rose Bean”",
+    "summary": "Lady Gaga and Michael Polansky's three-month-old daughter is named Rose Bean Polansky, reflecting two very personal tributes.…",
+    "category": "Art",
+    "image": "https://media.vanityfair.com/photos/6aaec70cce7d32a6357f6bd0/master/pass/2200270778",
+    "publishedAt": "2026-09-19T18:50:08.000Z"
+  },
+  {
+    "sourceName": "Vogue",
+    "link": "https://www.vogue.com/article/best-fall-movies",
+    "headline": "The 25 Best Fall Movies to Watch This Season",
+    "summary": "While some mark the season with apple picking and hot cider, others prefer to spend fall exactly as we spent summer: parked on the couch, watching movies.…",
+    "category": "Art",
+    "image": "https://assets.vogue.com/photos/6aaf706851bf7fd4cf6390fd/master/pass/MCDFAFR_EC017.jpg",
+    "publishedAt": "2026-09-20T05:44:07.000Z"
+  },
+  {
+    "sourceName": "NYT Arts",
+    "link": "https://www.nytimes.com/2026/09/18/arts/thomas-jefferson-sally-hemings-smithsonian-hair.html",
+    "headline": "Two Centuries On, Smithsonian Connects Jefferson’s Hair to Hemings’s Children",
+    "summary": "A new book describes how cutting-edge genomics techniques yielded “extraordinary proof” that Thomas Jefferson fathered children with Sally Hemings.…",
+    "category": "Art",
+    "image": null,
+    "publishedAt": "2026-09-19T18:34:43.000Z"
+  },
+  {
+    "sourceName": "Soompi",
     "link": "https://www.soompi.com/article/1870579wpp/yim-si-wan-is-a-demanding-perfectionist-at-work-and-a-loving-cat-dad-at-home-in-love-in-disguise",
     "headline": "Yim Si Wan Is A Demanding Perfectionist At Work And A Loving Cat Dad At Home In “Love In Disguise”",
     "summary": "tvN’s upcoming drama “Love in Disguise” has unveiled new stills of Yim Si Wan in character! “Love in Disguise” is a romance thriller about an arrogant chaebol h…",
@@ -178,95 +268,5 @@
     "category": "Art",
     "image": "https://static01.nyt.com/images/2026/09/11/multimedia/11cul-kusama-review-01-gzmk/11cul-kusama-review-01-gzmk-mediumSquareAt3X.jpg",
     "publishedAt": "2026-09-11T10:50:15.000Z"
-  },
-  {
-    "sourceName": "Soompi",
-    "link": "https://www.soompi.com/article/1869911wpp/ha-seok-jin-comforts-hani-amidst-family-drama-in-love-on-the-menu",
-    "headline": "Ha Seok Jin Comforts Hani Amidst Family Drama In “Love On The Menu”",
-    "summary": "Is the relationship between Ha Seok Jin and EXID’s Hani about to change in “Love on the Menu”? KBS 2TV’s “Love on the Menu” is a drama that tells the story of K…",
-    "category": "Music",
-    "image": "https://0.soompi.io/wp-content/uploads/2026/09/11223837/Love-on-the-Menu-2.jpg",
-    "publishedAt": "2026-09-12T05:40:57.000Z"
-  },
-  {
-    "sourceName": "Variety",
-    "link": "https://variety.com/2026/tv/news/gary-oldman-hbo-harry-potter-series-more-satisfying-than-movies-1236859390/",
-    "headline": "Gary Oldman Predicts HBO’s ‘Harry Potter’ Series Will Be ‘More Satisfying’ for Fans Than the Movies",
-    "summary": "Gary Oldman, who played Sirius Black in four “Harry Potter” movies, said he believes HBO’s forthcoming TV series adaptation set in the Wizarding World will be a…",
-    "category": "Film",
-    "image": "https://variety.com/wp-content/uploads/2026/09/Gary-Oldman.jpg",
-    "publishedAt": "2026-09-12T05:54:51.000Z"
-  },
-  {
-    "sourceName": "Hyperallergic",
-    "link": "https://hyperallergic.com/standing-in-the-shadow-of-no-towers/",
-    "headline": "Standing in the Shadow of No Towers",
-    "summary": "The struggle for immigrant rights and lives after 9/11 defined a generation of South Asian art and activism, even if it felt at times like we were trying to emp…",
-    "category": "Art",
-    "image": "https://storage.ghost.io/c/51/f8/51f871d8-b6be-4a73-b958-0ca4fff0110a/content/images/2026/09/visible_collective_lingering_image4.jpg",
-    "publishedAt": "2026-09-11T21:52:49.000Z"
-  },
-  {
-    "sourceName": "Colossal",
-    "link": "https://www.thisiscolossal.com/2026/09/roberta-gentry-blood-orange-acrylic-paintings/",
-    "headline": "Symmetry and Biomorphic Forms Characterize Roberta Gentry’s Sensual Paintings",
-    "summary": "Roberta Gentry is interested in the relationship between the constructed and the natural, cultivating abstract, biomorphic forms. Do stories and artists like th…",
-    "category": "Art",
-    "image": "https://www.thisiscolossal.com/wp-content/uploads/2026/09/gentry-1.jpg",
-    "publishedAt": "2026-09-11T18:52:30.000Z"
-  },
-  {
-    "sourceName": "Pitchfork",
-    "link": "https://pitchfork.com/reviews/albums/mac-demarco-dog-on-the-rock-seven-off-the-two-seaplane-dog-the-view-from-tian-tan/",
-    "headline": "Dog on the Rock / Seven Off the Two / Seaplane Dog / The View from Tian Tan",
-    "summary": "Originally issued as tour-only CD-Rs, these four diaristic albums from the singer-songwriter bundle together half-formed suites of slow, seasick recordings aime…",
-    "category": "Music",
-    "image": "https://media.pitchfork.com/photos/6aa2f33182c08b3dd55d3d44/master/pass/Mac%20DeMarco%20Dog%20on%20the%20Rock.jpg",
-    "publishedAt": "2026-09-12T04:00:00.000Z"
-  },
-  {
-    "sourceName": "NME",
-    "link": "https://www.nme.com/news/tv/crew-girl-soundtrack-every-song-3968338?utm_source=rss&utm_medium=rss&utm_campaign=crew-girl-soundtrack-every-song",
-    "headline": "Every song on the ‘Crew Girl’ soundtrack",
-    "summary": "Including songs by Tina Turner and Soulwax The post Every song on the ‘Crew Girl’ soundtrack appeared first on NME.…",
-    "category": "Music",
-    "image": "https://www.nme.com/wp-content/uploads/2026/09/Crew-Girl-main.jpg",
-    "publishedAt": "2026-09-11T23:47:57.000Z"
-  },
-  {
-    "sourceName": "IndieWire",
-    "link": "https://www.indiewire.com/criticism/movies/the-face-of-horror-review-anna-biller-1235216164/",
-    "headline": "‘The Face of Horror’ Review: Anna Biller Brings Her Brand of Technicolor Feminism to a Tale of Chivalry (or Lack Thereof)",
-    "summary": "TIFF: The medieval setting proves a perfect match for Biller's sensibilities, as she crafts a sophomore feature as visually striking and blunt in its messaging …",
-    "category": "Film",
-    "image": "https://www.indiewire.com/wp-content/uploads/2026/08/The_Face_of_Horror_Still_HERO.jpg?w=650",
-    "publishedAt": "2026-09-12T06:00:00.000Z"
-  },
-  {
-    "sourceName": "Vanity Fair",
-    "link": "https://www.vanityfair.com/story/if-emmett-till-lived-photos",
-    "headline": "A New Photo Exhibit Asks a Heartbreaking Question: What If Emmett Till Had Lived?",
-    "summary": "The multi-artist exhibit at Columbia College Chicago’s Museum of Contemporary Photography seeks to illustrate the true cost of racism.…",
-    "category": "Art",
-    "image": "https://media.vanityfair.com/photos/6aa42bea2c07062c37de5c79/master/pass/GettyImages-2238478076.jpg",
-    "publishedAt": "2026-09-11T22:24:34.000Z"
-  },
-  {
-    "sourceName": "Vogue",
-    "link": "https://www.vogue.com/article/best-parties-new-york-fashion-week-september-2026",
-    "headline": "Inside the Buzziest Parties of New York Fashion Week",
-    "summary": "Beyond the runways and presentations, the Spring 2027 season has also spelled no shortage of parties popping off across Manhattan—with plenty of celebrity names…",
-    "category": "Art",
-    "image": "https://assets.vogue.com/photos/6aa31f8fa45807271a6ac4a1/master/pass/0-%20Becky%20G,%20Willy%20Chavarria.%20Photo%20courtesy%20of%20Matt%20Weinberger.jpg",
-    "publishedAt": "2026-09-12T03:41:48.000Z"
-  },
-  {
-    "sourceName": "NYT Arts",
-    "link": "https://www.nytimes.com/2026/09/11/arts/music/lil-durk-acquitted-murder-for-hire.html",
-    "headline": "Lil Durk Is Found Not Guilty in Murder-for-Hire Case",
-    "summary": "The rapper had been accused of orchestrating a plot to kill a rival in an ambush that resulted in the death of another man.…",
-    "category": "Art",
-    "image": "https://static01.nyt.com/images/2026/09/08/multimedia/08cul-durk-explainer-zwbm/08cul-durk-explainer-zwbm-mediumSquareAt3X.jpg",
-    "publishedAt": "2026-09-12T02:03:01.000Z"
   }
 ]
