@@ -33,22 +33,28 @@
     will-change:transform;
   }
   .cosmos i:nth-child(1){
-    width:52vmax; height:52vmax;
-    top:-14vmax; left:-12vmax;
-    background:radial-gradient(circle, rgba(142,203,235,0.20) 0%, rgba(142,203,235,0) 64%);
-    animation:celDriftA 80s ease-in-out infinite alternate;
+    width:56vmax; height:56vmax;
+    top:-16vmax; left:-14vmax;
+    background:radial-gradient(circle, rgba(37,68,255,0.14) 0%, rgba(37,68,255,0) 66%);
+    animation:celDriftA 55s ease-in-out infinite alternate;
   }
   .cosmos i:nth-child(2){
-    width:46vmax; height:46vmax;
-    top:32vh; right:-14vmax;
-    background:radial-gradient(circle, rgba(91,47,224,0.10) 0%, rgba(91,47,224,0) 64%);
-    animation:celDriftB 96s ease-in-out infinite alternate;
+    width:50vmax; height:50vmax;
+    top:28vh; right:-16vmax;
+    background:radial-gradient(circle, rgba(91,47,224,0.17) 0%, rgba(91,47,224,0) 66%);
+    animation:celDriftB 70s ease-in-out infinite alternate;
   }
   .cosmos i:nth-child(3){
-    width:42vmax; height:42vmax;
-    bottom:-16vmax; left:24vw;
-    background:radial-gradient(circle, rgba(191,230,247,0.28) 0%, rgba(191,230,247,0) 64%);
-    animation:celDriftC 110s ease-in-out infinite alternate;
+    width:46vmax; height:46vmax;
+    bottom:-18vmax; left:18vw;
+    background:radial-gradient(circle, rgba(255,45,111,0.10) 0%, rgba(255,45,111,0) 66%);
+    animation:celDriftC 62s ease-in-out infinite alternate;
+  }
+  .cosmos i:nth-child(4){
+    width:34vmax; height:34vmax;
+    top:8vh; left:42vw;
+    background:radial-gradient(circle, rgba(255,179,0,0.15) 0%, rgba(255,179,0,0) 66%);
+    animation:celDriftD 80s ease-in-out infinite alternate;
   }
   .cosmos::before,
   .cosmos::after{
@@ -57,54 +63,64 @@
     will-change:transform, opacity;
   }
   .cosmos::before{
-    inset:-520px;
+    inset:-480px;
     background-image:
-      radial-gradient(circle 1.6px at 70px 110px,  rgba(91,47,224,0.50),  transparent),
-      radial-gradient(circle 1.2px at 240px 40px,  rgba(142,203,235,0.95), transparent),
-      radial-gradient(circle 1.8px at 400px 200px, rgba(91,47,224,0.40),  transparent),
-      radial-gradient(circle 1.2px at 150px 330px, rgba(142,203,235,0.95), transparent),
-      radial-gradient(circle 1.4px at 460px 430px, rgba(91,47,224,0.45),  transparent),
-      radial-gradient(circle 1px   at 320px 370px, rgba(142,203,235,0.85), transparent);
-    background-size:520px 520px;
-    opacity:0.7;
-    animation:celStarsDrift 260s linear infinite;
+      radial-gradient(circle at 70px 110px,  rgba(91,47,224,0.70) 0, rgba(91,47,224,0.70) 1.6px, rgba(91,47,224,0) 3px),
+      radial-gradient(circle at 250px 45px,  rgba(37,68,255,0.65) 0, rgba(37,68,255,0.65) 1.3px, rgba(37,68,255,0) 2.6px),
+      radial-gradient(circle at 390px 210px, rgba(255,179,0,0.85) 0, rgba(255,179,0,0.85) 1.8px, rgba(255,179,0,0) 3.2px),
+      radial-gradient(circle at 150px 330px, rgba(37,68,255,0.65) 0, rgba(37,68,255,0.65) 1.3px, rgba(37,68,255,0) 2.6px),
+      radial-gradient(circle at 430px 420px, rgba(91,47,224,0.70) 0, rgba(91,47,224,0.70) 1.6px, rgba(91,47,224,0) 3px),
+      radial-gradient(circle at 310px 360px, rgba(255,45,111,0.55) 0, rgba(255,45,111,0.55) 1.2px, rgba(255,45,111,0) 2.4px);
+    background-size:480px 480px;
+    opacity:0.85;
+    animation:
+      celStarsDrift 150s linear infinite,
+      celTwinkleB 8s ease-in-out infinite alternate;
   }
   .cosmos::after{
-    inset:-380px;
+    inset:-340px;
     background-image:
-      radial-gradient(circle 1.3px at 50px 260px,  rgba(91,47,224,0.45),  transparent),
-      radial-gradient(circle 1.6px at 210px 90px,  rgba(142,203,235,0.95), transparent),
-      radial-gradient(circle 1px   at 330px 300px, rgba(91,47,224,0.40),  transparent),
-      radial-gradient(circle 1.5px at 130px 180px, rgba(142,203,235,0.90), transparent);
-    background-size:380px 380px;
+      radial-gradient(circle at 50px 240px,  rgba(91,47,224,0.70) 0, rgba(91,47,224,0.70) 1.5px, rgba(91,47,224,0) 2.8px),
+      radial-gradient(circle at 200px 85px,  rgba(255,179,0,0.85) 0, rgba(255,179,0,0.85) 1.7px, rgba(255,179,0,0) 3px),
+      radial-gradient(circle at 300px 290px, rgba(37,68,255,0.65) 0, rgba(37,68,255,0.65) 1.3px, rgba(37,68,255,0) 2.6px),
+      radial-gradient(circle at 120px 170px, rgba(255,45,111,0.55) 0, rgba(255,45,111,0.55) 1.2px, rgba(255,45,111,0) 2.4px);
+    background-size:340px 340px;
     opacity:0.3;
     animation:
-      celStarsDriftB 340s linear infinite,
-      celTwinkle 9s ease-in-out infinite alternate;
+      celStarsDriftB 210s linear infinite,
+      celTwinkle 6s ease-in-out infinite alternate;
   }
   @keyframes celDriftA{
     from{ transform:translate3d(0,0,0) scale(1); }
-    to{   transform:translate3d(9vmax,7vmax,0) scale(1.12); }
+    to{   transform:translate3d(16vmax,12vmax,0) scale(1.18); }
   }
   @keyframes celDriftB{
-    from{ transform:translate3d(0,0,0) scale(1.05); }
-    to{   transform:translate3d(-8vmax,6vmax,0) scale(0.95); }
+    from{ transform:translate3d(0,0,0) scale(1.08); }
+    to{   transform:translate3d(-14vmax,10vmax,0) scale(0.92); }
   }
   @keyframes celDriftC{
     from{ transform:translate3d(0,0,0) scale(1); }
-    to{   transform:translate3d(7vmax,-6vmax,0) scale(1.1); }
+    to{   transform:translate3d(12vmax,-10vmax,0) scale(1.16); }
+  }
+  @keyframes celDriftD{
+    from{ transform:translate3d(0,0,0) scale(0.95); }
+    to{   transform:translate3d(-12vmax,14vmax,0) scale(1.12); }
   }
   @keyframes celStarsDrift{
     from{ transform:translate3d(0,0,0); }
-    to{   transform:translate3d(520px,520px,0); }
+    to{   transform:translate3d(480px,480px,0); }
   }
   @keyframes celStarsDriftB{
     from{ transform:translate3d(0,0,0); }
-    to{   transform:translate3d(-380px,380px,0); }
+    to{   transform:translate3d(-340px,340px,0); }
   }
   @keyframes celTwinkle{
-    from{ opacity:0.22; }
-    to{   opacity:0.80; }
+    from{ opacity:0.15; }
+    to{   opacity:1; }
+  }
+  @keyframes celTwinkleB{
+    from{ opacity:1; }
+    to{   opacity:0.45; }
   }
   @media (prefers-reduced-motion: reduce){
     .cosmos i,
@@ -211,7 +227,7 @@
 </head>
 <body>
 
-<div class="cosmos" aria-hidden="true"><i></i><i></i><i></i></div>
+<div class="cosmos" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
 
 <header>
   <a href="index.html" class="logo">Celestine<span></span></a>
@@ -265,7 +281,7 @@
     <a href="bios.html">View all bios</a>
   </div>
   <div class="grid">
-    <a class="card c-span-3" href="taylor-swift.html">
+    <a class="card c-span-2" href="taylor-swift.html">
       <div class="thumb t-music" style="background-image:url('images/taylor.jpg.webp');background-size:cover;background-position:center;"><span>ARTIST BIO</span></div>
       <div class="body">
         <h3>Taylor Swift — The Storyteller Who Keeps Rewriting the Rules</h3>
@@ -273,7 +289,7 @@
         <div class="meta">Trending Now</div>
       </div>
     </a>
-    <a class="card c-span-3" href="tom-holland.html">
+    <a class="card c-span-2" href="tom-holland.html">
       <div class="thumb t-film" style="background-image:url('images/gettyimages-2287310851.jpg');background-size:cover;background-position:center;"><span>ARTIST BIO</span></div>
       <div class="body">
         <h3>Tom Holland — Grew Up On Screen</h3>
@@ -281,10 +297,18 @@
         <div class="meta">Film</div>
       </div>
     </a>
+    <a class="card c-span-2" href="cillian-murphy.html">
+      <div class="thumb t-film" style="background-image:url('images/cillian-murphy.jpg'), linear-gradient(135deg,#2544FF,#7fa0ff);background-size:cover;background-position:center;"><span>ARTIST BIO</span></div>
+      <div class="body">
+        <h3>Cillian Murphy — The Understated Actor Who Finally Got His Oscar</h3>
+        <p>Two decades of intense, unshowy roles, then Oppenheimer made it official.</p>
+        <div class="meta">Film</div>
+      </div>
+    </a>
   </div>
 </section>
 
-<section class="section" id="film" style="background:rgba(251,248,255,0.78);">
+<section class="section" id="film" style="background:rgba(251,248,255,0.55);">
   <div class="section-head">
     <h2>Film reviews</h2>
     <a href="film.html">View all reviews</a>
@@ -335,7 +359,7 @@
   </div>
 </section>
 
-<section class="section" id="charts" style="background:rgba(244,239,252,0.78);">
+<section class="section" id="charts" style="background:rgba(244,239,252,0.55);">
   <div class="section-head">
     <h2>Billboard Hot 100 — Live Tracker</h2>
     <a href="charts.html">View full Top 100 →</a>
@@ -351,7 +375,7 @@
   </div>
 </section>
 
-<section class="section" id="news" style="background:rgba(251,248,255,0.78);border-bottom:none;">
+<section class="section" id="news" style="background:rgba(251,248,255,0.55);border-bottom:none;">
   <div class="section-head">
     <h2>News</h2>
     <a href="news.html">View all news</a>
