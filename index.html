@@ -19,6 +19,101 @@
     box-shadow:0 0 8px rgba(142,203,235,0.7);
   }
 
+  /* ===== Celestial background (slow, quiet, sits behind all content) ===== */
+  .cosmos{
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    overflow:hidden;
+    pointer-events:none;
+  }
+  .cosmos i{
+    position:absolute;
+    border-radius:50%;
+    will-change:transform;
+  }
+  .cosmos i:nth-child(1){
+    width:52vmax; height:52vmax;
+    top:-14vmax; left:-12vmax;
+    background:radial-gradient(circle, rgba(142,203,235,0.20) 0%, rgba(142,203,235,0) 64%);
+    animation:celDriftA 80s ease-in-out infinite alternate;
+  }
+  .cosmos i:nth-child(2){
+    width:46vmax; height:46vmax;
+    top:32vh; right:-14vmax;
+    background:radial-gradient(circle, rgba(91,47,224,0.10) 0%, rgba(91,47,224,0) 64%);
+    animation:celDriftB 96s ease-in-out infinite alternate;
+  }
+  .cosmos i:nth-child(3){
+    width:42vmax; height:42vmax;
+    bottom:-16vmax; left:24vw;
+    background:radial-gradient(circle, rgba(191,230,247,0.28) 0%, rgba(191,230,247,0) 64%);
+    animation:celDriftC 110s ease-in-out infinite alternate;
+  }
+  .cosmos::before,
+  .cosmos::after{
+    content:"";
+    position:absolute;
+    will-change:transform, opacity;
+  }
+  .cosmos::before{
+    inset:-520px;
+    background-image:
+      radial-gradient(circle 1.6px at 70px 110px,  rgba(91,47,224,0.50),  transparent),
+      radial-gradient(circle 1.2px at 240px 40px,  rgba(142,203,235,0.95), transparent),
+      radial-gradient(circle 1.8px at 400px 200px, rgba(91,47,224,0.40),  transparent),
+      radial-gradient(circle 1.2px at 150px 330px, rgba(142,203,235,0.95), transparent),
+      radial-gradient(circle 1.4px at 460px 430px, rgba(91,47,224,0.45),  transparent),
+      radial-gradient(circle 1px   at 320px 370px, rgba(142,203,235,0.85), transparent);
+    background-size:520px 520px;
+    opacity:0.7;
+    animation:celStarsDrift 260s linear infinite;
+  }
+  .cosmos::after{
+    inset:-380px;
+    background-image:
+      radial-gradient(circle 1.3px at 50px 260px,  rgba(91,47,224,0.45),  transparent),
+      radial-gradient(circle 1.6px at 210px 90px,  rgba(142,203,235,0.95), transparent),
+      radial-gradient(circle 1px   at 330px 300px, rgba(91,47,224,0.40),  transparent),
+      radial-gradient(circle 1.5px at 130px 180px, rgba(142,203,235,0.90), transparent);
+    background-size:380px 380px;
+    opacity:0.3;
+    animation:
+      celStarsDriftB 340s linear infinite,
+      celTwinkle 9s ease-in-out infinite alternate;
+  }
+  @keyframes celDriftA{
+    from{ transform:translate3d(0,0,0) scale(1); }
+    to{   transform:translate3d(9vmax,7vmax,0) scale(1.12); }
+  }
+  @keyframes celDriftB{
+    from{ transform:translate3d(0,0,0) scale(1.05); }
+    to{   transform:translate3d(-8vmax,6vmax,0) scale(0.95); }
+  }
+  @keyframes celDriftC{
+    from{ transform:translate3d(0,0,0) scale(1); }
+    to{   transform:translate3d(7vmax,-6vmax,0) scale(1.1); }
+  }
+  @keyframes celStarsDrift{
+    from{ transform:translate3d(0,0,0); }
+    to{   transform:translate3d(520px,520px,0); }
+  }
+  @keyframes celStarsDriftB{
+    from{ transform:translate3d(0,0,0); }
+    to{   transform:translate3d(-380px,380px,0); }
+  }
+  @keyframes celTwinkle{
+    from{ opacity:0.22; }
+    to{   opacity:0.80; }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .cosmos i,
+    .cosmos::before,
+    .cosmos::after{
+      animation:none !important;
+    }
+  }
+
   /* Hamburger Menu Styles */
   header {
     position: relative;
@@ -116,6 +211,8 @@
 </head>
 <body>
 
+<div class="cosmos" aria-hidden="true"><i></i><i></i><i></i></div>
+
 <header>
   <a href="index.html" class="logo">Celestine<span></span></a>
   
@@ -168,26 +265,26 @@
     <a href="bios.html">View all bios</a>
   </div>
   <div class="grid">
-    <a class="card c-span-3" href="v-kim-taehyung.html">
-      <div class="thumb t-art" style="background-image:url('images/BTS-Kim-Taehyung.jpg');background-size:cover;background-position:center;"><span>ARTIST BIO</span></div>
+    <a class="card c-span-3" href="taylor-swift.html">
+      <div class="thumb t-music" style="background-image:url('images/taylor.jpg.webp');background-size:cover;background-position:center;"><span>ARTIST BIO</span></div>
       <div class="body">
-        <h3>V — The Complete Story</h3>
-        <p>From a farmer's son in Geochang to the world's most searched artist: the full chronology, chapter by chapter.</p>
-        <div class="meta">Research Series · Vol. I</div>
+        <h3>Taylor Swift — The Storyteller Who Keeps Rewriting the Rules</h3>
+        <p>Two decades in, still the artist the industry measures its biggest moments against.</p>
+        <div class="meta">Trending Now</div>
       </div>
     </a>
-    <a class="card c-span-3" href="jungkook.html">
-      <div class="thumb t-music" style="background-image:url('images/jungkook-seven-review.jpg');background-size:cover;background-position:center;"><span>ARTIST BIO</span></div>
+    <a class="card c-span-3" href="tom-holland.html">
+      <div class="thumb t-film" style="background-image:url('images/gettyimages-2287310851.jpg');background-size:cover;background-position:center;"><span>ARTIST BIO</span></div>
       <div class="body">
-        <h3>Jungkook — The Golden Maknae, Off Duty and Back Again</h3>
-        <p>Enlisted at his solo peak, discharged to a chart record still untouched.</p>
-        <div class="meta">BTS</div>
+        <h3>Tom Holland — Grew Up On Screen</h3>
+        <p>Cast at 19 to play a teenager. Spent a decade growing into the role.</p>
+        <div class="meta">Film</div>
       </div>
     </a>
   </div>
 </section>
 
-<section class="section" id="film" style="background:#FBF8FF;">
+<section class="section" id="film" style="background:rgba(251,248,255,0.78);">
   <div class="section-head">
     <h2>Film reviews</h2>
     <a href="film.html">View all reviews</a>
@@ -238,7 +335,7 @@
   </div>
 </section>
 
-<section class="section" id="charts" style="background:#F4EFFC;">
+<section class="section" id="charts" style="background:rgba(244,239,252,0.78);">
   <div class="section-head">
     <h2>Billboard Hot 100 — Live Tracker</h2>
     <a href="charts.html">View full Top 100 →</a>
@@ -254,7 +351,7 @@
   </div>
 </section>
 
-<section class="section" id="news" style="background:#FBF8FF;border-bottom:none;">
+<section class="section" id="news" style="background:rgba(251,248,255,0.78);border-bottom:none;">
   <div class="section-head">
     <h2>News</h2>
     <a href="news.html">View all news</a>
