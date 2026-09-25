@@ -1,0 +1,38 @@
+name: Update Billboard Hot 100
+
+on:
+  schedule:
+    # Runs daily at 06:00 UTC. The chart itself only updates weekly
+    # (Tuesdays), but checking daily means the site is never more than
+    # a day behind whenever Billboard does publish a new one.
+    - cron: '0 6 * * *'
+  workflow_dispatch: {}   # lets you trigger it manually from the Actions tab, for testing
+
+permissions:
+  contents: write
+
+jobs:
+  update-chart:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install billboard.py
+
+      - name: Fetch chart
+        run: python scripts/fetch_chart.py
+
+      - name: Commit updated chart data
+        run: |
+          git config user.name "celestine-bot"
+          git config user.email "actions@github.com"
+          git add data/hot100.json
+          git diff --staged --quiet && echo "No changes to commit" || git commit -m "Update Hot 100 chart data"
+          git push
