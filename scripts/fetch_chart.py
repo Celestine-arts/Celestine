@@ -18,6 +18,7 @@ below against the live page and update the selectors.
 """
 
 import json
+import os
 import re
 import sys
 from datetime import datetime, timezone
@@ -126,6 +127,7 @@ if __name__ == "__main__":
         print(f"FAILED: only parsed {len(data['entries'])} entries, expected ~100", file=sys.stderr)
         sys.exit(1)
 
+    os.makedirs("data", exist_ok=True)
     with open("data/hot100.json", "w") as f:
         json.dump(data, f, indent=2)
     print(f"Wrote {len(data['entries'])} entries for chart dated {data['chartDate']}")
