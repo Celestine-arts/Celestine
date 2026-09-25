@@ -24,7 +24,7 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install billboard.py
+        run: pip install requests beautifulsoup4
 
       - name: Fetch chart
         run: python scripts/fetch_chart.py
