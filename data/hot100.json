@@ -1,0 +1,906 @@
+{
+  "chartDate": "2026-09-25",
+  "fetchedAt": "2026-09-25T12:00:59.631643+00:00",
+  "entries": [
+    {
+      "rank": 1,
+      "title": "Choosin' Texas",
+      "artist": "1",
+      "weeks": 2,
+      "peak": 1,
+      "lastPos": 11,
+      "movement": "up"
+    },
+    {
+      "rank": 2,
+      "title": "Boston",
+      "artist": "2",
+      "weeks": 8,
+      "peak": 2,
+      "lastPos": 4,
+      "movement": "up"
+    },
+    {
+      "rank": 3,
+      "title": "Been By Now",
+      "artist": "3",
+      "weeks": 8,
+      "peak": 2,
+      "lastPos": 8,
+      "movement": "up"
+    },
+    {
+      "rank": 4,
+      "title": "Hate That I Made You Love Me",
+      "artist": "4",
+      "weeks": 6,
+      "peak": 1,
+      "lastPos": 6,
+      "movement": "up"
+    },
+    {
+      "rank": 5,
+      "title": "Dracula",
+      "artist": "5",
+      "weeks": 7,
+      "peak": 5,
+      "lastPos": 10,
+      "movement": "up"
+    },
+    {
+      "rank": 6,
+      "title": "I Knew It, I Knew You",
+      "artist": "6",
+      "weeks": 6,
+      "peak": 1,
+      "lastPos": 6,
+      "movement": "same"
+    },
+    {
+      "rank": 7,
+      "title": "BbY WOW",
+      "artist": "7",
+      "weeks": 9,
+      "peak": 7,
+      "lastPos": 8,
+      "movement": "up"
+    },
+    {
+      "rank": 8,
+      "title": "So Easy (To Fall In Love)",
+      "artist": "8",
+      "weeks": 5,
+      "peak": 5,
+      "lastPos": 10,
+      "movement": "up"
+    },
+    {
+      "rank": 9,
+      "title": "Man I Need",
+      "artist": "9",
+      "weeks": 1,
+      "peak": 2,
+      "lastPos": 9,
+      "movement": "same"
+    },
+    {
+      "rank": 10,
+      "title": "Be Her",
+      "artist": "10",
+      "weeks": 5,
+      "peak": 2,
+      "lastPos": 2,
+      "movement": "down"
+    },
+    {
+      "rank": 11,
+      "title": "Risk It All",
+      "artist": "11",
+      "weeks": 3,
+      "peak": 4,
+      "lastPos": 3,
+      "movement": "down"
+    },
+    {
+      "rank": 12,
+      "title": "Stupid Song",
+      "artist": "12",
+      "weeks": 6,
+      "peak": 3,
+      "lastPos": 6,
+      "movement": "down"
+    },
+    {
+      "rank": 13,
+      "title": "I Just Might",
+      "artist": "13",
+      "weeks": 1,
+      "peak": 1,
+      "lastPos": 1,
+      "movement": "down"
+    },
+    {
+      "rank": 14,
+      "title": "Midnight Sun",
+      "artist": "14",
+      "weeks": 9,
+      "peak": 13,
+      "lastPos": 1,
+      "movement": "down"
+    },
+    {
+      "rank": 15,
+      "title": "I Can't Love You Anymore",
+      "artist": "15",
+      "weeks": 7,
+      "peak": 4,
+      "lastPos": 5,
+      "movement": "down"
+    },
+    {
+      "rank": 16,
+      "title": "Drop Dead",
+      "artist": "16",
+      "weeks": 5,
+      "peak": 1,
+      "lastPos": 5,
+      "movement": "down"
+    },
+    {
+      "rank": 17,
+      "title": "Be By You",
+      "artist": "17",
+      "weeks": 3,
+      "peak": 12,
+      "lastPos": 2,
+      "movement": "down"
+    },
+    {
+      "rank": 18,
+      "title": "Janice STFU",
+      "artist": "18",
+      "weeks": 5,
+      "peak": 1,
+      "lastPos": 5,
+      "movement": "down"
+    },
+    {
+      "rank": 19,
+      "title": "Babydoll",
+      "artist": "19",
+      "weeks": 4,
+      "peak": 16,
+      "lastPos": 2,
+      "movement": "down"
+    },
+    {
+      "rank": 20,
+      "title": "Earrings",
+      "artist": "20",
+      "weeks": 9,
+      "peak": 19,
+      "lastPos": 3,
+      "movement": "down"
+    },
+    {
+      "rank": 21,
+      "title": "Dead Fresh",
+      "artist": "21",
+      "weeks": 8,
+      "peak": 18,
+      "lastPos": 8,
+      "movement": "down"
+    },
+    {
+      "rank": 22,
+      "title": "Nicole Kidman",
+      "artist": "22",
+      "weeks": 9,
+      "peak": 22,
+      "lastPos": 9,
+      "movement": "down"
+    },
+    {
+      "rank": 23,
+      "title": "Loser",
+      "artist": "23",
+      "weeks": 8,
+      "peak": 18,
+      "lastPos": 11,
+      "movement": "down"
+    },
+    {
+      "rank": 24,
+      "title": "Loving Life Again",
+      "artist": "24",
+      "weeks": 4,
+      "peak": 21,
+      "lastPos": 4,
+      "movement": "down"
+    },
+    {
+      "rank": 25,
+      "title": "Jaded",
+      "artist": "25",
+      "weeks": 8,
+      "peak": 19,
+      "lastPos": 8,
+      "movement": "down"
+    },
+    {
+      "rank": 26,
+      "title": "So Good",
+      "artist": "26",
+      "weeks": 9,
+      "peak": 26,
+      "lastPos": 9,
+      "movement": "down"
+    },
+    {
+      "rank": 27,
+      "title": "The Cure",
+      "artist": "27",
+      "weeks": 6,
+      "peak": 5,
+      "lastPos": 6,
+      "movement": "down"
+    },
+    {
+      "rank": 28,
+      "title": "Animal",
+      "artist": "28",
+      "weeks": 8,
+      "peak": 24,
+      "lastPos": 8,
+      "movement": "down"
+    },
+    {
+      "rank": 29,
+      "title": "What You Need",
+      "artist": "29",
+      "weeks": 8,
+      "peak": 29,
+      "lastPos": 2,
+      "movement": "down"
+    },
+    {
+      "rank": 30,
+      "title": "Ain't In LA",
+      "artist": "30",
+      "weeks": 9,
+      "peak": 30,
+      "lastPos": 8,
+      "movement": "down"
+    },
+    {
+      "rank": 31,
+      "title": "Oh Yeah?",
+      "artist": "31",
+      "weeks": 8,
+      "peak": 19,
+      "lastPos": 8,
+      "movement": "down"
+    },
+    {
+      "rank": 32,
+      "title": "Dai Dai (FIFA World Cup Official Song 2026)",
+      "artist": "32",
+      "weeks": 8,
+      "peak": 17,
+      "lastPos": 6,
+      "movement": "down"
+    },
+    {
+      "rank": 33,
+      "title": "Orbiter",
+      "artist": "33",
+      "weeks": 9,
+      "peak": 33,
+      "lastPos": 5,
+      "movement": "down"
+    },
+    {
+      "rank": 34,
+      "title": "Spend Dat",
+      "artist": "34",
+      "weeks": 7,
+      "peak": 17,
+      "lastPos": 6,
+      "movement": "down"
+    },
+    {
+      "rank": 35,
+      "title": "Cinderella",
+      "artist": "35",
+      "weeks": 7,
+      "peak": 25,
+      "lastPos": 5,
+      "movement": "down"
+    },
+    {
+      "rank": 36,
+      "title": "Take Me Back (Leave Me There)",
+      "artist": "36",
+      "weeks": 9,
+      "peak": 33,
+      "lastPos": 8,
+      "movement": "down"
+    },
+    {
+      "rank": 37,
+      "title": "Morning Dew (Donk)",
+      "artist": "37",
+      "weeks": 7,
+      "peak": 26,
+      "lastPos": 7,
+      "movement": "down"
+    },
+    {
+      "rank": 38,
+      "title": "Mr. Know It All",
+      "artist": "38",
+      "weeks": 9,
+      "peak": 38,
+      "lastPos": 4,
+      "movement": "down"
+    },
+    {
+      "rank": 39,
+      "title": "Rethink Some Things",
+      "artist": "39",
+      "weeks": 9,
+      "peak": 39,
+      "lastPos": 4,
+      "movement": "down"
+    },
+    {
+      "rank": 40,
+      "title": "Shabang",
+      "artist": "40",
+      "weeks": 5,
+      "peak": 4,
+      "lastPos": 5,
+      "movement": "down"
+    },
+    {
+      "rank": 41,
+      "title": "He Belongs",
+      "artist": "41",
+      "weeks": 9,
+      "peak": 41,
+      "lastPos": 9,
+      "movement": "down"
+    },
+    {
+      "rank": 42,
+      "title": "Ghost",
+      "artist": "42",
+      "weeks": 9,
+      "peak": 42,
+      "lastPos": 9,
+      "movement": "down"
+    },
+    {
+      "rank": 43,
+      "title": "AH HA",
+      "artist": "43",
+      "weeks": 8,
+      "peak": 25,
+      "lastPos": 8,
+      "movement": "down"
+    },
+    {
+      "rank": 44,
+      "title": "Self Aware",
+      "artist": "44",
+      "weeks": 8,
+      "peak": 35,
+      "lastPos": 4,
+      "movement": "down"
+    },
+    {
+      "rank": 45,
+      "title": "Bloodstream",
+      "artist": "45",
+      "weeks": 8,
+      "peak": 45,
+      "lastPos": 6,
+      "movement": "down"
+    },
+    {
+      "rank": 46,
+      "title": "Petal",
+      "artist": "46",
+      "weeks": 8,
+      "peak": 4,
+      "lastPos": 8,
+      "movement": "down"
+    },
+    {
+      "rank": 47,
+      "title": "Freakin' Out",
+      "artist": "47",
+      "weeks": 5,
+      "peak": 33,
+      "lastPos": 4,
+      "movement": "down"
+    },
+    {
+      "rank": 48,
+      "title": "Phone, Keys, Wallet",
+      "artist": "48",
+      "weeks": 8,
+      "peak": 48,
+      "lastPos": 6,
+      "movement": "down"
+    },
+    {
+      "rank": 49,
+      "title": "Cowgirl",
+      "artist": "49",
+      "weeks": 9,
+      "peak": 42,
+      "lastPos": 6,
+      "movement": "down"
+    },
+    {
+      "rank": 50,
+      "title": "Something To Lose",
+      "artist": "50",
+      "weeks": 8,
+      "peak": 40,
+      "lastPos": 6,
+      "movement": "down"
+    },
+    {
+      "rank": 51,
+      "title": "Rein Me In",
+      "artist": "51",
+      "weeks": 8,
+      "peak": 45,
+      "lastPos": 3,
+      "movement": "down"
+    },
+    {
+      "rank": 52,
+      "title": "Hit The Wall",
+      "artist": "52",
+      "weeks": 8,
+      "peak": 26,
+      "lastPos": 5,
+      "movement": "down"
+    },
+    {
+      "rank": 53,
+      "title": "WTF GOIN",
+      "artist": "53",
+      "weeks": 9,
+      "peak": 53,
+      "lastPos": 9,
+      "movement": "down"
+    },
+    {
+      "rank": 54,
+      "title": "Ceiling",
+      "artist": "54",
+      "weeks": 9,
+      "peak": 54,
+      "lastPos": 9,
+      "movement": "down"
+    },
+    {
+      "rank": 55,
+      "title": "My Body Isn't Ready",
+      "artist": "55",
+      "weeks": 7,
+      "peak": 30,
+      "lastPos": 7,
+      "movement": "down"
+    },
+    {
+      "rank": 56,
+      "title": "Carry On",
+      "artist": "56",
+      "weeks": 9,
+      "peak": 53,
+      "lastPos": 7,
+      "movement": "down"
+    },
+    {
+      "rank": 57,
+      "title": "Great Expectation",
+      "artist": "57",
+      "weeks": 9,
+      "peak": 52,
+      "lastPos": 7,
+      "movement": "down"
+    },
+    {
+      "rank": 58,
+      "title": "Think As You Drunk",
+      "artist": "58",
+      "weeks": 9,
+      "peak": 58,
+      "lastPos": 6,
+      "movement": "down"
+    },
+    {
+      "rank": 59,
+      "title": "Love Bomb",
+      "artist": "59",
+      "weeks": 9,
+      "peak": 59,
+      "lastPos": 9,
+      "movement": "down"
+    },
+    {
+      "rank": 60,
+      "title": "Noble",
+      "artist": "60",
+      "weeks": 8,
+      "peak": 51,
+      "lastPos": 5,
+      "movement": "down"
+    },
+    {
+      "rank": 61,
+      "title": "Mexico Honey",
+      "artist": "61",
+      "weeks": 8,
+      "peak": 39,
+      "lastPos": 6,
+      "movement": "down"
+    },
+    {
+      "rank": 62,
+      "title": "Kid Myself",
+      "artist": "62",
+      "weeks": 9,
+      "peak": 62,
+      "lastPos": 8,
+      "movement": "down"
+    },
+    {
+      "rank": 63,
+      "title": "Bass Persuades",
+      "artist": "63",
+      "weeks": 9,
+      "peak": 35,
+      "lastPos": 9,
+      "movement": "down"
+    },
+    {
+      "rank": 64,
+      "title": "Sue Me",
+      "artist": "64",
+      "weeks": 9,
+      "peak": 57,
+      "lastPos": 8,
+      "movement": "down"
+    },
+    {
+      "rank": 65,
+      "title": "Empty Words",
+      "artist": "65",
+      "weeks": 9,
+      "peak": 65,
+      "lastPos": 5,
+      "movement": "down"
+    },
+    {
+      "rank": 66,
+      "title": "Chevy Silverado",
+      "artist": "66",
+      "weeks": 8,
+      "peak": 41,
+      "lastPos": 7,
+      "movement": "down"
+    },
+    {
+      "rank": 67,
+      "title": "Ghetto Love Story",
+      "artist": "67",
+      "weeks": 8,
+      "peak": 44,
+      "lastPos": 7,
+      "movement": "down"
+    },
+    {
+      "rank": 68,
+      "title": "Another Drink",
+      "artist": "68",
+      "weeks": 9,
+      "peak": 60,
+      "lastPos": 8,
+      "movement": "down"
+    },
+    {
+      "rank": 69,
+      "title": "Nothing Nice To Say",
+      "artist": "69",
+      "weeks": 9,
+      "peak": 69,
+      "lastPos": 9,
+      "movement": "down"
+    },
+    {
+      "rank": 70,
+      "title": "McArthur",
+      "artist": "70",
+      "weeks": 2,
+      "peak": 31,
+      "lastPos": 2,
+      "movement": "down"
+    },
+    {
+      "rank": 71,
+      "title": "South Of Sanity",
+      "artist": "71",
+      "weeks": 9,
+      "peak": 71,
+      "lastPos": 9,
+      "movement": "down"
+    },
+    {
+      "rank": 72,
+      "title": "Like, Whatever",
+      "artist": "72",
+      "weeks": 9,
+      "peak": 72,
+      "lastPos": 9,
+      "movement": "down"
+    },
+    {
+      "rank": 73,
+      "title": "Break",
+      "artist": "73",
+      "weeks": 9,
+      "peak": 73,
+      "lastPos": 9,
+      "movement": "down"
+    },
+    {
+      "rank": 74,
+      "title": "Doors",
+      "artist": "74",
+      "weeks": 5,
+      "peak": 9,
+      "lastPos": 5,
+      "movement": "down"
+    },
+    {
+      "rank": 75,
+      "title": "String By",
+      "artist": "75",
+      "weeks": 9,
+      "peak": 71,
+      "lastPos": 8,
+      "movement": "down"
+    },
+    {
+      "rank": 76,
+      "title": "All My Exes",
+      "artist": "76",
+      "weeks": 9,
+      "peak": 76,
+      "lastPos": 9,
+      "movement": "down"
+    },
+    {
+      "rank": 77,
+      "title": "Maggots For Brains",
+      "artist": "77",
+      "weeks": 6,
+      "peak": 12,
+      "lastPos": 6,
+      "movement": "down"
+    },
+    {
+      "rank": 78,
+      "title": "The Feeling",
+      "artist": "78",
+      "weeks": 8,
+      "peak": 67,
+      "lastPos": 6,
+      "movement": "down"
+    },
+    {
+      "rank": 79,
+      "title": "Still",
+      "artist": "79",
+      "weeks": 8,
+      "peak": 41,
+      "lastPos": 8,
+      "movement": "down"
+    },
+    {
+      "rank": 80,
+      "title": "Expectations",
+      "artist": "80",
+      "weeks": 6,
+      "peak": 20,
+      "lastPos": 6,
+      "movement": "down"
+    },
+    {
+      "rank": 81,
+      "title": "Honeybee",
+      "artist": "81",
+      "weeks": 6,
+      "peak": 9,
+      "lastPos": 6,
+      "movement": "down"
+    },
+    {
+      "rank": 82,
+      "title": "In My Room",
+      "artist": "82",
+      "weeks": 4,
+      "peak": 57,
+      "lastPos": 3,
+      "movement": "down"
+    },
+    {
+      "rank": 83,
+      "title": "Painted You Pretty",
+      "artist": "83",
+      "weeks": 9,
+      "peak": 80,
+      "lastPos": 9,
+      "movement": "down"
+    },
+    {
+      "rank": 84,
+      "title": "Stop The Wedding!",
+      "artist": "84",
+      "weeks": 9,
+      "peak": 84,
+      "lastPos": 9,
+      "movement": "down"
+    },
+    {
+      "rank": 85,
+      "title": "Country And She Knows It",
+      "artist": "85",
+      "weeks": 9,
+      "peak": 81,
+      "lastPos": 9,
+      "movement": "down"
+    },
+    {
+      "rank": 86,
+      "title": "Hands Up",
+      "artist": "86",
+      "weeks": 9,
+      "peak": 82,
+      "lastPos": 8,
+      "movement": "down"
+    },
+    {
+      "rank": 87,
+      "title": "Get To Drinkin'",
+      "artist": "87",
+      "weeks": 9,
+      "peak": 87,
+      "lastPos": 9,
+      "movement": "down"
+    },
+    {
+      "rank": 88,
+      "title": "Ahi",
+      "artist": "88",
+      "weeks": 8,
+      "peak": 44,
+      "lastPos": 8,
+      "movement": "down"
+    },
+    {
+      "rank": 89,
+      "title": "Wild Cat(s)",
+      "artist": "89",
+      "weeks": 9,
+      "peak": 89,
+      "lastPos": 9,
+      "movement": "down"
+    },
+    {
+      "rank": 90,
+      "title": "God I'm Just Grateful",
+      "artist": "90",
+      "weeks": 9,
+      "peak": 90,
+      "lastPos": 9,
+      "movement": "down"
+    },
+    {
+      "rank": 91,
+      "title": "Hootie Frutti",
+      "artist": "91",
+      "weeks": 8,
+      "peak": 31,
+      "lastPos": 8,
+      "movement": "down"
+    },
+    {
+      "rank": 92,
+      "title": "onsra",
+      "artist": "92",
+      "weeks": 9,
+      "peak": 92,
+      "lastPos": 9,
+      "movement": "down"
+    },
+    {
+      "rank": 93,
+      "title": "SaWaDiKa",
+      "artist": "93",
+      "weeks": 9,
+      "peak": 69,
+      "lastPos": 9,
+      "movement": "down"
+    },
+    {
+      "rank": 94,
+      "title": "Bet On That",
+      "artist": "94",
+      "weeks": 9,
+      "peak": 84,
+      "lastPos": 8,
+      "movement": "down"
+    },
+    {
+      "rank": 95,
+      "title": "California Girls",
+      "artist": "95",
+      "weeks": 7,
+      "peak": 23,
+      "lastPos": 7,
+      "movement": "down"
+    },
+    {
+      "rank": 96,
+      "title": "You",
+      "artist": "96",
+      "weeks": 9,
+      "peak": 96,
+      "lastPos": 9,
+      "movement": "down"
+    },
+    {
+      "rank": 97,
+      "title": "Washed",
+      "artist": "97",
+      "weeks": 9,
+      "peak": 97,
+      "lastPos": 9,
+      "movement": "down"
+    },
+    {
+      "rank": 98,
+      "title": "Say So",
+      "artist": "98",
+      "weeks": 9,
+      "peak": 98,
+      "lastPos": 4,
+      "movement": "down"
+    },
+    {
+      "rank": 99,
+      "title": "Some Of Your Love",
+      "artist": "99",
+      "weeks": 9,
+      "peak": 36,
+      "lastPos": 9,
+      "movement": "down"
+    },
+    {
+      "rank": 100,
+      "title": "What's Wrong With Me",
+      "artist": "100",
+      "weeks": 6,
+      "peak": 17,
+      "lastPos": 6,
+      "movement": "down"
+    }
+  ]
+}
