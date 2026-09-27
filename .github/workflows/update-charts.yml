@@ -35,6 +35,16 @@ jobs:
       - name: Fetch chart
         run: python scripts/fetch_chart.py
 
+      # Runs BEFORE generate-song-pages.mjs on purpose: a brand-new
+      # artist's bio needs to exist before their first song page is
+      # generated, so the song -> bio link is there from day one
+      # (song pages are never rewritten once created, so a missed link
+      # here would stay missing forever).
+      - name: Generate artist bio pages
+        run: node scripts/generate-artist-bios.mjs
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+
       - name: Generate new song pages
         run: node scripts/generate-song-pages.mjs
         env:
@@ -43,15 +53,22 @@ jobs:
       - name: Open pull request with changes
         uses: peter-evans/create-pull-request@v6
         with:
-          commit-message: "Auto: update Hot 100 chart + new song pages"
-          title: "Chart update — new songs for review"
+          commit-message: "Auto: update Hot 100 chart + new song/artist pages"
+          title: "Chart update — new songs & artists for review"
           body: |
             Automated daily run:
             - Refreshed `data/hot100.json` from Billboard's Hot 100
-            - Generated pages under `songs/` for any songs new to the chart
+            - Merged today's chart into the persistent `data/songs-index.json`
+              catalog (songs never drop out of this file once seen)
+            - Generated bio pages for any artist new to the chart, grounded
+              in their Wikipedia summary where one exists (added to
+              `bio-index.json`)
+            - Generated pages under `songs/` for any songs new to the chart,
+              linking to the artist's bio when one is available
               (existing pages are never touched or overwritten)
 
-            Song pages include an AI-drafted note (Gemini) clearly marked
-            as a draft — review before merging, same as the news workflow.
+            Song and artist pages include an AI-drafted note (Gemini)
+            clearly marked as a draft — review before merging, same as the
+            news workflow.
           branch: auto/chart-update
           delete-branch: true
