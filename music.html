@@ -293,8 +293,12 @@
             var card = document.createElement('a');
             card.className = 'card c-span-2';
             card.href = href;
+            var coverBlock = s.coverArt
+              ? '<img src="' + s.coverArt + '" alt="Cover art for ' + s.title + '" style="display:block;width:100%;height:100%;object-fit:cover;">'
+              : ''; // no cover on file yet — falls back to the placeholder gradient below
             card.innerHTML =
               '<div class="thumb t-music" style="position:relative;overflow:hidden;background:linear-gradient(135deg,#e8e4f5,#f5e8f0);">' +
+                coverBlock +
                 '<span style="position:absolute;top:10px;left:10px;background:rgba(0,0,0,0.55);color:#fff;font-size:11px;letter-spacing:0.06em;padding:4px 9px;border-radius:3px;text-transform:uppercase;">Chart Pick</span>' +
               '</div>' +
               '<div class="body"><h3>' + s.title + '</h3><p>Peak #' + (s.peak || '—') + ' on the Hot 100.</p><div class="meta">' + s.artist + '</div></div>';
