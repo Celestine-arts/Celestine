@@ -1,6 +1,6 @@
 {
   "chartDate": "2026-09-27",
-  "fetchedAt": "2026-09-27T01:04:16.795308+00:00",
+  "fetchedAt": "2026-09-27T06:07:37.242350+00:00",
   "entries": [
     {
       "rank": 1,
@@ -880,7 +880,7 @@
       "lastPos": 72,
       "movement": "down",
       "spotifyUrl": "https://open.spotify.com/search/Expectations%20Olivia%20Rodrigo",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/1d/1b/f9/1d1bf9b1-44c6-9a6c-6ffb-c158488c06ce/26UMGIM39303.rgb.jpg/600x600bb.jpg"
     },
     {
       "rank": 81,
@@ -935,7 +935,7 @@
       "lastPos": 81,
       "movement": "down",
       "spotifyUrl": "https://open.spotify.com/search/Country%20And%20She%20Knows%20It%20Luke%20Bryan",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/2b/8b/bb/2b8bbb2b-3b10-b142-82e7-aefc9d80466d/26UMGIM24741.rgb.jpg/600x600bb.jpg"
     },
     {
       "rank": 86,
@@ -990,7 +990,7 @@
       "lastPos": 91,
       "movement": "up",
       "spotifyUrl": "https://open.spotify.com/search/Elevation%20Worship%20%26%20Chandler%20Moore",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/ac/fb/2e/acfb2e1b-5a2a-6ad2-401f-aeb16df85673/886449130207.jpg/600x600bb.jpg"
     },
     {
       "rank": 91,
@@ -1001,7 +1001,7 @@
       "lastPos": 67,
       "movement": "down",
       "spotifyUrl": "https://open.spotify.com/search/Hootie%20Frutti%20KATSEYE",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/e2/28/92/e22892a7-fe88-72cf-ecba-691030dfcf7e/26UMGIM41151.rgb.jpg/600x600bb.jpg"
     },
     {
       "rank": 92,
@@ -1023,7 +1023,7 @@
       "lastPos": 69,
       "movement": "down",
       "spotifyUrl": "https://open.spotify.com/search/SaWaDiKa%20LISA",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/99/67/3e/99673e22-2a03-6523-4753-7c2e254a817d/artwork.jpg/600x600bb.jpg"
     },
     {
       "rank": 94,
@@ -1056,7 +1056,7 @@
       "lastPos": null,
       "movement": "new",
       "spotifyUrl": "https://open.spotify.com/search/You%20Jhene%20Aiko",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/5f/51/9f/5f519f49-44c1-6aeb-f289-5b14c677abb1/26UM1IM17017.rgb.jpg/600x600bb.jpg"
     },
     {
       "rank": 97,
@@ -1067,7 +1067,7 @@
       "lastPos": null,
       "movement": "new",
       "spotifyUrl": "https://open.spotify.com/search/Washed%20ELEVATION%20RHYTHM",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/9d/7a/d1/9d7ad145-0308-f659-164b-73713709cce3/196873547404.jpg/600x600bb.jpg"
     },
     {
       "rank": 98,
@@ -1089,7 +1089,7 @@
       "lastPos": 78,
       "movement": "down",
       "spotifyUrl": "https://open.spotify.com/search/Some%20Of%20Your%20Love%20PARTYNEXTDOOR",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/cd/3c/da/cd3cda94-8f7b-8368-3fa3-53abca7baf6a/808391400252.jpg/600x600bb.jpg"
     },
     {
       "rank": 100,
