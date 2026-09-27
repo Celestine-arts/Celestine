@@ -648,11 +648,54 @@
     });
   });
 
-  (function() {
-    var input = document.getElementById('bio-search');
-    var cards = Array.prototype.slice.call(document.querySelectorAll('#bio-grid .card'));
+  (async function() {
+    var grid = document.getElementById('bio-grid');
     var noResults = document.getElementById('no-results');
     var countLabel = document.getElementById('searchCount');
+
+    // --- NEW: pull in every artist the automation has generated a page
+    // for (bio-index.json) that isn't already one of the hand-curated
+    // cards above, so new bios show up here without editing this file. ---
+    function titleCase(key) {
+      return key.replace(/\b\w/g, function(c) { return c.toUpperCase(); });
+    }
+
+    try {
+      var res = await fetch('bio-index.json', { cache: 'no-store' });
+      if (res.ok) {
+        var bioIndex = await res.json();
+        var existingHrefs = new Set(
+          Array.prototype.map.call(grid.querySelectorAll('.card'), function(c) {
+            return c.getAttribute('href');
+          })
+        );
+        Object.keys(bioIndex).sort().forEach(function(key) {
+          var href = bioIndex[key];
+          if (existingHrefs.has(href)) return; // already a hand-curated card above
+          var name = titleCase(key);
+          var card = document.createElement('a');
+          card.className = 'card c-span-2';
+          card.href = href;
+          card.setAttribute('data-name', name.toLowerCase());
+          card.innerHTML =
+            '<div class="thumb t-art" style="background:linear-gradient(135deg,#e8e4f5,#f5e8f0);">' +
+              '<span>ARTIST BIO</span>' +
+            '</div>' +
+            '<div class="body">' +
+              '<h3>' + name + '</h3>' +
+              '<p>Auto-generated bio — full documentary chapter coming later.</p>' +
+              '<div class="meta">Auto-added</div>' +
+            '</div>';
+          grid.appendChild(card);
+        });
+      }
+    } catch (err) {
+      console.error('Could not load bio-index.json', err);
+    }
+
+    // --- existing search logic, now running over curated + auto cards ---
+    var input = document.getElementById('bio-search');
+    var cards = Array.prototype.slice.call(grid.querySelectorAll('.card'));
     var total = cards.length;
 
     function runSearch() {

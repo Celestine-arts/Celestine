@@ -264,11 +264,50 @@
 </footer>
 
 <script>
-  (function() {
-    var input = document.getElementById('songSearch');
-    var cards = Array.prototype.slice.call(document.querySelectorAll('#songGrid .card'));
+  (async function() {
+    var grid = document.getElementById('songGrid');
     var noResults = document.getElementById('noResults');
     var countLabel = document.getElementById('searchCount');
+
+    // --- NEW: pull in every song the automation has generated a review
+    // page for (data/songs-index.json) that isn't already one of the
+    // hand-written deep-dive cards above, so new reviews show up here
+    // without editing this file. Auto pages live under songs/, the
+    // hand-written ones under music/ — different folders, so there's
+    // no collision between the two tracks of content. ---
+    try {
+      var res = await fetch('data/songs-index.json', { cache: 'no-store' });
+      if (res.ok) {
+        var songs = await res.json();
+        var existingHrefs = new Set(
+          Array.prototype.map.call(grid.querySelectorAll('.card'), function(c) {
+            return c.getAttribute('href');
+          })
+        );
+        Object.values(songs)
+          .filter(function(s) { return s.hasReview; })
+          .sort(function(a, b) { return (a.peak || 999) - (b.peak || 999); })
+          .forEach(function(s) {
+            var href = 'songs/' + s.slug + '.html';
+            if (existingHrefs.has(href)) return; // already a hand-written card above
+            var card = document.createElement('a');
+            card.className = 'card c-span-2';
+            card.href = href;
+            card.innerHTML =
+              '<div class="thumb t-music" style="position:relative;overflow:hidden;background:linear-gradient(135deg,#e8e4f5,#f5e8f0);">' +
+                '<span style="position:absolute;top:10px;left:10px;background:rgba(0,0,0,0.55);color:#fff;font-size:11px;letter-spacing:0.06em;padding:4px 9px;border-radius:3px;text-transform:uppercase;">Chart Pick</span>' +
+              '</div>' +
+              '<div class="body"><h3>' + s.title + '</h3><p>Peak #' + (s.peak || '—') + ' on the Hot 100.</p><div class="meta">' + s.artist + '</div></div>';
+            grid.appendChild(card);
+          });
+      }
+    } catch (err) {
+      console.error('Could not load data/songs-index.json', err);
+    }
+
+    // --- existing search logic, now running over curated + auto cards ---
+    var input = document.getElementById('songSearch');
+    var cards = Array.prototype.slice.call(grid.querySelectorAll('.card'));
     var total = cards.length;
 
     function runSearch() {
