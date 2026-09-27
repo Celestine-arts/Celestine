@@ -2,93 +2,142 @@
 Fetches the current Billboard Hot 100 and writes it to data/hot100.json.
 Run daily by .github/workflows/update-charts.yml.
 
-This does its own lightweight scraping of billboard.com rather than using
-the third-party `billboard.py` library, because that library's parser
-broke against Billboard's current page markup (it was grabbing a whole
-blob of label+value text instead of a single clean number, then crashing
-on int()). The fix here is defensive: every numeric field is pulled out
-with a regex that finds *a number inside the text*, rather than assuming
-the whole string is already just a number. If a field genuinely can't be
-found, it's set to None and the entry is still kept — one messy field
-should never take down the whole chart.
+PARSING APPROACH
+Billboard's page renders each chart row with a predictable sequence of
+visible text: [rank] [title] [artist] "LW" [number] "PEAK" [number]
+"WEEKS" [number] ... (new/re-entry rows show "NEW"/"RE-ENTRY" badges
+before the title instead of a rank-to-rank comparison, and "LW" reads
+as "-" for them). Rather than guess CSS class names (which broke last
+time — a class that used to hold a clean number started holding a whole
+label+value blob instead), this script anchors on the literal "LW" /
+"PEAK" / "WEEKS" text labels themselves and reads title/artist as the
+two text nodes immediately before them. That's resilient to Billboard
+reshuffling their CSS classes, since it depends on the visible words
+rather than the styling around them.
 
-Billboard's page structure can still change again in the future; if this
-script starts failing, the fix is almost always: re-check the class names
-below against the live page and update the selectors.
+COVER ART
+Billboard's page doesn't expose usable per-song artwork through simple
+scraping, so cover art is fetched separately per song from Apple's
+public iTunes Search API (https://itunes.apple.com/search) — no API key
+required, no rate-limit issues at this volume. If a given song can't be
+found there, artwork is left as null and the front-end just shows a
+plain placeholder instead of a broken image.
+
+SPOTIFY LINKS
+No official free Spotify API exists for this without registering an app
+and handling OAuth, which is real ongoing complexity for a one-person
+static site. Instead, each entry links to a Spotify *search* URL built
+from the title + artist — no credentials needed, and it reliably lands
+on the right song as the top result.
 """
 
 import json
 import os
 import re
 import sys
+import time
+import urllib.parse
 from datetime import datetime, timezone
 
 import requests
 from bs4 import BeautifulSoup
 
-URL = "https://www.billboard.com/charts/hot-100/"
+CHART_URL = "https://www.billboard.com/charts/hot-100/"
+ITUNES_SEARCH_URL = "https://itunes.apple.com/search"
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
                   "AppleWebKit/537.36 (KHTML, like Gecko) "
                   "Chrome/124.0.0.0 Safari/537.36"
 }
 
+STOP_WORDS = {
+    "share", "chart history", "awards", "gains in performance",
+    "credits", "songwriter(s)", "producer(s)", "imprint/label",
+    "debut position", "debut chart date", "peak position", "peak chart date",
+}
 
-def first_number(text):
-    """Pull the first integer out of a string; None if there isn't one.
-    This is the core defensive fix: never assume scraped text is already
-    a clean number."""
-    if not text:
+
+def spotify_search_url(title, artist):
+    q = urllib.parse.quote(f"{title} {artist}")
+    return f"https://open.spotify.com/search/{q}"
+
+
+def fetch_cover_art(title, artist):
+    """Look up cover art via the free iTunes Search API. Returns a URL
+    string or None — never raises, since a missing image shouldn't break
+    the whole chart fetch."""
+    try:
+        resp = requests.get(
+            ITUNES_SEARCH_URL,
+            params={"term": f"{artist} {title}", "media": "music", "limit": 1},
+            timeout=10,
+        )
+        resp.raise_for_status()
+        results = resp.json().get("results", [])
+        if not results:
+            return None
+        art = results[0].get("artworkUrl100")
+        if not art:
+            return None
+        # iTunes lets you swap the resolution right in the URL
+        return art.replace("100x100", "600x600")
+    except Exception:
         return None
-    match = re.search(r"\d+", text)
-    return int(match.group()) if match else None
 
 
-def clean_text(el):
-    return el.get_text(strip=True) if el else ""
+def parse_row_strings(strings):
+    """Given the row's visible text in order, find each 'LW <n> PEAK <n>
+    WEEKS <n>' block and pull out title/artist (the two strings right
+    before it) plus the three numbers. Handles the fact that this block
+    appears twice per row (Billboard duplicates it, likely for a
+    mobile/accessible layout) by just using the first occurrence."""
+    try:
+        lw_idx = strings.index("LW")
+    except ValueError:
+        return None
+
+    if lw_idx < 2:
+        return None
+
+    artist = strings[lw_idx - 1]
+    title = strings[lw_idx - 2]
+
+    def number_after(label):
+        try:
+            idx = strings.index(label, lw_idx)
+            val = strings[idx + 1]
+            return int(val) if val.isdigit() else None
+        except (ValueError, IndexError):
+            return None
+
+    last_pos = number_after("LW")
+    peak = number_after("PEAK")
+    weeks = number_after("WEEKS")
+
+    return title, artist, last_pos, peak, weeks
 
 
 def fetch_hot_100():
-    resp = requests.get(URL, headers=HEADERS, timeout=30)
+    resp = requests.get(CHART_URL, headers=HEADERS, timeout=30)
     resp.raise_for_status()
     soup = BeautifulSoup(resp.text, "html.parser")
 
     rows = soup.select("div.o-chart-results-list-row-container")
     if not rows:
-        # Billboard's markup changed shape entirely — fail loudly rather
-        # than silently writing an empty/garbage chart.
         raise RuntimeError(
             "No chart rows found — Billboard's page structure has likely "
-            "changed. Selectors in fetch_chart.py need updating."
+            "changed. Check CHART_URL and the row selector in fetch_chart.py."
         )
 
     entries = []
     for i, row in enumerate(rows, start=1):
-        title_el = row.select_one("h3.c-title")
-        artist_el = row.select_one("span.c-label") or row.select_one("p.c-label")
+        strings = [s for s in row.stripped_strings if s.strip().lower() not in STOP_WORDS]
+        parsed = parse_row_strings(strings)
+        if not parsed:
+            continue
+        title, artist, last_pos, peak, weeks = parsed
 
-        title = clean_text(title_el)
-        artist = clean_text(artist_el)
-        if not title:
-            continue  # skip anything that isn't really a chart entry
-
-        # Stat blocks (LAST, PEAK, WEEKS) are typically stacked as
-        # label + value pairs further down each row. Rather than trust
-        # position, grab every number-bearing small text node in order.
-        stat_texts = [
-            clean_text(el) for el in row.select("span.c-label")
-        ]
-        numbers = [n for n in (first_number(t) for t in stat_texts) if n is not None]
-
-        # Best-effort mapping: on Billboard's row layout these generally
-        # appear in the order [this-week dup, last-week, peak, weeks-on-chart]
-        # after the rank/title/artist labels — but we defensively fall back
-        # to None for anything we can't confidently identify.
-        last_pos = numbers[-3] if len(numbers) >= 3 else None
-        peak = numbers[-2] if len(numbers) >= 2 else None
-        weeks = numbers[-1] if len(numbers) >= 1 else None
-
-        if last_pos is None or last_pos == 0:
+        if last_pos is None:
             movement = "new"
         elif i < last_pos:
             movement = "up"
@@ -105,7 +154,15 @@ def fetch_hot_100():
             "peak": peak,
             "lastPos": last_pos,
             "movement": movement,
+            "spotifyUrl": spotify_search_url(title, artist),
+            "coverArt": None,  # filled in below
         })
+
+    # Cover art lookups are a separate pass so a slow/failed image lookup
+    # never affects whether the chart itself parsed successfully.
+    for entry in entries:
+        entry["coverArt"] = fetch_cover_art(entry["title"], entry["artist"])
+        time.sleep(0.1)  # light rate-limit courtesy to iTunes' API
 
     return {
         "chartDate": datetime.now(timezone.utc).strftime("%Y-%m-%d"),
@@ -122,12 +179,17 @@ if __name__ == "__main__":
         sys.exit(1)
 
     if len(data["entries"]) < 50:
-        # Sanity check — a real Hot 100 fetch should have ~100 entries.
-        # Better to fail the workflow than publish a suspiciously short chart.
         print(f"FAILED: only parsed {len(data['entries'])} entries, expected ~100", file=sys.stderr)
+        sys.exit(1)
+
+    missing_artists = sum(1 for e in data["entries"] if not e["artist"])
+    if missing_artists > 5:
+        print(f"FAILED: {missing_artists} entries missing an artist name — parsing is likely broken", file=sys.stderr)
         sys.exit(1)
 
     os.makedirs("data", exist_ok=True)
     with open("data/hot100.json", "w") as f:
         json.dump(data, f, indent=2)
-    print(f"Wrote {len(data['entries'])} entries for chart dated {data['chartDate']}")
+
+    with_art = sum(1 for e in data["entries"] if e["coverArt"])
+    print(f"Wrote {len(data['entries'])} entries ({with_art} with cover art) for chart dated {data['chartDate']}")
