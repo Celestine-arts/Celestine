@@ -1,99 +1,366 @@
 {
-  "v": "v-kim-taehyung.html",
-  "jisoo": "jisoo.html",
-  "jennie": "jennie.html",
-  "rosé": "rose.html",
-  "rose": "rose.html",
-  "lisa": "lisa.html",
-  "jungkook": "jungkook.html",
-  "jimin": "jimin.html",
-  "bruno mars": "bruno-mars.html",
-  "olivia rodrigo": "olivia-rodrigo.html",
-  "sabrina carpenter": "sabrina-carpenter.html",
-  "taylor swift": "taylor-swift.html",
-  "doechii": "doechii.html",
-  "tyla": "tyla.html",
-  "raye": "raye.html",
-  "addison rae": "addison-rae.html",
-  "sombr": "sombr.html",
-  "alex warren": "alex-warren.html",
-  "noah kahan": "noah-kahan.html",
-  "zara larsson": "zara-larsson.html",
-  "djo": "djo.html",
-  "madonna": "madonna.html",
-  "harry styles": "harry-styles.html",
-  "ella langley": "ella-langley.html",
-  "stella lefty": "stella-lefty.html",
-  "morgan wallen": "morgan-wallen.html",
-  "ariana grande": "ariana-grande.html",
-  "tame impala": "tame-impala.html",
-  "with judeline": "with-judeline.html",
-  "rusowsky": "rusowsky.html",
-  "olivia dean": "olivia-dean.html",
-  "luke combs": "luke-combs.html",
-  "drake": "drake.html",
-  "dominic fike": "dominic-fike.html",
-  "malcolm todd": "malcolm-todd.html",
-  "lil baby": "lil-baby.html",
-  "adela": "adela.html",
-  "koe wetzel": "koe-wetzel.html",
-  "jhene aiko": "jhene-aiko.html",
-  "kendrick lamar": "kendrick-lamar.html",
-  "katseye": "katseye.html",
-  "tems": "tems.html",
-  "steve lacy": "steve-lacy.html",
-  "shakira": "shakira.html",
-  "burna boy": "burna-boy.html",
-  "yung miami": "yung-miami.html",
-  "mac miller": "mac-miller.html",
-  "ty dolla $ign": "ty-dolla-ign.html",
-  "cody johnson": "cody-johnson.html",
-  "beyonce": "beyonce.html",
-  "teddy swims": "teddy-swims.html",
-  "cardi b": "cardi-b.html",
-  "temper city": "temper-city.html",
-  "alyssa grace": "alyssa-grace.html",
-  "dexter": "dexter.html",
-  "the moonrocks": "the-moonrocks.html",
-  "& john mayer": "john-mayer.html",
-  "shaboozey": "shaboozey.html",
-  "vincent mason": "vincent-mason.html",
-  "sam fender": "sam-fender.html",
-  "gracie abrams": "gracie-abrams.html",
-  "21 savage": "21-savage.html",
-  "kenny chesney": "kenny-chesney.html",
-  "sienna spiro": "sienna-spiro.html",
-  "riley green": "riley-green.html",
-  "& ab-soul": "ab-soul.html",
-  "f3miii": "f3miii.html",
-  "kacey musgraves": "kacey-musgraves.html",
-  "john morgan": "john-morgan.html",
-  "miley": "miley.html",
-  "audrey hobert": "audrey-hobert.html",
-  "corey kent": "corey-kent.html",
-  "bailey zimmerman": "bailey-zimmerman.html",
-  "babychiefdoit": "babychiefdoit.html",
-  "marshmello": "marshmello.html",
-  "kelsea ballerini": "kelsea-ballerini.html",
-  "tim mcgraw": "tim-mcgraw.html",
-  "zach top": "zach-top.html",
-  "tyga": "tyga.html",
-  "mack geiger": "mack-geiger.html",
-  "featuring chase matthew": "featuring-chase-matthew.html",
-  "karol g": "karol-g.html",
-  "julia wolf": "julia-wolf.html",
-  "hudson westbrook": "hudson-westbrook.html",
-  "ashe": "ashe.html",
-  "luke bryan": "luke-bryan.html",
-  "jelly roll": "jelly-roll.html",
-  "zach john king": "zach-john-king.html",
-  "& chandler moore": "chandler-moore.html",
-  "comehelpglo": "comehelpglo.html",
-  "blake whiten": "blake-whiten.html",
-  "future": "future.html",
-  "elevation rhythm": "elevation-rhythm.html",
-  "dan": "dan.html",
-  "shay": "shay.html",
-  "partynextdoor": "partynextdoor.html",
-  "robert smith": "robert-smith.html"
+  "v": {
+    "href": "v-kim-taehyung.html",
+    "thumbnail": null
+  },
+  "jisoo": {
+    "href": "jisoo.html",
+    "thumbnail": null
+  },
+  "jennie": {
+    "href": "jennie.html",
+    "thumbnail": null
+  },
+  "rosé": {
+    "href": "rose.html",
+    "thumbnail": null
+  },
+  "rose": {
+    "href": "rose.html",
+    "thumbnail": null
+  },
+  "lisa": {
+    "href": "lisa.html",
+    "thumbnail": null
+  },
+  "jungkook": {
+    "href": "jungkook.html",
+    "thumbnail": null
+  },
+  "jimin": {
+    "href": "jimin.html",
+    "thumbnail": null
+  },
+  "bruno mars": {
+    "href": "bruno-mars.html",
+    "thumbnail": null
+  },
+  "olivia rodrigo": {
+    "href": "olivia-rodrigo.html",
+    "thumbnail": null
+  },
+  "sabrina carpenter": {
+    "href": "sabrina-carpenter.html",
+    "thumbnail": null
+  },
+  "taylor swift": {
+    "href": "taylor-swift.html",
+    "thumbnail": null
+  },
+  "doechii": {
+    "href": "doechii.html",
+    "thumbnail": null
+  },
+  "tyla": {
+    "href": "tyla.html",
+    "thumbnail": null
+  },
+  "raye": {
+    "href": "raye.html",
+    "thumbnail": null
+  },
+  "addison rae": {
+    "href": "addison-rae.html",
+    "thumbnail": null
+  },
+  "sombr": {
+    "href": "sombr.html",
+    "thumbnail": null
+  },
+  "alex warren": {
+    "href": "alex-warren.html",
+    "thumbnail": null
+  },
+  "noah kahan": {
+    "href": "noah-kahan.html",
+    "thumbnail": null
+  },
+  "zara larsson": {
+    "href": "zara-larsson.html",
+    "thumbnail": null
+  },
+  "djo": {
+    "href": "djo.html",
+    "thumbnail": null
+  },
+  "madonna": {
+    "href": "madonna.html",
+    "thumbnail": null
+  },
+  "harry styles": {
+    "href": "harry-styles.html",
+    "thumbnail": null
+  },
+  "ella langley": {
+    "href": "ella-langley.html",
+    "thumbnail": null
+  },
+  "stella lefty": {
+    "href": "stella-lefty.html",
+    "thumbnail": null
+  },
+  "morgan wallen": {
+    "href": "morgan-wallen.html",
+    "thumbnail": null
+  },
+  "ariana grande": {
+    "href": "ariana-grande.html",
+    "thumbnail": null
+  },
+  "tame impala": {
+    "href": "tame-impala.html",
+    "thumbnail": null
+  },
+  "with judeline": {
+    "href": "with-judeline.html",
+    "thumbnail": null
+  },
+  "rusowsky": {
+    "href": "rusowsky.html",
+    "thumbnail": null
+  },
+  "olivia dean": {
+    "href": "olivia-dean.html",
+    "thumbnail": null
+  },
+  "luke combs": {
+    "href": "luke-combs.html",
+    "thumbnail": null
+  },
+  "drake": {
+    "href": "drake.html",
+    "thumbnail": null
+  },
+  "dominic fike": {
+    "href": "dominic-fike.html",
+    "thumbnail": null
+  },
+  "malcolm todd": {
+    "href": "malcolm-todd.html",
+    "thumbnail": null
+  },
+  "lil baby": {
+    "href": "lil-baby.html",
+    "thumbnail": null
+  },
+  "adela": {
+    "href": "adela.html",
+    "thumbnail": null
+  },
+  "koe wetzel": {
+    "href": "koe-wetzel.html",
+    "thumbnail": null
+  },
+  "jhene aiko": {
+    "href": "jhene-aiko.html",
+    "thumbnail": null
+  },
+  "kendrick lamar": {
+    "href": "kendrick-lamar.html",
+    "thumbnail": null
+  },
+  "katseye": {
+    "href": "katseye.html",
+    "thumbnail": null
+  },
+  "tems": {
+    "href": "tems.html",
+    "thumbnail": null
+  },
+  "steve lacy": {
+    "href": "steve-lacy.html",
+    "thumbnail": null
+  },
+  "shakira": {
+    "href": "shakira.html",
+    "thumbnail": null
+  },
+  "burna boy": {
+    "href": "burna-boy.html",
+    "thumbnail": null
+  },
+  "yung miami": {
+    "href": "yung-miami.html",
+    "thumbnail": null
+  },
+  "mac miller": {
+    "href": "mac-miller.html",
+    "thumbnail": null
+  },
+  "ty dolla $ign": {
+    "href": "ty-dolla-ign.html",
+    "thumbnail": null
+  },
+  "cody johnson": {
+    "href": "cody-johnson.html",
+    "thumbnail": null
+  },
+  "beyonce": {
+    "href": "beyonce.html",
+    "thumbnail": null
+  },
+  "teddy swims": {
+    "href": "teddy-swims.html",
+    "thumbnail": null
+  },
+  "cardi b": {
+    "href": "cardi-b.html",
+    "thumbnail": null
+  },
+  "temper city": {
+    "href": "temper-city.html",
+    "thumbnail": null
+  },
+  "alyssa grace": {
+    "href": "alyssa-grace.html",
+    "thumbnail": null
+  },
+  "dexter": {
+    "href": "dexter.html",
+    "thumbnail": null
+  },
+  "the moonrocks": {
+    "href": "the-moonrocks.html",
+    "thumbnail": null
+  },
+  "shaboozey": {
+    "href": "shaboozey.html",
+    "thumbnail": null
+  },
+  "vincent mason": {
+    "href": "vincent-mason.html",
+    "thumbnail": null
+  },
+  "sam fender": {
+    "href": "sam-fender.html",
+    "thumbnail": null
+  },
+  "gracie abrams": {
+    "href": "gracie-abrams.html",
+    "thumbnail": null
+  },
+  "21 savage": {
+    "href": "21-savage.html",
+    "thumbnail": null
+  },
+  "kenny chesney": {
+    "href": "kenny-chesney.html",
+    "thumbnail": null
+  },
+  "sienna spiro": {
+    "href": "sienna-spiro.html",
+    "thumbnail": null
+  },
+  "riley green": {
+    "href": "riley-green.html",
+    "thumbnail": null
+  },
+  "f3miii": {
+    "href": "f3miii.html",
+    "thumbnail": null
+  },
+  "kacey musgraves": {
+    "href": "kacey-musgraves.html",
+    "thumbnail": null
+  },
+  "john morgan": {
+    "href": "john-morgan.html",
+    "thumbnail": null
+  },
+  "miley": {
+    "href": "miley.html",
+    "thumbnail": null
+  },
+  "audrey hobert": {
+    "href": "audrey-hobert.html",
+    "thumbnail": null
+  },
+  "corey kent": {
+    "href": "corey-kent.html",
+    "thumbnail": null
+  },
+  "bailey zimmerman": {
+    "href": "bailey-zimmerman.html",
+    "thumbnail": null
+  },
+  "babychiefdoit": {
+    "href": "babychiefdoit.html",
+    "thumbnail": null
+  },
+  "marshmello": {
+    "href": "marshmello.html",
+    "thumbnail": null
+  },
+  "kelsea ballerini": {
+    "href": "kelsea-ballerini.html",
+    "thumbnail": null
+  },
+  "tim mcgraw": {
+    "href": "tim-mcgraw.html",
+    "thumbnail": null
+  },
+  "zach top": {
+    "href": "zach-top.html",
+    "thumbnail": null
+  },
+  "tyga": {
+    "href": "tyga.html",
+    "thumbnail": null
+  },
+  "mack geiger": {
+    "href": "mack-geiger.html",
+    "thumbnail": null
+  },
+  "karol g": {
+    "href": "karol-g.html",
+    "thumbnail": null
+  },
+  "julia wolf": {
+    "href": "julia-wolf.html",
+    "thumbnail": null
+  },
+  "hudson westbrook": {
+    "href": "hudson-westbrook.html",
+    "thumbnail": null
+  },
+  "ashe": {
+    "href": "ashe.html",
+    "thumbnail": null
+  },
+  "luke bryan": {
+    "href": "luke-bryan.html",
+    "thumbnail": null
+  },
+  "jelly roll": {
+    "href": "jelly-roll.html",
+    "thumbnail": null
+  },
+  "zach john king": {
+    "href": "zach-john-king.html",
+    "thumbnail": null
+  },
+  "comehelpglo": {
+    "href": "comehelpglo.html",
+    "thumbnail": null
+  },
+  "blake whiten": {
+    "href": "blake-whiten.html",
+    "thumbnail": null
+  },
+  "future": {
+    "href": "future.html",
+    "thumbnail": null
+  },
+  "elevation rhythm": {
+    "href": "elevation-rhythm.html",
+    "thumbnail": null
+  },
+  "partynextdoor": {
+    "href": "partynextdoor.html",
+    "thumbnail": null
+  },
+  "robert smith": {
+    "href": "robert-smith.html",
+    "thumbnail": null
+  }
 }
