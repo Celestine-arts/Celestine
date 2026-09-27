@@ -34,6 +34,12 @@
 // scheduled run. This is the one sanctioned exception to "never
 // overwrite" — it only ever touches a page THIS SCRIPT marked as its own
 // unfinished placeholder, never a page a human has since edited.
+//
+// DESIGN (updated)
+// renderPage() below now reuses the site's own .masthead / .figure-full /
+// .inline-figure / .chapter classes from styles.css instead of a bespoke
+// .song-* stylesheet, so an auto-generated review reads as a lighter
+// version of a real Celestine article instead of a visually distinct stub.
 
 import fs from "node:fs/promises";
 import path from "node:path";
@@ -81,8 +87,20 @@ function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
+// Must match generate-artist-bios.mjs's normalizeKey() exactly, since
+// that's what actually wrote the keys in bio-index.json — otherwise an
+// accented artist name here would fail to find the bio page keyed by its
+// unaccented (or vice versa) spelling.
+function normalizeKey(name) {
+  return name
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .trim();
+}
+
 function findBioLink(artist, bioIndex) {
-  const key = artist.trim().toLowerCase();
+  const key = normalizeKey(artist);
   if (bioIndex[key]) return bioIndex[key];
   // Loose fallback: artist string contains a known name (handles
   // "Ella Langley & Morgan Wallen" style multi-artist credits)
@@ -128,26 +146,38 @@ async function draftBlurbWithGemini(entry) {
 }
 
 function renderPage(entry, { videoId, bioLink, blurb }) {
-  const coverBlock = entry.coverArt
-    ? `<img class="song-cover" src="${escapeHtml(entry.coverArt)}" alt="Cover art for ${escapeHtml(entry.title)}">`
-    : `<div class="song-cover song-cover-placeholder"></div>`;
+  const isDraft = !!blurb;
 
-  const videoBlock = videoId
-    ? `<div class="song-video">
-         <iframe width="100%" height="100%" src="https://www.youtube.com/embed/${videoId}"
-           title="${escapeHtml(entry.title)}" frameborder="0"
-           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-           allowfullscreen loading="lazy"></iframe>
-       </div>`
-    : `<div class="song-video song-video-unavailable"><p>No video available yet.</p></div>`;
-
-  const bioBlock = bioLink
-    ? `<a class="song-bio-link" href="../${bioLink}">Read ${escapeHtml(entry.artist)}'s full bio →</a>`
+  const coverFigure = entry.coverArt
+    ? `<figure class="figure-full">
+         <div class="frame" style="background-image:url('${escapeHtml(entry.coverArt)}');background-size:cover;background-position:center;"></div>
+       </figure>`
     : "";
 
-  const blurbBlock = blurb
-    ? `<p class="song-blurb">${escapeHtml(blurb)}</p><p class="song-draft-tag">Draft note — auto-generated, awaiting a full human review.</p>`
-    : `<p class="song-draft-tag">Full review coming soon.</p>`;
+  const videoBlock = videoId
+    ? `<div class="inline-figure" style="max-width:760px;margin:34px auto;">
+         <div class="frame" style="height:auto;aspect-ratio:16/9;background:#151220;">
+           <iframe width="100%" height="100%" style="display:block;border:0;"
+             src="https://www.youtube.com/embed/${videoId}"
+             title="${escapeHtml(entry.title)}"
+             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+             allowfullscreen loading="lazy"></iframe>
+         </div>
+       </div>`
+    : `<div class="inline-figure" style="max-width:760px;margin:34px auto;">
+         <div class="frame" style="height:160px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#e8e4f5,#f5e8f0);">
+           <p style="margin:0;font-family:'Inter',sans-serif;color:#9a94ac;">No video available yet.</p>
+         </div>
+       </div>`;
+
+  const bioLinkBlock = bioLink
+    ? `<a class="hero-cta" style="padding:12px 22px;box-shadow:5px 5px 0 var(--ink);" href="../${bioLink}">Read ${escapeHtml(entry.artist)}'s bio →</a>`
+    : "";
+
+  const blurbText = blurb || "Full review coming soon — check back as our editorial team finishes this one.";
+  const draftTag = isDraft
+    ? `<p class="artist-draft-tag" style="max-width:760px;margin:14px auto 0;padding:0 5vw;font-family:'Inter',sans-serif;font-size:0.8rem;font-style:italic;color:#9a94ac;">Draft note — auto-generated, awaiting a full human review.</p>`
+    : "";
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -158,23 +188,9 @@ function renderPage(entry, { videoId, bioLink, blurb }) {
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../styles.css">
-<style>
-  .song-hero{max-width:800px;margin:60px auto 0;padding:0 24px;display:flex;gap:28px;align-items:flex-start;flex-wrap:wrap;}
-  .song-cover{width:180px;height:180px;border-radius:6px;object-fit:cover;box-shadow:0 4px 18px rgba(0,0,0,0.18);}
-  .song-cover-placeholder{background:linear-gradient(135deg,#e8e4f5,#f5e8f0);}
-  .song-hero-meta{flex:1;min-width:240px;}
-  .song-hero-meta h1{font-family:'Fraunces',serif;font-size:2.1rem;font-weight:600;margin:0 0 6px;}
-  .song-hero-meta .artist{font-size:1.15rem;color:#5c5670;margin:0 0 14px;}
-  .song-stats{display:flex;gap:20px;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:0.85rem;color:#75708a;}
-  .song-links{max-width:800px;margin:20px auto 0;padding:0 24px;display:flex;gap:16px;flex-wrap:wrap;align-items:center;}
-  .song-spotify,.song-bio-link{font-family:'Inter',sans-serif;font-weight:700;font-size:0.9rem;padding:10px 18px;border:2px solid var(--ink);text-decoration:none;color:var(--ink);}
-  .song-spotify{background:#1DB954;color:#fff;border-color:#1DB954;}
-  .song-video{max-width:800px;margin:32px auto;padding:0 24px;aspect-ratio:16/9;}
-  .song-video iframe{width:100%;height:100%;border-radius:6px;}
-  .song-video-unavailable{display:flex;align-items:center;justify-content:center;background:#f0eef7;color:#9a94ac;font-family:'Inter',sans-serif;border-radius:6px;}
-  .song-blurb{max-width:800px;margin:0 auto;padding:0 24px;font-family:'Fraunces',serif;font-size:1.15rem;line-height:1.6;color:#2c2836;}
-  .song-draft-tag{max-width:800px;margin:10px auto 60px;padding:0 24px;font-family:'Inter',sans-serif;font-size:0.8rem;font-style:italic;color:#9a94ac;}
-</style>
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-96x96.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
 </head>
 <body>
 
@@ -190,27 +206,29 @@ function renderPage(entry, { videoId, bioLink, blurb }) {
   </nav>
 </header>
 
-<div class="song-hero">
-  ${coverBlock}
-  <div class="song-hero-meta">
-    <h1>${escapeHtml(entry.title)}</h1>
-    <p class="artist">${escapeHtml(entry.artist)}</p>
-    <div class="song-stats">
-      <span>Currently #${entry.rank}</span>
-      <span>Peak #${entry.peak ?? "—"}</span>
-      <span>${entry.weeks ?? "—"} weeks on chart</span>
-    </div>
+<div class="masthead" style="border-bottom:3px solid var(--ink);">
+  <span class="tag">Song Review${isDraft ? " · Draft" : ""}</span>
+  <h1>${escapeHtml(entry.title)}</h1>
+  <p class="dek">${escapeHtml(entry.artist)}</p>
+  <p class="range">Currently #${entry.rank} · Peak #${entry.peak ?? "—"} · ${entry.weeks ?? "—"} weeks on chart</p>
+</div>
+
+${coverFigure}
+
+<article style="padding-top:40px;">
+  <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:10px;">
+    <a class="hero-cta" style="padding:12px 22px;box-shadow:5px 5px 0 var(--ink);" href="${escapeHtml(entry.spotifyUrl)}" target="_blank" rel="noopener">Listen on Spotify</a>
+    ${bioLinkBlock}
   </div>
-</div>
 
-<div class="song-links">
-  <a class="song-spotify" href="${escapeHtml(entry.spotifyUrl)}" target="_blank" rel="noopener">Listen on Spotify</a>
-  ${bioBlock}
-</div>
+  ${videoBlock}
 
-${videoBlock}
+  <section class="chapter" style="padding:20px 0 0;border-bottom:none;">
+    <p>${escapeHtml(blurbText)}</p>
+  </section>
+</article>
 
-${blurbBlock}
+${draftTag}
 
 <footer>
   <a href="../index.html" class="logo">Celestine<span></span></a>
@@ -296,7 +314,7 @@ async function main() {
       firstSeen: existing?.firstSeen || today,
       lastSeen: today,
       peak: Math.min(entry.peak ?? entry.rank, existing?.peak ?? Infinity),
-      hasReview: alreadyExists || true, // page exists either way after this point
+      hasReview: true, // a page exists at this point either way (just created, or already existed)
       // Carried over from hot100.json (iTunes Search API) so listing pages
       // (music.html) can render a real cover instead of a placeholder.
       // Re-merged every run — including for songs that already had a page —

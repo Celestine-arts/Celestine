@@ -42,6 +42,14 @@
 // whenever you spot a wrong split on the live site. There's no fully
 // automatic fix for this — it's a genuinely ambiguous text problem.
 //
+// DEDUP KEY — normalized (new)
+// bioIndex is keyed by normalizeKey(name) rather than a plain
+// name.toLowerCase(), so accented and unaccented spellings of the same
+// artist ("Rosé" vs "Rose") collapse to one entry instead of silently
+// generating two near-duplicate pages. generate-song-pages.mjs's
+// findBioLink() must use the same normalizeKey() when looking an artist
+// up, or bio links will stop resolving.
+//
 // QUOTA-EXHAUSTION RECOVERY (new)
 // If Gemini's daily quota runs out mid-run, the artist still gets a page
 // (with a "coming soon" placeholder) so the song → bio link never 404s,
@@ -78,6 +86,18 @@ const CONNECTOR_PATTERN = /\s+(?:featuring|feat\.?|with|duet with|and|&|\+|x|vs\
 
 function escapeRegex(s) {
   return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+// Strips diacritics before lowercasing, so "Rosé" and "Rose" (or any
+// other accented/unaccented spelling of the same artist) resolve to the
+// same dedup key instead of quietly creating two bio pages for one
+// person. Keep this identical to the copy in generate-song-pages.mjs.
+function normalizeKey(name) {
+  return name
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .trim();
 }
 
 function splitArtists(creditString) {
@@ -160,19 +180,25 @@ async function draftBioWithGemini(name, wikiExtract) {
   return callGemini(prompt); // handles rate-limit pacing and 429 retries itself
 }
 
+// DESIGN (updated): reuses the site's own .masthead / .figure-full /
+// .section / .grid / .card classes from styles.css instead of the old
+// bespoke .artist-* stylesheet, so a bio page — draft or full — reads as
+// a lighter version of a real Celestine page instead of a visually
+// distinct stub.
 function renderPage(name, { bio, thumbnail, wikiUrl, isDraft }) {
-  const photoBlock = thumbnail
-    ? `<img class="artist-photo" src="${escapeHtml(thumbnail)}" alt="${escapeHtml(name)}">`
-    : `<div class="artist-photo artist-photo-placeholder"></div>`;
+  const dek = bio || "The full documentary chapter for this artist is still being researched — check back soon.";
 
-  const bioBlock = bio
-    ? `<p class="artist-bio-text">${escapeHtml(bio)}</p>` +
-      (isDraft
-        ? `<p class="artist-draft-tag">Draft bio — auto-generated from public sources, awaiting a full human writeup.</p>`
-        : "")
-    : `<p class="artist-draft-tag">Full bio coming soon.</p>`;
+  const photoFigure = thumbnail
+    ? `<figure class="figure-full">
+         <div class="frame" style="background-image:url('${escapeHtml(thumbnail)}');background-size:cover;background-position:center;"></div>
+       </figure>`
+    : "";
 
-  const sourceBlock = wikiUrl
+  const draftTag = bio && isDraft
+    ? `<p class="artist-draft-tag">Draft bio — auto-generated from public sources, awaiting a full human writeup.</p>`
+    : "";
+
+  const sourceLink = wikiUrl
     ? `<a class="artist-source-link" href="${escapeHtml(wikiUrl)}" target="_blank" rel="noopener">Source: Wikipedia →</a>`
     : "";
 
@@ -185,23 +211,13 @@ function renderPage(name, { bio, thumbnail, wikiUrl, isDraft }) {
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-96x96.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <style>
-  .artist-hero{max-width:800px;margin:60px auto 0;padding:0 24px;display:flex;gap:28px;align-items:center;flex-wrap:wrap;}
-  .artist-photo{width:160px;height:160px;border-radius:50%;object-fit:cover;box-shadow:0 4px 18px rgba(0,0,0,0.18);}
-  .artist-photo-placeholder{background:linear-gradient(135deg,#e8e4f5,#f5e8f0);}
-  .artist-hero h1{font-family:'Fraunces',serif;font-size:2.1rem;font-weight:600;margin:0;}
-  .artist-bio-text{max-width:800px;margin:28px auto 0;padding:0 24px;font-family:'Fraunces',serif;font-size:1.15rem;line-height:1.6;color:#2c2836;}
-  .artist-draft-tag{max-width:800px;margin:10px auto 0;padding:0 24px;font-family:'Inter',sans-serif;font-size:0.8rem;font-style:italic;color:#9a94ac;}
-  .artist-source-link{display:block;max-width:800px;margin:14px auto 0;padding:0 24px;font-family:'Inter',sans-serif;font-size:0.85rem;color:#5c5670;text-decoration:none;}
+  .artist-draft-tag{max-width:760px;margin:14px auto 0;padding:0 5vw;font-family:'Inter',sans-serif;font-size:0.8rem;font-style:italic;color:#9a94ac;}
+  .artist-source-link{display:block;max-width:760px;margin:6px auto 0;padding:0 5vw;font-family:'Inter',sans-serif;font-size:0.85rem;color:#5c5670;text-decoration:none;}
   .artist-source-link:hover{color:var(--violet);}
-  .artist-songs{max-width:800px;margin:50px auto 80px;padding:0 24px;}
-  .artist-songs h2{font-family:'Fraunces',serif;font-size:1.4rem;font-weight:600;margin:0 0 16px;}
-  .artist-song-row{display:flex;align-items:center;gap:14px;padding:12px 0;border-bottom:1px solid rgba(0,0,0,0.08);}
-  .artist-song-row .no-cover{width:44px;height:44px;border-radius:4px;background:linear-gradient(135deg,#e8e4f5,#f5e8f0);flex-shrink:0;}
-  .artist-song-row a{font-family:'Inter',sans-serif;font-weight:600;color:var(--ink);text-decoration:none;}
-  .artist-song-row a:hover{color:var(--violet);}
-  .artist-song-row span{font-family:'Inter',sans-serif;font-size:0.85rem;color:#9a94ac;}
-  #artistSongsStatus{font-family:'Inter',sans-serif;font-size:0.9rem;color:#9a94ac;font-style:italic;}
 </style>
 </head>
 <body>
@@ -218,18 +234,22 @@ function renderPage(name, { bio, thumbnail, wikiUrl, isDraft }) {
   </nav>
 </header>
 
-<div class="artist-hero">
-  ${photoBlock}
+<div class="masthead" style="border-bottom:3px solid var(--ink);">
+  <span class="tag">Artist Bio${isDraft ? " · Draft" : ""}</span>
   <h1>${escapeHtml(name)}</h1>
+  <p class="dek">${escapeHtml(dek)}</p>
 </div>
+${draftTag}
+${sourceLink}
 
-${bioBlock}
-${sourceBlock}
+${photoFigure}
 
-<section class="artist-songs">
-  <h2>Songs on our charts</h2>
-  <div id="artistSongsList"></div>
-  <p id="artistSongsStatus">Loading…</p>
+<section class="section" style="padding-top:50px;">
+  <div class="section-head">
+    <h2>Songs on our charts</h2>
+  </div>
+  <div class="grid" id="artistSongsList"></div>
+  <p id="artistSongsStatus" style="font-family:'Inter',sans-serif;font-size:0.95rem;color:#75708a;font-style:italic;">Loading…</p>
 </section>
 
 <footer>
@@ -248,7 +268,7 @@ ${sourceBlock}
     var listEl = document.getElementById('artistSongsList');
     var statusEl = document.getElementById('artistSongsStatus');
 
-    fetch('data/songs-index.json')
+    fetch('data/songs-index.json', { cache: 'no-store' })
       .then(function(res) {
         if (!res.ok) throw new Error('not found');
         return res.json();
@@ -265,14 +285,25 @@ ${sourceBlock}
           return;
         }
         statusEl.style.display = 'none';
+
         matches.forEach(function(s) {
-          var row = document.createElement('div');
-          row.className = 'artist-song-row';
-          var link = s.hasReview
-            ? '<a href="songs/' + s.slug + '.html">' + s.title + '</a>'
-            : '<span>' + s.title + '</span>';
-          row.innerHTML = '<div class="no-cover"></div><div>' + link + '<br><span>Peak #' + (s.peak || '—') + '</span></div>';
-          listEl.appendChild(row);
+          var hasReview = !!s.hasReview;
+          var card = document.createElement(hasReview ? 'a' : 'div');
+          card.className = 'card c-span-2';
+          if (hasReview) card.href = 'songs/' + s.slug + '.html';
+
+          var coverBlock = s.coverArt
+            ? '<img src="' + s.coverArt + '" alt="Cover art for ' + s.title + '" style="display:block;width:100%;height:100%;object-fit:cover;">'
+            : '';
+
+          card.innerHTML =
+            '<div class="thumb t-music" style="position:relative;overflow:hidden;' + (s.coverArt ? '' : 'background:linear-gradient(135deg,#e8e4f5,#f5e8f0);') + '">' +
+              coverBlock +
+              (hasReview ? '<span style="position:absolute;top:10px;left:10px;background:rgba(0,0,0,0.55);color:#fff;font-size:11px;letter-spacing:0.06em;padding:4px 9px;border-radius:3px;text-transform:uppercase;">Review</span>' : '') +
+            '</div>' +
+            '<div class="body"><h3>' + s.title + '</h3><p>Peak #' + (s.peak || '—') + ' on the Hot 100.</p></div>';
+
+          listEl.appendChild(card);
         });
       })
       .catch(function() {
@@ -328,7 +359,7 @@ async function main() {
 
   let created = 0;
   for (const name of allArtistNames) {
-    const key = name.toLowerCase();
+    const key = normalizeKey(name);
     if (bioIndex[key]) continue; // already has a bio page
 
     const slug = slugify(name);
