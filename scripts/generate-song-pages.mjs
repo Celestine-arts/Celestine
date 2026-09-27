@@ -1,0 +1,268 @@
+// scripts/generate-song-pages.mjs
+//
+// Reads data/hot100.json (written by fetch_chart.py) and, for every song
+// that doesn't already have a page under songs/, generates one:
+//   - cover art (already in hot100.json, from the iTunes Search API)
+//   - an embedded YouTube player (found via a lightweight page scrape —
+//     no API key, matching the "no card details" constraint)
+//   - a Spotify search link (already in hot100.json)
+//   - a link to the artist's bio, if bio-index.json has one
+//   - a short AI-drafted paragraph via Gemini (same pattern as
+//     update-news.mjs), explicitly instructed never to quote lyrics or
+//     invent quotes from the artist
+//
+// Never overwrites an existing songs/{slug}.html — once a page exists
+// (whether AI-drafted or hand-rewritten), this script leaves it alone.
+// That's what makes the "milestone 1: AI draft, human polish later" plan
+// safe to run daily without clobbering finished work.
+
+import fs from "node:fs/promises";
+import path from "node:path";
+
+const HOT100_PATH = "data/hot100.json";
+const BIO_INDEX_PATH = "bio-index.json";
+const SONGS_DIR = "songs";
+const SITE_URL = "https://celestinestudio.com.lk";
+
+const GEMINI_MODEL = "gemini-flash-lite-latest";
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
+
+function slugify(title, artist) {
+  const clean = (s) =>
+    s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+  return `${clean(artist)}-${clean(title)}`;
+}
+
+async function loadJson(p, fallback) {
+  try {
+    return JSON.parse(await fs.readFile(p, "utf8"));
+  } catch {
+    return fallback;
+  }
+}
+
+async function fileExists(p) {
+  try {
+    await fs.access(p);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+function escapeHtml(str = "") {
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+function findBioLink(artist, bioIndex) {
+  const key = artist.trim().toLowerCase();
+  if (bioIndex[key]) return bioIndex[key];
+  // Loose fallback: artist string contains a known name (handles
+  // "Ella Langley & Morgan Wallen" style multi-artist credits)
+  for (const [name, file] of Object.entries(bioIndex)) {
+    if (key.includes(name)) return file;
+  }
+  return null;
+}
+
+// Finds a YouTube video id via a lightweight scrape of the search results
+// page (no API key). YouTube embeds a JSON blob in the page source
+// ("var ytInitialData = {...}") that includes video ids for the results —
+// this pulls the first one out with a regex rather than parsing the full
+// blob, so it degrades gracefully (returns null) if YouTube changes the
+// page structure, instead of crashing the whole run.
+async function findYouTubeVideoId(title, artist) {
+  const query = encodeURIComponent(`${artist} ${title} official`);
+  const url = `https://www.youtube.com/results?search_query=${query}`;
+
+  try {
+    const res = await fetch(url, {
+      headers: {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      },
+    });
+    if (!res.ok) return null;
+    const html = await res.text();
+    const match = html.match(/"videoId":"([a-zA-Z0-9_-]{11})"/);
+    return match ? match[1] : null;
+  } catch (err) {
+    console.error(`YouTube lookup failed for "${title}" by ${artist}:`, err.message);
+    return null;
+  }
+}
+
+async function draftBlurbWithGemini(entry) {
+  if (!GEMINI_API_KEY) return null;
+
+  const prompt = `Write a short (2-3 sentence, under 60 words) editorial-style note about the song "${entry.title}" by ${entry.artist}, for a music chart website. ` +
+    `You may reference its chart performance (currently #${entry.rank}, peak #${entry.peak}, ${entry.weeks ?? "several"} weeks on the chart) and general, well-known facts about the artist or song's reception. ` +
+    `Do NOT quote or paraphrase any song lyrics. Do NOT invent quotes attributed to the artist. Do NOT state specific factual claims you are not confident are true — keep it general and safe rather than specific and risky. ` +
+    `Write it as flowing prose, no headers or bullet points.`;
+
+  const url = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
+
+  try {
+    const res = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "x-goog-api-key": GEMINI_API_KEY,
+      },
+      body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] }),
+    });
+    if (!res.ok) {
+      console.error("Gemini API error:", res.status, await res.text());
+      return null;
+    }
+    const data = await res.json();
+    const text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
+    return text ? text.trim() : null;
+  } catch (err) {
+    console.error("Gemini call failed:", err.message);
+    return null;
+  }
+}
+
+function renderPage(entry, { videoId, bioLink, blurb }) {
+  const coverBlock = entry.coverArt
+    ? `<img class="song-cover" src="${escapeHtml(entry.coverArt)}" alt="Cover art for ${escapeHtml(entry.title)}">`
+    : `<div class="song-cover song-cover-placeholder"></div>`;
+
+  const videoBlock = videoId
+    ? `<div class="song-video">
+         <iframe width="100%" height="100%" src="https://www.youtube.com/embed/${videoId}"
+           title="${escapeHtml(entry.title)}" frameborder="0"
+           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+           allowfullscreen loading="lazy"></iframe>
+       </div>`
+    : `<div class="song-video song-video-unavailable"><p>No video available yet.</p></div>`;
+
+  const bioBlock = bioLink
+    ? `<a class="song-bio-link" href="../${bioLink}">Read ${escapeHtml(entry.artist)}'s full bio →</a>`
+    : "";
+
+  const blurbBlock = blurb
+    ? `<p class="song-blurb">${escapeHtml(blurb)}</p><p class="song-draft-tag">Draft note — auto-generated, awaiting a full human review.</p>`
+    : `<p class="song-draft-tag">Full review coming soon.</p>`;
+
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>${escapeHtml(entry.title)} — ${escapeHtml(entry.artist)} | Celestine</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  .song-hero{max-width:800px;margin:60px auto 0;padding:0 24px;display:flex;gap:28px;align-items:flex-start;flex-wrap:wrap;}
+  .song-cover{width:180px;height:180px;border-radius:6px;object-fit:cover;box-shadow:0 4px 18px rgba(0,0,0,0.18);}
+  .song-cover-placeholder{background:linear-gradient(135deg,#e8e4f5,#f5e8f0);}
+  .song-hero-meta{flex:1;min-width:240px;}
+  .song-hero-meta h1{font-family:'Fraunces',serif;font-size:2.1rem;font-weight:600;margin:0 0 6px;}
+  .song-hero-meta .artist{font-size:1.15rem;color:#5c5670;margin:0 0 14px;}
+  .song-stats{display:flex;gap:20px;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:0.85rem;color:#75708a;}
+  .song-links{max-width:800px;margin:20px auto 0;padding:0 24px;display:flex;gap:16px;flex-wrap:wrap;align-items:center;}
+  .song-spotify,.song-bio-link{font-family:'Inter',sans-serif;font-weight:700;font-size:0.9rem;padding:10px 18px;border:2px solid var(--ink);text-decoration:none;color:var(--ink);}
+  .song-spotify{background:#1DB954;color:#fff;border-color:#1DB954;}
+  .song-video{max-width:800px;margin:32px auto;padding:0 24px;aspect-ratio:16/9;}
+  .song-video iframe{width:100%;height:100%;border-radius:6px;}
+  .song-video-unavailable{display:flex;align-items:center;justify-content:center;background:#f0eef7;color:#9a94ac;font-family:'Inter',sans-serif;border-radius:6px;}
+  .song-blurb{max-width:800px;margin:0 auto;padding:0 24px;font-family:'Fraunces',serif;font-size:1.15rem;line-height:1.6;color:#2c2836;}
+  .song-draft-tag{max-width:800px;margin:10px auto 60px;padding:0 24px;font-family:'Inter',sans-serif;font-size:0.8rem;font-style:italic;color:#9a94ac;}
+</style>
+</head>
+<body>
+
+<header>
+  <a href="../index.html" class="logo">Celestine<span></span></a>
+  <nav>
+    <a href="../bios.html">Artist bios</a>
+    <a href="../film.html">Film</a>
+    <a href="../music.html">Music</a>
+    <a href="../charts.html">Charts</a>
+    <a href="../news.html">News</a>
+    <a href="../about.html">About</a>
+  </nav>
+</header>
+
+<div class="song-hero">
+  ${coverBlock}
+  <div class="song-hero-meta">
+    <h1>${escapeHtml(entry.title)}</h1>
+    <p class="artist">${escapeHtml(entry.artist)}</p>
+    <div class="song-stats">
+      <span>Currently #${entry.rank}</span>
+      <span>Peak #${entry.peak ?? "—"}</span>
+      <span>${entry.weeks ?? "—"} weeks on chart</span>
+    </div>
+  </div>
+</div>
+
+<div class="song-links">
+  <a class="song-spotify" href="${escapeHtml(entry.spotifyUrl)}" target="_blank" rel="noopener">Listen on Spotify</a>
+  ${bioBlock}
+</div>
+
+${videoBlock}
+
+${blurbBlock}
+
+<footer>
+  <a href="../index.html" class="logo">Celestine<span></span></a>
+  <div class="socials">
+    <a href="https://youtube.com/@celestinestudio" target="_blank">YouTube</a>
+    <a href="https://www.instagram.com/celestine_studio_" target="_blank">Instagram</a>
+    <a href="https://web.facebook.com/profile.php?id=61594418093291" target="_blank">Facebook</a>
+  </div>
+  <div class="fine">© 2026 Celestine Studio. All rights reserved.</div>
+</footer>
+
+</body>
+</html>
+`;
+}
+
+async function main() {
+  const chart = await loadJson(HOT100_PATH, null);
+  if (!chart || !chart.entries) {
+    console.error("No hot100.json found — run fetch_chart.py first.");
+    process.exit(1);
+  }
+  const bioIndex = await loadJson(BIO_INDEX_PATH, {});
+
+  await fs.mkdir(SONGS_DIR, { recursive: true });
+
+  let created = 0;
+  for (const entry of chart.entries) {
+    const slug = entry.slug || slugify(entry.title, entry.artist);
+    const outPath = path.join(SONGS_DIR, `${slug}.html`);
+
+    if (await fileExists(outPath)) continue; // never touch an existing page
+
+    const videoId = await findYouTubeVideoId(entry.title, entry.artist);
+    const bioLink = findBioLink(entry.artist, bioIndex);
+    const blurb = await draftBlurbWithGemini(entry);
+
+    const html = renderPage(entry, { videoId, bioLink, blurb });
+    await fs.writeFile(outPath, html);
+    created++;
+
+    await sleep(2000); // gentle pacing for the free-tier Gemini + YouTube scrape
+  }
+
+  console.log(`Created ${created} new song page(s).`);
+}
+
+main().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});
