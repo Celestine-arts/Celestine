@@ -1,13 +1,49 @@
 // scripts/lib/gemini-client.mjs
-// (same file as before, with these additions)
+//
+// A shared, self-throttling wrapper around the Gemini free-tier API,
+// used by generate-song-pages.mjs, generate-artist-bios.mjs, and
+// update-news.mjs.
+//
+// WHY THIS EXISTS
+// The free tier caps out at 15 requests/minute per model. Scripts used
+// to just sleep a fixed amount between calls, which is faster than that
+// limit allows — so a long run would reliably start hitting 429
+// RESOURCE_EXHAUSTED partway through and then fail the same way for
+// every remaining item, since nothing paused to let the quota window
+// reset.
+//
+// WHAT THIS DOES INSTEAD
+// 1. Self-throttles BEFORE hitting the limit: tracks the timestamp of
+//    every call in a rolling 60-second window and sleeps as needed to
+//    stay under MAX_CALLS_PER_MINUTE, so a long run shouldn't hit 429 at
+//    all under normal conditions.
+// 2. If a 429 slips through anyway (e.g. another process/run sharing the
+//    same API key), it reads Google's own "Please retry in X.Xs" hint
+//    out of the error body and waits that long (plus a small buffer)
+//    before retrying the same request — rather than failing that item.
+// 3. Caps retries (MAX_RETRIES) so a single stuck item can't hang the
+//    whole job forever. After that many attempts it gives up and returns
+//    null, same as any other failure — callers already treat a null
+//    response as "skip the AI text, fall back to a placeholder," so the
+//    run still finishes and nothing crashes.
+// 4. Distinguishes a per-minute rate limit (worth waiting out) from a
+//    per-DAY quota exhaustion (nothing will fix that until tomorrow).
+//    Google's 429 body includes a quotaId like
+//    "GenerateRequestsPerDayPerProjectPerModel-FreeTier" vs
+//    "...PerMinutePerProjectPerModel-FreeTier" — once a daily-quota error
+//    is seen, every subsequent callGemini() in this process returns null
+//    immediately, with no more waiting or retrying, so a long backlog
+//    doesn't burn the rest of the Actions run retrying calls that can't
+//    possibly succeed. Callers can check isDailyQuotaExhausted() to
+//    decide whether to save unfinished work for a later run.
 
 const GEMINI_MODEL = "gemini-flash-lite-latest";
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 
-const MAX_CALLS_PER_MINUTE = 12;
+const MAX_CALLS_PER_MINUTE = 12; // stay a margin under the real 15/min cap
 const WINDOW_MS = 60_000;
 const MAX_RETRIES = 6;
-const DEFAULT_BACKOFF_MS = 15_000;
+const DEFAULT_BACKOFF_MS = 15_000; // used if we can't parse a retry hint
 const MAX_BACKOFF_MS = 70_000;
 
 const callTimestamps = [];
@@ -21,6 +57,7 @@ function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
+// Blocks until there's room in the rolling window for one more call.
 async function waitForRateLimitWindow() {
   while (true) {
     const now = Date.now();
@@ -31,26 +68,29 @@ async function waitForRateLimitWindow() {
       callTimestamps.push(now);
       return;
     }
-    const waitMs = WINDOW_MS - (now - callTimestamps[0]) + 250;
+    const waitMs = WINDOW_MS - (now - callTimestamps[0]) + 250; // small buffer
     console.log(`Gemini: pacing — waiting ${(waitMs / 1000).toFixed(1)}s to stay under the free-tier rate limit.`);
     await sleep(waitMs);
   }
 }
 
+// Pulls "Please retry in 6.86s" (or similar) out of a Gemini error body.
+// Returns milliseconds, or null if no such hint is present.
 function parseRetryDelayMs(errorBodyText) {
   const match = errorBodyText.match(/retry in ([\d.]+)s/i);
   if (!match) return null;
   const seconds = parseFloat(match[1]);
   if (Number.isNaN(seconds)) return null;
-  return Math.ceil(seconds * 1000) + 500;
+  return Math.ceil(seconds * 1000) + 500; // small buffer on top of Google's own hint
 }
 
 // Distinguishes "you're over the per-minute rate" (retry shortly) from
 // "you're over the per-day cap" (nothing will fix this until tomorrow).
-// Google puts this in details[].violations[].quotaId, e.g.
-// "GenerateRequestsPerDayPerProjectPerModel-FreeTier" vs "...PerMinute...".
-// NOTE: the retryDelay hint can look short (e.g. "51s") even for a daily
-// cap, so that field can't be used to tell them apart — only quotaId can.
+// Google puts this in error.details[].violations[].quotaId, e.g.
+// "GenerateRequestsPerDayPerProjectPerModel-FreeTier" vs
+// "...PerMinutePerProjectPerModel-FreeTier". NOTE: the retryDelay hint
+// can look short (e.g. "51s") even for a daily-cap error, so that field
+// can't be used to tell them apart — only quotaId can.
 function isDailyQuotaError(errorBodyText) {
   try {
     const parsed = JSON.parse(errorBodyText);
@@ -65,6 +105,14 @@ function isDailyQuotaError(errorBodyText) {
   }
 }
 
+/**
+ * Calls Gemini with a single text prompt. Returns the response text, or
+ * null if the key is missing, the daily quota is already known to be
+ * exhausted, all retries are exhausted, or a non-rate-limit error
+ * occurs. Never throws — every caller already treats a null result as
+ * "fall back to a placeholder," so a failed call degrades the output
+ * instead of crashing the run.
+ */
 export async function callGemini(prompt) {
   if (!GEMINI_API_KEY) return null;
   if (dailyQuotaExhausted) return null; // short-circuit — no wait, no retry
@@ -112,9 +160,10 @@ export async function callGemini(prompt) {
         `Waiting ${(waitMs / 1000).toFixed(1)}s before retrying this item.`
       );
       await sleep(waitMs);
-      continue;
+      continue; // retry the same prompt
     }
 
+    // Non-429 error: not something waiting will fix, so don't retry.
     console.error("Gemini API error:", res.status, bodyText);
     return null;
   }
