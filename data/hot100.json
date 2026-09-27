@@ -1,6 +1,6 @@
 {
   "chartDate": "2026-09-27",
-  "fetchedAt": "2026-09-27T16:36:13.530647+00:00",
+  "fetchedAt": "2026-09-27T17:46:13.309687+00:00",
   "entries": [
     {
       "rank": 1,
@@ -564,7 +564,7 @@
       "movement": "same",
       "spotifyUrl": "https://open.spotify.com/search/Freakin%27%20Out%20Dexter%20And%20The%20Moonrocks",
       "slug": "dexter-and-the-moonrocks-freakin-out",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/fd/e7/ef/fde7efaf-0a34-1c0d-a8aa-a0c297916aba/26UMGIM21566.rgb.jpg/600x600bb.jpg"
     },
     {
       "rank": 48,
@@ -624,7 +624,7 @@
       "movement": "down",
       "spotifyUrl": "https://open.spotify.com/search/Hit%20The%20Wall%20Gracie%20Abrams",
       "slug": "gracie-abrams-hit-the-wall",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/4f/13/47/4f1347cf-9564-e8b6-523a-386202f4d265/26UMGIM54147.rgb.jpg/600x600bb.jpg"
     },
     {
       "rank": 53,
@@ -648,7 +648,7 @@
       "movement": "new",
       "spotifyUrl": "https://open.spotify.com/search/Ceiling%20Jhene%20Aiko",
       "slug": "jhene-aiko-ceiling",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/71/5a/90/715a9057-5ed3-26e0-a706-0fc39b1a1a64/26UM1IM17018.rgb.jpg/600x600bb.jpg"
     },
     {
       "rank": 55,
@@ -1068,7 +1068,7 @@
       "movement": "new",
       "spotifyUrl": "https://open.spotify.com/search/Wild%20Cat%28s%29%20Jhene%20Aiko",
       "slug": "jhene-aiko-wild-cat-s",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/5f/51/9f/5f519f49-44c1-6aeb-f289-5b14c677abb1/26UM1IM17017.rgb.jpg/600x600bb.jpg"
     },
     {
       "rank": 90,
@@ -1080,7 +1080,7 @@
       "movement": "up",
       "spotifyUrl": "https://open.spotify.com/search/Elevation%20Worship%20%26%20Chandler%20Moore",
       "slug": "chandler-moore-elevation-worship",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/ac/fb/2e/acfb2e1b-5a2a-6ad2-401f-aeb16df85673/886449130207.jpg/600x600bb.jpg"
     },
     {
       "rank": 91,
@@ -1116,7 +1116,7 @@
       "movement": "down",
       "spotifyUrl": "https://open.spotify.com/search/SaWaDiKa%20LISA",
       "slug": "lisa-sawadika",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/99/67/3e/99673e22-2a03-6523-4753-7c2e254a817d/artwork.jpg/600x600bb.jpg"
     },
     {
       "rank": 94,
@@ -1128,7 +1128,7 @@
       "movement": "down",
       "spotifyUrl": "https://open.spotify.com/search/Bet%20On%20That%20Blake%20Whiten",
       "slug": "blake-whiten-bet-on-that",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/00/1d/40/001d40eb-679d-05df-f1f2-1d66602ff1f1/093624821267.jpg/600x600bb.jpg"
     },
     {
       "rank": 95,
@@ -1140,7 +1140,7 @@
       "movement": "new",
       "spotifyUrl": "https://open.spotify.com/search/California%20Girls%20Future",
       "slug": "future-california-girls",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/79/a1/24/79a1245d-b4f8-0395-0500-e46668801d88/196874590546.jpg/600x600bb.jpg"
     },
     {
       "rank": 96,
@@ -1152,7 +1152,7 @@
       "movement": "new",
       "spotifyUrl": "https://open.spotify.com/search/You%20Jhene%20Aiko",
       "slug": "jhene-aiko-you",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/5f/51/9f/5f519f49-44c1-6aeb-f289-5b14c677abb1/26UM1IM17017.rgb.jpg/600x600bb.jpg"
     },
     {
       "rank": 97,
@@ -1200,7 +1200,7 @@
       "movement": "down",
       "spotifyUrl": "https://open.spotify.com/search/What%27s%20Wrong%20With%20Me%20Olivia%20Rodrigo%20%26%20Robert%20Smith",
       "slug": "olivia-rodrigo-robert-smith-what-s-wrong-with-me",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/1d/1b/f9/1d1bf9b1-44c6-9a6c-6ffb-c158488c06ce/26UMGIM39303.rgb.jpg/600x600bb.jpg"
     }
   ]
 }
