@@ -1,0 +1,902 @@
+{
+  "ella-langley-choosin-texas": {
+    "slug": "ella-langley-choosin-texas",
+    "title": "Choosin' Texas",
+    "artist": "Ella Langley",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 1,
+    "hasReview": true
+  },
+  "stella-lefty-boston": {
+    "slug": "stella-lefty-boston",
+    "title": "Boston",
+    "artist": "Stella Lefty",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 2,
+    "hasReview": true
+  },
+  "morgan-wallen-been-by-now": {
+    "slug": "morgan-wallen-been-by-now",
+    "title": "Been By Now",
+    "artist": "Morgan Wallen",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 2,
+    "hasReview": true
+  },
+  "ariana-grande-hate-that-i-made-you-love-me": {
+    "slug": "ariana-grande-hate-that-i-made-you-love-me",
+    "title": "Hate That I Made You Love Me",
+    "artist": "Ariana Grande",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 1,
+    "hasReview": true
+  },
+  "tame-impala-jennie-dracula": {
+    "slug": "tame-impala-jennie-dracula",
+    "title": "Dracula",
+    "artist": "Tame Impala & JENNIE",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 5,
+    "hasReview": true
+  },
+  "taylor-swift-i-knew-it-i-knew-you": {
+    "slug": "taylor-swift-i-knew-it-i-knew-you",
+    "title": "I Knew It, I Knew You",
+    "artist": "Taylor Swift",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 1,
+    "hasReview": true
+  },
+  "with-judeline-rusowsky-karol-g": {
+    "slug": "with-judeline-rusowsky-karol-g",
+    "title": "Karol G",
+    "artist": "With Judeline & rusowsky",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 7,
+    "hasReview": true
+  },
+  "olivia-dean-so-easy-to-fall-in-love": {
+    "slug": "olivia-dean-so-easy-to-fall-in-love",
+    "title": "So Easy (To Fall In Love)",
+    "artist": "Olivia Dean",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 5,
+    "hasReview": true
+  },
+  "olivia-dean-man-i-need": {
+    "slug": "olivia-dean-man-i-need",
+    "title": "Man I Need",
+    "artist": "Olivia Dean",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 2,
+    "hasReview": true
+  },
+  "ella-langley-be-her": {
+    "slug": "ella-langley-be-her",
+    "title": "Be Her",
+    "artist": "Ella Langley",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 2,
+    "hasReview": true
+  },
+  "bruno-mars-risk-it-all": {
+    "slug": "bruno-mars-risk-it-all",
+    "title": "Risk It All",
+    "artist": "Bruno Mars",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 4,
+    "hasReview": true
+  },
+  "olivia-rodrigo-stupid-song": {
+    "slug": "olivia-rodrigo-stupid-song",
+    "title": "Stupid Song",
+    "artist": "Olivia Rodrigo",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 3,
+    "hasReview": true
+  },
+  "bruno-mars-i-just-might": {
+    "slug": "bruno-mars-i-just-might",
+    "title": "I Just Might",
+    "artist": "Bruno Mars",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 1,
+    "hasReview": true
+  },
+  "zara-larsson-midnight-sun": {
+    "slug": "zara-larsson-midnight-sun",
+    "title": "Midnight Sun",
+    "artist": "Zara Larsson",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 13,
+    "hasReview": true
+  },
+  "ella-langley-morgan-wallen-i-can-t-love-you-anymore": {
+    "slug": "ella-langley-morgan-wallen-i-can-t-love-you-anymore",
+    "title": "I Can't Love You Anymore",
+    "artist": "Ella Langley & Morgan Wallen",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 4,
+    "hasReview": true
+  },
+  "olivia-rodrigo-drop-dead": {
+    "slug": "olivia-rodrigo-drop-dead",
+    "title": "Drop Dead",
+    "artist": "Olivia Rodrigo",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 1,
+    "hasReview": true
+  },
+  "luke-combs-be-by-you": {
+    "slug": "luke-combs-be-by-you",
+    "title": "Be By You",
+    "artist": "Luke Combs",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 12,
+    "hasReview": true
+  },
+  "drake-janice-stfu": {
+    "slug": "drake-janice-stfu",
+    "title": "Janice STFU",
+    "artist": "Drake",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 1,
+    "hasReview": true
+  },
+  "dominic-fike-babydoll": {
+    "slug": "dominic-fike-babydoll",
+    "title": "Babydoll",
+    "artist": "Dominic Fike",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 16,
+    "hasReview": true
+  },
+  "malcolm-todd-earrings": {
+    "slug": "malcolm-todd-earrings",
+    "title": "Earrings",
+    "artist": "Malcolm Todd",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 19,
+    "hasReview": true
+  },
+  "lil-baby-dead-fresh": {
+    "slug": "lil-baby-dead-fresh",
+    "title": "Dead Fresh",
+    "artist": "Lil Baby",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 18,
+    "hasReview": true
+  },
+  "adela-nicole-kidman": {
+    "slug": "adela-nicole-kidman",
+    "title": "Nicole Kidman",
+    "artist": "ADELA",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 22,
+    "hasReview": true
+  },
+  "tame-impala-loser": {
+    "slug": "tame-impala-loser",
+    "title": "Loser",
+    "artist": "Tame Impala",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 18,
+    "hasReview": true
+  },
+  "ella-langley-loving-life-again": {
+    "slug": "ella-langley-loving-life-again",
+    "title": "Loving Life Again",
+    "artist": "Ella Langley",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 21,
+    "hasReview": true
+  },
+  "koe-wetzel-ella-langley-jaded": {
+    "slug": "koe-wetzel-ella-langley-jaded",
+    "title": "Jaded",
+    "artist": "Koe Wetzel & Ella Langley",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 19,
+    "hasReview": true
+  },
+  "jhene-aiko-featuring-kendrick-lamar-so-good": {
+    "slug": "jhene-aiko-featuring-kendrick-lamar-so-good",
+    "title": "So Good",
+    "artist": "Jhene Aiko Featuring Kendrick Lamar",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 26,
+    "hasReview": true
+  },
+  "olivia-rodrigo-the-cure": {
+    "slug": "olivia-rodrigo-the-cure",
+    "title": "The Cure",
+    "artist": "Olivia Rodrigo",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 5,
+    "hasReview": true
+  },
+  "katseye-animal": {
+    "slug": "katseye-animal",
+    "title": "Animal",
+    "artist": "KATSEYE",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 24,
+    "hasReview": true
+  },
+  "tems-what-you-need": {
+    "slug": "tems-what-you-need",
+    "title": "What You Need",
+    "artist": "Tems",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 29,
+    "hasReview": true
+  },
+  "adela-ain-t-in-la": {
+    "slug": "adela-ain-t-in-la",
+    "title": "Ain't In LA",
+    "artist": "ADELA",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 30,
+    "hasReview": true
+  },
+  "steve-lacy-oh-yeah": {
+    "slug": "steve-lacy-oh-yeah",
+    "title": "Oh Yeah?",
+    "artist": "Steve Lacy",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 19,
+    "hasReview": true
+  },
+  "shakira-x-burna-boy-dai-dai-fifa-world-cup-official-song-2026": {
+    "slug": "shakira-x-burna-boy-dai-dai-fifa-world-cup-official-song-2026",
+    "title": "Dai Dai (FIFA World Cup Official Song 2026)",
+    "artist": "Shakira X Burna Boy",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 17,
+    "hasReview": true
+  },
+  "noah-kahan-orbiter": {
+    "slug": "noah-kahan-orbiter",
+    "title": "Orbiter",
+    "artist": "Noah Kahan",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 33,
+    "hasReview": true
+  },
+  "yung-miami-spend-dat": {
+    "slug": "yung-miami-spend-dat",
+    "title": "Spend Dat",
+    "artist": "Yung Miami",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 17,
+    "hasReview": true
+  },
+  "mac-miller-featuring-ty-dolla-ign-cinderella": {
+    "slug": "mac-miller-featuring-ty-dolla-ign-cinderella",
+    "title": "Cinderella",
+    "artist": "Mac Miller Featuring Ty Dolla $ign",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 25,
+    "hasReview": true
+  },
+  "cody-johnson-take-me-back-leave-me-there": {
+    "slug": "cody-johnson-take-me-back-leave-me-there",
+    "title": "Take Me Back (Leave Me There)",
+    "artist": "Cody Johnson",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 33,
+    "hasReview": true
+  },
+  "beyonce-morning-dew-donk": {
+    "slug": "beyonce-morning-dew-donk",
+    "title": "Morning Dew (Donk)",
+    "artist": "Beyonce",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 26,
+    "hasReview": true
+  },
+  "teddy-swims-mr-know-it-all": {
+    "slug": "teddy-swims-mr-know-it-all",
+    "title": "Mr. Know It All",
+    "artist": "Teddy Swims",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 38,
+    "hasReview": true
+  },
+  "luke-combs-rethink-some-things": {
+    "slug": "luke-combs-rethink-some-things",
+    "title": "Rethink Some Things",
+    "artist": "Luke Combs",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 39,
+    "hasReview": true
+  },
+  "drake-shabang": {
+    "slug": "drake-shabang",
+    "title": "Shabang",
+    "artist": "Drake",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 4,
+    "hasReview": true
+  },
+  "jhene-aiko-he-belongs": {
+    "slug": "jhene-aiko-he-belongs",
+    "title": "He Belongs",
+    "artist": "Jhene Aiko",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 41,
+    "hasReview": true
+  },
+  "jhene-aiko-ghost": {
+    "slug": "jhene-aiko-ghost",
+    "title": "Ghost",
+    "artist": "Jhene Aiko",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 42,
+    "hasReview": true
+  },
+  "cardi-b-ah-ha": {
+    "slug": "cardi-b-ah-ha",
+    "title": "AH HA",
+    "artist": "Cardi B",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 25,
+    "hasReview": true
+  },
+  "temper-city-self-aware": {
+    "slug": "temper-city-self-aware",
+    "title": "Self Aware",
+    "artist": "Temper City",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 35,
+    "hasReview": true
+  },
+  "alyssa-grace-bloodstream": {
+    "slug": "alyssa-grace-bloodstream",
+    "title": "Bloodstream",
+    "artist": "Alyssa Grace",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 45,
+    "hasReview": true
+  },
+  "ariana-grande-petal": {
+    "slug": "ariana-grande-petal",
+    "title": "Petal",
+    "artist": "Ariana Grande",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 4,
+    "hasReview": true
+  },
+  "dexter-and-the-moonrocks-freakin-out": {
+    "slug": "dexter-and-the-moonrocks-freakin-out",
+    "title": "Freakin' Out",
+    "artist": "Dexter And The Moonrocks",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 33,
+    "hasReview": true
+  },
+  "john-mayer-lainey-wilson": {
+    "slug": "john-mayer-lainey-wilson",
+    "title": "Lainey Wilson",
+    "artist": "& John Mayer",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 48,
+    "hasReview": true
+  },
+  "shaboozey-cowgirl": {
+    "slug": "shaboozey-cowgirl",
+    "title": "Cowgirl",
+    "artist": "Shaboozey",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 42,
+    "hasReview": true
+  },
+  "stella-lefty-featuring-vincent-mason-something-to-lose": {
+    "slug": "stella-lefty-featuring-vincent-mason-something-to-lose",
+    "title": "Something To Lose",
+    "artist": "Stella Lefty Featuring Vincent Mason",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 40,
+    "hasReview": true
+  },
+  "sam-fender-olivia-dean-rein-me-in": {
+    "slug": "sam-fender-olivia-dean-rein-me-in",
+    "title": "Rein Me In",
+    "artist": "Sam Fender & Olivia Dean",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 45,
+    "hasReview": true
+  },
+  "gracie-abrams-hit-the-wall": {
+    "slug": "gracie-abrams-hit-the-wall",
+    "title": "Hit The Wall",
+    "artist": "Gracie Abrams",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 26,
+    "hasReview": true
+  },
+  "21-savage-belly-gang-kushington": {
+    "slug": "21-savage-belly-gang-kushington",
+    "title": "Belly Gang Kushington &",
+    "artist": "21 Savage",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 53,
+    "hasReview": true
+  },
+  "jhene-aiko-ceiling": {
+    "slug": "jhene-aiko-ceiling",
+    "title": "Ceiling",
+    "artist": "Jhene Aiko",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 54,
+    "hasReview": true
+  },
+  "sombr-my-body-isn-t-ready": {
+    "slug": "sombr-my-body-isn-t-ready",
+    "title": "My Body Isn't Ready",
+    "artist": "sombr",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 30,
+    "hasReview": true
+  },
+  "kenny-chesney-carry-on": {
+    "slug": "kenny-chesney-carry-on",
+    "title": "Carry On",
+    "artist": "Kenny Chesney",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 53,
+    "hasReview": true
+  },
+  "sienna-spiro-great-expectation": {
+    "slug": "sienna-spiro-great-expectation",
+    "title": "Great Expectation",
+    "artist": "Sienna Spiro",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 52,
+    "hasReview": true
+  },
+  "riley-green-think-as-you-drunk": {
+    "slug": "riley-green-think-as-you-drunk",
+    "title": "Think As You Drunk",
+    "artist": "Riley Green",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 58,
+    "hasReview": true
+  },
+  "ab-soul-jhene-aiko": {
+    "slug": "ab-soul-jhene-aiko",
+    "title": "Jhene Aiko",
+    "artist": "& Ab-Soul",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 59,
+    "hasReview": true
+  },
+  "f3miii-noble": {
+    "slug": "f3miii-noble",
+    "title": "Noble",
+    "artist": "F3miii",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 51,
+    "hasReview": true
+  },
+  "kacey-musgraves-mexico-honey": {
+    "slug": "kacey-musgraves-mexico-honey",
+    "title": "Mexico Honey",
+    "artist": "Kacey Musgraves",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 39,
+    "hasReview": true
+  },
+  "john-morgan-kid-myself": {
+    "slug": "john-morgan-kid-myself",
+    "title": "Kid Myself",
+    "artist": "John Morgan",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 62,
+    "hasReview": true
+  },
+  "miley-bass-persuades": {
+    "slug": "miley-bass-persuades",
+    "title": "Bass Persuades",
+    "artist": "Miley",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 35,
+    "hasReview": true
+  },
+  "audrey-hobert-sue-me": {
+    "slug": "audrey-hobert-sue-me",
+    "title": "Sue Me",
+    "artist": "Audrey Hobert",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 57,
+    "hasReview": true
+  },
+  "corey-kent-empty-words": {
+    "slug": "corey-kent-empty-words",
+    "title": "Empty Words",
+    "artist": "Corey Kent",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 65,
+    "hasReview": true
+  },
+  "bailey-zimmerman-chevy-silverado": {
+    "slug": "bailey-zimmerman-chevy-silverado",
+    "title": "Chevy Silverado",
+    "artist": "Bailey Zimmerman",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 41,
+    "hasReview": true
+  },
+  "babychiefdoit-ghetto-love-story": {
+    "slug": "babychiefdoit-ghetto-love-story",
+    "title": "Ghetto Love Story",
+    "artist": "BabyChiefDoit",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 44,
+    "hasReview": true
+  },
+  "marshmello-kelsea-ballerini-another-drink": {
+    "slug": "marshmello-kelsea-ballerini-another-drink",
+    "title": "Another Drink",
+    "artist": "Marshmello & Kelsea Ballerini",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 60,
+    "hasReview": true
+  },
+  "jhene-aiko-nothing-nice-to-say": {
+    "slug": "jhene-aiko-nothing-nice-to-say",
+    "title": "Nothing Nice To Say",
+    "artist": "Jhene Aiko",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 69,
+    "hasReview": true
+  },
+  "morgan-wallen-tim-mcgraw-": {
+    "slug": "morgan-wallen-tim-mcgraw-",
+    "title": ",",
+    "artist": "Morgan Wallen & Tim McGraw",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 31,
+    "hasReview": true
+  },
+  "zach-top-south-of-sanity": {
+    "slug": "zach-top-south-of-sanity",
+    "title": "South Of Sanity",
+    "artist": "Zach Top",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 71,
+    "hasReview": true
+  },
+  "jhene-aiko-featuring-tyga-like-whatever": {
+    "slug": "jhene-aiko-featuring-tyga-like-whatever",
+    "title": "Like, Whatever",
+    "artist": "Jhene Aiko Featuring Tyga",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 72,
+    "hasReview": true
+  },
+  "jhene-aiko-break": {
+    "slug": "jhene-aiko-break",
+    "title": "Break",
+    "artist": "Jhene Aiko",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 73,
+    "hasReview": true
+  },
+  "noah-kahan-doors": {
+    "slug": "noah-kahan-doors",
+    "title": "Doors",
+    "artist": "Noah Kahan",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 9,
+    "hasReview": true
+  },
+  "mack-geiger-string-by": {
+    "slug": "mack-geiger-string-by",
+    "title": "String By",
+    "artist": "Mack Geiger",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 71,
+    "hasReview": true
+  },
+  "featuring-chase-matthew-lauren-alaina": {
+    "slug": "featuring-chase-matthew-lauren-alaina",
+    "title": "Lauren Alaina",
+    "artist": "Featuring Chase Matthew",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 76,
+    "hasReview": true
+  },
+  "olivia-rodrigo-maggots-for-brains": {
+    "slug": "olivia-rodrigo-maggots-for-brains",
+    "title": "Maggots For Brains",
+    "artist": "Olivia Rodrigo",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 12,
+    "hasReview": true
+  },
+  "steve-lacy-the-feeling": {
+    "slug": "steve-lacy-the-feeling",
+    "title": "The Feeling",
+    "artist": "Steve Lacy",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 67,
+    "hasReview": true
+  },
+  "karol-g-with-bruno-mars-still": {
+    "slug": "karol-g-with-bruno-mars-still",
+    "title": "Still",
+    "artist": "Karol G With Bruno Mars",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 41,
+    "hasReview": true
+  },
+  "olivia-rodrigo-expectations": {
+    "slug": "olivia-rodrigo-expectations",
+    "title": "Expectations",
+    "artist": "Olivia Rodrigo",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 20,
+    "hasReview": true
+  },
+  "olivia-rodrigo-honeybee": {
+    "slug": "olivia-rodrigo-honeybee",
+    "title": "Honeybee",
+    "artist": "Olivia Rodrigo",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 9,
+    "hasReview": true
+  },
+  "julia-wolf-in-my-room": {
+    "slug": "julia-wolf-in-my-room",
+    "title": "In My Room",
+    "artist": "Julia Wolf",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 57,
+    "hasReview": true
+  },
+  "hudson-westbrook-painted-you-pretty": {
+    "slug": "hudson-westbrook-painted-you-pretty",
+    "title": "Painted You Pretty",
+    "artist": "Hudson Westbrook",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 80,
+    "hasReview": true
+  },
+  "ashe-stop-the-wedding": {
+    "slug": "ashe-stop-the-wedding",
+    "title": "Stop The Wedding!",
+    "artist": "Ashe",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 84,
+    "hasReview": true
+  },
+  "luke-bryan-country-and-she-knows-it": {
+    "slug": "luke-bryan-country-and-she-knows-it",
+    "title": "Country And She Knows It",
+    "artist": "Luke Bryan",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 81,
+    "hasReview": true
+  },
+  "jelly-roll-hands-up": {
+    "slug": "jelly-roll-hands-up",
+    "title": "Hands Up",
+    "artist": "Jelly Roll",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 82,
+    "hasReview": true
+  },
+  "zach-john-king-get-to-drinkin": {
+    "slug": "zach-john-king-get-to-drinkin",
+    "title": "Get To Drinkin'",
+    "artist": "Zach John King",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 87,
+    "hasReview": true
+  },
+  "karol-g-with-drake-ahi": {
+    "slug": "karol-g-with-drake-ahi",
+    "title": "Ahi",
+    "artist": "Karol G With Drake",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 44,
+    "hasReview": true
+  },
+  "jhene-aiko-wild-cat-s": {
+    "slug": "jhene-aiko-wild-cat-s",
+    "title": "Wild Cat(s)",
+    "artist": "Jhene Aiko",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 89,
+    "hasReview": true
+  },
+  "chandler-moore-elevation-worship": {
+    "slug": "chandler-moore-elevation-worship",
+    "title": "Elevation Worship",
+    "artist": "& Chandler Moore",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 90,
+    "hasReview": true
+  },
+  "katseye-hootie-frutti": {
+    "slug": "katseye-hootie-frutti",
+    "title": "Hootie Frutti",
+    "artist": "KATSEYE",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 31,
+    "hasReview": true
+  },
+  "comehelpglo-onsra": {
+    "slug": "comehelpglo-onsra",
+    "title": "onsra",
+    "artist": "comehelpglo",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 92,
+    "hasReview": true
+  },
+  "lisa-sawadika": {
+    "slug": "lisa-sawadika",
+    "title": "SaWaDiKa",
+    "artist": "LISA",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 69,
+    "hasReview": true
+  },
+  "blake-whiten-bet-on-that": {
+    "slug": "blake-whiten-bet-on-that",
+    "title": "Bet On That",
+    "artist": "Blake Whiten",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 84,
+    "hasReview": true
+  },
+  "future-california-girls": {
+    "slug": "future-california-girls",
+    "title": "California Girls",
+    "artist": "Future",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 23,
+    "hasReview": true
+  },
+  "jhene-aiko-you": {
+    "slug": "jhene-aiko-you",
+    "title": "You",
+    "artist": "Jhene Aiko",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 96,
+    "hasReview": true
+  },
+  "elevation-rhythm-washed": {
+    "slug": "elevation-rhythm-washed",
+    "title": "Washed",
+    "artist": "ELEVATION RHYTHM",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 97,
+    "hasReview": true
+  },
+  "dan-shay-say-so": {
+    "slug": "dan-shay-say-so",
+    "title": "Say So",
+    "artist": "Dan + Shay",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 98,
+    "hasReview": true
+  },
+  "partynextdoor-some-of-your-love": {
+    "slug": "partynextdoor-some-of-your-love",
+    "title": "Some Of Your Love",
+    "artist": "PARTYNEXTDOOR",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 36,
+    "hasReview": true
+  },
+  "olivia-rodrigo-robert-smith-what-s-wrong-with-me": {
+    "slug": "olivia-rodrigo-robert-smith-what-s-wrong-with-me",
+    "title": "What's Wrong With Me",
+    "artist": "Olivia Rodrigo & Robert Smith",
+    "firstSeen": "2026-09-27",
+    "lastSeen": "2026-09-27",
+    "peak": 17,
+    "hasReview": true
+  }
+}
