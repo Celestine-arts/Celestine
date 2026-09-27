@@ -297,6 +297,11 @@ async function main() {
       lastSeen: today,
       peak: Math.min(entry.peak ?? entry.rank, existing?.peak ?? Infinity),
       hasReview: alreadyExists || true, // page exists either way after this point
+      // Carried over from hot100.json (iTunes Search API) so listing pages
+      // (music.html) can render a real cover instead of a placeholder.
+      // Re-merged every run — including for songs that already had a page —
+      // so this backfills automatically for older entries too.
+      coverArt: entry.coverArt || existing?.coverArt || null,
     };
   }
 
