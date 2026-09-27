@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Site Status | Celestine</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .status-wrap{max-width:1100px;margin:0 auto;padding:40px 5vw 80px;}
+  .status-head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:14px;margin-bottom:28px;}
+  .status-head h1{font-family:'Fraunces',serif;font-size:1.8rem;margin:0 0 4px;}
+  .status-head p{margin:0;color:#75708a;font-size:0.9rem;}
+  .btn{font-family:'Inter',sans-serif;font-weight:700;font-size:0.85rem;padding:9px 18px;border:2px solid var(--ink,#111);background:var(--ink,#111);color:#fff;cursor:pointer;border-radius:4px;}
+  .btn.ghost{background:transparent;color:var(--ink,#111);}
+  .btn:disabled{opacity:0.5;cursor:default;}
+
+  .panel-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-bottom:36px;}
+  .panel{border:2px solid #111;padding:16px 18px;box-shadow:4px 4px 0 #111;background:#fff;}
+  .panel .pname{font-family:'Inter',sans-serif;font-weight:700;font-size:0.85rem;margin-bottom:6px;}
+  .panel .pstate{font-family:'Fraunces',serif;font-size:1.3rem;margin-bottom:4px;}
+  .panel .pmeta{font-size:0.78rem;color:#75708a;}
+  .panel a{color:inherit;text-decoration:none;}
+  .ok{color:#1f8a5f;}
+  .bad{color:#c23e3e;}
+  .warn{color:#b36b00;}
+  .muted{color:#9a94ac;}
+
+  table.datafresh{width:100%;border-collapse:collapse;margin-bottom:36px;font-family:'Inter',sans-serif;font-size:0.85rem;}
+  table.datafresh th, table.datafresh td{text-align:left;padding:9px 12px;border-bottom:1px solid rgba(0,0,0,0.08);}
+  table.datafresh th{color:#75708a;font-weight:600;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.03em;}
+
+  .tabs{display:flex;gap:6px;border-bottom:3px solid #111;margin-bottom:20px;flex-wrap:wrap;}
+  .tab{font-family:'Inter',sans-serif;font-weight:700;font-size:0.9rem;padding:10px 18px;cursor:pointer;background:none;border:none;border-bottom:3px solid transparent;margin-bottom:-3px;color:#75708a;}
+  .tab.active{color:#111;border-bottom-color:#111;}
+  .tabpanel{display:none;}
+  .tabpanel.active{display:block;}
+
+  .section-summary{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:16px;font-family:'Inter',sans-serif;font-size:0.85rem;}
+  .section-summary b{font-family:'Fraunces',serif;font-size:1.1rem;}
+
+  table.content{width:100%;border-collapse:collapse;font-family:'Inter',sans-serif;font-size:0.83rem;}
+  table.content th, table.content td{text-align:left;padding:8px 10px;border-bottom:1px solid rgba(0,0,0,0.08);white-space:nowrap;}
+  table.content th{color:#75708a;font-weight:600;font-size:0.75rem;text-transform:uppercase;}
+  table.content td.name{white-space:normal;max-width:280px;}
+  table.content .tag{display:inline-block;padding:2px 9px;border-radius:999px;font-size:0.72rem;font-weight:700;}
+  .tag.full{background:#e3f5eb;color:#1f8a5f;}
+  .tag.draft{background:#fdf0d8;color:#b36b00;}
+  .tag.placeholder{background:#f4e9e9;color:#9a5a5a;}
+  .tag.pending{background:#f4e2e2;color:#c23e3e;}
+  .tag.unknown{background:#f0eef7;color:#9a94ac;}
+  .cb{font-size:1rem;}
+  .table-wrap{overflow-x:auto;border:1px solid rgba(0,0,0,0.08);border-radius:6px;}
+  .loading-note{font-size:0.82rem;color:#9a94ac;font-style:italic;padding:8px 0;}
+</style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo">Celestine<span></span></a>
+  <nav>
+    <a href="bios.html">Artist bios</a>
+    <a href="film.html">Film</a>
+    <a href="music.html">Music</a>
+    <a href="charts.html">Charts</a>
+    <a href="news.html">News</a>
+    <a href="about.html">About</a>
+  </nav>
+</header>
+
+<div class="status-wrap">
+  <div class="status-head">
+    <div>
+      <h1>Site Status</h1>
+      <p id="checkedAt">Not yet checked.</p>
+    </div>
+    <button class="btn" id="refreshAllBtn">↻ Refresh everything</button>
+  </div>
+
+  <div class="panel-grid" id="pipelinePanels">
+    <div class="panel"><div class="pname">Charts / Bios / Songs</div><div class="pstate muted">—</div></div>
+    <div class="panel"><div class="pname">News</div><div class="pstate muted">—</div></div>
+    <div class="panel"><div class="pname">Weekly Digest</div><div class="pstate muted">—</div></div>
+  </div>
+
+  <table class="datafresh" id="freshTable">
+    <thead><tr><th>Data file</th><th>Last updated</th><th>Commit</th></tr></thead>
+    <tbody id="freshBody"><tr><td colspan="3" class="loading-note">Click "Refresh everything" to check.</td></tr></tbody>
+  </table>
+
+  <div class="tabs">
+    <button class="tab active" data-tab="bios">Bios</button>
+    <button class="tab" data-tab="songs">Songs</button>
+    <button class="tab" data-tab="news">News</button>
+    <button class="tab" data-tab="films">Films</button>
+  </div>
+
+  <div class="tabpanel active" id="tab-bios">
+    <div class="section-summary" id="biosSummary"><span class="loading-note">Not loaded yet.</span></div>
+    <button class="btn ghost" id="scanBiosBtn">Scan details (fetches every bio page)</button>
+    <div style="height:12px"></div>
+    <div class="table-wrap"><table class="content" id="biosTable"><thead><tr><th>Artist</th><th>Status</th><th class="cb">Photo</th><th class="cb">Wiki source</th></tr></thead><tbody></tbody></table></div>
+  </div>
+
+  <div class="tabpanel" id="tab-songs">
+    <div class="section-summary" id="songsSummary"><span class="loading-note">Not loaded yet.</span></div>
+    <button class="btn ghost" id="scanSongsBtn">Scan details (fetches every song page)</button>
+    <div style="height:12px"></div>
+    <div class="table-wrap"><table class="content" id="songsTable"><thead><tr><th>Song</th><th>Artist</th><th>Peak</th><th>Status</th><th class="cb">Cover</th><th class="cb">YouTube</th><th class="cb">Spotify</th><th class="cb">Bio link</th></tr></thead><tbody></tbody></table></div>
+  </div>
+
+  <div class="tabpanel" id="tab-news">
+    <div class="section-summary" id="newsSummary"><span class="loading-note">Not loaded yet.</span></div>
+    <div class="table-wrap"><table class="content" id="newsTable"><thead><tr><th>Headline</th><th>Source</th><th>Date</th><th>Summary</th><th class="cb">Image</th></tr></thead><tbody></tbody></table></div>
+  </div>
+
+  <div class="tabpanel" id="tab-films">
+    <div class="section-summary" id="filmsSummary"><span class="loading-note">Not loaded yet.</span></div>
+    <p class="loading-note">No index file or generator exists for films yet, so this is a best-effort scrape of film.html's markup, not a real database. Ask if you'd like a films-index.json + generator built to match bios/songs.</p>
+    <div class="table-wrap"><table class="content" id="filmsTable"><thead><tr><th>Title (best-effort)</th></tr></thead><tbody></tbody></table></div>
+  </div>
+</div>
+
+<footer>
+  <a href="index.html" class="logo">Celestine<span></span></a>
+  <div class="fine">© 2026 Celestine Studio. Internal status page — not linked in main nav.</div>
+</footer>
+
+<script>
+const REPO = 'Celestine-arts/Celestine';
+const WORKFLOWS = [
+  { file: 'update-charts.yml', label: 'Charts / Bios / Songs', el: 0 },
+  { file: 'update-news.yml', label: 'News', el: 1 },
+  { file: 'weekly-digest.yml', label: 'Weekly Digest', el: 2 },
+];
+const DATA_FILES = [
+  'data/hot100.json', 'bio-index.json', 'data/songs-index.json',
+  'news.json', 'bio-pending.json', 'song-blurb-pending.json',
+];
+
+function timeAgo(iso) {
+  const diffMs = Date.now() - new Date(iso).getTime();
+  const mins = Math.round(diffMs / 60000);
+  if (mins < 1) return 'just now';
+  if (mins < 60) return `${mins}m ago`;
+  const hrs = Math.round(mins / 60);
+  if (hrs < 24) return `${hrs}h ago`;
+  const days = Math.round(hrs / 24);
+  return `${days}d ago`;
+}
+function esc(s='') { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function cb(bool) { return bool ? '<span class="cb ok">☑</span>' : '<span class="cb muted">☐</span>'; }
+function tag(cls, text) { return `<span class="tag ${cls}">${text}</span>`; }
+
+async function ghApi(path) {
+  try {
+    const res = await fetch(`https://api.github.com/repos/${REPO}${path}`, {
+      headers: { 'Accept': 'application/vnd.github+json' },
+    });
+    if (res.status === 403) return { rateLimited: true };
+    if (!res.ok) return null;
+    return await res.json();
+  } catch { return null; }
+}
+async function getJson(path) {
+  try {
+    const res = await fetch(path, { cache: 'no-store' });
+    if (!res.ok) return null;
+    return await res.json();
+  } catch { return null; }
+}
+async function getText(path) {
+  try {
+    const res = await fetch(path, { cache: 'no-store' });
+    if (!res.ok) return null;
+    return await res.text();
+  } catch { return null; }
+}
+
+async function loadPipelineHealth() {
+  const panelsEl = document.getElementById('pipelinePanels');
+  const panels = panelsEl.children;
+  for (const wf of WORKFLOWS) {
+    const data = await ghApi(`/actions/workflows/${wf.file}/runs?per_page=1`);
+    const panel = panels[wf.el];
+    if (!data || data.rateLimited || !data.workflow_runs || !data.workflow_runs.length) {
+      panel.innerHTML = `<div class="pname">${esc(wf.label)}</div><div class="pstate muted">No data</div><div class="pmeta">${data && data.rateLimited ? 'GitHub API rate-limited — try again later.' : 'Could not load run history.'}</div>`;
+      continue;
+    }
+    const run = data.workflow_runs[0];
+    const ok = run.conclusion === 'success';
+    const failed = run.conclusion === 'failure';
+    const stateClass = ok ? 'ok' : (failed ? 'bad' : 'warn');
+    const stateText = run.status !== 'completed' ? 'Running…' : (run.conclusion || 'unknown');
+    panel.innerHTML = `<div class="pname">${esc(wf.label)}</div>` +
+      `<div class="pstate ${stateClass}">${esc(stateText)}</div>` +
+      `<div class="pmeta"><a href="${run.html_url}" target="_blank" rel="noopener">${timeAgo(run.updated_at)}</a></div>`;
+  }
+}
+
+async function loadDataFreshness() {
+  const body = document.getElementById('freshBody');
+  body.innerHTML = '';
+  for (const file of DATA_FILES) {
+    const row = document.createElement('tr');
+    row.innerHTML = `<td>${esc(file)}</td><td class="loading-note">Loading…</td><td></td>`;
+    body.appendChild(row);
+    const commits = await ghApi(`/commits?path=${encodeURIComponent(file)}&per_page=1`);
+    if (!commits || commits.rateLimited || !Array.isArray(commits) || !commits.length) {
+      row.innerHTML = `<td>${esc(file)}</td><td class="muted">${commits && commits.rateLimited ? 'Rate-limited' : 'No history found'}</td><td></td>`;
+      continue;
+    }
+    const c = commits[0];
+    const date = c.commit.author?.date || c.commit.committer?.date;
+    row.innerHTML = `<td>${esc(file)}</td>` +
+      `<td>${timeAgo(date)} <span class="muted">(${new Date(date).toLocaleString()})</span></td>` +
+      `<td><a href="${c.html_url}" target="_blank" rel="noopener">${esc((c.commit.message || '').split('\n')[0]).slice(0,60)}</a></td>`;
+  }
+}
+
+async function loadBiosOverview() {
+  const bioIndex = await getJson('bio-index.json') || {};
+  const bioPending = await getJson('bio-pending.json') || {};
+  const names = Object.keys(bioIndex);
+  document.getElementById('biosSummary').innerHTML =
+    `<span><b>${names.length}</b> bios</span><span><b>${Object.keys(bioPending).length}</b> pending redraft</span>`;
+  const body = document.querySelector('#biosTable tbody');
+  body.innerHTML = names.map(name => {
+    const key = name.toLowerCase();
+    const pendingFlag = !!bioPending[key];
+    return `<tr data-name="${esc(name)}" data-file="${esc(bioIndex[name])}"><td class="name">${esc(name)}</td>` +
+      `<td class="scan-status">${pendingFlag ? tag('pending','Pending') : tag('unknown','Not scanned')}</td>` +
+      `<td class="cb scan-photo muted">—</td><td class="cb scan-source muted">—</td></tr>`;
+  }).join('');
+}
+
+async function scanBiosDetails() {
+  const btn = document.getElementById('scanBiosBtn');
+  btn.disabled = true; btn.textContent = 'Scanning…';
+  const rows = document.querySelectorAll('#biosTable tbody tr');
+  for (const row of rows) {
+    const file = row.getAttribute('data-file');
+    const html = await getText(file);
+    if (!html) continue;
+    const hasPhoto = !html.includes('artist-photo-placeholder');
+    const hasSource = html.includes('artist-source-link');
+    const isPlaceholder = html.includes('Full bio coming soon');
+    const isDraft = html.includes('artist-draft-tag') && html.includes('Draft bio');
+    const statusCell = row.querySelector('.scan-status');
+    if (!statusCell.textContent.includes('Pending')) {
+      statusCell.innerHTML = isPlaceholder ? tag('placeholder','Placeholder') : (isDraft ? tag('draft','AI draft') : tag('full','Full'));
+    }
+    row.querySelector('.scan-photo').innerHTML = cb(hasPhoto);
+    row.querySelector('.scan-photo').classList.remove('muted');
+    row.querySelector('.scan-source').innerHTML = cb(hasSource);
+    row.querySelector('.scan-source').classList.remove('muted');
+  }
+  btn.disabled = false; btn.textContent = 'Scan details (fetches every bio page)';
+}
+
+async function loadSongsOverview() {
+  const songsIndex = await getJson('data/songs-index.json') || {};
+  const songPending = await getJson('song-blurb-pending.json') || {};
+  const songs = Object.values(songsIndex).sort((a,b) => (a.peak||999)-(b.peak||999));
+  document.getElementById('songsSummary').innerHTML =
+    `<span><b>${songs.length}</b> songs</span><span><b>${Object.keys(songPending).length}</b> pending AI draft</span>`;
+  const body = document.querySelector('#songsTable tbody');
+  body.innerHTML = songs.map(s => {
+    const pendingFlag = !!songPending[s.slug];
+    return `<tr data-slug="${esc(s.slug)}"><td class="name">${esc(s.title)}</td><td>${esc(s.artist)}</td><td>#${s.peak ?? '—'}</td>` +
+      `<td class="scan-status">${pendingFlag ? tag('pending','Pending') : tag('unknown','Not scanned')}</td>` +
+      `<td class="cb scan-cover muted">—</td><td class="cb scan-video muted">—</td><td class="cb scan-spotify muted">—</td><td class="cb scan-biolink muted">—</td></tr>`;
+  }).join('');
+}
+
+async function scanSongsDetails() {
+  const btn = document.getElementById('scanSongsBtn');
+  btn.disabled = true; btn.textContent = 'Scanning…';
+  const rows = document.querySelectorAll('#songsTable tbody tr');
+  for (const row of rows) {
+    const slug = row.getAttribute('data-slug');
+    const html = await getText(`songs/${slug}.html`);
+    if (!html) continue;
+    const hasCover = !html.includes('song-cover-placeholder');
+    const hasVideo = !html.includes('song-video-unavailable');
+    const hasSpotify = html.includes('class="song-spotify"');
+    const hasBioLink = html.includes('song-bio-link');
+    const isPlaceholder = html.includes('Full review coming soon.');
+    const isDraft = html.includes('song-draft-tag') && html.includes('Draft note');
+    const statusCell = row.querySelector('.scan-status');
+    if (!statusCell.textContent.includes('Pending')) {
+      statusCell.innerHTML = isPlaceholder ? tag('placeholder','Placeholder') : (isDraft ? tag('draft','AI draft') : tag('full','Full'));
+    }
+    row.querySelector('.scan-cover').innerHTML = cb(hasCover);
+    row.querySelector('.scan-cover').classList.remove('muted');
+    row.querySelector('.scan-video').innerHTML = cb(hasVideo);
+    row.querySelector('.scan-video').classList.remove('muted');
+    row.querySelector('.scan-spotify').innerHTML = cb(hasSpotify);
+    row.querySelector('.scan-spotify').classList.remove('muted');
+    row.querySelector('.scan-biolink').innerHTML = cb(hasBioLink);
+    row.querySelector('.scan-biolink').classList.remove('muted');
+  }
+  btn.disabled = false; btn.textContent = 'Scan details (fetches every song page)';
+}
+
+async function loadNewsOverview() {
+  const news = await getJson('news.json') || [];
+  const pending = news.filter(n => n.aiPending);
+  document.getElementById('newsSummary').innerHTML =
+    `<span><b>${news.length}</b> items</span><span><b>${pending.length}</b> pending summary</span>`;
+  const body = document.querySelector('#newsTable tbody');
+  body.innerHTML = news.map(n => {
+    const likelyFallback = !n.aiPending && n.summary && n.summary.trim().endsWith('…');
+    const status = n.aiPending ? tag('pending','Pending') : (likelyFallback ? tag('draft','Likely raw excerpt') : tag('full','AI summary'));
+    return `<tr><td class="name">${esc(n.headline)}</td><td>${esc(n.sourceName)}</td>` +
+      `<td>${new Date(n.publishedAt).toLocaleDateString()}</td><td>${status}</td><td class="cb">${cb(!!n.image)}</td></tr>`;
+  }).join('');
+}
+
+async function loadFilmsOverview() {
+  const html = await getText('film.html');
+  const body = document.querySelector('#filmsTable tbody');
+  if (!html) {
+    document.getElementById('filmsSummary').innerHTML = `<span class="muted">Couldn't load film.html</span>`;
+    return;
+  }
+  const titles = [...html.matchAll(/<h3>(.*?)<\/h3>/g)].map(m => m[1]);
+  document.getElementById('filmsSummary').innerHTML = `<span><b>${titles.length}</b> card(s) found</span>`;
+  body.innerHTML = titles.map(t => `<tr><td class="name">${esc(t)}</td></tr>`).join('');
+}
+
+document.querySelectorAll('.tab').forEach(t => t.addEventListener('click', () => {
+  document.querySelectorAll('.tab').forEach(x => x.classList.remove('active'));
+  document.querySelectorAll('.tabpanel').forEach(x => x.classList.remove('active'));
+  t.classList.add('active');
+  document.getElementById('tab-' + t.dataset.tab).classList.add('active');
+}));
+
+document.getElementById('scanBiosBtn').addEventListener('click', scanBiosDetails);
+document.getElementById('scanSongsBtn').addEventListener('click', scanSongsDetails);
+
+async function refreshAll() {
+  const btn = document.getElementById('refreshAllBtn');
+  btn.disabled = true; btn.textContent = 'Refreshing…';
+  document.getElementById('checkedAt').textContent = 'Checking…';
+  await Promise.all([
+    loadPipelineHealth(),
+    loadDataFreshness(),
+    loadBiosOverview(),
+    loadSongsOverview(),
+    loadNewsOverview(),
+    loadFilmsOverview(),
+  ]);
+  document.getElementById('checkedAt').textContent = `Last checked ${new Date().toLocaleString()}`;
+  btn.disabled = false; btn.textContent = '↻ Refresh everything';
+}
+
+document.getElementById('refreshAllBtn').addEventListener('click', refreshAll);
+refreshAll();
+</script>
+
+</body>
+</html>
