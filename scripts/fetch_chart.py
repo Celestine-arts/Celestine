@@ -62,6 +62,14 @@ def spotify_search_url(title, artist):
     return f"https://open.spotify.com/search/{q}"
 
 
+def slugify(title, artist):
+    def clean(s):
+        s = s.lower()
+        s = re.sub(r"[^a-z0-9]+", "-", s)
+        return s.strip("-")
+    return f"{clean(artist)}-{clean(title)}"
+
+
 def fetch_cover_art(title, artist):
     """Look up cover art via the free iTunes Search API. Returns a URL
     string or None — never raises, since a missing image shouldn't break
@@ -155,6 +163,7 @@ def fetch_hot_100():
             "lastPos": last_pos,
             "movement": movement,
             "spotifyUrl": spotify_search_url(title, artist),
+            "slug": slugify(title, artist),
             "coverArt": None,  # filled in below
         })
 
