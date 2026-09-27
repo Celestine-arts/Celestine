@@ -43,13 +43,11 @@
 // automatic fix for this — it's a genuinely ambiguous text problem.
 
 import fs from "node:fs/promises";
+import { callGemini } from "./lib/gemini-client.mjs";
 
 const HOT100_PATH = "data/hot100.json";
 const SONGS_INDEX_PATH = "data/songs-index.json";
 const BIO_INDEX_PATH = "bio-index.json";
-
-const GEMINI_MODEL = "gemini-flash-lite-latest";
-const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 
 const PROTECTED_ARTIST_NAMES = [
   "Florence and the Machine",
@@ -145,31 +143,12 @@ async function fetchWikipediaSummary(name) {
 }
 
 async function draftBioWithGemini(name, wikiExtract) {
-  if (!GEMINI_API_KEY) return null;
-
   const prompt =
     `Using ONLY the facts in the reference text below, write a short (3-4 sentence, under 100 words) artist bio for "${name}" for a music chart website. ` +
     `Do not add any fact, date, award, or claim that is not present in the reference text. Do not invent quotes. Write flowing prose, no headers or bullet points.\n\n` +
     `Reference text:\n"""${wikiExtract}"""`;
 
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
-  try {
-    const res = await fetch(url, {
-      method: "POST",
-      headers: { "Content-Type": "application/json", "x-goog-api-key": GEMINI_API_KEY },
-      body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] }),
-    });
-    if (!res.ok) {
-      console.error("Gemini API error:", res.status, await res.text());
-      return null;
-    }
-    const data = await res.json();
-    const text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
-    return text ? text.trim() : null;
-  } catch (err) {
-    console.error("Gemini call failed:", err.message);
-    return null;
-  }
+  return callGemini(prompt); // handles rate-limit pacing and 429 retries itself
 }
 
 function renderPage(name, { bio, thumbnail, wikiUrl, isDraft }) {
@@ -339,7 +318,7 @@ async function main() {
     bioIndex[key] = outPath;
     created++;
 
-    await sleep(1500); // gentle pacing for Wikipedia's + Gemini's free tiers
+    await sleep(300); // light courtesy pacing for Wikipedia's API; Gemini paces itself
   }
 
   await fs.writeFile(BIO_INDEX_PATH, JSON.stringify(bioIndex, null, 2));

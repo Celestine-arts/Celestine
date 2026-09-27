@@ -28,15 +28,13 @@
 
 import fs from "node:fs/promises";
 import path from "node:path";
+import { callGemini } from "./lib/gemini-client.mjs";
 
 const HOT100_PATH = "data/hot100.json";
 const BIO_INDEX_PATH = "bio-index.json";
 const SONGS_INDEX_PATH = "data/songs-index.json";
 const SONGS_DIR = "songs";
 const SITE_URL = "https://celestinestudio.com.lk";
-
-const GEMINI_MODEL = "gemini-flash-lite-latest";
-const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 
 function slugify(title, artist) {
   const clean = (s) =>
@@ -111,35 +109,12 @@ async function findYouTubeVideoId(title, artist) {
 }
 
 async function draftBlurbWithGemini(entry) {
-  if (!GEMINI_API_KEY) return null;
-
   const prompt = `Write a short (2-3 sentence, under 60 words) editorial-style note about the song "${entry.title}" by ${entry.artist}, for a music chart website. ` +
     `You may reference its chart performance (currently #${entry.rank}, peak #${entry.peak}, ${entry.weeks ?? "several"} weeks on the chart) and general, well-known facts about the artist or song's reception. ` +
     `Do NOT quote or paraphrase any song lyrics. Do NOT invent quotes attributed to the artist. Do NOT state specific factual claims you are not confident are true — keep it general and safe rather than specific and risky. ` +
     `Write it as flowing prose, no headers or bullet points.`;
 
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
-
-  try {
-    const res = await fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "x-goog-api-key": GEMINI_API_KEY,
-      },
-      body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] }),
-    });
-    if (!res.ok) {
-      console.error("Gemini API error:", res.status, await res.text());
-      return null;
-    }
-    const data = await res.json();
-    const text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
-    return text ? text.trim() : null;
-  } catch (err) {
-    console.error("Gemini call failed:", err.message);
-    return null;
-  }
+  return callGemini(prompt); // handles rate-limit pacing and 429 retries itself
 }
 
 function renderPage(entry, { videoId, bioLink, blurb }) {
@@ -271,7 +246,7 @@ async function main() {
       await fs.writeFile(outPath, html);
       created++;
 
-      await sleep(2000); // gentle pacing for the free-tier Gemini + YouTube scrape
+      await sleep(500); // light courtesy pacing for the YouTube scrape; Gemini paces itself
     }
 
     // Merge into the persistent catalog regardless of whether the page
