@@ -10,6 +10,7 @@ on:
 
 permissions:
   contents: write
+  pull-requests: write
 
 jobs:
   update-chart:
@@ -23,16 +24,34 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Install dependencies
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Python dependencies
         run: pip install requests beautifulsoup4
 
       - name: Fetch chart
         run: python scripts/fetch_chart.py
 
-      - name: Commit updated chart data
-        run: |
-          git config user.name "celestine-bot"
-          git config user.email "actions@github.com"
-          git add data/hot100.json
-          git diff --staged --quiet && echo "No changes to commit" || git commit -m "Update Hot 100 chart data"
-          git push
+      - name: Generate new song pages
+        run: node scripts/generate-song-pages.mjs
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+
+      - name: Open pull request with changes
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "Auto: update Hot 100 chart + new song pages"
+          title: "Chart update — new songs for review"
+          body: |
+            Automated daily run:
+            - Refreshed `data/hot100.json` from Billboard's Hot 100
+            - Generated pages under `songs/` for any songs new to the chart
+              (existing pages are never touched or overwritten)
+
+            Song pages include an AI-drafted note (Gemini) clearly marked
+            as a draft — review before merging, same as the news workflow.
+          branch: auto/chart-update
+          delete-branch: true
