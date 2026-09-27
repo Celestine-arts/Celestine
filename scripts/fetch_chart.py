@@ -32,6 +32,27 @@ Billboard's markup has drifted twice now):
     still shows weeks=null everywhere, that fallback found nothing
     number-shaped either, and the anchor text search needs a fresh look
     at the live page.
+  - CONNECTOR-FUSION FIX (this change): the merge-backward logic above
+    only recognized a text node that WAS a connector by itself ("&",
+    "Featuring"). It turns out Billboard sometimes fuses the connector
+    to the FRONT of the next name in a single node instead — one node
+    "& John Mayer" instead of two nodes "&" and "John Mayer" — and
+    _is_connector() returned False for that fused node, so the backward
+    walk stopped one node early and swallowed the real title into the
+    artist credit (rank 48 on 2026-09-27: title became "Lainey Wilson",
+    artist became "& John Mayer" — the real title, "Lainey Wilson", is
+    actually correct by coincidence there, but the same bug produced
+    fully wrong titles like "Jhene Aiko" for rank 59 and "Elevation
+    Worship" for rank 90, which should have been the ARTIST field, not
+    the title). Fixed below by splitting any node that STARTS WITH a
+    connector into [connector, rest] before the backward walk runs, so
+    fused and un-fused connectors are handled identically. A trailing-
+    fusion case (rank 53: "Belly Gang Kushington &") is NOT handled by
+    this fix — peeling a trailing "&" off a node can't reliably tell
+    "title bleeding into next field" apart from "legitimate continuing
+    credit" from static text alone. Watch for it in the post-run
+    diagnostic below and check the live page's DOM directly if it
+    recurs.
 
 COVER ART
 Billboard's page doesn't expose usable per-song artwork through simple
@@ -87,6 +108,34 @@ CONNECTOR_SYMBOLS = {"&", "+", "x"}
 WEEKS_LABEL_VARIANTS = [
     "WEEKS", "WKS", "WEEKS ON CHART", "WEEKS ON CHT", "TOTAL WEEKS", "WOC",
 ]
+
+# Connector words/symbols that sometimes render fused to the FRONT of the
+# next name instead of as their own text node (e.g. Billboard giving one
+# node "& John Mayer" instead of two nodes "&" and "John Mayer", or
+# "Featuring Chase Matthew" instead of "Featuring" + "Chase Matthew").
+# This is what actually caused the title/artist boundary to be
+# mis-located: _is_connector() only recognized a node that WAS a
+# connector, not one that merely STARTED with one, so the backward walk
+# stopped one node too early and swallowed the real title into the
+# artist credit. See CHANGE LOG above.
+_LEADING_CONNECTOR_RE = re.compile(
+    r"^(?:featuring|feat\.?|duet\s+with|with|and)\s+|^(?:&|\+)\s*",
+    re.IGNORECASE,
+)
+
+
+def _split_leading_connector(s):
+    """If `s` starts with a connector fused to a name ('& John Mayer',
+    'Featuring Chase Matthew'), split it into ['&', 'John Mayer'] /
+    ['Featuring', 'Chase Matthew'] so the backward walk sees the
+    connector as its own node — same as the un-fused case it already
+    handles correctly. Returns [s] unchanged otherwise."""
+    m = _LEADING_CONNECTOR_RE.match(s)
+    if not m:
+        return [s]
+    connector = s[:m.end()].strip()
+    rest = s[m.end():].strip()
+    return [connector, rest] if rest else [connector]
 
 
 def spotify_search_url(title, artist):
@@ -150,9 +199,16 @@ def parse_row_strings(strings):
     """Given the row's visible text in order, find the 'LW' anchor and
     walk backward to recover the title and full artist credit — merging
     however many text nodes the artist credit happens to be split across
-    (Billboard doesn't always keep a multi-artist credit as one node).
-    Then reads PEAK and WEEKS-ish numbers, with a positional fallback for
-    the latter in case its label text has changed again."""
+    (Billboard doesn't always keep a multi-artist credit as one node, and
+    doesn't always keep a connector as its own node either — see
+    _split_leading_connector above). Then reads PEAK and WEEKS-ish
+    numbers, with a positional fallback for the latter in case its label
+    text has changed again."""
+    # Un-fuse any node that starts with a connector glued to a name,
+    # BEFORE the backward walk runs, so the walk's connector check
+    # ("_is_connector") sees them as separate nodes like it expects.
+    strings = [frag for s in strings for frag in _split_leading_connector(s)]
+
     try:
         lw_idx = strings.index("LW")
     except ValueError:
@@ -220,12 +276,20 @@ def fetch_hot_100():
         )
 
     entries = []
+    suspect_rows = []  # rows whose parsed title/artist still look off after the fix
     for i, row in enumerate(rows, start=1):
         strings = [s for s in row.stripped_strings if s.strip().lower() not in STOP_WORDS]
         parsed = parse_row_strings(strings)
         if not parsed:
             continue
         title, artist, last_pos, peak, weeks = parsed
+
+        # Diagnostic only — doesn't block the row, just flags it for the
+        # trailing-connector case (e.g. rank 53's "Belly Gang Kushington &")
+        # that this fix doesn't attempt to auto-correct. Printed at the end
+        # of the run so you can check the live page's DOM for that rank.
+        if title.strip().endswith(("&", "+")) or artist.strip().startswith(("&", "+")):
+            suspect_rows.append((i, title, artist))
 
         if last_pos is None:
             movement = "new"
@@ -248,6 +312,17 @@ def fetch_hot_100():
             "slug": slugify(title, artist),
             "coverArt": None,  # filled in below
         })
+
+    if suspect_rows:
+        print(
+            "NOTE: the following rows still show a leading/trailing "
+            "connector after the fused-connector fix — check Billboard's "
+            "live DOM for these ranks (likely a trailing-fusion case like "
+            "rank 53's historical 'Belly Gang Kushington &'):",
+            file=sys.stderr,
+        )
+        for rank, title, artist in suspect_rows:
+            print(f"  rank {rank}: title={title!r} artist={artist!r}", file=sys.stderr)
 
     # Cover art lookups are a separate pass so a slow/failed image lookup
     # never affects whether the chart itself parsed successfully.
