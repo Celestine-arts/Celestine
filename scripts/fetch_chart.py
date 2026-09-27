@@ -4,16 +4,34 @@ Run daily by .github/workflows/update-charts.yml.
 
 PARSING APPROACH
 Billboard's page renders each chart row with a predictable sequence of
-visible text: [rank] [title] [artist] "LW" [number] "PEAK" [number]
-"WEEKS" [number] ... (new/re-entry rows show "NEW"/"RE-ENTRY" badges
+visible text: [rank] [title] [artist credit] "LW" [number] "PEAK" [number]
+"WEEKS"-ish [number] ... (new/re-entry rows show "NEW"/"RE-ENTRY" badges
 before the title instead of a rank-to-rank comparison, and "LW" reads
 as "-" for them). Rather than guess CSS class names (which broke last
 time — a class that used to hold a clean number started holding a whole
 label+value blob instead), this script anchors on the literal "LW" /
-"PEAK" / "WEEKS" text labels themselves and reads title/artist as the
-two text nodes immediately before them. That's resilient to Billboard
-reshuffling their CSS classes, since it depends on the visible words
-rather than the styling around them.
+"PEAK" text labels and reads title/artist as the text nodes immediately
+before them.
+
+CHANGE LOG (read this before assuming the anchors below are still right —
+Billboard's markup has drifted twice now):
+  - Originally assumed exactly two text nodes sit before "LW": [title,
+    artist]. That broke for any multi-artist credit ("X Featuring Y",
+    "X & Y", "X With Y"), which Billboard renders as several separate
+    text nodes instead of one string. Fixed below by walking backward
+    from "LW" and merging consecutive artist-credit fragments (names +
+    connector words like "Featuring"/"&"/"With") into one artist string,
+    so the real title node is found regardless of how many fragments
+    the credit is split into.
+  - The literal "WEEKS" label stopped appearing verbatim at some point
+    (every row was silently coming back with weeks=None while LW/PEAK
+    still worked fine, which is the tell — only that one label moved).
+    Fixed below with a two-tier lookup: try a handful of known label
+    variants case-insensitively first, then fall back to "the next pure
+    number after PEAK's number" if none of those match. If a future run
+    still shows weeks=null everywhere, that fallback found nothing
+    number-shaped either, and the anchor text search needs a fresh look
+    at the live page.
 
 COVER ART
 Billboard's page doesn't expose usable per-song artwork through simple
@@ -56,6 +74,20 @@ STOP_WORDS = {
     "debut position", "debut chart date", "peak position", "peak chart date",
 }
 
+# Words/symbols that signal "this text node is a continuation of the same
+# artist credit", not a separate title or a new field. Checked case-
+# insensitively (and stripped of a trailing period, for "feat.").
+CONNECTOR_WORDS = {
+    "featuring", "feat", "with", "duet with", "and", "x", "vs", "vs.",
+}
+CONNECTOR_SYMBOLS = {"&", "+", "x"}
+
+# Label variants to try, in order, before falling back to positional
+# guessing. All matched case-insensitively against the stripped string.
+WEEKS_LABEL_VARIANTS = [
+    "WEEKS", "WKS", "WEEKS ON CHART", "WEEKS ON CHT", "TOTAL WEEKS", "WOC",
+]
+
 
 def spotify_search_url(title, artist):
     q = urllib.parse.quote(f"{title} {artist}")
@@ -93,12 +125,34 @@ def fetch_cover_art(title, artist):
         return None
 
 
+def _is_connector(s):
+    """True if `s` is a word/symbol that continues an artist credit
+    rather than starting a new field (e.g. 'Featuring', '&', 'With')."""
+    cleaned = s.strip().lower().rstrip(".")
+    if cleaned in CONNECTOR_WORDS:
+        return True
+    if s.strip() in CONNECTOR_SYMBOLS:
+        return True
+    return False
+
+
+def _find_label_index(strings, start_idx, label_variants):
+    """Case-insensitive search for any of `label_variants` in strings,
+    starting at start_idx. Returns the index, or None if none match."""
+    variants_lower = {v.lower() for v in label_variants}
+    for i in range(start_idx, len(strings)):
+        if strings[i].strip().lower() in variants_lower:
+            return i
+    return None
+
+
 def parse_row_strings(strings):
-    """Given the row's visible text in order, find each 'LW <n> PEAK <n>
-    WEEKS <n>' block and pull out title/artist (the two strings right
-    before it) plus the three numbers. Handles the fact that this block
-    appears twice per row (Billboard duplicates it, likely for a
-    mobile/accessible layout) by just using the first occurrence."""
+    """Given the row's visible text in order, find the 'LW' anchor and
+    walk backward to recover the title and full artist credit — merging
+    however many text nodes the artist credit happens to be split across
+    (Billboard doesn't always keep a multi-artist credit as one node).
+    Then reads PEAK and WEEKS-ish numbers, with a positional fallback for
+    the latter in case its label text has changed again."""
     try:
         lw_idx = strings.index("LW")
     except ValueError:
@@ -107,20 +161,48 @@ def parse_row_strings(strings):
     if lw_idx < 2:
         return None
 
-    artist = strings[lw_idx - 1]
-    title = strings[lw_idx - 2]
+    # Walk backward from just before "LW", merging consecutive artist-
+    # credit fragments (names and connector words) into one credit string.
+    # Stops as soon as we hit a node that is neither a connector itself
+    # nor immediately follows one — that node is the real title.
+    j = lw_idx - 1
+    artist_parts = [strings[j]]
+    j -= 1
+    while j >= 0 and (_is_connector(strings[j]) or _is_connector(artist_parts[-1])):
+        artist_parts.append(strings[j])
+        j -= 1
 
-    def number_after(label):
-        try:
-            idx = strings.index(label, lw_idx)
-            val = strings[idx + 1]
-            return int(val) if val.isdigit() else None
-        except (ValueError, IndexError):
+    if j < 0:
+        return None
+
+    artist_parts.reverse()
+    artist = " ".join(artist_parts)
+    title = strings[j]
+
+    def number_at(idx):
+        if idx is None or idx + 1 >= len(strings):
             return None
+        val = strings[idx + 1]
+        return int(val) if val.isdigit() else None
 
-    last_pos = number_after("LW")
-    peak = number_after("PEAK")
-    weeks = number_after("WEEKS")
+    lw_label_idx = lw_idx  # we already matched "LW" exactly
+    last_pos = number_at(lw_label_idx)
+
+    peak_idx = _find_label_index(strings, lw_idx, ["PEAK"])
+    peak = number_at(peak_idx)
+
+    weeks_idx = _find_label_index(strings, lw_idx, WEEKS_LABEL_VARIANTS)
+    weeks = number_at(weeks_idx)
+
+    if weeks is None and peak_idx is not None:
+        # Fallback: the next purely-numeric node after PEAK's number,
+        # as long as it's close by (so we don't wander into the next
+        # row's rank number if the label truly vanished).
+        peak_num_idx = peak_idx + 1
+        for k in range(peak_num_idx + 1, min(peak_num_idx + 4, len(strings))):
+            if strings[k].strip().isdigit():
+                weeks = int(strings[k])
+                break
 
     return title, artist, last_pos, peak, weeks
 
@@ -195,6 +277,14 @@ if __name__ == "__main__":
     if missing_artists > 5:
         print(f"FAILED: {missing_artists} entries missing an artist name — parsing is likely broken", file=sys.stderr)
         sys.exit(1)
+
+    missing_weeks = sum(1 for e in data["entries"] if e["weeks"] is None)
+    if missing_weeks > len(data["entries"]) * 0.5:
+        print(
+            f"WARNING: {missing_weeks}/{len(data['entries'])} entries have no weeks value — "
+            "Billboard's WEEKS label may have changed again; check parse_row_strings.",
+            file=sys.stderr,
+        )
 
     os.makedirs("data", exist_ok=True)
     with open("data/hot100.json", "w") as f:
