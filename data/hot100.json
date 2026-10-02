@@ -1,6 +1,6 @@
 {
   "chartDate": "2026-10-02",
-  "fetchedAt": "2026-10-02T06:08:28.520881+00:00",
+  "fetchedAt": "2026-10-02T18:40:26.488857+00:00",
   "entries": [
     {
       "rank": 1,
@@ -384,7 +384,7 @@
       "movement": "down",
       "spotifyUrl": "https://open.spotify.com/search/Oh%20Yeah%3F%20Steve%20Lacy",
       "slug": "steve-lacy-oh-yeah",
-      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/7a/e5/96/7ae596ae-2acf-2070-cfdb-d06372773e0b/196589099631.jpg/600x600bb.jpg"
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/1c/b2/46/1cb246db-afae-a599-d377-44a7ea7267fa/196874346976.jpg/600x600bb.jpg"
     },
     {
       "rank": 33,
@@ -468,7 +468,7 @@
       "movement": "up",
       "spotifyUrl": "https://open.spotify.com/search/My%20Body%20Isn%27t%20Ready%20sombr",
       "slug": "sombr-my-body-isn-t-ready",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/2f/1d/f6/2f1df6d3-09e2-e0a2-2e2b-fd5bb05be1ab/054391214515.jpg/600x600bb.jpg"
     },
     {
       "rank": 40,
@@ -564,7 +564,7 @@
       "movement": "down",
       "spotifyUrl": "https://open.spotify.com/search/Morning%20Dew%20%28Donk%29%20Beyonce",
       "slug": "beyonce-morning-dew-donk",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/3f/65/3d/3f653d87-197c-084c-dca2-0c6e0ca742c9/196874580721.jpg/600x600bb.jpg"
     },
     {
       "rank": 48,
@@ -576,7 +576,7 @@
       "movement": "down",
       "spotifyUrl": "https://open.spotify.com/search/Bloodstream%20Alyssa%20Grace",
       "slug": "alyssa-grace-bloodstream",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/7f/a7/ef/7fa7ef61-6e22-f30f-441c-e89e7ff4a79a/093624817147.jpg/600x600bb.jpg"
     },
     {
       "rank": 49,
@@ -588,7 +588,7 @@
       "movement": "down",
       "spotifyUrl": "https://open.spotify.com/search/Petal%20Ariana%20Grande",
       "slug": "ariana-grande-petal",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/56/f4/96/56f49612-02dd-83f4-44fe-d2118cc70707/26UMGIM51129.rgb.jpg/600x600bb.jpg"
     },
     {
       "rank": 50,
@@ -612,7 +612,7 @@
       "movement": "up",
       "spotifyUrl": "https://open.spotify.com/search/Carry%20On%20Kenny%20Chesney",
       "slug": "kenny-chesney-carry-on",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/cd/af/11/cdaf11cc-0a13-0010-175a-d78d70c1f0d9/093624819967.jpg/600x600bb.jpg"
     },
     {
       "rank": 52,
@@ -636,7 +636,7 @@
       "movement": "same",
       "spotifyUrl": "https://open.spotify.com/search/Belly%20Gang%20Kushington%20%26%2021%20Savage",
       "slug": "21-savage-belly-gang-kushington",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/48/0b/d7/480bd77f-593f-bba3-40ec-4d1f86cd303b/820233758536.jpg/600x600bb.jpg"
     },
     {
       "rank": 54,
@@ -660,7 +660,7 @@
       "movement": "new",
       "spotifyUrl": "https://open.spotify.com/search/Yeat%20%26%20Drake",
       "slug": "drake-yeat",
-      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/51/61/f3/5161f3c4-2292-f035-eb68-6f95bbc9edd6/00602537542338.rgb.jpg/600x600bb.jpg"
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/09/aa/f8/09aaf8da-8eaf-bf60-0c23-48a88d546cbd/26991.jpg/600x600bb.jpg"
     },
     {
       "rank": 56,
@@ -672,7 +672,7 @@
       "movement": "down",
       "spotifyUrl": "https://open.spotify.com/search/Rein%20Me%20In%20Sam%20Fender%20%26%20Olivia%20Dean",
       "slug": "sam-fender-olivia-dean-rein-me-in",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/e9/9e/ce/e99ece56-dcda-540a-d0b3-3927d152846f/25UMGIM83718.rgb.jpg/600x600bb.jpg"
     },
     {
       "rank": 57,
@@ -708,7 +708,7 @@
       "movement": "down",
       "spotifyUrl": "https://open.spotify.com/search/Hit%20The%20Wall%20Gracie%20Abrams",
       "slug": "gracie-abrams-hit-the-wall",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/4f/13/47/4f1347cf-9564-e8b6-523a-386202f4d265/26UMGIM54147.rgb.jpg/600x600bb.jpg"
     },
     {
       "rank": 60,
@@ -720,7 +720,7 @@
       "movement": "new",
       "spotifyUrl": "https://open.spotify.com/search/My%20Way%20Riley%20Green",
       "slug": "riley-green-my-way",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/74/60/09/74600943-c67a-5335-4f8c-bad8b3e5d2a8/26BMR0007851.rgb.jpg/600x600bb.jpg"
     },
     {
       "rank": 61,
@@ -756,7 +756,7 @@
       "movement": "down",
       "spotifyUrl": "https://open.spotify.com/search/Cowgirl%20Shaboozey",
       "slug": "shaboozey-cowgirl",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/a6/25/f1/a625f14b-328e-acab-bd7e-5f6d4d571332/199316643947_cover.jpg/600x600bb.jpg"
     },
     {
       "rank": 64,
@@ -768,7 +768,7 @@
       "movement": "up",
       "spotifyUrl": "https://open.spotify.com/search/Ghetto%20Love%20Story%20BabyChiefDoit",
       "slug": "babychiefdoit-ghetto-love-story",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/35/ce/58/35ce588d-e65d-7e21-30ab-6d28eeb3d3cf/840471815532.png/600x600bb.jpg"
     },
     {
       "rank": 65,
@@ -780,7 +780,7 @@
       "movement": "new",
       "spotifyUrl": "https://open.spotify.com/search/That%27s%20Just%20Me%20Riley%20Green",
       "slug": "riley-green-that-s-just-me",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/16/cf/71/16cf71b7-bda7-9916-3d11-3b60539ace2c/26BMR0008042.rgb.jpg/600x600bb.jpg"
     },
     {
       "rank": 66,
@@ -792,7 +792,7 @@
       "movement": "down",
       "spotifyUrl": "https://open.spotify.com/search/Empty%20Words%20Corey%20Kent",
       "slug": "corey-kent-empty-words",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/bd/79/87/bd7987fa-bb0d-148d-ab35-deece7c24de5/196874101148.jpg/600x600bb.jpg"
     },
     {
       "rank": 67,
@@ -816,7 +816,7 @@
       "movement": "up",
       "spotifyUrl": "https://open.spotify.com/search/onsra%20comehelpglo",
       "slug": "comehelpglo-onsra",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/2c/8d/b6/2c8db615-b3a4-2558-8138-2bf5ec9ef93a/00894096001061.rgb.jpg/600x600bb.jpg"
     },
     {
       "rank": 69,
@@ -828,7 +828,7 @@
       "movement": "up",
       "spotifyUrl": "https://open.spotify.com/search/South%20Of%20Sanity%20Zach%20Top",
       "slug": "zach-top-south-of-sanity",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/a0/93/fb/a093fb03-dc1a-2fe6-9700-96291b6d39c6/8721215862598.png/600x600bb.jpg"
     },
     {
       "rank": 70,
@@ -876,7 +876,7 @@
       "movement": "up",
       "spotifyUrl": "https://open.spotify.com/search/The%20Feeling%20Steve%20Lacy",
       "slug": "steve-lacy-the-feeling",
-      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/1c/b2/46/1cb246db-afae-a599-d377-44a7ea7267fa/196874346976.jpg/600x600bb.jpg"
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Video211/v4/82/c5/7c/82c57c7a-f9a9-24cc-cfb9-9a05db902c56/1968743470100101.jpg/600x600bb.jpg"
     },
     {
       "rank": 74,
@@ -900,7 +900,7 @@
       "movement": "down",
       "spotifyUrl": "https://open.spotify.com/search/Another%20Drink%20Marshmello%20%26%20Kelsea%20Ballerini",
       "slug": "marshmello-kelsea-ballerini-another-drink",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/32/04/31/3204314d-ef6a-532a-be2c-1355ced218cb/26UMGIM76701.rgb.jpg/600x600bb.jpg"
     },
     {
       "rank": 76,
@@ -912,7 +912,7 @@
       "movement": "up",
       "spotifyUrl": "https://open.spotify.com/search/Country%20And%20She%20Knows%20It%20Luke%20Bryan",
       "slug": "luke-bryan-country-and-she-knows-it",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/2b/8b/bb/2b8bbb2b-3b10-b142-82e7-aefc9d80466d/26UMGIM24741.rgb.jpg/600x600bb.jpg"
     },
     {
       "rank": 77,
@@ -924,7 +924,7 @@
       "movement": "up",
       "spotifyUrl": "https://open.spotify.com/search/Stop%20The%20Wedding%21%20Ashe",
       "slug": "ashe-stop-the-wedding",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/b7/55/7a/b7557aef-bb0a-cc57-25bf-979eee194f16/075679571403.jpg/600x600bb.jpg"
     },
     {
       "rank": 78,
@@ -948,7 +948,7 @@
       "movement": "up",
       "spotifyUrl": "https://open.spotify.com/search/Painted%20You%20Pretty%20Hudson%20Westbrook",
       "slug": "hudson-westbrook-painted-you-pretty",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/e1/f9/56/e1f95687-e778-ee4b-f6b0-bbc6b293e1bb/093624831686.jpg/600x600bb.jpg"
     },
     {
       "rank": 80,
@@ -960,7 +960,7 @@
       "movement": "up",
       "spotifyUrl": "https://open.spotify.com/search/Get%20To%20Drinkin%27%20Zach%20John%20King",
       "slug": "zach-john-king-get-to-drinkin",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/d0/c3/45/d0c34545-8fc0-8eb9-c229-d44465f3eb8f/196874043448.jpg/600x600bb.jpg"
     },
     {
       "rank": 81,
@@ -972,7 +972,7 @@
       "movement": "down",
       "spotifyUrl": "https://open.spotify.com/search/Maggots%20For%20Brains%20Olivia%20Rodrigo",
       "slug": "olivia-rodrigo-maggots-for-brains",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/1d/1b/f9/1d1bf9b1-44c6-9a6c-6ffb-c158488c06ce/26UMGIM39303.rgb.jpg/600x600bb.jpg"
     },
     {
       "rank": 82,
@@ -984,7 +984,7 @@
       "movement": "new",
       "spotifyUrl": "https://open.spotify.com/search/%2C%20Corey%20Taylor%20%26%20Serj%20Tankian",
       "slug": "corey-taylor-serj-tankian-",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/82/51/52/825152b4-9423-b23b-c036-cc67ead732d4/888888046775.jpg/600x600bb.jpg"
     },
     {
       "rank": 83,
@@ -996,7 +996,7 @@
       "movement": "new",
       "spotifyUrl": "https://open.spotify.com/search/Finders%20Keepers%20Luke%20Bryan%20%26%20Luke%20Combs",
       "slug": "luke-bryan-luke-combs-finders-keepers",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/f9/c4/8a/f9c48a79-ac83-7cb9-83bb-236a6bfcd419/26UMGIM53679.rgb.jpg/600x600bb.jpg"
     },
     {
       "rank": 84,
@@ -1008,7 +1008,7 @@
       "movement": "new",
       "spotifyUrl": "https://open.spotify.com/search/RHYNO%20Travis%20Scott",
       "slug": "travis-scott-rhyno",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/1f/29/3e/1f293e38-987a-9a77-d004-c866acebdac1/09BVMIM00838.rgb.jpg/600x600bb.jpg"
     },
     {
       "rank": 85,
@@ -1020,7 +1020,7 @@
       "movement": "down",
       "spotifyUrl": "https://open.spotify.com/search/Honeybee%20Olivia%20Rodrigo",
       "slug": "olivia-rodrigo-honeybee",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/1d/1b/f9/1d1bf9b1-44c6-9a6c-6ffb-c158488c06ce/26UMGIM39303.rgb.jpg/600x600bb.jpg"
     },
     {
       "rank": 86,
@@ -1032,7 +1032,7 @@
       "movement": "up",
       "spotifyUrl": "https://open.spotify.com/search/Ahi%20Karol%20G%20With%20Drake",
       "slug": "karol-g-with-drake-ahi",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/2b/66/b2/2b66b26c-ab23-faa1-c4ee-06fa2cce8f76/26UM1IM00558.rgb.jpg/600x600bb.jpg"
     },
     {
       "rank": 87,
@@ -1044,7 +1044,7 @@
       "movement": "down",
       "spotifyUrl": "https://open.spotify.com/search/Hands%20Up%20Jelly%20Roll",
       "slug": "jelly-roll-hands-up",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/26/ae/33/26ae3335-0ef8-4030-3505-89e284f43d26/4099964275186.jpg/600x600bb.jpg"
     },
     {
       "rank": 88,
@@ -1056,7 +1056,7 @@
       "movement": "up",
       "spotifyUrl": "https://open.spotify.com/search/God%20I%27m%20Just%20Grateful%20Elevation%20Worship%20%26%20Chandler%20Moore",
       "slug": "elevation-worship-chandler-moore-god-i-m-just-grateful",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/51/42/01/51420110-806a-86c5-7025-5016e5a2bd57/196873750729.jpg/600x600bb.jpg"
     },
     {
       "rank": 89,
@@ -1068,7 +1068,7 @@
       "movement": "up",
       "spotifyUrl": "https://open.spotify.com/search/Say%20So%20Dan%20%2B%20Shay",
       "slug": "dan-shay-say-so",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/e4/8c/c8/e48cc80f-c908-f8a4-da3a-cadf667b03f7/054391219565.jpg/600x600bb.jpg"
     },
     {
       "rank": 90,
@@ -1092,7 +1092,7 @@
       "movement": "down",
       "spotifyUrl": "https://open.spotify.com/search/Still%20Karol%20G%20With%20Bruno%20Mars",
       "slug": "karol-g-with-bruno-mars-still",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/2b/66/b2/2b66b26c-ab23-faa1-c4ee-06fa2cce8f76/26UM1IM00558.rgb.jpg/600x600bb.jpg"
     },
     {
       "rank": 92,
@@ -1116,7 +1116,7 @@
       "movement": "new",
       "spotifyUrl": "https://open.spotify.com/search/Duvet%20boa",
       "slug": "boa-duvet",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/45/44/15/45441528-0288-eedc-f6fc-93137b8cfe96/067003248969.png/600x600bb.jpg"
     },
     {
       "rank": 94,
@@ -1128,7 +1128,7 @@
       "movement": "new",
       "spotifyUrl": "https://open.spotify.com/search/Nothing%20Steve%20Lacy",
       "slug": "steve-lacy-nothing",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/1c/b2/46/1cb246db-afae-a599-d377-44a7ea7267fa/196874346976.jpg/600x600bb.jpg"
     },
     {
       "rank": 95,
@@ -1140,7 +1140,7 @@
       "movement": "new",
       "spotifyUrl": "https://open.spotify.com/search/Dope%20Girl%20Rod%20Wave",
       "slug": "rod-wave-dope-girl",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/44/13/75/441375a6-a91b-05ec-7b61-b7d17a892469/196874739525.jpg/600x600bb.jpg"
     },
     {
       "rank": 96,
@@ -1152,7 +1152,7 @@
       "movement": "down",
       "spotifyUrl": "https://open.spotify.com/search/Ghost%20Jhene%20Aiko",
       "slug": "jhene-aiko-ghost",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/5f/51/9f/5f519f49-44c1-6aeb-f289-5b14c677abb1/26UM1IM17017.rgb.jpg/600x600bb.jpg"
     },
     {
       "rank": 97,
@@ -1164,7 +1164,7 @@
       "movement": "down",
       "spotifyUrl": "https://open.spotify.com/search/Bet%20On%20That%20Blake%20Whiten",
       "slug": "blake-whiten-bet-on-that",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/00/1d/40/001d40eb-679d-05df-f1f2-1d66602ff1f1/093624821267.jpg/600x600bb.jpg"
     },
     {
       "rank": 98,
@@ -1200,7 +1200,7 @@
       "movement": "new",
       "spotifyUrl": "https://open.spotify.com/search/Kingdom%20Of%20Fear%20Cameron%20Whitcomb",
       "slug": "cameron-whitcomb-kingdom-of-fear",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/7e/33/73/7e337333-0802-d7b5-8848-d20fdbdf993c/075679584731.jpg/600x600bb.jpg"
     }
   ]
 }
