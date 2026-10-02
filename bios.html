@@ -360,7 +360,7 @@
     navMenu.classList.remove('open');
   }));
 
-    (async function() {
+     (async function() {
     var grid = document.getElementById('grid');
     var noResults = document.getElementById('no-results');
     var countLabel = document.getElementById('searchCount');
@@ -371,7 +371,8 @@
       return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
     }
     function titleCase(k) { return k.replace(/\b\w/g, function(c) { return c.toUpperCase(); }); }
-    // hide any card image that fails to load so the gradient shows instead of a broken icon
+    function norm(s) { return s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase(); }
+    function reEscape(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
     function guardImgs(root) {
       root.querySelectorAll('.thumb img').forEach(function(im) {
         im.addEventListener('error', function() { im.style.display = 'none'; });
@@ -379,7 +380,31 @@
     }
     guardImgs(grid);
 
-    // Auto-generated bios (bio-index.json) that aren't hand-curated above.
+    // Song catalog: source of fallback cover art and properly-cased names
+    var songList = [];
+    try {
+      var sr = await fetch('data/songs-index.json', { cache: 'no-store' });
+      if (sr.ok) {
+        songList = Object.values(await sr.json()).map(function(s) {
+          return { artist: s.artist, norm: norm(s.artist), peak: s.peak || 999, cover: s.coverArt };
+        });
+      }
+    } catch (err) { console.error('Could not load data/songs-index.json', err); }
+
+    // For an artist key, find their display name and best-charting song cover
+    function fromSongs(key) {
+      var re = new RegExp('(^|[^a-z0-9])(' + reEscape(key) + ')(?![a-z0-9])');
+      var name = null, cover = null, bestPeak = 1e9;
+      songList.forEach(function(s) {
+        var m = re.exec(s.norm);
+        if (!m) return;
+        if (!name) name = s.artist.substr(m.index + m[1].length, key.length);
+        if (s.cover && s.peak < bestPeak) { bestPeak = s.peak; cover = s.cover; }
+      });
+      return { name: name, cover: cover };
+    }
+
+    // Auto-generated bios (bio-index.json) not already hand-curated above.
     // Entries are {href, thumbnail, name}; old bare-string entries still work.
     try {
       var res = await fetch('bio-index.json', { cache: 'no-store' });
@@ -389,10 +414,13 @@
         Object.keys(bioIndex).sort().forEach(function(key) {
           if (/^[&+]/.test(key)) return; // junk entries from the connector bug
           var entry = bioIndex[key];
-          var href = typeof entry === 'string' ? entry : entry && entry.href;
+          var isObj = entry && typeof entry === 'object';
+          var href = isObj ? entry.href : entry;
           if (!href || have.has(href)) return;
-          var thumb = typeof entry === 'string' ? null : entry.thumbnail;
-          var name = (typeof entry === 'object' && entry.name) || titleCase(key);
+
+          var found = fromSongs(key);
+          var name = (isObj && entry.name) || found.name || titleCase(key);
+          var thumb = (isObj && entry.thumbnail) || found.cover;
 
           var card = document.createElement('a');
           card.className = 'card c-span-2';
