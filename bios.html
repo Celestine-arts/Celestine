@@ -360,12 +360,17 @@
     navMenu.classList.remove('open');
   }));
 
-  (async function() {
+    (async function() {
     var grid = document.getElementById('grid');
     var noResults = document.getElementById('no-results');
     var countLabel = document.getElementById('searchCount');
     var input = document.getElementById('q');
     var LABEL = 'artists';
+
+    function esc(s) {
+      return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+    function titleCase(k) { return k.replace(/\b\w/g, function(c) { return c.toUpperCase(); }); }
     // hide any card image that fails to load so the gradient shows instead of a broken icon
     function guardImgs(root) {
       root.querySelectorAll('.thumb img').forEach(function(im) {
@@ -373,24 +378,33 @@
       });
     }
     guardImgs(grid);
-    // Auto-generated bios (bio-index.json) that aren't hand-curated above
-    function titleCase(k) { return k.replace(/\b\w/g, function(c) { return c.toUpperCase(); }); }
+
+    // Auto-generated bios (bio-index.json) that aren't hand-curated above.
+    // Entries are {href, thumbnail, name}; old bare-string entries still work.
     try {
       var res = await fetch('bio-index.json', { cache: 'no-store' });
       if (res.ok) {
         var bioIndex = await res.json();
         var have = new Set(Array.prototype.map.call(grid.querySelectorAll('.card'), function(c) { return c.getAttribute('href'); }));
         Object.keys(bioIndex).sort().forEach(function(key) {
-          var href = bioIndex[key];
-          if (have.has(href)) return;
-          var name = titleCase(key);
+          if (/^[&+]/.test(key)) return; // junk entries from the connector bug
+          var entry = bioIndex[key];
+          var href = typeof entry === 'string' ? entry : entry && entry.href;
+          if (!href || have.has(href)) return;
+          var thumb = typeof entry === 'string' ? null : entry.thumbnail;
+          var name = (typeof entry === 'object' && entry.name) || titleCase(key);
+
           var card = document.createElement('a');
           card.className = 'card c-span-2';
           card.href = href;
+          var img = thumb ? '<img src="' + esc(thumb) + '" alt="' + esc(name) + '" loading="lazy">' : '';
           card.innerHTML =
-            '<div class="thumb t-art" style="position:relative;overflow:hidden;background:linear-gradient(135deg,#e8e4f5,#f5e8f0);"><span class="pill">ARTIST BIO</span></div>' +
-            '<div class="body"><h3>' + name + '</h3><p>Auto-generated bio — full documentary chapter coming later.</p><div class="meta">Auto-added</div></div>';
+            '<div class="thumb t-art" style="position:relative;overflow:hidden;background:linear-gradient(135deg,#e8e4f5,#f5e8f0);">' +
+              img + '<span class="pill">ARTIST BIO</span></div>' +
+            '<div class="body"><h3>' + esc(name) + '</h3><p>Auto-generated bio — full documentary chapter coming later.</p><div class="meta">Auto-added</div></div>';
           grid.appendChild(card);
+          guardImgs(card);
+          have.add(href);
         });
       }
     } catch (err) { console.error('Could not load bio-index.json', err); }
