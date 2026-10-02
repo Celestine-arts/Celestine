@@ -25,12 +25,6 @@
 // script is the natural place to maintain it, since it already knows,
 // for every song, whether a review page exists or was just created.
 //
-// BIO-INDEX VALUE SHAPE — {href, thumbnail} (new)
-// bio-index.json entries changed from a bare filename string to
-// { href, thumbnail } (see generate-artist-bios.mjs). findBioLink() below
-// now returns that object (or null) instead of a bare string, and the
-// template uses bioLink.href instead of bioLink directly.
-//
 // QUOTA-EXHAUSTION RECOVERY (new)
 // If Gemini's daily quota runs out mid-run, the song still gets a page
 // (with a "full review coming soon" placeholder) so nothing 404s, but
@@ -105,22 +99,13 @@ function normalizeKey(name) {
     .trim();
 }
 
-// Returns { href, thumbnail } for the best bio match, or null if none.
-// bio-index.json's values are objects now (see generate-artist-bios.mjs's
-// BIO-INDEX VALUE SHAPE note) — this used to return a bare filename
-// string; anything reading findBioLink()'s result must use .href now.
 function findBioLink(artist, bioIndex) {
   const key = normalizeKey(artist);
   if (bioIndex[key]) return bioIndex[key];
   // Loose fallback: artist string contains a known name (handles
-  // "Ella Langley & Morgan Wallen" style multi-artist credits).
-  // NOTE: this can false-match on very short keys (e.g. a one-word name
-  // that happens to be a substring of the credit for unrelated reasons).
-  // The length guard below is a light mitigation, not a full fix — worth
-  // auditing against your actual bio-index.json contents if you notice a
-  // song linking to the wrong artist's bio.
-  for (const [name, info] of Object.entries(bioIndex)) {
-    if (name.length > 3 && key.includes(name)) return info;
+  // "Ella Langley & Morgan Wallen" style multi-artist credits)
+  for (const [name, file] of Object.entries(bioIndex)) {
+    if (key.includes(name)) return file;
   }
   return null;
 }
@@ -185,9 +170,8 @@ function renderPage(entry, { videoId, bioLink, blurb }) {
          </div>
        </div>`;
 
-  // bioLink is now { href, thumbnail } (or null) — see findBioLink() above.
   const bioLinkBlock = bioLink
-    ? `<a class="hero-cta" style="padding:12px 22px;box-shadow:5px 5px 0 var(--ink);" href="../${bioLink.href}">Read ${escapeHtml(entry.artist)}'s bio →</a>`
+    ? `<a class="hero-cta" style="padding:12px 22px;box-shadow:5px 5px 0 var(--ink);" href="../${bioLink}">Read ${escapeHtml(entry.artist)}'s bio →</a>`
     : "";
 
   const blurbText = blurb || "Full review coming soon — check back as our editorial team finishes this one.";
@@ -210,16 +194,9 @@ function renderPage(entry, { videoId, bioLink, blurb }) {
 </head>
 <body>
 
-<div class="cosmos" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-
 <header>
   <a href="../index.html" class="logo">Celestine<span></span></a>
-  <button class="hamburger" id="hamburger-btn" aria-label="Toggle Menu">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
-  <nav id="nav-menu">
+  <nav>
     <a href="../bios.html">Artist bios</a>
     <a href="../film.html">Film</a>
     <a href="../music.html">Music</a>
@@ -262,24 +239,6 @@ ${draftTag}
   </div>
   <div class="fine">© 2026 Celestine Studio. All rights reserved.</div>
 </footer>
-
-<script>
-  (function() {
-    var hamburgerBtn = document.getElementById('hamburger-btn');
-    var navMenu = document.getElementById('nav-menu');
-    var navLinks = document.querySelectorAll('#nav-menu a');
-    hamburgerBtn.addEventListener('click', function() {
-      hamburgerBtn.classList.toggle('open');
-      navMenu.classList.toggle('open');
-    });
-    navLinks.forEach(function(link) {
-      link.addEventListener('click', function() {
-        hamburgerBtn.classList.remove('open');
-        navMenu.classList.remove('open');
-      });
-    });
-  })();
-</script>
 
 </body>
 </html>

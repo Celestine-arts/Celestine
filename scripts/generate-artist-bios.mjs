@@ -50,34 +50,7 @@
 // findBioLink() must use the same normalizeKey() when looking an artist
 // up, or bio links will stop resolving.
 //
-// BIO-INDEX VALUE SHAPE — {href, thumbnail} (new)
-// Each bioIndex entry used to be a bare filename string. It's now
-// { href, thumbnail } so bios.html's auto-append script (and anything
-// else that reads bio-index.json) can show a real photo instead of a
-// gradient placeholder for auto-generated cards. `thumbnail` is the
-// same Wikipedia thumbnail URL already fetched for the bio page itself
-// — it just wasn't being propagated into the index before. bios.html's
-// render script and generate-song-pages.mjs's findBioLink()/bioLinkBlock
-// must be updated to match this shape (they were written for the old
-// bare-string value).
-//
-// OUTPUT-PATH COLLISION GUARD (new)
-// slugify() strips leading connector symbols, so a corrupted credit like
-// "& John Mayer" (see fetch_chart.py's fused-connector bug) slugifies to
-// the SAME "john-mayer.html" a correctly-parsed "John Mayer" would use.
-// bioIndex is keyed by normalizeKey(name), and "& john mayer" is a
-// DIFFERENT key from "john mayer" — so the existing bioIndex[key] dedup
-// check does NOT catch this, and this script used to call
-// fs.writeFile(outPath, html) unconditionally, silently overwriting
-// whatever (possibly hand-written, possibly correct) page already lived
-// at that path. Before writing a brand-new page, this now checks whether
-// outPath already exists; if it does, that's a slug collision with some
-// other tracked or untracked page, and this script skips it and logs a
-// warning instead of overwriting — the artist is left out of bioIndex so
-// the collision surfaces (via a broken bio link somewhere) rather than
-// silently destroying data.
-//
-// QUOTA-EXHAUSTION RECOVERY
+// QUOTA-EXHAUSTION RECOVERY (new)
 // If Gemini's daily quota runs out mid-run, the artist still gets a page
 // (with a "coming soon" placeholder) so the song → bio link never 404s,
 // but that artist's name/wiki extract are also saved to bio-pending.json.
@@ -101,7 +74,6 @@ const PROTECTED_ARTIST_NAMES = [
   "Ashford and Simpson",
   "Chip and Dale",
   "Emerson, Lake & Palmer",
-  "Dan + Shay",
   // Add more here whenever a real credit gets wrongly split on the site —
   // this list can't anticipate every band name that contains a connector.
 ];
@@ -161,15 +133,6 @@ async function loadJson(p, fallback) {
     return JSON.parse(await fs.readFile(p, "utf8"));
   } catch {
     return fallback;
-  }
-}
-
-async function fileExists(p) {
-  try {
-    await fs.access(p);
-    return true;
-  } catch {
-    return false;
   }
 }
 
@@ -259,16 +222,9 @@ function renderPage(name, { bio, thumbnail, wikiUrl, isDraft }) {
 </head>
 <body>
 
-<div class="cosmos" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-
 <header>
   <a href="index.html" class="logo">Celestine<span></span></a>
-  <button class="hamburger" id="hamburger-btn" aria-label="Toggle Menu">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
-  <nav id="nav-menu">
+  <nav>
     <a href="bios.html">Artist bios</a>
     <a href="film.html">Film</a>
     <a href="music.html">Music</a>
@@ -307,22 +263,6 @@ ${photoFigure}
 </footer>
 
 <script>
-  (function() {
-    var hamburgerBtn = document.getElementById('hamburger-btn');
-    var navMenu = document.getElementById('nav-menu');
-    var navLinks = document.querySelectorAll('#nav-menu a');
-    hamburgerBtn.addEventListener('click', function() {
-      hamburgerBtn.classList.toggle('open');
-      navMenu.classList.toggle('open');
-    });
-    navLinks.forEach(function(link) {
-      link.addEventListener('click', function() {
-        hamburgerBtn.classList.remove('open');
-        navMenu.classList.remove('open');
-      });
-    });
-  })();
-
   (function() {
     var ARTIST_NAME = ${JSON.stringify(name)};
     var listEl = document.getElementById('artistSongsList');
@@ -418,33 +358,12 @@ async function main() {
   }
 
   let created = 0;
-  let skippedCollisions = 0;
   for (const name of allArtistNames) {
     const key = normalizeKey(name);
     if (bioIndex[key]) continue; // already has a bio page
 
     const slug = slugify(name);
     const outPath = `${slug}.html`;
-
-    // COLLISION GUARD: if a file already sits at this path but isn't the
-    // one bioIndex has on record for this key, something else — a hand-
-    // written page, or another artist's auto-generated one — already
-    // owns this slug. Writing here would silently destroy it (this is
-    // exactly how "& John Mayer" clobbered the real john-mayer.html).
-    // Skip and flag it instead of overwriting; the artist stays out of
-    // bioIndex so the gap is visible (a broken bio link) rather than
-    // silent.
-    if (await fileExists(outPath)) {
-      console.warn(
-        `SKIPPED "${name}" — output path "${outPath}" already exists and ` +
-        `isn't tracked under this artist's key in bio-index.json. This is ` +
-        `usually a slug collision with another artist or a corrupted name ` +
-        `from an upstream parsing bug. Not overwriting; check ${outPath} ` +
-        `by hand.`
-      );
-      skippedCollisions++;
-      continue;
-    }
 
     const wiki = await fetchWikipediaSummary(name);
     let bio = null;
@@ -470,10 +389,7 @@ async function main() {
       isDraft: !!bio,
     });
     await fs.writeFile(outPath, html);
-    // Value shape changed: {href, thumbnail} instead of a bare filename,
-    // so bios.html's auto-added cards can show a real photo. `thumbnail`
-    // is the same Wikipedia image already embedded in the page itself.
-    bioIndex[key] = { href: outPath, thumbnail: wiki?.thumbnail || null };
+    bioIndex[key] = outPath;
     created++;
 
     await sleep(300); // light courtesy pacing for Wikipedia's API; Gemini paces itself
@@ -483,7 +399,6 @@ async function main() {
   await fs.writeFile(BIO_PENDING_PATH, JSON.stringify(pending, null, 2));
   console.log(
     `Created ${created} new artist bio page(s), filled ${filled} pending, ` +
-    `${skippedCollisions} skipped due to slug collisions, ` +
     `${Object.keys(pending).length} still pending. bio-index.json now has ${Object.keys(bioIndex).length} artist(s).`
   );
 }
