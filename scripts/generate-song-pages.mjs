@@ -3,43 +3,28 @@
 // Reads data/hot100.json (written by fetch_chart.py) and, for every song
 // that doesn't already have a page under songs/, generates one:
 //   - cover art (already in hot100.json, from the iTunes Search API)
-//   - an embedded YouTube player (found via a lightweight page scrape —
-//     no API key, matching the "no card details" constraint)
+//   - an embedded YouTube player (lightweight page scrape, no API key)
 //   - a Spotify search link (already in hot100.json)
 //   - a link to the artist's bio, if bio-index.json has one
-//   - a short AI-drafted paragraph via Gemini (same pattern as
-//     update-news.mjs), explicitly instructed never to quote lyrics or
-//     invent quotes from the artist
+//   - a short AI-drafted paragraph via Gemini, explicitly instructed never
+//     to quote lyrics or invent quotes from the artist
 //
 // Never overwrites an existing songs/{slug}.html for a page a HUMAN has
-// touched — but see the pending-retry note below for the one deliberate
-// exception.
+// touched — except the pending-retry pass below.
 //
-// SONGS INDEX
-// After each run, this script also merges what it saw into
-// data/songs-index.json — a catalog that only ever grows, unlike
-// hot100.json which gets overwritten daily and only ever holds today's
-// 100 songs. This is what lets an artist's bio page show every song
-// they've ever charted (including ones that have since dropped off the
-// Hot 100), and whether each one has a review page to link to. This
-// script is the natural place to maintain it, since it already knows,
-// for every song, whether a review page exists or was just created.
+// SONGS INDEX: after each run, merges what it saw into
+// data/songs-index.json, a catalog that only ever grows.
 //
-// QUOTA-EXHAUSTION RECOVERY (new)
-// If Gemini's daily quota runs out mid-run, the song still gets a page
-// (with a "full review coming soon" placeholder) so nothing 404s, but
-// enough info to redraft it is saved to song-blurb-pending.json. The
-// NEXT run always tries song-blurb-pending.json first, before generating
-// any brand-new pages, so a quota-exhausted day self-heals on the next
-// scheduled run. This is the one sanctioned exception to "never
-// overwrite" — it only ever touches a page THIS SCRIPT marked as its own
-// unfinished placeholder, never a page a human has since edited.
+// BIO-INDEX VALUE SHAPE — {href, thumbnail, name}
+// findBioLink() always returns { href, thumbnail } or null. It now also
+// accepts OLD bare-string entries (via toBioObject), so a bio-index.json
+// that hasn't been upgraded yet can't produce "../undefined" links.
+// Junk keys starting with & or + (from the fused-connector bug) are
+// ignored so a song can't link to a mis-named bio.
 //
-// DESIGN (updated)
-// renderPage() below now reuses the site's own .masthead / .figure-full /
-// .inline-figure / .chapter classes from styles.css instead of a bespoke
-// .song-* stylesheet, so an auto-generated review reads as a lighter
-// version of a real Celestine article instead of a visually distinct stub.
+// QUOTA-EXHAUSTION RECOVERY: if Gemini's quota runs out, the song still
+// gets a placeholder page and is saved to song-blurb-pending.json; the
+// next run redrafts it.
 
 import fs from "node:fs/promises";
 import path from "node:path";
@@ -87,10 +72,7 @@ function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-// Must match generate-artist-bios.mjs's normalizeKey() exactly, since
-// that's what actually wrote the keys in bio-index.json — otherwise an
-// accented artist name here would fail to find the bio page keyed by its
-// unaccented (or vice versa) spelling.
+// Must match generate-artist-bios.mjs's normalizeKey() exactly.
 function normalizeKey(name) {
   return name
     .normalize("NFD")
@@ -99,23 +81,47 @@ function normalizeKey(name) {
     .trim();
 }
 
+// A row parsed by the old fetch_chart.py connector bug: artist starts with
+// a dangling connector ("& John Mayer", "Featuring X") or the title ends
+// with one ("Belly Gang Kushington &"). Their titles/artists are wrong, so
+// the page and catalog entry should go; the correctly-parsed version of
+// the song gets created fresh under its proper slug.
+function isJunkSong(song) {
+  const artist = (song.artist || "").trim();
+  const title = (song.title || "").trim();
+  return (
+    /^(?:[&+]|featuring\b|feat\.?(?=\s))/i.test(artist) ||
+    /\s[&+]$/.test(title) ||
+    /[&+]$/.test(artist)
+  );
+}
+
+// Accepts an old bare-string entry or a new object entry.
+function toBioObject(value) {
+  if (!value) return null;
+  if (typeof value === "string") return { href: value, thumbnail: null };
+  if (!value.href) return null;
+  return { href: value.href, thumbnail: value.thumbnail || null };
+}
+
+// Returns { href, thumbnail } for the best bio match, or null if none.
 function findBioLink(artist, bioIndex) {
   const key = normalizeKey(artist);
-  if (bioIndex[key]) return bioIndex[key];
-  // Loose fallback: artist string contains a known name (handles
-  // "Ella Langley & Morgan Wallen" style multi-artist credits)
-  for (const [name, file] of Object.entries(bioIndex)) {
-    if (key.includes(name)) return file;
+  const exact = toBioObject(bioIndex[key]);
+  if (exact) return exact;
+  // Loose fallback: credit contains a known name (handles
+  // "Ella Langley & Morgan Wallen" style multi-artist credits).
+  // The length guard is a light mitigation against short-key false matches.
+  for (const [name, info] of Object.entries(bioIndex)) {
+    if (/^[&+]/.test(name)) continue; // junk keys from the connector bug
+    if (name.length > 3 && key.includes(name)) {
+      const obj = toBioObject(info);
+      if (obj) return obj;
+    }
   }
   return null;
 }
 
-// Finds a YouTube video id via a lightweight scrape of the search results
-// page (no API key). YouTube embeds a JSON blob in the page source
-// ("var ytInitialData = {...}") that includes video ids for the results —
-// this pulls the first one out with a regex rather than parsing the full
-// blob, so it degrades gracefully (returns null) if YouTube changes the
-// page structure, instead of crashing the whole run.
 async function findYouTubeVideoId(title, artist) {
   const query = encodeURIComponent(`${artist} ${title} official`);
   const url = `https://www.youtube.com/results?search_query=${query}`;
@@ -142,7 +148,7 @@ async function draftBlurbWithGemini(entry) {
     `Do NOT quote or paraphrase any song lyrics. Do NOT invent quotes attributed to the artist. Do NOT state specific factual claims you are not confident are true — keep it general and safe rather than specific and risky. ` +
     `Write it as flowing prose, no headers or bullet points.`;
 
-  return callGemini(prompt); // handles rate-limit pacing and 429 retries itself
+  return callGemini(prompt);
 }
 
 function renderPage(entry, { videoId, bioLink, blurb }) {
@@ -171,7 +177,7 @@ function renderPage(entry, { videoId, bioLink, blurb }) {
        </div>`;
 
   const bioLinkBlock = bioLink
-    ? `<a class="hero-cta" style="padding:12px 22px;box-shadow:5px 5px 0 var(--ink);" href="../${bioLink}">Read ${escapeHtml(entry.artist)}'s bio →</a>`
+    ? `<a class="hero-cta" style="padding:12px 22px;box-shadow:5px 5px 0 var(--ink);" href="../${escapeHtml(bioLink.href)}">Read ${escapeHtml(entry.artist)}'s bio →</a>`
     : "";
 
   const blurbText = blurb || "Full review coming soon — check back as our editorial team finishes this one.";
@@ -194,9 +200,16 @@ function renderPage(entry, { videoId, bioLink, blurb }) {
 </head>
 <body>
 
+<div class="cosmos" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+
 <header>
   <a href="../index.html" class="logo">Celestine<span></span></a>
-  <nav>
+  <button class="hamburger" id="hamburger-btn" aria-label="Toggle Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <nav id="nav-menu">
     <a href="../bios.html">Artist bios</a>
     <a href="../film.html">Film</a>
     <a href="../music.html">Music</a>
@@ -240,6 +253,24 @@ ${draftTag}
   <div class="fine">© 2026 Celestine Studio. All rights reserved.</div>
 </footer>
 
+<script>
+  (function() {
+    var hamburgerBtn = document.getElementById('hamburger-btn');
+    var navMenu = document.getElementById('nav-menu');
+    var navLinks = document.querySelectorAll('#nav-menu a');
+    hamburgerBtn.addEventListener('click', function() {
+      hamburgerBtn.classList.toggle('open');
+      navMenu.classList.toggle('open');
+    });
+    navLinks.forEach(function(link) {
+      link.addEventListener('click', function() {
+        hamburgerBtn.classList.remove('open');
+        navMenu.classList.remove('open');
+      });
+    });
+  })();
+</script>
+
 </body>
 </html>
 `;
@@ -258,6 +289,19 @@ async function main() {
   await fs.mkdir(SONGS_DIR, { recursive: true });
   await fs.mkdir(path.dirname(SONGS_INDEX_PATH), { recursive: true });
 
+  // --- Pass 0: prune junk rows left behind by the old connector bug ---
+  // songs/ only ever holds pages this script generated (hand-written
+  // reviews live in music/), so deleting those files is safe.
+  let pruned = 0;
+  for (const [slug, song] of Object.entries(songsIndex)) {
+    if (!isJunkSong(song)) continue;
+    delete songsIndex[slug];
+    delete pending[slug];
+    await fs.rm(path.join(SONGS_DIR, `${slug}.html`), { force: true });
+    pruned++;
+  }
+  if (pruned) console.log(`Pruned ${pruned} junk song(s) from the catalog and songs/.`);
+
   // --- Pass 1: retry anything left over from a quota-exhausted run ---
   let filled = 0;
   const stillPending = {};
@@ -268,7 +312,10 @@ async function main() {
     }
     const blurb = await draftBlurbWithGemini(info.entry);
     if (blurb) {
-      const html = renderPage(info.entry, { videoId: info.videoId, bioLink: info.bioLink, blurb });
+      // Re-resolve the bio link: a bio may have been created (or the
+      // stored one may be in the old shape) since this was queued.
+      const bioLink = findBioLink(info.entry.artist, bioIndex) || toBioObject(info.bioLink);
+      const html = renderPage(info.entry, { videoId: info.videoId, bioLink, blurb });
       await fs.writeFile(path.join(SONGS_DIR, `${slug}.html`), html);
       filled++;
     } else {
@@ -278,7 +325,7 @@ async function main() {
   pending = stillPending;
   if (filled) console.log(`Filled in ${filled} previously-pending song blurb(s).`);
 
-  // --- Pass 2: existing logic, generating brand-new song pages ---
+  // --- Pass 2: generate brand-new song pages ---
   let created = 0;
   const today = chart.chartDate;
 
@@ -300,12 +347,9 @@ async function main() {
       await fs.writeFile(outPath, html);
       created++;
 
-      await sleep(500); // light courtesy pacing for the YouTube scrape; Gemini paces itself
+      await sleep(500);
     }
 
-    // Merge into the persistent catalog regardless of whether the page
-    // was just created or already existed — this is what keeps the
-    // index accurate for songs generated by past runs too.
     const existing = songsIndex[slug];
     songsIndex[slug] = {
       slug,
@@ -314,11 +358,7 @@ async function main() {
       firstSeen: existing?.firstSeen || today,
       lastSeen: today,
       peak: Math.min(entry.peak ?? entry.rank, existing?.peak ?? Infinity),
-      hasReview: true, // a page exists at this point either way (just created, or already existed)
-      // Carried over from hot100.json (iTunes Search API) so listing pages
-      // (music.html) can render a real cover instead of a placeholder.
-      // Re-merged every run — including for songs that already had a page —
-      // so this backfills automatically for older entries too.
+      hasReview: true,
       coverArt: entry.coverArt || existing?.coverArt || null,
     };
   }

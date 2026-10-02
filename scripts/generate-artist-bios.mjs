@@ -3,60 +3,35 @@
 // For every individual artist name found across today's chart
 // (data/hot100.json) and the historical catalog (data/songs-index.json)
 // that doesn't already have an entry in bio-index.json, this generates a
-// bio page at the site root — root/{slug}.html, matching the existing
-// convention already used by the hand-written bio pages listed in
-// bio-index.json (e.g. "jisoo.html", "rose.html") — and adds a new entry
-// so both song pages and future runs can link to it.
+// bio page at the site root (root/{slug}.html) and adds an entry so song
+// pages and future runs can link to it.
 //
-// Runs BEFORE generate-song-pages.mjs in the workflow, on purpose: that
-// way a brand-new artist's bio already exists by the time their first
-// song page is generated, so the song → bio link is there from day one
-// instead of being permanently missing (song pages are never rewritten
-// once created).
+// Runs BEFORE generate-song-pages.mjs in the workflow, so a brand-new
+// artist's bio exists by the time their first song page is generated.
 //
-// GROUNDING
-// To keep the AI from inventing biographical "facts," this script only
-// drafts prose for an artist when it found a real summary via Wikipedia's
-// free REST API (no key needed, no auth). If no Wikipedia page is found,
-// the artist still gets a page — so the song → bio link never 404s —
-// but with a plain "full bio coming soon" placeholder instead of guessed
-// text.
+// GROUNDING: prose is only drafted when a real Wikipedia summary exists.
+// Otherwise the page gets a plain "coming soon" placeholder.
 //
-// SONG LIST
-// Rather than bake each artist's song list into the page at generation
-// time (which would mean rewriting every existing bio page whenever that
-// artist charts again), each bio page loads data/songs-index.json client-
-// side and filters for songs whose artist credit contains this artist's
-// name. That keeps every bio page automatically current with zero
-// re-generation cost — the same approach charts.html already uses for
-// its own live search box.
+// SONG LIST: each bio page loads data/songs-index.json client-side.
 //
-// ARTIST-NAME SPLITTING — known limitation
-// A song's "artist" field can be a multi-artist credit ("X Featuring Y",
-// "X & Y"), and this script splits those into individual names so each
-// artist gets their own page. The naive version of this breaks on band
-// names that legitimately contain a connector word — "Florence and the
-// Machine" would otherwise get split into "Florence" and "the Machine".
-// PROTECTED_ARTIST_NAMES below is a manual allow-list checked before
-// splitting; it's deliberately small and meant to be extended by hand
-// whenever you spot a wrong split on the live site. There's no fully
-// automatic fix for this — it's a genuinely ambiguous text problem.
+// BIO-INDEX VALUE SHAPE: { href, thumbnail, name }
+//   - Older entries were bare filename strings; they are upgraded in
+//     memory on load (see upgradeEntry) and saved in the new shape.
+//   - `name` is the properly-cased display name (bios.html uses it so
+//     "sombr" and "Rosé" don't get mangled by title-casing the key).
 //
-// DEDUP KEY — normalized (new)
-// bioIndex is keyed by normalizeKey(name) rather than a plain
-// name.toLowerCase(), so accented and unaccented spellings of the same
-// artist ("Rosé" vs "Rose") collapse to one entry instead of silently
-// generating two near-duplicate pages. generate-song-pages.mjs's
-// findBioLink() must use the same normalizeKey() when looking an artist
-// up, or bio links will stop resolving.
-//
-// QUOTA-EXHAUSTION RECOVERY (new)
-// If Gemini's daily quota runs out mid-run, the artist still gets a page
-// (with a "coming soon" placeholder) so the song → bio link never 404s,
-// but that artist's name/wiki extract are also saved to bio-pending.json.
-// The NEXT run always tries bio-pending.json first, before generating any
-// brand-new pages, so a quota-exhausted day self-heals on the next
-// scheduled run instead of leaving that placeholder in place forever.
+// FIXES IN THIS VERSION
+// 1. splitArtists() strips fused leading/trailing connectors, so a
+//    corrupted credit like "& John Mayer" yields "John Mayer".
+// 2. Junk index entries whose key starts with & or + are removed from
+//    bio-index.json on load (their pages are NOT deleted — they get
+//    regenerated under the correct name, see 3).
+// 3. Collision guard now only protects pages that are NOT auto-generated.
+//    A page containing id="artistSongsList" is ours (hand-written pages
+//    never have it), so it is safe to regenerate. This heals pages that
+//    were created under a junk name.
+// 4. Thumbnail backfill: auto-generated entries with no thumbnail get one
+//    from Wikipedia (capped per run, and each entry is only tried once).
 
 import fs from "node:fs/promises";
 import { callGemini, isDailyQuotaExhausted } from "./lib/gemini-client.mjs";
@@ -65,6 +40,8 @@ const HOT100_PATH = "data/hot100.json";
 const SONGS_INDEX_PATH = "data/songs-index.json";
 const BIO_INDEX_PATH = "bio-index.json";
 const BIO_PENDING_PATH = "bio-pending.json";
+const AUTO_PAGE_SIGNATURE = 'id="artistSongsList"';
+const MAX_BACKFILL_PER_RUN = 30;
 
 const PROTECTED_ARTIST_NAMES = [
   "Florence and the Machine",
@@ -74,29 +51,32 @@ const PROTECTED_ARTIST_NAMES = [
   "Ashford and Simpson",
   "Chip and Dale",
   "Emerson, Lake & Palmer",
-  // Add more here whenever a real credit gets wrongly split on the site —
-  // this list can't anticipate every band name that contains a connector.
+  "Dan + Shay",
+  // Add more here whenever a real credit gets wrongly split on the site.
 ];
 
-// Same connector vocabulary as fetch_chart.py's artist-credit merging,
-// used here in reverse to SPLIT a merged credit back into individual
-// names. Requires whitespace on both sides so it only matches standalone
-// connector words/symbols, not letters inside a longer word.
 const CONNECTOR_PATTERN = /\s+(?:featuring|feat\.?|with|duet with|and|&|\+|x|vs\.?)\s+/gi;
 
 function escapeRegex(s) {
   return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
-// Strips diacritics before lowercasing, so "Rosé" and "Rose" (or any
-// other accented/unaccented spelling of the same artist) resolve to the
-// same dedup key instead of quietly creating two bio pages for one
-// person. Keep this identical to the copy in generate-song-pages.mjs.
 function normalizeKey(name) {
   return name
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
     .toLowerCase()
+    .trim();
+}
+
+// Removes connector symbols/words stuck to the start or end of a name
+// ("& John Mayer", "John Mayer &", "feat. Tems"). Deliberately does NOT
+// strip a leading "x" or "and", which would break names like
+// "X Ambassadors".
+function cleanName(name) {
+  return name
+    .replace(/^(?:[&+]|featuring\b|feat\.?(?=\s))\s*/i, "")
+    .replace(/\s*[&+]$/, "")
     .trim();
 }
 
@@ -112,10 +92,10 @@ function splitArtists(creditString) {
     }
   });
 
-  let names = working
+  const names = working
     .split(",")
     .flatMap((part) => part.split(CONNECTOR_PATTERN))
-    .map((name) => name.trim())
+    .map((name) => cleanName(name.trim()))
     .filter(Boolean);
 
   return names.map((name) => {
@@ -136,6 +116,26 @@ async function loadJson(p, fallback) {
   }
 }
 
+async function fileExists(p) {
+  try {
+    await fs.access(p);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+// True only for pages THIS script generated (hand-written bios never
+// contain the client-side song list container).
+async function isAutoGeneratedPage(p) {
+  try {
+    const html = await fs.readFile(p, "utf8");
+    return html.includes(AUTO_PAGE_SIGNATURE);
+  } catch {
+    return false;
+  }
+}
+
 function escapeHtml(str = "") {
   return str
     .replace(/&/g, "&amp;")
@@ -148,9 +148,20 @@ function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-// Wikipedia's free summary endpoint — no API key, no auth. Returns null
-// if the artist has no page, the page is a disambiguation page, or the
-// lookup fails, so a missing page never crashes the run.
+// Old entries were bare strings; new ones are objects. Accept both.
+function upgradeEntry(value) {
+  if (typeof value === "string") {
+    return { href: value, thumbnail: null, name: null };
+  }
+  return {
+    href: value.href,
+    thumbnail: value.thumbnail || null,
+    name: value.name || null,
+    ...(value.thumbChecked ? { thumbChecked: true } : {}),
+    ...(value.thumbIsCover ? { thumbIsCover: true } : {}),
+  };
+}
+
 async function fetchWikipediaSummary(name) {
   const url = `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(name.replace(/ /g, "_"))}`;
   try {
@@ -177,14 +188,9 @@ async function draftBioWithGemini(name, wikiExtract) {
     `Do not add any fact, date, award, or claim that is not present in the reference text. Do not invent quotes. Write flowing prose, no headers or bullet points.\n\n` +
     `Reference text:\n"""${wikiExtract}"""`;
 
-  return callGemini(prompt); // handles rate-limit pacing and 429 retries itself
+  return callGemini(prompt);
 }
 
-// DESIGN (updated): reuses the site's own .masthead / .figure-full /
-// .section / .grid / .card classes from styles.css instead of the old
-// bespoke .artist-* stylesheet, so a bio page — draft or full — reads as
-// a lighter version of a real Celestine page instead of a visually
-// distinct stub.
 function renderPage(name, { bio, thumbnail, wikiUrl, isDraft }) {
   const dek = bio || "The full documentary chapter for this artist is still being researched — check back soon.";
 
@@ -222,9 +228,16 @@ function renderPage(name, { bio, thumbnail, wikiUrl, isDraft }) {
 </head>
 <body>
 
+<div class="cosmos" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+
 <header>
   <a href="index.html" class="logo">Celestine<span></span></a>
-  <nav>
+  <button class="hamburger" id="hamburger-btn" aria-label="Toggle Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <nav id="nav-menu">
     <a href="bios.html">Artist bios</a>
     <a href="film.html">Film</a>
     <a href="music.html">Music</a>
@@ -263,6 +276,22 @@ ${photoFigure}
 </footer>
 
 <script>
+  (function() {
+    var hamburgerBtn = document.getElementById('hamburger-btn');
+    var navMenu = document.getElementById('nav-menu');
+    var navLinks = document.querySelectorAll('#nav-menu a');
+    hamburgerBtn.addEventListener('click', function() {
+      hamburgerBtn.classList.toggle('open');
+      navMenu.classList.toggle('open');
+    });
+    navLinks.forEach(function(link) {
+      link.addEventListener('click', function() {
+        hamburgerBtn.classList.remove('open');
+        navMenu.classList.remove('open');
+      });
+    });
+  })();
+
   (function() {
     var ARTIST_NAME = ${JSON.stringify(name)};
     var listEl = document.getElementById('artistSongsList');
@@ -320,15 +349,34 @@ ${photoFigure}
 async function main() {
   const chart = await loadJson(HOT100_PATH, { entries: [] });
   const songsIndex = await loadJson(SONGS_INDEX_PATH, {});
-  const bioIndex = await loadJson(BIO_INDEX_PATH, {});
+  const rawBioIndex = await loadJson(BIO_INDEX_PATH, {});
   let pending = await loadJson(BIO_PENDING_PATH, {});
+
+  // --- Load + clean the bio index ---
+  // Upgrade bare-string entries to {href, thumbnail, name}, and drop junk
+  // entries created by the fused-connector bug ("& John Mayer"). Their
+  // pages are left on disk; the correctly-named artist is regenerated
+  // over them below (they carry the auto-generated signature).
+  const bioIndex = {};
+  let droppedJunk = 0;
+  for (const [key, value] of Object.entries(rawBioIndex)) {
+    if (/^[&+]/.test(key)) {
+      droppedJunk++;
+      continue;
+    }
+    bioIndex[key] = upgradeEntry(value);
+  }
+  for (const key of Object.keys(pending)) {
+    if (/^[&+]/.test(key)) delete pending[key];
+  }
+  if (droppedJunk) console.log(`Dropped ${droppedJunk} junk bio-index entr(ies) starting with a connector symbol.`);
 
   // --- Pass 1: retry anything left over from a quota-exhausted run ---
   let filled = 0;
   const stillPending = {};
   for (const [key, info] of Object.entries(pending)) {
     if (isDailyQuotaExhausted()) {
-      stillPending[key] = info; // don't bother trying, save the wasted call
+      stillPending[key] = info;
       continue;
     }
     const bio = await draftBioWithGemini(info.name, info.wikiExtract);
@@ -348,30 +396,46 @@ async function main() {
   pending = stillPending;
   if (filled) console.log(`Filled in ${filled} previously-pending bio(s).`);
 
-  // --- Pass 2: existing logic, generating brand-new artist pages ---
-  const allArtistNames = new Set();
+  // --- Pass 2: generate brand-new artist pages ---
+  const allArtistNames = new Map(); // normalized key -> display name
+  const addName = (n) => {
+    const k = normalizeKey(n);
+    if (k && !allArtistNames.has(k)) allArtistNames.set(k, n);
+  };
   for (const song of Object.values(songsIndex)) {
-    splitArtists(song.artist).forEach((n) => allArtistNames.add(n));
+    splitArtists(song.artist).forEach(addName);
   }
   for (const entry of chart.entries || []) {
-    splitArtists(entry.artist).forEach((n) => allArtistNames.add(n));
+    splitArtists(entry.artist).forEach(addName);
   }
 
   let created = 0;
-  for (const name of allArtistNames) {
-    const key = normalizeKey(name);
+  let skippedCollisions = 0;
+  for (const [key, name] of allArtistNames) {
     if (bioIndex[key]) continue; // already has a bio page
 
     const slug = slugify(name);
+    if (!slug) continue;
     const outPath = `${slug}.html`;
+
+    // COLLISION GUARD: only protect pages that are NOT auto-generated.
+    // A hand-written page (or anything we can't identify) is never
+    // overwritten. An auto-generated page with no matching index entry
+    // is a leftover from the junk-name bug and is safe to regenerate.
+    if ((await fileExists(outPath)) && !(await isAutoGeneratedPage(outPath))) {
+      console.warn(
+        `SKIPPED "${name}" — "${outPath}" already exists and isn't an auto-generated page. ` +
+        `Likely a slug collision with a hand-written page. Not overwriting; check it by hand.`
+      );
+      skippedCollisions++;
+      continue;
+    }
 
     const wiki = await fetchWikipediaSummary(name);
     let bio = null;
     if (wiki) {
       bio = await draftBioWithGemini(name, wiki.extract);
       if (!bio && isDailyQuotaExhausted()) {
-        // Page still gets written below so the link never 404s — but we
-        // remember to come back and redraft it once quota resets.
         pending[key] = {
           name,
           wikiExtract: wiki.extract,
@@ -389,16 +453,79 @@ async function main() {
       isDraft: !!bio,
     });
     await fs.writeFile(outPath, html);
-    bioIndex[key] = outPath;
+    bioIndex[key] = {
+      href: outPath,
+      thumbnail: wiki?.thumbnail || null,
+      name,
+      thumbChecked: true,
+    };
     created++;
 
-    await sleep(300); // light courtesy pacing for Wikipedia's API; Gemini paces itself
+    await sleep(300);
+  }
+
+  // --- Pass 3: fill in display names + thumbnails for existing entries ---
+  // 3a. Display names come from the real chart credits (no network), so
+  //     "adela" becomes "ADELA" and "rose" keeps its accent.
+  for (const [key, entry] of Object.entries(bioIndex)) {
+    if (!entry.name && allArtistNames.has(key)) entry.name = allArtistNames.get(key);
+  }
+
+  // 3b. Fallback image: cover art of the artist's best-charting song
+  //     (already stored in songs-index.json, same source music.html uses).
+  const splitCache = new Map();
+  const creditKeys = (credit) => {
+    if (!splitCache.has(credit)) {
+      splitCache.set(credit, splitArtists(credit).map(normalizeKey));
+    }
+    return splitCache.get(credit);
+  };
+  function bestCover(key) {
+    let best = null;
+    for (const song of Object.values(songsIndex)) {
+      if (!song.coverArt || !creditKeys(song.artist).includes(key)) continue;
+      const peak = song.peak ?? 999;
+      if (!best || peak < best.peak) best = { peak, art: song.coverArt };
+    }
+    return best ? best.art : null;
+  }
+
+  // 3c. Try Wikipedia for a real photo (capped per run, once per entry);
+  //     if there isn't one, fall back to the song cover.
+  let backfilled = 0;
+  let coverFallbacks = 0;
+  let attempted = 0;
+  for (const [key, entry] of Object.entries(bioIndex)) {
+    const needsPhoto = !entry.thumbnail || entry.thumbIsCover;
+
+    if (needsPhoto && !entry.thumbChecked && entry.name && attempted < MAX_BACKFILL_PER_RUN) {
+      attempted++;
+      const wiki = await fetchWikipediaSummary(entry.name);
+      entry.thumbChecked = true;
+      if (wiki?.thumbnail) {
+        entry.thumbnail = wiki.thumbnail;
+        delete entry.thumbIsCover;
+        backfilled++;
+      }
+      await sleep(300);
+    }
+
+    if (!entry.thumbnail) {
+      const cover = bestCover(key);
+      if (cover) {
+        entry.thumbnail = cover;
+        entry.thumbIsCover = true;
+        coverFallbacks++;
+      }
+    }
   }
 
   await fs.writeFile(BIO_INDEX_PATH, JSON.stringify(bioIndex, null, 2));
   await fs.writeFile(BIO_PENDING_PATH, JSON.stringify(pending, null, 2));
   console.log(
     `Created ${created} new artist bio page(s), filled ${filled} pending, ` +
+    `backfilled ${backfilled} Wikipedia photo(s), ${coverFallbacks} cover fallback(s), ` +
+    `${skippedCollisions} skipped due to slug collisions, ` +
     `${Object.keys(pending).length} still pending. bio-index.json now has ${Object.keys(bioIndex).length} artist(s).`
   );
 }
