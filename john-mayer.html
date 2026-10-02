@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>&amp; John Mayer | Celestine</title>
+<title>John Mayer | Celestine</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
@@ -18,16 +18,9 @@
 </head>
 <body>
 
-<div class="cosmos" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-
 <header>
   <a href="index.html" class="logo">Celestine<span></span></a>
-  <button class="hamburger" id="hamburger-btn" aria-label="Toggle Menu">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
-  <nav id="nav-menu">
+  <nav>
     <a href="bios.html">Artist bios</a>
     <a href="film.html">Film</a>
     <a href="music.html">Music</a>
@@ -38,14 +31,16 @@
 </header>
 
 <div class="masthead" style="border-bottom:3px solid var(--ink);">
-  <span class="tag">Artist Bio</span>
-  <h1>&amp; John Mayer</h1>
-  <p class="dek">The full documentary chapter for this artist is still being researched — check back soon.</p>
+  <span class="tag">Artist Bio · Draft</span>
+  <h1>John Mayer</h1>
+  <p class="dek">John Clayton Mayer is an American singer, songwriter, and guitarist. After attending the Berklee College of Music, he moved to Atlanta to form the rock duo Lo-Fi Masters before pursuing a solo path that led to his signing with Aware Records. His debut EP, *Inside Wants Out*, was released in 1999, followed by the critically and commercially successful studio albums *Room for Squares* in 2001 and *Heavier Things* in 2003. His single &quot;Your Body Is a Wonderland&quot; won Best Male Pop Vocal Performance at the 45th Annual Grammy Awards, and *Heavier Things* peaked atop the Billboard 200.</p>
 </div>
+<p class="artist-draft-tag">Draft bio — auto-generated from public sources, awaiting a full human writeup.</p>
+<a class="artist-source-link" href="https://en.wikipedia.org/wiki/John_Mayer" target="_blank" rel="noopener">Source: Wikipedia →</a>
 
-
-
-
+<figure class="figure-full">
+         <div class="frame" style="background-image:url('https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/JohnMayerin2019.jpg/330px-JohnMayerin2019.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=api&amp;utm_content=thumbnail');background-size:cover;background-position:center;"></div>
+       </figure>
 
 <section class="section" style="padding-top:50px;">
   <div class="section-head">
@@ -67,23 +62,7 @@
 
 <script>
   (function() {
-    var hamburgerBtn = document.getElementById('hamburger-btn');
-    var navMenu = document.getElementById('nav-menu');
-    var navLinks = document.querySelectorAll('#nav-menu a');
-    hamburgerBtn.addEventListener('click', function() {
-      hamburgerBtn.classList.toggle('open');
-      navMenu.classList.toggle('open');
-    });
-    navLinks.forEach(function(link) {
-      link.addEventListener('click', function() {
-        hamburgerBtn.classList.remove('open');
-        navMenu.classList.remove('open');
-      });
-    });
-  })();
-
-  (function() {
-    var ARTIST_NAME = "& John Mayer";
+    var ARTIST_NAME = "John Mayer";
     var listEl = document.getElementById('artistSongsList');
     var statusEl = document.getElementById('artistSongsStatus');
 
