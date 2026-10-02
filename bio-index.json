@@ -362,5 +362,81 @@
   "robert smith": {
     "href": "robert-smith.html",
     "thumbnail": null
+  },
+  "& john mayer": {
+    "href": "john-mayer.html",
+    "thumbnail": null
+  },
+  "& ab-soul": {
+    "href": "ab-soul.html",
+    "thumbnail": null
+  },
+  "featuring chase matthew": {
+    "href": "featuring-chase-matthew.html",
+    "thumbnail": null
+  },
+  "& chandler moore": {
+    "href": "chandler-moore.html",
+    "thumbnail": null
+  },
+  "dan + shay": {
+    "href": "dan-shay.html",
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Dan_%2B_Shay_in_2017.jpg/330px-Dan_%2B_Shay_in_2017.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  },
+  "judeline": {
+    "href": "judeline.html",
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Malaga_Film_Festival_2025_-_Judeline_02.jpg/330px-Malaga_Film_Festival_2025_-_Judeline_02.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  },
+  "earth, wind & fire": {
+    "href": "earth-wind-fire.html",
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/Earth%2C_Wind_%26_Fire_%282%29.jpg/330px-Earth%2C_Wind_%26_Fire_%282%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  },
+  "lainey wilson": {
+    "href": "lainey-wilson.html",
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Lainey_Wilson_2024.jpg/330px-Lainey_Wilson_2024.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  },
+  "lauren alaina": {
+    "href": "lauren-alaina.html",
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/2023_Independence_Day_celebration_on_MCB_Camp_Lejeune_%284%29_%28cropped%29.jpg/330px-2023_Independence_Day_celebration_on_MCB_Camp_Lejeune_%284%29_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  },
+  "chase matthew": {
+    "href": "chase-matthew.html",
+    "thumbnail": null
+  },
+  "corey taylor": {
+    "href": "corey-taylor.html",
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/20180602_N%C3%BCrnberg_Rock_im_Park_Stone_Sour_0270_%28cropped%29.jpg/330px-20180602_N%C3%BCrnberg_Rock_im_Park_Stone_Sour_0270_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  },
+  "serj tankian": {
+    "href": "serj-tankian.html",
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Serj_Tankian_performing_2026.png/330px-Serj_Tankian_performing_2026.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  },
+  "travis scott": {
+    "href": "travis-scott.html",
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Travis_Scott_sig.svg/330px-Travis_Scott_sig.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  },
+  "elevation worship": {
+    "href": "elevation-worship.html",
+    "thumbnail": null
+  },
+  "jamie miller": {
+    "href": "jamie-miller.html",
+    "thumbnail": null
+  },
+  "boa": {
+    "href": "boa.html",
+    "thumbnail": null
+  },
+  "rod wave": {
+    "href": "rod-wave.html",
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Beautiful_Mind_Tour_Pittsburgh%2C_PA_4.jpg/330px-Beautiful_Mind_Tour_Pittsburgh%2C_PA_4.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  },
+  "miley cyrus": {
+    "href": "miley-cyrus.html",
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Miley_Cyrus_Primavera19_-226_%2848986293772%29_%28cropped%29.jpg/330px-Miley_Cyrus_Primavera19_-226_%2848986293772%29_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+  },
+  "cameron whitcomb": {
+    "href": "cameron-whitcomb.html",
+    "thumbnail": null
   }
 }
