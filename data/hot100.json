@@ -1,6 +1,6 @@
 {
-  "chartDate": "2026-10-02",
-  "fetchedAt": "2026-10-02T18:40:26.488857+00:00",
+  "chartDate": "2026-10-03",
+  "fetchedAt": "2026-10-03T06:13:18.961356+00:00",
   "entries": [
     {
       "rank": 1,
@@ -64,14 +64,14 @@
     },
     {
       "rank": 6,
-      "title": "BbY WOW",
-      "artist": "Karol G With Judeline & rusowsky",
+      "title": "Karol G",
+      "artist": "With Judeline & rusowsky",
       "weeks": 7,
       "peak": 6,
       "lastPos": 7,
       "movement": "up",
-      "spotifyUrl": "https://open.spotify.com/search/BbY%20WOW%20Karol%20G%20With%20Judeline%20%26%20rusowsky",
-      "slug": "karol-g-with-judeline-rusowsky-bby-wow",
+      "spotifyUrl": "https://open.spotify.com/search/Karol%20G%20With%20Judeline%20%26%20rusowsky",
+      "slug": "with-judeline-rusowsky-karol-g",
       "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/2b/66/b2/2b66b26c-ab23-faa1-c4ee-06fa2cce8f76/26UM1IM00558.rgb.jpg/600x600bb.jpg"
     },
     {
@@ -600,7 +600,7 @@
       "movement": "down",
       "spotifyUrl": "https://open.spotify.com/search/Freakin%27%20Out%20Dexter%20And%20The%20Moonrocks",
       "slug": "dexter-and-the-moonrocks-freakin-out",
-      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/fd/e7/ef/fde7efaf-0a34-1c0d-a8aa-a0c297916aba/26UMGIM21566.rgb.jpg/600x600bb.jpg"
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/a2/71/03/a27103a6-ca4b-1d36-fec1-8956b27f803b/26UM1IM02470.rgb.jpg/600x600bb.jpg"
     },
     {
       "rank": 51,
@@ -628,14 +628,14 @@
     },
     {
       "rank": 53,
-      "title": "Belly Gang Kushington &",
-      "artist": "21 Savage",
+      "title": "WTF GOIN",
+      "artist": "Belly Gang Kushington & 21 Savage",
       "weeks": 5,
       "peak": 53,
       "lastPos": 53,
       "movement": "same",
-      "spotifyUrl": "https://open.spotify.com/search/Belly%20Gang%20Kushington%20%26%2021%20Savage",
-      "slug": "21-savage-belly-gang-kushington",
+      "spotifyUrl": "https://open.spotify.com/search/WTF%20GOIN%20Belly%20Gang%20Kushington%20%26%2021%20Savage",
+      "slug": "belly-gang-kushington-21-savage-wtf-goin",
       "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/48/0b/d7/480bd77f-593f-bba3-40ec-4d1f86cd303b/820233758536.jpg/600x600bb.jpg"
     },
     {
@@ -652,15 +652,15 @@
     },
     {
       "rank": 55,
-      "title": "Yeat &",
-      "artist": "Drake",
+      "title": "Miss My Dawg",
+      "artist": "Yeat & Drake",
       "weeks": 1,
       "peak": 55,
       "lastPos": null,
       "movement": "new",
-      "spotifyUrl": "https://open.spotify.com/search/Yeat%20%26%20Drake",
-      "slug": "drake-yeat",
-      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/09/aa/f8/09aaf8da-8eaf-bf60-0c23-48a88d546cbd/26991.jpg/600x600bb.jpg"
+      "spotifyUrl": "https://open.spotify.com/search/Miss%20My%20Dawg%20Yeat%20%26%20Drake",
+      "slug": "yeat-drake-miss-my-dawg",
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/68/8b/a9/688ba9aa-4c90-c630-63c3-b6a7a0d945c2/23UM1IM56239.rgb.jpg/600x600bb.jpg"
     },
     {
       "rank": 56,
@@ -1080,7 +1080,7 @@
       "movement": "down",
       "spotifyUrl": "https://open.spotify.com/search/He%20Belongs%20Jhene%20Aiko",
       "slug": "jhene-aiko-he-belongs",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/71/5a/90/715a9057-5ed3-26e0-a706-0fc39b1a1a64/26UM1IM17018.rgb.jpg/600x600bb.jpg"
     },
     {
       "rank": 91,
@@ -1104,7 +1104,7 @@
       "movement": "new",
       "spotifyUrl": "https://open.spotify.com/search/Babydoll%20Jamie%20Miller",
       "slug": "jamie-miller-babydoll",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/e6/15/d2/e615d28f-70b5-e43a-b3c8-460dca39c9e5/26UMGIM97516.rgb.jpg/600x600bb.jpg"
     },
     {
       "rank": 93,
@@ -1116,7 +1116,7 @@
       "movement": "new",
       "spotifyUrl": "https://open.spotify.com/search/Duvet%20boa",
       "slug": "boa-duvet",
-      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/45/44/15/45441528-0288-eedc-f6fc-93137b8cfe96/067003248969.png/600x600bb.jpg"
+      "coverArt": null
     },
     {
       "rank": 94,
@@ -1128,7 +1128,7 @@
       "movement": "new",
       "spotifyUrl": "https://open.spotify.com/search/Nothing%20Steve%20Lacy",
       "slug": "steve-lacy-nothing",
-      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/1c/b2/46/1cb246db-afae-a599-d377-44a7ea7267fa/196874346976.jpg/600x600bb.jpg"
+      "coverArt": null
     },
     {
       "rank": 95,
@@ -1140,7 +1140,7 @@
       "movement": "new",
       "spotifyUrl": "https://open.spotify.com/search/Dope%20Girl%20Rod%20Wave",
       "slug": "rod-wave-dope-girl",
-      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/44/13/75/441375a6-a91b-05ec-7b61-b7d17a892469/196874739525.jpg/600x600bb.jpg"
+      "coverArt": null
     },
     {
       "rank": 96,
@@ -1188,7 +1188,7 @@
       "movement": "new",
       "spotifyUrl": "https://open.spotify.com/search/Let%E2%80%99s%20Get%20Married%20Miley%20Cyrus",
       "slug": "miley-cyrus-let-s-get-married",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/ff/af/51/ffaf51a6-d711-6f92-a5d6-f90e98014f0f/075679564061.jpg/600x600bb.jpg"
     },
     {
       "rank": 100,
