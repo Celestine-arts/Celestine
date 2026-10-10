@@ -1,6 +1,106 @@
 [
   {
     "sourceName": "Soompi",
+    "link": "https://www.soompi.com/article/1876760wpp/sm-shares-update-on-aespas-giselles-health-after-she-leaves-stage-mid-concert",
+    "headline": "SM Shares Update On aespa’s Giselle’s Health After She Leaves Stage Mid-Concert",
+    "rawText": "SM Entertainment has released a statement on aespa’s Giselle’s health. During aespa’s concert in Seattle on October 9, Giselle unexpectedly left the stage midway through the concert due to her health, and the other members of the group wrapped up the show without her. Shortly afterwards, SM Entertainment released the following statement in English explaining… Continue reading SM Shares Update On aespa’s Giselle’s Health After She Leaves Stage Mid-Concert The post SM Shares Update On aespa’s Giselle’s Health After She Leaves Stage Mid-Concert appeared first on Soompi.",
+    "summary": "SM Entertainment released a health update after aespa member Giselle abruptly left the stage midway through the group's Seattle concert.",
+    "category": "Music",
+    "image": "https://0.soompi.io/wp-content/uploads/2026/10/10003300/Giselle.jpg",
+    "publishedAt": "2026-10-10T07:33:39.000Z"
+  },
+  {
+    "sourceName": "Variety",
+    "link": "https://variety.com/2026/tv/festivals/love-untangled-director-netflix-korean-indie-film-busan-1236907394/",
+    "headline": "Netflix Romance ‘Love Untangled’ Director Namkoong Sun on Netflix Freedom and the Funding and Distribution Gap in Korean Indie Film",
+    "rawText": "Namkoong Sun, director of Netflix’s Korean romance “Love Untangled,” said her first commercial feature felt little different from her independent films once cameras rolled, apart from the scale. The freedom, she added, came with weight. Namkoong was speaking at “New Voices in Film,” an industry panel staged by the Busan International Film Festival and Netflix […]",
+    "summary": "At a Busan Film Festival panel, \"Love Untangled\" director Namkoong Sun discussed the creative freedom and heavy responsibilities of transitioning from independent to commercial Netflix filmmaking.",
+    "category": "Film",
+    "image": "https://variety.com/wp-content/uploads/2026/10/Netflix-Creative-Asia-panel.jpg",
+    "publishedAt": "2026-10-10T11:36:14.000Z"
+  },
+  {
+    "sourceName": "Hyperallergic",
+    "link": "https://hyperallergic.com/raven-chacon-sounds-the-history-of-the-land/",
+    "headline": "Raven Chacon Sounds the History of the Land",
+    "rawText": "The Pulitzer Prize-winning Diné artist talks about his recent performances at the Park Avenue Armory, the freedom of improvisation, and the privilege of “deep listening.”",
+    "summary": "Pulitzer Prize-winning Diné artist Raven Chacon discussed his recent Park Avenue Armory performances, the freedom of improvisation, and the importance of deep listening.",
+    "category": "Art",
+    "image": "https://storage.ghost.io/c/51/f8/51f871d8-b6be-4a73-b958-0ca4fff0110a/content/images/2026/10/20261007_PAA_RavenChacon_ArtistsStudio_095.JPG",
+    "publishedAt": "2026-10-09T22:36:03.000Z"
+  },
+  {
+    "sourceName": "Colossal",
+    "link": "https://www.thisiscolossal.com/2026/10/jonathan-knight-exhale-seascape-photographs/",
+    "headline": "Jonathan Knight’s Meditative Series ‘Exhale’ Invites Us to Slow Down and Practice Noticing",
+    "rawText": "Knight conceived of 'Exhale' as a way to explore the nuances of color and \"the emotional experience of looking.\" Do stories and artists like this matter to you? Become a Colossal Member today and support independent arts publishing for as little as $7 per month. The article Jonathan Knight’s Meditative Series ‘Exhale’ Invites Us to Slow Down and Practice Noticing appeared first on Colossal.",
+    "summary": "Artist Jonathan Knight has released a meditative new photo series titled \"Exhale\" that explores the nuances of color and the emotional experience of looking.",
+    "category": "Art",
+    "image": "https://www.thisiscolossal.com/wp-content/uploads/2026/10/knight-8.jpg",
+    "publishedAt": "2026-10-09T17:50:08.000Z"
+  },
+  {
+    "sourceName": "Pitchfork",
+    "link": "https://pitchfork.com/reviews/albums/stevie-wonder-songs-in-the-key-of-life-the-ep/",
+    "headline": "Songs in the Key of Life - The EP",
+    "rawText": "A rare glimpse into the artist’s legendary and largely untapped vault of unreleased music presents four stunning outtakes from a hot streak that remains unparalleled in pop history.",
+    "summary": "Four rare outtakes from Stevie Wonder's legendary unreleased music vault have been released as a new EP.",
+    "category": "Music",
+    "image": "https://media.pitchfork.com/photos/6ac7f4da26778676bec2e141/master/pass/Stevie%20Wonder%20Songs%20in%20the%20Key%20of%20Life%20The%20EP.jpg",
+    "publishedAt": "2026-10-10T04:00:00.000Z"
+  },
+  {
+    "sourceName": "NME",
+    "link": "https://www.nme.com/news/music/the-rolling-stones-are-back-in-the-studio-again-3972859?utm_source=rss&utm_medium=rss&utm_campaign=the-rolling-stones-are-back-in-the-studio-again",
+    "headline": "The Rolling Stones are back in the studio again",
+    "rawText": "Saxophonist Courtney Pine has revealed that he recently recorded with the band The post The Rolling Stones are back in the studio again appeared first on NME.",
+    "summary": "Saxophonist Courtney Pine revealed that he recently recorded in the studio with The Rolling Stones.",
+    "category": "Music",
+    "image": "https://www.nme.com/wp-content/uploads/2026/10/rolling_stones_2026.jpg",
+    "publishedAt": "2026-10-10T10:43:15.000Z"
+  },
+  {
+    "sourceName": "IndieWire",
+    "link": "https://www.indiewire.com/criticism/movies/14th-review-ava-duvernay-netflix-documentary-1235221147/",
+    "headline": "’14th’ Review: Ava DuVernay’s Overstuffed Netflix Documentary Finds Us Living in the Age Frederick Douglass Warned Us About",
+    "rawText": "Ava DuVernay’s ambitious follow-up to “13th” traces the Fourteenth Amendment’s unfinished promise, but its urgency sometimes overwhelms its argument.",
+    "summary": "Ava DuVernay’s new documentary explores the Fourteenth Amendment's unfulfilled promises and the ongoing legacy of racial inequality in America.",
+    "category": "Film",
+    "image": "https://www.indiewire.com/wp-content/uploads/2026/10/B0002289.webp?w=650",
+    "publishedAt": "2026-10-10T01:00:00.000Z"
+  },
+  {
+    "sourceName": "Vanity Fair",
+    "link": "https://www.vanityfair.com/story/chanel-dior-saint-laurent-paris-fashion-week-spring-2027",
+    "headline": "At Paris Fashion Week, Designers at Saint Laurent, Dior, Chanel and More Contend with their Legacies",
+    "rawText": "A year into fashion’s great reset of 2025, new designers at some of fashion’s most recognizable houses are finding their way around the legacies they are the faces of—to various degrees of success.",
+    "summary": "At Paris Fashion Week, new designers at legendary houses like Saint Laurent, Dior, and Chanel navigated the heavy expectations of their iconic brands' histories.",
+    "category": "Art",
+    "image": "https://media.vanityfair.com/photos/6ac95a3511be2077f951c5fe/master/pass/2298098243",
+    "publishedAt": "2026-10-09T22:12:17.000Z"
+  },
+  {
+    "sourceName": "Vogue",
+    "link": "https://www.vogue.com/article/fall-home-decor-trends-2026",
+    "headline": "7 Fall Decor Trends Worth the Investment, According to Interior Designers",
+    "rawText": "As temperatures continue to drop, transform your space by shopping our favorite fall home decor essentials—here, interior designers share the trends to know.",
+    "summary": "Interior designers have shared seven essential autumn home decor trends to help transform living spaces for the cooler season.",
+    "category": "Art",
+    "image": "https://assets.vogue.com/photos/6ac93ab064d73b52c8121e0f/master/pass/image19.jpg",
+    "publishedAt": "2026-10-10T10:00:00.000Z"
+  },
+  {
+    "sourceName": "NYT Arts",
+    "link": "https://www.nytimes.com/2026/10/09/movies/the-social-reckoning-clip.html",
+    "headline": "Aaron Sorkin on ‘The Social Reckoning’",
+    "rawText": "The writer and director explains how he evolved the character of Mark Zuckerberg in the sort-of sequel to “The Social Network.”",
+    "summary": "Writer and director Aaron Sorkin explained how he evolved Mark Zuckerberg's character for his upcoming spiritual sequel to \"The Social Network.\"",
+    "category": "Art",
+    "image": "https://static01.nyt.com/images/2026/10/08/arts/H-Jane-copy-3/H-Jane-copy-3-mediumSquareAt3X.png",
+    "publishedAt": "2026-10-09T11:37:26.000Z"
+  },
+  {
+    "sourceName": "Soompi",
     "link": "https://www.soompi.com/article/1874930wpp/watch-son-suk-ku-and-nagayama-eita-get-entangled-through-a-serial-murder-case-in-the-blue-road-teasers",
     "headline": "Watch: Son Suk Ku And Nagayama Eita Get Entangled Through A Serial Murder Case In “The Blue Road” Teasers",
     "rawText": "Netflix’s upcoming drama “The Blue Road” has unveiled a new poster and teaser! “The Blue Road” is the latest project from director Han Jun Hee, who helmed the “D.P.” series and the film “Coin Locker Girl.” The film follows the story of two detectives tracking a series of murders that occur across both Korea and… Continue reading Watch: Son Suk Ku And Nagayama Eita Get Entangled Through A Serial Murder Case In “The Blue Road” Teasers The post Watch: Son Suk Ku And Nagayama Eita Get Entangled Through A Serial Murder Case In “The Blue Road” Teasers appeared first on Soompi.",
@@ -188,95 +288,5 @@
     "category": "Art",
     "image": "https://static01.nyt.com/images/2026/09/27/multimedia/27cul-chronic-illness-01-wczg/27cul-chronic-illness-01-wczg-mediumSquareAt3X.jpg",
     "publishedAt": "2026-09-24T09:00:19.000Z"
-  },
-  {
-    "sourceName": "Soompi",
-    "link": "https://www.soompi.com/article/1872707wpp/katseyes-hootie-frutti-becomes-their-fastest-mv-to-hit-100-million-views",
-    "headline": "KATSEYE’s “Hootie Frutti” Becomes Their Fastest MV To Hit 100 Million Views",
-    "summary": "Global girl group KATSEYE has set a new YouTube viewership record with “Hootie Frutti”! According to HYBE and Geffen Records, the music video for KATSEYE’s “Hoo…",
-    "category": "Music",
-    "image": "https://0.soompi.io/wp-content/uploads/2026/09/22193957/katseye.jpg",
-    "publishedAt": "2026-09-23T02:48:41.000Z"
-  },
-  {
-    "sourceName": "Variety",
-    "link": "https://variety.com/2026/global/global/ecam-incubator-title-the-woodworm-laura-obradors-1236867632/",
-    "headline": "ECAM Incubator Title ‘The Woodworm’ Explores Female Identity in the Shadow of an Artist Father",
-    "summary": "In “The Woodworm” (“El Corquim”), the feature debut of Laura Obradors, a teenage girl’s search for an identity of her own runs up against the authority of her f…",
-    "category": "Film",
-    "image": "https://variety.com/wp-content/uploads/2026/09/sergio.jpg",
-    "publishedAt": "2026-09-23T05:30:00.000Z"
-  },
-  {
-    "sourceName": "Hyperallergic",
-    "link": "https://hyperallergic.com/art-problems-if-i-have-a-day-job-am-i-a-real-artist/",
-    "headline": "Art Problems: If I Have a Day Job, Am I a Real Artist?",
-    "summary": "Ever been shamed for having a nine-to-five job as an artist? Paddy Johnson can relate.…",
-    "category": "Art",
-    "image": "https://storage.ghost.io/c/51/f8/51f871d8-b6be-4a73-b958-0ca4fff0110a/content/images/2026/09/When-the-gallery-says-they-don---t-work-with-artists-who-have-a-9---5-job.jpg",
-    "publishedAt": "2026-09-22T21:49:57.000Z"
-  },
-  {
-    "sourceName": "Colossal",
-    "link": "https://www.thisiscolossal.com/2026/09/2026-nikon-small-world-in-motion-video-competition/",
-    "headline": "Microscopic Universes Come Alive in Nikon’s Small World in Motion Contest",
-    "summary": "This year's cycle received more than 340 video entries from 40 different countries. Do stories and artists like this matter to you? Become a Colossal Member tod…",
-    "category": "Art",
-    "image": "https://www.thisiscolossal.com/wp-content/uploads/2026/09/nikon-swim-2026-1.gif",
-    "publishedAt": "2026-09-22T19:53:14.000Z"
-  },
-  {
-    "sourceName": "Pitchfork",
-    "link": "https://pitchfork.com/reviews/albums/boy-harsher-get-mean/",
-    "headline": "GET MEAN",
-    "summary": "On its major-label debut, the industrial-dance duo embraces brighter tones and wider vistas, but traces of the group’s claustrophobic murk remain.…",
-    "category": "Music",
-    "image": "https://media.pitchfork.com/photos/6ab2d15953bdeef50ce595a9/master/pass/Boy%20Harsher%20-%20Get%20Mean%20album%20art.jpg",
-    "publishedAt": "2026-09-23T04:03:00.000Z"
-  },
-  {
-    "sourceName": "NME",
-    "link": "https://www.nme.com/guides/gaming-guides/globle-hint-answer-today-3213991?utm_source=rss&utm_medium=rss&utm_campaign=globle-hint-answer-today",
-    "headline": "Globle answer today – here’s the answer and hints for September 23",
-    "summary": "Where in the world? The post Globle answer today – here’s the answer and hints for September 23 appeared first on NME.…",
-    "category": "Music",
-    "image": "https://www.nme.com/wp-content/uploads/2024/01/globle@2000x1270.jpg",
-    "publishedAt": "2026-09-22T23:00:17.000Z"
-  },
-  {
-    "sourceName": "IndieWire",
-    "link": "https://www.indiewire.com/news/breaking-news/robert-eggers-romeo-and-juliet-focus-features-1235218119/",
-    "headline": "Robert Eggers Moves from Vampires and Werwulfs to ‘Romeo and Juliet’ Adaptation at Focus",
-    "summary": "Focus Features is closing in on the film to be his next project after \"Werwulf\" this Christmas.…",
-    "category": "Film",
-    "image": "https://www.indiewire.com/wp-content/uploads/2026/04/GettyImages-2189693668.jpg?w=650",
-    "publishedAt": "2026-09-22T21:45:25.000Z"
-  },
-  {
-    "sourceName": "Vanity Fair",
-    "link": "https://www.vanityfair.com/story/charles-spencer-princess-diana-memoir-takeaways",
-    "headline": "The Biggest Claims in Charles Spencer’s Princess Diana Memoir",
-    "summary": "Almost 30 years after his sister’s death, Spencer’s explosive memoir recounts what Diana really thought about her marriage to Charles, and revisits the days fol…",
-    "category": "Art",
-    "image": "https://media.vanityfair.com/photos/6ab303dea9392bbaa1e54f9a/master/pass/76214539",
-    "publishedAt": "2026-09-22T23:12:52.000Z"
-  },
-  {
-    "sourceName": "Vogue",
-    "link": "https://www.vogue.com/article/on-the-podcast-behind-the-scenes-at-vogue-world-milano",
-    "headline": "On the Podcast: Behind the Scenes at Vogue World 2026: Milano",
-    "summary": "Mere minutes after Vogue World: Milano wrapped, Chloe, Nicole, and Vogue Italia’s Francesca Ragazzi gathered in a nearby ristorante to recap the evening’s going…",
-    "category": "Art",
-    "image": "https://assets.vogue.com/photos/6ab34f06834c79e817fd9bb0/master/pass/VOGUEWORLD-PHILOH-33.jpg",
-    "publishedAt": "2026-09-23T03:00:00.000Z"
-  },
-  {
-    "sourceName": "NYT Arts",
-    "link": "https://www.nytimes.com/2026/09/22/arts/music/deutsche-oper-mittwoch-aus-licht.html",
-    "headline": "With Helicopters and Dancing Camels, an Opera House Changes Its Groove",
-    "summary": "The Deutsche Oper Berlin is staging Karlheinz Stockhausen’s epic “Mittwoch aus Licht” at the start of a new season and a new era.…",
-    "category": "Art",
-    "image": "https://static01.nyt.com/images/2026/09/21/multimedia/21cul-deutsche-oper-vwzm/21cul-deutsche-oper-vwzm-mediumSquareAt3X.jpg",
-    "publishedAt": "2026-09-22T09:00:08.000Z"
   }
 ]
