@@ -1,446 +1,677 @@
 {
   "v": {
     "href": "v-kim-taehyung.html",
-    "thumbnail": null
+    "thumbnail": null,
+    "name": null
   },
   "jisoo": {
     "href": "jisoo.html",
-    "thumbnail": null
+    "thumbnail": null,
+    "name": null
   },
   "jennie": {
     "href": "jennie.html",
-    "thumbnail": null
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/20260526_Jennie_Kim_04.jpg/330px-20260526_Jennie_Kim_04.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "name": "JENNIE",
+    "thumbChecked": true
   },
   "rosé": {
     "href": "rose.html",
-    "thumbnail": null
+    "thumbnail": null,
+    "name": null
   },
   "rose": {
     "href": "rose.html",
-    "thumbnail": null
+    "thumbnail": null,
+    "name": null
   },
   "lisa": {
     "href": "lisa.html",
-    "thumbnail": null
+    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/99/67/3e/99673e22-2a03-6523-4753-7c2e254a817d/artwork.jpg/600x600bb.jpg",
+    "name": "LISA",
+    "thumbChecked": true,
+    "thumbIsCover": true
   },
   "jungkook": {
     "href": "jungkook.html",
-    "thumbnail": null
+    "thumbnail": null,
+    "name": null
   },
   "jimin": {
     "href": "jimin.html",
-    "thumbnail": null
+    "thumbnail": null,
+    "name": null
   },
   "bruno mars": {
     "href": "bruno-mars.html",
-    "thumbnail": null
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/BrunoMars24KMagicWorldTourLive_%28cropped%29.jpg/330px-BrunoMars24KMagicWorldTourLive_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "name": "Bruno Mars",
+    "thumbChecked": true
   },
   "olivia rodrigo": {
     "href": "olivia-rodrigo.html",
-    "thumbnail": null
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/Glasto2025-546_%28cropped%29_2.jpg/330px-Glasto2025-546_%28cropped%29_2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "name": "Olivia Rodrigo",
+    "thumbChecked": true
   },
   "sabrina carpenter": {
     "href": "sabrina-carpenter.html",
-    "thumbnail": null
+    "thumbnail": null,
+    "name": null
   },
   "taylor swift": {
     "href": "taylor-swift.html",
-    "thumbnail": null
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Taylor_Swift_at_the_2023_MTV_Video_Music_Awards_%283%29.png/330px-Taylor_Swift_at_the_2023_MTV_Video_Music_Awards_%283%29.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "name": "Taylor Swift",
+    "thumbChecked": true
   },
   "doechii": {
     "href": "doechii.html",
-    "thumbnail": null
+    "thumbnail": null,
+    "name": null
   },
   "tyla": {
     "href": "tyla.html",
-    "thumbnail": null
+    "thumbnail": null,
+    "name": null
   },
   "raye": {
     "href": "raye.html",
-    "thumbnail": null
+    "thumbnail": null,
+    "name": null
   },
   "addison rae": {
     "href": "addison-rae.html",
-    "thumbnail": null
+    "thumbnail": null,
+    "name": null
   },
   "sombr": {
     "href": "sombr.html",
-    "thumbnail": null
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Sombr%2C_Islington_Academy%2C_London_%28cropped%29.jpg/330px-Sombr%2C_Islington_Academy%2C_London_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "name": "sombr",
+    "thumbChecked": true
   },
   "alex warren": {
     "href": "alex-warren.html",
-    "thumbnail": null
+    "thumbnail": null,
+    "name": null
   },
   "noah kahan": {
     "href": "noah-kahan.html",
-    "thumbnail": null
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Noah_Kahan_at_Glastonbury_Festival_2025_04_%28cropped%29_%28again%29.jpg/330px-Noah_Kahan_at_Glastonbury_Festival_2025_04_%28cropped%29_%28again%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "name": "Noah Kahan",
+    "thumbChecked": true
   },
   "zara larsson": {
     "href": "zara-larsson.html",
-    "thumbnail": null
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Zara_Larsson_Midnight_Sun_European_Tour_%28cropped%29_%28cropped%29.jpg/330px-Zara_Larsson_Midnight_Sun_European_Tour_%28cropped%29_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "name": "Zara Larsson",
+    "thumbChecked": true
   },
   "djo": {
     "href": "djo.html",
-    "thumbnail": null
+    "thumbnail": null,
+    "name": null
   },
   "madonna": {
     "href": "madonna.html",
-    "thumbnail": null
+    "thumbnail": null,
+    "name": null
   },
   "harry styles": {
     "href": "harry-styles.html",
-    "thumbnail": null
+    "thumbnail": null,
+    "name": null
   },
   "ella langley": {
     "href": "ella-langley.html",
-    "thumbnail": null
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Ella_Langley_2026_%28cropped%29.jpg/330px-Ella_Langley_2026_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "name": "Ella Langley",
+    "thumbChecked": true
   },
   "stella lefty": {
     "href": "stella-lefty.html",
-    "thumbnail": null
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Stella_Lefty_%40_Moroccan_Lounge.jpg/330px-Stella_Lefty_%40_Moroccan_Lounge.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "name": "Stella Lefty",
+    "thumbChecked": true
   },
   "morgan wallen": {
     "href": "morgan-wallen.html",
-    "thumbnail": null
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Morgan_Wallen_performing_at_Bank_of_America_Stadium.png/330px-Morgan_Wallen_performing_at_Bank_of_America_Stadium.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "name": "Morgan Wallen",
+    "thumbChecked": true
   },
   "ariana grande": {
     "href": "ariana-grande.html",
-    "thumbnail": null
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Ariana_Grande_promoting_Wicked_%282024%29.jpg/330px-Ariana_Grande_promoting_Wicked_%282024%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "name": "Ariana Grande",
+    "thumbChecked": true
   },
   "tame impala": {
     "href": "tame-impala.html",
-    "thumbnail": null
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Tame_Impala_at_Flow_Festival_Helsinki_Aug_10_2019_-24.jpg/330px-Tame_Impala_at_Flow_Festival_Helsinki_Aug_10_2019_-24.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "name": "Tame Impala",
+    "thumbChecked": true
   },
   "with judeline": {
     "href": "with-judeline.html",
-    "thumbnail": null
+    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/2b/66/b2/2b66b26c-ab23-faa1-c4ee-06fa2cce8f76/26UM1IM00558.rgb.jpg/600x600bb.jpg",
+    "name": "With Judeline",
+    "thumbChecked": true,
+    "thumbIsCover": true
   },
   "rusowsky": {
     "href": "rusowsky.html",
-    "thumbnail": null
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/Rusowsky_Performing_in_Guadalajara%2C_Mexico..jpg/330px-Rusowsky_Performing_in_Guadalajara%2C_Mexico..jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "name": "rusowsky",
+    "thumbChecked": true
   },
   "olivia dean": {
     "href": "olivia-dean.html",
-    "thumbnail": null
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Olivia_Dean_for_Vogue.png/330px-Olivia_Dean_for_Vogue.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "name": "Olivia Dean",
+    "thumbChecked": true
   },
   "luke combs": {
     "href": "luke-combs.html",
-    "thumbnail": null
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Luke_Combs_interview.jpg/330px-Luke_Combs_interview.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "name": "Luke Combs",
+    "thumbChecked": true
   },
   "drake": {
     "href": "drake.html",
-    "thumbnail": null
+    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/7f/39/61/7f396123-be56-bc11-eaab-976441808e58/26UMGIM63622.rgb.jpg/600x600bb.jpg",
+    "name": "Drake",
+    "thumbChecked": true,
+    "thumbIsCover": true
   },
   "dominic fike": {
     "href": "dominic-fike.html",
-    "thumbnail": null
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/2021_Shaky_Knees_Dominic_Fike_%283%29_%28cropped%29.jpg/330px-2021_Shaky_Knees_Dominic_Fike_%283%29_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "name": "Dominic Fike",
+    "thumbChecked": true
   },
   "malcolm todd": {
     "href": "malcolm-todd.html",
-    "thumbnail": null
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Malcolm_Todd_4-2-26_%28cropped%29.png/330px-Malcolm_Todd_4-2-26_%28cropped%29.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "name": "Malcolm Todd",
+    "thumbChecked": true
   },
   "lil baby": {
     "href": "lil-baby.html",
-    "thumbnail": null
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Lil_Baby_2023.png/330px-Lil_Baby_2023.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "name": "Lil Baby",
+    "thumbChecked": true
   },
   "adela": {
     "href": "adela.html",
-    "thumbnail": null
+    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/53/c6/9a/53c69a6a-d1c4-0983-a20c-a67dceae554f/26UMGIM82372.rgb.jpg/600x600bb.jpg",
+    "name": "ADELA",
+    "thumbChecked": true,
+    "thumbIsCover": true
   },
   "koe wetzel": {
     "href": "koe-wetzel.html",
-    "thumbnail": null
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Koe_Wetzel_2026_%28cropped%29.jpg/330px-Koe_Wetzel_2026_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "name": "Koe Wetzel",
+    "thumbChecked": true
   },
   "jhene aiko": {
     "href": "jhene-aiko.html",
-    "thumbnail": null
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/Jhen%C3%A9_Aiko_%28cropped%29.jpg/330px-Jhen%C3%A9_Aiko_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "name": "Jhene Aiko",
+    "thumbChecked": true
   },
   "kendrick lamar": {
     "href": "kendrick-lamar.html",
-    "thumbnail": null
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/KendrickSZASPurs230725-144_%28cropped%29_desaturated.jpg/330px-KendrickSZASPurs230725-144_%28cropped%29_desaturated.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "name": "Kendrick Lamar",
+    "thumbChecked": true
   },
   "katseye": {
     "href": "katseye.html",
-    "thumbnail": null
+    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/e2/28/92/e22892a7-fe88-72cf-ecba-691030dfcf7e/26UMGIM41151.rgb.jpg/600x600bb.jpg",
+    "name": "KATSEYE",
+    "thumbChecked": true,
+    "thumbIsCover": true
   },
   "tems": {
     "href": "tems.html",
-    "thumbnail": null
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Tems_Afro_Plus_Fest_%2855514652102%29.jpg/330px-Tems_Afro_Plus_Fest_%2855514652102%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "name": "Tems",
+    "thumbChecked": true
   },
   "steve lacy": {
     "href": "steve-lacy.html",
-    "thumbnail": null
+    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/1c/b2/46/1cb246db-afae-a599-d377-44a7ea7267fa/196874346976.jpg/600x600bb.jpg",
+    "name": "Steve Lacy",
+    "thumbChecked": true,
+    "thumbIsCover": true
   },
   "shakira": {
     "href": "shakira.html",
-    "thumbnail": null
+    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/61/49/8d/61498ded-f0dc-227d-cd1d-2051b5d9f195/196874328590.jpg/600x600bb.jpg",
+    "name": "Shakira",
+    "thumbChecked": true,
+    "thumbIsCover": true
   },
   "burna boy": {
     "href": "burna-boy.html",
-    "thumbnail": null
+    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/61/49/8d/61498ded-f0dc-227d-cd1d-2051b5d9f195/196874328590.jpg/600x600bb.jpg",
+    "name": "Burna Boy",
+    "thumbChecked": true,
+    "thumbIsCover": true
   },
   "yung miami": {
     "href": "yung-miami.html",
-    "thumbnail": null
+    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/b1/a5/ef/b1a5efe5-9be8-285f-4d08-b676b4be4e08/26UMGIM41444.rgb.jpg/600x600bb.jpg",
+    "name": "Yung Miami",
+    "thumbIsCover": true
   },
   "mac miller": {
     "href": "mac-miller.html",
-    "thumbnail": null
+    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/1e/5c/ad/1e5cadeb-6f0c-86a0-9e85-6487a848d866/093624917168.jpg/600x600bb.jpg",
+    "name": "Mac Miller",
+    "thumbIsCover": true
   },
   "ty dolla $ign": {
     "href": "ty-dolla-ign.html",
-    "thumbnail": null
+    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/1e/5c/ad/1e5cadeb-6f0c-86a0-9e85-6487a848d866/093624917168.jpg/600x600bb.jpg",
+    "name": "Ty Dolla $ign",
+    "thumbIsCover": true
   },
   "cody johnson": {
     "href": "cody-johnson.html",
-    "thumbnail": null
+    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/e2/d9/7a/e2d97a87-6ec6-99de-9a1f-31b86ce6e7c4/093624826613.jpg/600x600bb.jpg",
+    "name": "Cody Johnson",
+    "thumbIsCover": true
   },
   "beyonce": {
     "href": "beyonce.html",
-    "thumbnail": null
+    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/3f/65/3d/3f653d87-197c-084c-dca2-0c6e0ca742c9/196874580721.jpg/600x600bb.jpg",
+    "name": "Beyonce",
+    "thumbIsCover": true
   },
   "teddy swims": {
     "href": "teddy-swims.html",
-    "thumbnail": null
+    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/7e/fb/0b/7efb0b1b-8e34-5bd0-99ee-eafc83b8d5c7/054391217349.jpg/600x600bb.jpg",
+    "name": "Teddy Swims",
+    "thumbIsCover": true
   },
   "cardi b": {
     "href": "cardi-b.html",
-    "thumbnail": null
+    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/2e/e4/56/2ee45633-7fbf-9970-18e1-d3c6f9eefc6e/075679562951.jpg/600x600bb.jpg",
+    "name": "Cardi B",
+    "thumbIsCover": true
   },
   "temper city": {
     "href": "temper-city.html",
-    "thumbnail": null
+    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/ba/63/6e/ba636e4b-5c9a-e89c-87d3-1a9ab7773644/1084252.jpg/600x600bb.jpg",
+    "name": "Temper City",
+    "thumbIsCover": true
   },
   "alyssa grace": {
     "href": "alyssa-grace.html",
-    "thumbnail": null
+    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/7f/a7/ef/7fa7ef61-6e22-f30f-441c-e89e7ff4a79a/093624817147.jpg/600x600bb.jpg",
+    "name": "Alyssa Grace",
+    "thumbIsCover": true
   },
   "dexter": {
     "href": "dexter.html",
-    "thumbnail": null
+    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/fd/e7/ef/fde7efaf-0a34-1c0d-a8aa-a0c297916aba/26UMGIM21566.rgb.jpg/600x600bb.jpg",
+    "name": "Dexter",
+    "thumbIsCover": true
   },
   "the moonrocks": {
     "href": "the-moonrocks.html",
-    "thumbnail": null
+    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/fd/e7/ef/fde7efaf-0a34-1c0d-a8aa-a0c297916aba/26UMGIM21566.rgb.jpg/600x600bb.jpg",
+    "name": "The Moonrocks",
+    "thumbIsCover": true
   },
   "shaboozey": {
     "href": "shaboozey.html",
-    "thumbnail": null
+    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/a6/25/f1/a625f14b-328e-acab-bd7e-5f6d4d571332/199316643947_cover.jpg/600x600bb.jpg",
+    "name": "Shaboozey",
+    "thumbIsCover": true
   },
   "vincent mason": {
     "href": "vincent-mason.html",
-    "thumbnail": null
+    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/cb/9d/ba/cb9dba19-0847-164f-3cec-32f337918dda/075679578518.jpg/600x600bb.jpg",
+    "name": "Vincent Mason",
+    "thumbIsCover": true
   },
   "sam fender": {
     "href": "sam-fender.html",
-    "thumbnail": null
+    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/e9/9e/ce/e99ece56-dcda-540a-d0b3-3927d152846f/25UMGIM83718.rgb.jpg/600x600bb.jpg",
+    "name": "Sam Fender",
+    "thumbIsCover": true
   },
   "gracie abrams": {
     "href": "gracie-abrams.html",
-    "thumbnail": null
+    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/4f/13/47/4f1347cf-9564-e8b6-523a-386202f4d265/26UMGIM54147.rgb.jpg/600x600bb.jpg",
+    "name": "Gracie Abrams",
+    "thumbIsCover": true
   },
   "21 savage": {
     "href": "21-savage.html",
-    "thumbnail": null
+    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/48/0b/d7/480bd77f-593f-bba3-40ec-4d1f86cd303b/820233758536.jpg/600x600bb.jpg",
+    "name": "21 Savage",
+    "thumbIsCover": true
   },
   "kenny chesney": {
     "href": "kenny-chesney.html",
-    "thumbnail": null
+    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/cd/af/11/cdaf11cc-0a13-0010-175a-d78d70c1f0d9/093624819967.jpg/600x600bb.jpg",
+    "name": "Kenny Chesney",
+    "thumbIsCover": true
   },
   "sienna spiro": {
     "href": "sienna-spiro.html",
-    "thumbnail": null
+    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/f4/e5/61/f4e561f5-3e73-68c7-7ca4-295ac5a063ed/26UMGIM51351.rgb.jpg/600x600bb.jpg",
+    "name": "Sienna Spiro",
+    "thumbIsCover": true
   },
   "riley green": {
     "href": "riley-green.html",
-    "thumbnail": null
+    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/16/cf/71/16cf71b7-bda7-9916-3d11-3b60539ace2c/26BMR0008042.rgb.jpg/600x600bb.jpg",
+    "name": "Riley Green",
+    "thumbIsCover": true
   },
   "f3miii": {
     "href": "f3miii.html",
-    "thumbnail": null
+    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/24/a4/84/24a48418-e757-949a-2593-76851e0f9c05/196874129104.jpg/600x600bb.jpg",
+    "name": "F3miii",
+    "thumbIsCover": true
   },
   "kacey musgraves": {
     "href": "kacey-musgraves.html",
-    "thumbnail": null
+    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/31/2f/6c/312f6c94-3035-398b-8217-e79f0c2dfc63/15UMGIM22460.rgb.jpg/600x600bb.jpg",
+    "name": "Kacey Musgraves",
+    "thumbIsCover": true
   },
   "john morgan": {
     "href": "john-morgan.html",
-    "thumbnail": null
+    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/d2/ae/65/d2ae65e8-9a14-061e-1165-b5351ef994a6/4099964145403.jpg/600x600bb.jpg",
+    "name": "John Morgan",
+    "thumbIsCover": true
   },
   "miley": {
     "href": "miley.html",
-    "thumbnail": null
+    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/ff/af/51/ffaf51a6-d711-6f92-a5d6-f90e98014f0f/075679564061.jpg/600x600bb.jpg",
+    "name": "Miley",
+    "thumbIsCover": true
   },
   "audrey hobert": {
     "href": "audrey-hobert.html",
-    "thumbnail": null
+    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/2c/2c/55/2c2c557a-cec2-c3f1-c48c-b9223442f1fd/196873397825.jpg/600x600bb.jpg",
+    "name": "Audrey Hobert",
+    "thumbIsCover": true
   },
   "corey kent": {
     "href": "corey-kent.html",
-    "thumbnail": null
+    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/bd/79/87/bd7987fa-bb0d-148d-ab35-deece7c24de5/196874101148.jpg/600x600bb.jpg",
+    "name": "Corey Kent",
+    "thumbIsCover": true
   },
   "bailey zimmerman": {
     "href": "bailey-zimmerman.html",
-    "thumbnail": null
+    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/69/72/3b/69723b10-4255-f36b-6045-fa18f46ea485/093624842132.jpg/600x600bb.jpg",
+    "name": "Bailey Zimmerman",
+    "thumbIsCover": true
   },
   "babychiefdoit": {
     "href": "babychiefdoit.html",
-    "thumbnail": null
+    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/35/ce/58/35ce588d-e65d-7e21-30ab-6d28eeb3d3cf/840471815532.png/600x600bb.jpg",
+    "name": "BabyChiefDoit",
+    "thumbIsCover": true
   },
   "marshmello": {
     "href": "marshmello.html",
-    "thumbnail": null
+    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/32/04/31/3204314d-ef6a-532a-be2c-1355ced218cb/26UMGIM76701.rgb.jpg/600x600bb.jpg",
+    "name": "Marshmello",
+    "thumbIsCover": true
   },
   "kelsea ballerini": {
     "href": "kelsea-ballerini.html",
-    "thumbnail": null
+    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/32/04/31/3204314d-ef6a-532a-be2c-1355ced218cb/26UMGIM76701.rgb.jpg/600x600bb.jpg",
+    "name": "Kelsea Ballerini",
+    "thumbIsCover": true
   },
   "tim mcgraw": {
     "href": "tim-mcgraw.html",
-    "thumbnail": null
+    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/1a/cd/9b/1acd9bad-40e2-c906-5614-03edf8e929a1/26UMGIM07556.rgb.jpg/600x600bb.jpg",
+    "name": "Tim McGraw",
+    "thumbIsCover": true
   },
   "zach top": {
     "href": "zach-top.html",
-    "thumbnail": null
+    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/a0/93/fb/a093fb03-dc1a-2fe6-9700-96291b6d39c6/8721215862598.png/600x600bb.jpg",
+    "name": "Zach Top",
+    "thumbIsCover": true
   },
   "tyga": {
     "href": "tyga.html",
-    "thumbnail": null
+    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/71/5a/90/715a9057-5ed3-26e0-a706-0fc39b1a1a64/26UM1IM17018.rgb.jpg/600x600bb.jpg",
+    "name": "Tyga",
+    "thumbIsCover": true
   },
   "mack geiger": {
     "href": "mack-geiger.html",
-    "thumbnail": null
+    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/32/a2/9d/32a29dbc-49e3-b6dc-1c3c-89a8c0eda415/196874233788.jpg/600x600bb.jpg",
+    "name": "Mack Geiger",
+    "thumbIsCover": true
   },
   "karol g": {
     "href": "karol-g.html",
-    "thumbnail": null
+    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/2b/66/b2/2b66b26c-ab23-faa1-c4ee-06fa2cce8f76/26UM1IM00558.rgb.jpg/600x600bb.jpg",
+    "name": "Karol G",
+    "thumbIsCover": true
   },
   "julia wolf": {
     "href": "julia-wolf.html",
-    "thumbnail": null
+    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/32/ba/d7/32bad7c1-42e3-31fc-e7a8-cdccd9b59f62/193436376150.jpg/600x600bb.jpg",
+    "name": "Julia Wolf",
+    "thumbIsCover": true
   },
   "hudson westbrook": {
     "href": "hudson-westbrook.html",
-    "thumbnail": null
+    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/e1/f9/56/e1f95687-e778-ee4b-f6b0-bbc6b293e1bb/093624831686.jpg/600x600bb.jpg",
+    "name": "Hudson Westbrook",
+    "thumbIsCover": true
   },
   "ashe": {
     "href": "ashe.html",
-    "thumbnail": null
+    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/b7/55/7a/b7557aef-bb0a-cc57-25bf-979eee194f16/075679571403.jpg/600x600bb.jpg",
+    "name": "Ashe",
+    "thumbIsCover": true
   },
   "luke bryan": {
     "href": "luke-bryan.html",
-    "thumbnail": null
+    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/2b/8b/bb/2b8bbb2b-3b10-b142-82e7-aefc9d80466d/26UMGIM24741.rgb.jpg/600x600bb.jpg",
+    "name": "Luke Bryan",
+    "thumbIsCover": true
   },
   "jelly roll": {
     "href": "jelly-roll.html",
-    "thumbnail": null
+    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/26/ae/33/26ae3335-0ef8-4030-3505-89e284f43d26/4099964275186.jpg/600x600bb.jpg",
+    "name": "Jelly Roll",
+    "thumbIsCover": true
   },
   "zach john king": {
     "href": "zach-john-king.html",
-    "thumbnail": null
+    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/d0/c3/45/d0c34545-8fc0-8eb9-c229-d44465f3eb8f/196874043448.jpg/600x600bb.jpg",
+    "name": "Zach John King",
+    "thumbIsCover": true
   },
   "comehelpglo": {
     "href": "comehelpglo.html",
-    "thumbnail": null
+    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/2c/8d/b6/2c8db615-b3a4-2558-8138-2bf5ec9ef93a/00894096001061.rgb.jpg/600x600bb.jpg",
+    "name": "comehelpglo",
+    "thumbIsCover": true
   },
   "blake whiten": {
     "href": "blake-whiten.html",
-    "thumbnail": null
+    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/00/1d/40/001d40eb-679d-05df-f1f2-1d66602ff1f1/093624821267.jpg/600x600bb.jpg",
+    "name": "Blake Whiten",
+    "thumbIsCover": true
   },
   "future": {
     "href": "future.html",
-    "thumbnail": null
+    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/79/a1/24/79a1245d-b4f8-0395-0500-e46668801d88/196874590546.jpg/600x600bb.jpg",
+    "name": "Future",
+    "thumbIsCover": true
   },
   "elevation rhythm": {
     "href": "elevation-rhythm.html",
-    "thumbnail": null
+    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/9d/7a/d1/9d7ad145-0308-f659-164b-73713709cce3/196873547404.jpg/600x600bb.jpg",
+    "name": "ELEVATION RHYTHM",
+    "thumbIsCover": true
   },
   "partynextdoor": {
     "href": "partynextdoor.html",
-    "thumbnail": null
+    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/cd/3c/da/cd3cda94-8f7b-8368-3fa3-53abca7baf6a/808391400252.jpg/600x600bb.jpg",
+    "name": "PARTYNEXTDOOR",
+    "thumbIsCover": true
   },
   "robert smith": {
     "href": "robert-smith.html",
-    "thumbnail": null
-  },
-  "& john mayer": {
-    "href": "john-mayer.html",
-    "thumbnail": null
-  },
-  "& ab-soul": {
-    "href": "ab-soul.html",
-    "thumbnail": null
+    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/1d/1b/f9/1d1bf9b1-44c6-9a6c-6ffb-c158488c06ce/26UMGIM39303.rgb.jpg/600x600bb.jpg",
+    "name": "Robert Smith",
+    "thumbIsCover": true
   },
   "featuring chase matthew": {
     "href": "featuring-chase-matthew.html",
-    "thumbnail": null
-  },
-  "& chandler moore": {
-    "href": "chandler-moore.html",
-    "thumbnail": null
+    "thumbnail": null,
+    "name": null
   },
   "dan + shay": {
     "href": "dan-shay.html",
-    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Dan_%2B_Shay_in_2017.jpg/330px-Dan_%2B_Shay_in_2017.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Dan_%2B_Shay_in_2017.jpg/330px-Dan_%2B_Shay_in_2017.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "name": "Dan + Shay"
   },
   "judeline": {
     "href": "judeline.html",
-    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Malaga_Film_Festival_2025_-_Judeline_02.jpg/330px-Malaga_Film_Festival_2025_-_Judeline_02.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Malaga_Film_Festival_2025_-_Judeline_02.jpg/330px-Malaga_Film_Festival_2025_-_Judeline_02.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "name": "Judeline"
   },
   "earth, wind & fire": {
     "href": "earth-wind-fire.html",
-    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/Earth%2C_Wind_%26_Fire_%282%29.jpg/330px-Earth%2C_Wind_%26_Fire_%282%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/Earth%2C_Wind_%26_Fire_%282%29.jpg/330px-Earth%2C_Wind_%26_Fire_%282%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "name": "Earth, Wind & Fire"
   },
   "lainey wilson": {
     "href": "lainey-wilson.html",
-    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Lainey_Wilson_2024.jpg/330px-Lainey_Wilson_2024.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Lainey_Wilson_2024.jpg/330px-Lainey_Wilson_2024.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "name": "Lainey Wilson"
   },
   "lauren alaina": {
     "href": "lauren-alaina.html",
-    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/2023_Independence_Day_celebration_on_MCB_Camp_Lejeune_%284%29_%28cropped%29.jpg/330px-2023_Independence_Day_celebration_on_MCB_Camp_Lejeune_%284%29_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/2023_Independence_Day_celebration_on_MCB_Camp_Lejeune_%284%29_%28cropped%29.jpg/330px-2023_Independence_Day_celebration_on_MCB_Camp_Lejeune_%284%29_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "name": "Lauren Alaina"
   },
   "chase matthew": {
     "href": "chase-matthew.html",
-    "thumbnail": null
+    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/4d/8e/84/4d8e84c4-20b2-8e41-c93e-e6ccab1110bc/25UMGIM61671.rgb.jpg/600x600bb.jpg",
+    "name": "Chase Matthew",
+    "thumbIsCover": true
   },
   "corey taylor": {
     "href": "corey-taylor.html",
-    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/20180602_N%C3%BCrnberg_Rock_im_Park_Stone_Sour_0270_%28cropped%29.jpg/330px-20180602_N%C3%BCrnberg_Rock_im_Park_Stone_Sour_0270_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/20180602_N%C3%BCrnberg_Rock_im_Park_Stone_Sour_0270_%28cropped%29.jpg/330px-20180602_N%C3%BCrnberg_Rock_im_Park_Stone_Sour_0270_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "name": "Corey Taylor"
   },
   "serj tankian": {
     "href": "serj-tankian.html",
-    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Serj_Tankian_performing_2026.png/330px-Serj_Tankian_performing_2026.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Serj_Tankian_performing_2026.png/330px-Serj_Tankian_performing_2026.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "name": "Serj Tankian"
   },
   "travis scott": {
     "href": "travis-scott.html",
-    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Travis_Scott_sig.svg/330px-Travis_Scott_sig.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Travis_Scott_sig.svg/330px-Travis_Scott_sig.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "name": "Travis Scott"
   },
   "elevation worship": {
     "href": "elevation-worship.html",
-    "thumbnail": null
+    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/51/42/01/51420110-806a-86c5-7025-5016e5a2bd57/196873750729.jpg/600x600bb.jpg",
+    "name": "Elevation Worship",
+    "thumbIsCover": true
   },
   "jamie miller": {
     "href": "jamie-miller.html",
-    "thumbnail": null
+    "thumbnail": null,
+    "name": "Jamie Miller"
   },
   "boa": {
     "href": "boa.html",
-    "thumbnail": null
+    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/45/44/15/45441528-0288-eedc-f6fc-93137b8cfe96/067003248969.png/600x600bb.jpg",
+    "name": "boa",
+    "thumbIsCover": true
   },
   "rod wave": {
     "href": "rod-wave.html",
-    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Beautiful_Mind_Tour_Pittsburgh%2C_PA_4.jpg/330px-Beautiful_Mind_Tour_Pittsburgh%2C_PA_4.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Beautiful_Mind_Tour_Pittsburgh%2C_PA_4.jpg/330px-Beautiful_Mind_Tour_Pittsburgh%2C_PA_4.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "name": "Rod Wave"
   },
   "miley cyrus": {
     "href": "miley-cyrus.html",
-    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Miley_Cyrus_Primavera19_-226_%2848986293772%29_%28cropped%29.jpg/330px-Miley_Cyrus_Primavera19_-226_%2848986293772%29_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Miley_Cyrus_Primavera19_-226_%2848986293772%29_%28cropped%29.jpg/330px-Miley_Cyrus_Primavera19_-226_%2848986293772%29_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "name": "Miley Cyrus"
   },
   "cameron whitcomb": {
     "href": "cameron-whitcomb.html",
-    "thumbnail": null
+    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/7e/33/73/7e337333-0802-d7b5-8848-d20fdbdf993c/075679584731.jpg/600x600bb.jpg",
+    "name": "Cameron Whitcomb",
+    "thumbIsCover": true
   },
-  "dan": "dan.html",
-  "shay": "shay.html",
-  "john mayer": "john-mayer.html",
-  "chandler moore": "chandler-moore.html"
+  "dan": {
+    "href": "dan.html",
+    "thumbnail": null,
+    "name": null
+  },
+  "shay": {
+    "href": "shay.html",
+    "thumbnail": null,
+    "name": null
+  },
+  "john mayer": {
+    "href": "john-mayer.html",
+    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/43/99/8b/43998b40-7612-a2d7-5a54-da5e7870af99/4099964268270.jpg/600x600bb.jpg",
+    "name": "John Mayer",
+    "thumbIsCover": true
+  },
+  "chandler moore": {
+    "href": "chandler-moore.html",
+    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/51/42/01/51420110-806a-86c5-7025-5016e5a2bd57/196873750729.jpg/600x600bb.jpg",
+    "name": "Chandler Moore",
+    "thumbIsCover": true
+  },
+  "ab-soul": {
+    "href": "ab-soul.html",
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Ab-Soul_-_AfroPunk_Festival_2015.jpg/330px-Ab-Soul_-_AfroPunk_Festival_2015.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "name": "Ab-Soul",
+    "thumbChecked": true
+  },
+  "belly gang kushington": {
+    "href": "belly-gang-kushington.html",
+    "thumbnail": null,
+    "name": "Belly Gang Kushington",
+    "thumbChecked": true
+  },
+  "megan thee stallion": {
+    "href": "megan-thee-stallion.html",
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Megan_Thee_Stallion_Adweek_pose.jpg/330px-Megan_Thee_Stallion_Adweek_pose.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "name": "Megan Thee Stallion",
+    "thumbChecked": true
+  },
+  "loe shimmy": {
+    "href": "loe-shimmy.html",
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/96/Loe_Shimmy_Dollaz_2026.png/330px-Loe_Shimmy_Dollaz_2026.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "name": "Loe Shimmy",
+    "thumbChecked": true
+  },
+  "emmanuel cortes": {
+    "href": "emmanuel-cortes.html",
+    "thumbnail": "https://upload.wikimedia.org/wikipedia/en/4/48/Emmanuel_Cortes_-_Amor_Remix.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "name": "Emmanuel Cortes",
+    "thumbChecked": true
+  }
 }
