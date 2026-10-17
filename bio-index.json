@@ -261,183 +261,193 @@
   },
   "yung miami": {
     "href": "yung-miami.html",
-    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/b1/a5/ef/b1a5efe5-9be8-285f-4d08-b676b4be4e08/26UMGIM41444.rgb.jpg/600x600bb.jpg",
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Yung_Miami.png/330px-Yung_Miami.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
     "name": "Yung Miami",
-    "thumbIsCover": true
+    "thumbChecked": true
   },
   "mac miller": {
     "href": "mac-miller.html",
-    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/1e/5c/ad/1e5cadeb-6f0c-86a0-9e85-6487a848d866/093624917168.jpg/600x600bb.jpg",
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Mac_Miller_%287%29_%E2%80%93_splash%21_Festival_20_%282017%29_%28cropped%29.jpg/330px-Mac_Miller_%287%29_%E2%80%93_splash%21_Festival_20_%282017%29_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
     "name": "Mac Miller",
-    "thumbIsCover": true
+    "thumbChecked": true
   },
   "ty dolla $ign": {
     "href": "ty-dolla-ign.html",
-    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/1e/5c/ad/1e5cadeb-6f0c-86a0-9e85-6487a848d866/093624917168.jpg/600x600bb.jpg",
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Ty_Dolla_Sign_2018.jpg/330px-Ty_Dolla_Sign_2018.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
     "name": "Ty Dolla $ign",
-    "thumbIsCover": true
+    "thumbChecked": true
   },
   "cody johnson": {
     "href": "cody-johnson.html",
-    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/e2/d9/7a/e2d97a87-6ec6-99de-9a1f-31b86ce6e7c4/093624826613.jpg/600x600bb.jpg",
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/Cody_Johnson_in_2024.png/330px-Cody_Johnson_in_2024.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
     "name": "Cody Johnson",
-    "thumbIsCover": true
+    "thumbChecked": true
   },
   "beyonce": {
     "href": "beyonce.html",
-    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/3f/65/3d/3f653d87-197c-084c-dca2-0c6e0ca742c9/196874580721.jpg/600x600bb.jpg",
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Beyonc%C3%A9_-_Tottenham_Hotspur_Stadium_-_1st_June_2023_%2810_of_118%29_%2852946364598%29_%28best_crop%29.jpg/330px-Beyonc%C3%A9_-_Tottenham_Hotspur_Stadium_-_1st_June_2023_%2810_of_118%29_%2852946364598%29_%28best_crop%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
     "name": "Beyonce",
-    "thumbIsCover": true
+    "thumbChecked": true
   },
   "teddy swims": {
     "href": "teddy-swims.html",
-    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/7e/fb/0b/7efb0b1b-8e34-5bd0-99ee-eafc83b8d5c7/054391217349.jpg/600x600bb.jpg",
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/Teddy_Swims_Warner_Records_%28cropped%29.jpg/330px-Teddy_Swims_Warner_Records_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
     "name": "Teddy Swims",
-    "thumbIsCover": true
+    "thumbChecked": true
   },
   "cardi b": {
     "href": "cardi-b.html",
-    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/2e/e4/56/2ee45633-7fbf-9970-18e1-d3c6f9eefc6e/075679562951.jpg/600x600bb.jpg",
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Cardi_B_at_2026_Essence_Festival_of_Culture_02_%28cropped%29_%28cropped%29.jpg/330px-Cardi_B_at_2026_Essence_Festival_of_Culture_02_%28cropped%29_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
     "name": "Cardi B",
-    "thumbIsCover": true
+    "thumbChecked": true
   },
   "temper city": {
     "href": "temper-city.html",
-    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/ba/63/6e/ba636e4b-5c9a-e89c-87d3-1a9ab7773644/1084252.jpg/600x600bb.jpg",
+    "thumbnail": "https://upload.wikimedia.org/wikipedia/en/3/36/Temper_City_logo.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
     "name": "Temper City",
-    "thumbIsCover": true
+    "thumbChecked": true
   },
   "alyssa grace": {
     "href": "alyssa-grace.html",
     "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/7f/a7/ef/7fa7ef61-6e22-f30f-441c-e89e7ff4a79a/093624817147.jpg/600x600bb.jpg",
     "name": "Alyssa Grace",
-    "thumbIsCover": true
+    "thumbIsCover": true,
+    "thumbChecked": true
   },
   "dexter": {
     "href": "dexter.html",
     "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/fd/e7/ef/fde7efaf-0a34-1c0d-a8aa-a0c297916aba/26UMGIM21566.rgb.jpg/600x600bb.jpg",
     "name": "Dexter",
-    "thumbIsCover": true
+    "thumbIsCover": true,
+    "thumbChecked": true
   },
   "the moonrocks": {
     "href": "the-moonrocks.html",
     "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/fd/e7/ef/fde7efaf-0a34-1c0d-a8aa-a0c297916aba/26UMGIM21566.rgb.jpg/600x600bb.jpg",
     "name": "The Moonrocks",
-    "thumbIsCover": true
+    "thumbIsCover": true,
+    "thumbChecked": true
   },
   "shaboozey": {
     "href": "shaboozey.html",
-    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/a6/25/f1/a625f14b-328e-acab-bd7e-5f6d4d571332/199316643947_cover.jpg/600x600bb.jpg",
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/Shaboozey_at_San_Diego_Comic_Con_2026.jpg/330px-Shaboozey_at_San_Diego_Comic_Con_2026.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
     "name": "Shaboozey",
-    "thumbIsCover": true
+    "thumbChecked": true
   },
   "vincent mason": {
     "href": "vincent-mason.html",
     "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/cb/9d/ba/cb9dba19-0847-164f-3cec-32f337918dda/075679578518.jpg/600x600bb.jpg",
     "name": "Vincent Mason",
-    "thumbIsCover": true
+    "thumbIsCover": true,
+    "thumbChecked": true
   },
   "sam fender": {
     "href": "sam-fender.html",
-    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/e9/9e/ce/e99ece56-dcda-540a-d0b3-3927d152846f/25UMGIM83718.rgb.jpg/600x600bb.jpg",
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Boardmaster21_%2867%29_%2851386236113%29_%28cropped%29_2.jpg/330px-Boardmaster21_%2867%29_%2851386236113%29_%28cropped%29_2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
     "name": "Sam Fender",
-    "thumbIsCover": true
+    "thumbChecked": true
   },
   "gracie abrams": {
     "href": "gracie-abrams.html",
-    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/4f/13/47/4f1347cf-9564-e8b6-523a-386202f4d265/26UMGIM54147.rgb.jpg/600x600bb.jpg",
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/Gracie_Abrams_%40_El_Rey_Theatre_03_05_2022_%2852297976119%29_%28cropped%29_3.jpg/330px-Gracie_Abrams_%40_El_Rey_Theatre_03_05_2022_%2852297976119%29_%28cropped%29_3.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
     "name": "Gracie Abrams",
-    "thumbIsCover": true
+    "thumbChecked": true
   },
   "21 savage": {
     "href": "21-savage.html",
-    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/48/0b/d7/480bd77f-593f-bba3-40ec-4d1f86cd303b/820233758536.jpg/600x600bb.jpg",
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/21_Savage_2018.jpg/330px-21_Savage_2018.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
     "name": "21 Savage",
-    "thumbIsCover": true
+    "thumbChecked": true
   },
   "kenny chesney": {
     "href": "kenny-chesney.html",
-    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/cd/af/11/cdaf11cc-0a13-0010-175a-d78d70c1f0d9/093624819967.jpg/600x600bb.jpg",
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Kenny_Chesney_20070830_%28cropped%29.jpg/330px-Kenny_Chesney_20070830_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
     "name": "Kenny Chesney",
-    "thumbIsCover": true
+    "thumbChecked": true
   },
   "sienna spiro": {
     "href": "sienna-spiro.html",
-    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/f4/e5/61/f4e561f5-3e73-68c7-7ca4-295ac5a063ed/26UMGIM51351.rgb.jpg/600x600bb.jpg",
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/Sienna_Spiro_at_2026_Montreux_Jazz_Festival_05_%28cropped%29.jpg/330px-Sienna_Spiro_at_2026_Montreux_Jazz_Festival_05_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
     "name": "Sienna Spiro",
-    "thumbIsCover": true
+    "thumbChecked": true
   },
   "riley green": {
     "href": "riley-green.html",
-    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/16/cf/71/16cf71b7-bda7-9916-3d11-3b60539ace2c/26BMR0008042.rgb.jpg/600x600bb.jpg",
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/Riley_Green.jpg/330px-Riley_Green.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
     "name": "Riley Green",
-    "thumbIsCover": true
+    "thumbChecked": true
   },
   "f3miii": {
     "href": "f3miii.html",
     "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/24/a4/84/24a48418-e757-949a-2593-76851e0f9c05/196874129104.jpg/600x600bb.jpg",
     "name": "F3miii",
-    "thumbIsCover": true
+    "thumbIsCover": true,
+    "thumbChecked": true
   },
   "kacey musgraves": {
     "href": "kacey-musgraves.html",
-    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/31/2f/6c/312f6c94-3035-398b-8217-e79f0c2dfc63/15UMGIM22460.rgb.jpg/600x600bb.jpg",
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/KaceyMRoundhouse140524_%2811%29_%2853727552385%29_%28cropped%29.jpg/330px-KaceyMRoundhouse140524_%2811%29_%2853727552385%29_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
     "name": "Kacey Musgraves",
-    "thumbIsCover": true
+    "thumbChecked": true
   },
   "john morgan": {
     "href": "john-morgan.html",
     "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/d2/ae/65/d2ae65e8-9a14-061e-1165-b5351ef994a6/4099964145403.jpg/600x600bb.jpg",
     "name": "John Morgan",
-    "thumbIsCover": true
+    "thumbIsCover": true,
+    "thumbChecked": true
   },
   "miley": {
     "href": "miley.html",
-    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/ff/af/51/ffaf51a6-d711-6f92-a5d6-f90e98014f0f/075679564061.jpg/600x600bb.jpg",
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Miley_Cyrus_Primavera19_-226_%2848986293772%29_%28cropped%29.jpg/330px-Miley_Cyrus_Primavera19_-226_%2848986293772%29_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
     "name": "Miley",
-    "thumbIsCover": true
+    "thumbChecked": true
   },
   "audrey hobert": {
     "href": "audrey-hobert.html",
-    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/2c/2c/55/2c2c557a-cec2-c3f1-c48c-b9223442f1fd/196873397825.jpg/600x600bb.jpg",
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/AudreyHobertJuly25_%28cropped%29.jpg/330px-AudreyHobertJuly25_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
     "name": "Audrey Hobert",
-    "thumbIsCover": true
+    "thumbChecked": true
   },
   "corey kent": {
     "href": "corey-kent.html",
     "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/bd/79/87/bd7987fa-bb0d-148d-ab35-deece7c24de5/196874101148.jpg/600x600bb.jpg",
     "name": "Corey Kent",
-    "thumbIsCover": true
+    "thumbIsCover": true,
+    "thumbChecked": true
   },
   "bailey zimmerman": {
     "href": "bailey-zimmerman.html",
     "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/69/72/3b/69723b10-4255-f36b-6045-fa18f46ea485/093624842132.jpg/600x600bb.jpg",
     "name": "Bailey Zimmerman",
-    "thumbIsCover": true
+    "thumbIsCover": true,
+    "thumbChecked": true
   },
   "babychiefdoit": {
     "href": "babychiefdoit.html",
     "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/35/ce/58/35ce588d-e65d-7e21-30ab-6d28eeb3d3cf/840471815532.png/600x600bb.jpg",
     "name": "BabyChiefDoit",
-    "thumbIsCover": true
+    "thumbIsCover": true,
+    "thumbChecked": true
   },
   "marshmello": {
     "href": "marshmello.html",
-    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/32/04/31/3204314d-ef6a-532a-be2c-1355ced218cb/26UMGIM76701.rgb.jpg/600x600bb.jpg",
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/2016_Open_Beatz_-_Marshmello_-_by_2eight_-DSC_4448.jpg/330px-2016_Open_Beatz_-_Marshmello_-_by_2eight_-DSC_4448.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
     "name": "Marshmello",
-    "thumbIsCover": true
+    "thumbChecked": true
   },
   "kelsea ballerini": {
     "href": "kelsea-ballerini.html",
     "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/32/04/31/3204314d-ef6a-532a-be2c-1355ced218cb/26UMGIM76701.rgb.jpg/600x600bb.jpg",
     "name": "Kelsea Ballerini",
-    "thumbIsCover": true
+    "thumbIsCover": true,
+    "thumbChecked": true
   },
   "tim mcgraw": {
     "href": "tim-mcgraw.html",
-    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/1a/cd/9b/1acd9bad-40e2-c906-5614-03edf8e929a1/26UMGIM07556.rgb.jpg/600x600bb.jpg",
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Tim_McGraw_October_24_2015.jpg/330px-Tim_McGraw_October_24_2015.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
     "name": "Tim McGraw",
-    "thumbIsCover": true
+    "thumbChecked": true
   },
   "zach top": {
     "href": "zach-top.html",
@@ -655,9 +665,10 @@
   },
   "yebba": {
     "href": "yebba.html",
-    "thumbnail": null,
+    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/62/58/98/62589807-decc-d418-eb07-5060de9a2d3e/26UMGIM63617.rgb.jpg/600x600bb.jpg",
     "name": "Yebba",
-    "thumbChecked": true
+    "thumbChecked": true,
+    "thumbIsCover": true
   },
   "miranda lambert": {
     "href": "miranda-lambert.html",
