@@ -1,6 +1,106 @@
 [
   {
     "sourceName": "Soompi",
+    "link": "https://www.soompi.com/article/1883161wpp/kim-ji-won-sets-out-to-save-a-child-patient-in-doctor-x",
+    "headline": "Kim Ji Won Sets Out To Save A Child Patient In “Doctor X”",
+    "rawText": "Kim Ji Won will rescue her next patient in “Doctor X”! Based on the hit Japanese series of the same name, SBS’s “Doctor X” is a medical noir drama starring Kim Ji Won as Gye Soo Jung, a genius surgeon who proves what it truly means to be a doctor through pure skill alone as… Continue reading Kim Ji Won Sets Out To Save A Child Patient In “Doctor X” The post Kim Ji Won Sets Out To Save A Child Patient In “Doctor X” appeared first on Soompi.",
+    "summary": "Actor Kim Ji Won stars as a genius surgeon tasked with saving a young patient in the upcoming medical noir drama \"Doctor X.\"",
+    "category": "Music",
+    "image": "https://0.soompi.io/wp-content/uploads/2026/10/31201424/doctor-x-1-4.jpg",
+    "publishedAt": "2026-10-31T11:15:23.000Z"
+  },
+  {
+    "sourceName": "Variety",
+    "link": "https://variety.com/2026/film/obituaries-people-news/sanjay-gupta-dead-kaante-zinda-1236935973/",
+    "headline": "Sanjay Gupta, Indian Director of ‘Kaante’ and ‘Zinda,’ Dies at 59",
+    "rawText": "Indian filmmaker Sanjay Gupta, whose credits include the crime thriller “Kaante,” the gangster saga “Shootout at Wadala” and the Hrithik Roshan-starring “Kaabil,” has died following a fall at his Mumbai residence on Oct. 30. He was 59, according to the Press Trust of India. Director Milap Zaveri, a longtime friend of Gupta who worked on […]",
+    "summary": "Indian filmmaker Sanjay Gupta, known for directing crime thrillers like \"Kaante\" and \"Shootout at Wadala,\" has died at 59 following a fall at his Mumbai home.",
+    "category": "Film",
+    "image": "https://variety.com/wp-content/uploads/2026/10/Sanjay-Gupta.jpg",
+    "publishedAt": "2026-10-31T09:33:22.000Z"
+  },
+  {
+    "sourceName": "Hyperallergic",
+    "link": "https://hyperallergic.com/to-live-is-to-believe/",
+    "headline": "To Live Is to Believe",
+    "rawText": "Remembering Ursula von Rydingsvard, an Epstein survivor’s message for MoMA, interviews with Paul Pfeiffer and Layli Long Soldier, and the best costumes of our artsy Halloween party.",
+    "summary": "The latest arts roundup features tributes to Ursula von Rydingsvard, an Epstein survivor's message to MoMA, artist interviews, and highlights from a creative Halloween party.",
+    "category": "Art",
+    "image": "https://storage.ghost.io/c/51/f8/51f871d8-b6be-4a73-b958-0ca4fff0110a/content/images/2026/10/IMG_6025.JPG",
+    "publishedAt": "2026-10-31T10:00:00.000Z"
+  },
+  {
+    "sourceName": "Colossal",
+    "link": "https://www.thisiscolossal.com/2026/10/timothy-boomer-photographs-plant-galls/",
+    "headline": "Timothy Boomer Captures the Uncanny World of Insect Galls",
+    "rawText": "Gall wasps produce some of the remarkable natural \"nurseries.\" Do stories and artists like this matter to you? Become a Colossal Member today and support independent arts publishing for as little as $7 per month. The article Timothy Boomer Captures the Uncanny World of Insect Galls appeared first on Colossal.",
+    "summary": "Photographer Timothy Boomer has captured the bizarre and intricate world of insect galls created by wasps.",
+    "category": "Art",
+    "image": "https://www.thisiscolossal.com/wp-content/uploads/2026/10/boomer-8.jpg",
+    "publishedAt": "2026-10-30T18:46:00.000Z"
+  },
+  {
+    "sourceName": "Pitchfork",
+    "link": "https://pitchfork.com/reviews/albums/aphex-twin-drukqs-25th-anniversary-edition/",
+    "headline": "Drukqs (25th Anniversary Edition)",
+    "rawText": "Richard D. James’ once divisive 2001 album today looks, with 25 years of hindsight, like the keystone of his career, joining rave mischief and academic rigor in a sprawling, 100-minute package.",
+    "summary": "Richard D. James's once-divisive 2001 electronic album *Drukqs* is being reissued for its 25th anniversary, recognized now as the definitive keystone of his career.",
+    "category": "Music",
+    "image": "https://media.pitchfork.com/photos/6ae377d7efb3062cf478c6cd/master/pass/Aphex%20Twin%20-%20Drukqs%202026.jpg",
+    "publishedAt": "2026-10-31T04:00:00.000Z"
+  },
+  {
+    "sourceName": "NME",
+    "link": "https://www.nme.com/news/music/blue-dot-fever-lily-allen-ticketmaster-unsold-seat-map-halloween-3974727?utm_source=rss&utm_medium=rss&utm_campaign=blue-dot-fever-lily-allen-ticketmaster-unsold-seat-map-halloween",
+    "headline": "“Blue dot fever”: Lily Allen dresses up as Ticketmaster unsold seat map for Halloween",
+    "rawText": "The singer was poking fun at the ticket sales controversy surrounding her recent North American tour The post “Blue dot fever”: Lily Allen dresses up as Ticketmaster unsold seat map for Halloween appeared first on NME.",
+    "summary": "Lily Allen dressed as a Ticketmaster unsold seat map for Halloween to mock the ticketing controversies of her recent North American tour.",
+    "category": "Music",
+    "image": "https://www.nme.com/wp-content/uploads/2026/10/lily_allen_2026.jpg",
+    "publishedAt": "2026-10-31T10:41:59.000Z"
+  },
+  {
+    "sourceName": "IndieWire",
+    "link": "https://www.indiewire.com/news/events/watch-rehearsals-for-a-revolution-director-art-of-the-doc-1235224797/",
+    "headline": "Watch the ‘Rehearsals for a Revolution’ Director and Editor Explain How Memories Can Help Fight Authoritarianism",
+    "rawText": "At our Art of the Doc event, director Pegah Ahangurani and editor Arash Ashtiani went deep on one of the year's most acclaimed films.",
+    "summary": "Director Pegah Ahangurani and editor Arash Ashtiani discussed how their acclaimed film *Rehearsals for a Revolution* demonstrates using memory to fight authoritarianism.",
+    "category": "Film",
+    "image": "https://www.indiewire.com/wp-content/uploads/2026/10/RP_B2706.jpg?w=650",
+    "publishedAt": "2026-10-30T21:14:42.000Z"
+  },
+  {
+    "sourceName": "Vanity Fair",
+    "link": "https://www.vanityfair.com/story/marilyn-monroe-arthur-miller-tragic-love-story",
+    "headline": "Marilyn Monroe and Arthur Miller’s Tragic Love Story",
+    "rawText": "They met when Monroe wanted to stop being Hollywood’s “dumb blonde,” and Miller seemed like the man who would take her seriously. They married in 1956, but amid the desire for a family, career ambitions, and frequent misunderstandings, their marriage soon began to crumble.",
+    "summary": "Hollywood icon Marilyn Monroe and playwright Arthur Miller married in 1956 in a union that quickly deteriorated due to career pressures, personal misunderstandings, and conflicting family desires.",
+    "category": "Art",
+    "image": "https://media.vanityfair.com/photos/6ae4c0f14e27d9dc16f3be0c/master/pass/GettyImages-52038142%20copia.png",
+    "publishedAt": "2026-10-30T20:52:06.000Z"
+  },
+  {
+    "sourceName": "Vogue",
+    "link": "https://www.vogue.com/article/street-style-trend-tracker-halloween-outfits-2023",
+    "headline": "Need Halloween Inspo? Look No Further Than These IRL Street Style Pics",
+    "rawText": "If you’re in a bind this Halloween, chances are you can pull together a costume straight from your closet, using these street style looks as inspiration.",
+    "summary": "Real-life street style looks offer practical wardrobe inspiration for putting together a last-minute Halloween costume straight from your closet.",
+    "category": "Art",
+    "image": "https://assets.vogue.com/photos/6324848dbee7fa2be1d21e60/master/pass/NYFW-STREETSTYLE-PHILOH-DAY6-11.jpg",
+    "publishedAt": "2026-10-31T10:00:00.000Z"
+  },
+  {
+    "sourceName": "NYT Arts",
+    "link": "https://www.nytimes.com/2026/10/30/arts/music/lil-baby-popcast-interview.html",
+    "headline": "Lil Baby Interview: The Atlanta Rapper Takes On New Challenges",
+    "rawText": "The Atlanta superstar rapper is back with a new hit and more expansive sound but, he says, the same hunger to dominate.",
+    "summary": "Atlanta rapper Lil Baby has returned with a new hit and expanded sound while maintaining his drive to dominate hip-hop.",
+    "category": "Art",
+    "image": "https://static01.nyt.com/images/2026/10/30/multimedia/30cul-popcast-lilbaby-promo/30cul-popcast-lilbaby-promo-mediumSquareAt3X.jpg",
+    "publishedAt": "2026-10-30T09:02:27.000Z"
+  },
+  {
+    "sourceName": "Soompi",
     "link": "https://www.soompi.com/article/1881626wpp/lee-joon-gis-conscience-is-put-to-the-test-by-a-murder-mission-in-kidnap-game",
     "headline": "Lee Joon Gi’s Conscience Is Put To The Test By A Murder Mission In “kiDnap GAME”",
     "rawText": "“kiDnap GAME” has unveiled new stills ahead of its upcoming episode! “kiDnap GAME” is a thriller centered on an unprecedented kidnapping case that unfolds simultaneously across seven Asian cities: Seoul, Tokyo, Taipei, Singapore, Bangkok, Naha, and Manila. The story follows seven individuals who are each given different missions and forced into a deadly survival game,… Continue reading Lee Joon Gi’s Conscience Is Put To The Test By A Murder Mission In “kiDnap GAME” The post Lee Joon Gi’s Conscience Is Put To The Test By A Murder Mission In “kiDnap GAME” appeared first on Soompi.",
@@ -198,105 +298,5 @@
     "category": "Art",
     "image": "https://static01.nyt.com/images/2026/10/14/multimedia/14cul-ballet-salon-tjlb/14cul-ballet-salon-tjlb-mediumSquareAt3X.jpg",
     "publishedAt": "2026-10-14T09:00:36.000Z"
-  },
-  {
-    "sourceName": "Soompi",
-    "link": "https://www.soompi.com/article/1874930wpp/watch-son-suk-ku-and-nagayama-eita-get-entangled-through-a-serial-murder-case-in-the-blue-road-teasers",
-    "headline": "Watch: Son Suk Ku And Nagayama Eita Get Entangled Through A Serial Murder Case In “The Blue Road” Teasers",
-    "rawText": "Netflix’s upcoming drama “The Blue Road” has unveiled a new poster and teaser! “The Blue Road” is the latest project from director Han Jun Hee, who helmed the “D.P.” series and the film “Coin Locker Girl.” The film follows the story of two detectives tracking a series of murders that occur across both Korea and… Continue reading Watch: Son Suk Ku And Nagayama Eita Get Entangled Through A Serial Murder Case In “The Blue Road” Teasers The post Watch: Son Suk Ku And Nagayama Eita Get Entangled Through A Serial Murder Case In “The Blue Road” Teasers appeared first on Soompi.",
-    "summary": "Netflix released new teasers and a poster for the upcoming crime drama “The Blue Road,” starring Son Suk Ku and Nagayama Eita as detectives tracking cross-border serial murders.",
-    "category": "Music",
-    "image": "https://0.soompi.io/wp-content/uploads/2026/10/01225110/the-blue-road.jpg",
-    "publishedAt": "2026-10-02T06:08:21.000Z"
-  },
-  {
-    "sourceName": "Variety",
-    "link": "https://variety.com/2026/film/reviews/cameron-winter-at-carnegie-hall-review-paul-thomas-anderson-1236897129/",
-    "headline": "‘Cameron Winter at Carnegie Hall’ Review: Paul Thomas Anderson Directs a Rapturous Solo Concert Movie Built Around the Songs — and Haunting Sound — of Cameron Winter",
-    "rawText": "The slow rolling piano echo through the hall like a rhapsody from the deep. The sound is rich, lustrous, bottom-heavy, grand. And that voice! Winter sings in a low baritone (and occasionally a high one) of astonishing power, the notes hanging there in a suspended quaver so bold it’s hypnotic.",
-    "summary": "Director Paul Thomas Anderson has captured musician Cameron Winter's hypnotic solo Carnegie Hall performance in a new concert film.",
-    "category": "Film",
-    "image": "https://variety.com/wp-content/uploads/2026/08/CameronWinterAtCarnegieHall-Still.jpg",
-    "publishedAt": "2026-10-02T05:51:46.000Z"
-  },
-  {
-    "sourceName": "Hyperallergic",
-    "link": "https://hyperallergic.com/cyra-levenson-to-lead-yaddo-artist-residency/",
-    "headline": "Cyra Levenson to Lead Yaddo Artist Residency",
-    "rawText": "Ann Temkins steps down at MoMA, Rose B. Simpson wins the Santa Fe Mayor's award, Roy Lichtenstein x Alex Da Corte, and more in Art Movements.",
-    "summary": "Cyra Levenson has been appointed to lead the prestigious Yaddo artist residency program.",
-    "category": "Art",
-    "image": "https://storage.ghost.io/c/51/f8/51f871d8-b6be-4a73-b958-0ca4fff0110a/content/images/2026/10/2024_CLGI_Headshot_CL1820BW.jpg",
-    "publishedAt": "2026-10-01T20:55:23.000Z"
-  },
-  {
-    "sourceName": "Colossal",
-    "link": "https://www.thisiscolossal.com/2026/10/world-of-wearableart-2026-glo-fashion-performance/",
-    "headline": "World of WearableArt’s ‘GLO!’ Is a Celebration of Culture, Nature, and Whimsy",
-    "rawText": "The annual fashion-meets-performance competition is an international visual feast. Do stories and artists like this matter to you? Become a Colossal Member today and support independent arts publishing for as little as $7 per month. The article World of WearableArt’s ‘GLO!’ Is a Celebration of Culture, Nature, and Whimsy appeared first on Colossal.",
-    "summary": "The annual international World of WearableArt competition returned with \"GLO!\", a vibrant showcase blending fashion, performance, culture, nature, and whimsy.",
-    "category": "Art",
-    "image": "https://www.thisiscolossal.com/wp-content/uploads/2026/09/wearableart-3-e1790859226557.jpg",
-    "publishedAt": "2026-10-01T14:30:00.000Z"
-  },
-  {
-    "sourceName": "Pitchfork",
-    "link": "https://pitchfork.com/story/drake-and-don-tolivers-choosin-texas-remix-is-officially-here/",
-    "headline": "Drake and Don Toliver’s “Choosin’ Texas” Remix Is Officially Here",
-    "rawText": "”Solar Eclipse” arrives alongside other FOMO tracks “Quebec,” “Classic PT2,” and “Cold Shoulder”",
-    "summary": "Drake and Don Toliver have officially released their new remix \"Choosin’ Texas\" alongside several other tracks.",
-    "category": "Music",
-    "image": "https://media.pitchfork.com/photos/6abecd83798b7e873471acfa/master/pass/Drake.jpeg",
-    "publishedAt": "2026-10-02T04:10:25.000Z"
-  },
-  {
-    "sourceName": "NME",
-    "link": "https://www.nme.com/guides/gaming-guides/heres-the-wordle-answer-for-today-3171240?utm_source=rss&utm_medium=rss&utm_campaign=heres-the-wordle-answer-for-today",
-    "headline": "Today’s Wordle answer and hints for #1921 on October 02",
-    "rawText": "There's no need to lose your streak - here's the 'Wordle' answer for today The post Today’s Wordle answer and hints for #1921 on October 02 appeared first on NME.",
-    "summary": "NME published the hints and correct answer for today's October 2 Wordle puzzle, #1921.",
-    "category": "Music",
-    "image": "https://www.nme.com/wp-content/uploads/2023/10/Wordle-credit-Jakub-PorzyckiNurPhoto-via-Getty@2000x1270.jpg",
-    "publishedAt": "2026-10-01T23:01:34.000Z"
-  },
-  {
-    "sourceName": "IndieWire",
-    "link": "https://www.indiewire.com/news/general-news/barack-michelle-obama-james-baldwin-love-story-film-1235219745/",
-    "headline": "Barack and Michelle Obama’s Higher Ground, Anonymous Content Making Film of ‘Baldwin: A Love Story’",
-    "rawText": "The James Baldwin autobiography will be adapted by its writer Nicholas Boggs and his partner, Marlon James, the bestselling author of \"The Disappearers.\"",
-    "summary": "Barack and Michelle Obama’s Higher Ground and Anonymous Content are adapting Nicholas Boggs and Marlon James's biography *Baldwin: A Love Story* into a film.",
-    "category": "Film",
-    "image": "https://www.indiewire.com/wp-content/uploads/2024/06/MCDIIAM_EC248.jpg?w=650",
-    "publishedAt": "2026-10-01T23:55:50.000Z"
-  },
-  {
-    "sourceName": "Vanity Fair",
-    "link": "https://www.vanityfair.com/story/justin-vivian-bond-cabaret-neverman",
-    "headline": "Justin Vivian Bond, ‘Neverman’ and ‘Madame Stanley’ Star, Talks Paris, NYC, and Love",
-    "rawText": "The star talks about their new life in Paris, why they don’t date, and how their friendship with Dior’s Jonathan Anderson first began.",
-    "summary": "Iconic performer Justin Vivian Bond discussed their new life in Paris, relationship status, and friendship with designer Jonathan Anderson in a recent interview.",
-    "category": "Art",
-    "image": "https://media.vanityfair.com/photos/6abd329b3ada2c98da832706/master/pass/VF0926_Justin-Vivian-Bond_01_h_16506317.jpg",
-    "publishedAt": "2026-10-01T22:09:13.000Z"
-  },
-  {
-    "sourceName": "Vogue",
-    "link": "https://www.vogue.com/article/the-scoop-with-cyrus-veyssi",
-    "headline": "The Scoop With Cyrus Veyssi: On Creating Their Own Fragrance",
-    "rawText": "As Cyrus Veyssi built their platform over the years, they began weaving in more content about products they loved, and just last week they were announced in the role of May in the Broadway production of & Juliet. It’s all come full circle. But the news doesn’t stop there, so I called Cyrus to hear about something else they are cooking up.",
-    "summary": "Content creator Cyrus Veyssi has been cast in Broadway's *& Juliet* while also developing a new personal fragrance line.",
-    "category": "Art",
-    "image": "https://assets.vogue.com/photos/6abe65a2b4d8fdbcc14a99ec/master/pass/-story%20(82).jpg",
-    "publishedAt": "2026-10-02T04:30:00.000Z"
-  },
-  {
-    "sourceName": "NYT Arts",
-    "link": "https://www.nytimes.com/2026/10/01/arts/music/wynonna-judd-interview.html",
-    "headline": "Wynonna Judd Has No Secrets Left, but the Pain Endures",
-    "rawText": "A new album reinvents this country music legend’s sound and lays bare a lifetime of heartbreak.",
-    "summary": "Country music legend Wynonna Judd has released a new album that reinvents her sound while exploring a lifetime of heartbreak.",
-    "category": "Art",
-    "image": "https://static01.nyt.com/images/2026/09/25/multimedia/00cul-wynonna-PROMO-tqhm/00cul-wynonna-PROMO-tqhm-mediumSquareAt3X.jpg",
-    "publishedAt": "2026-10-01T09:00:45.000Z"
   }
 ]
