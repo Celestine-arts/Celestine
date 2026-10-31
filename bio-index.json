@@ -120,8 +120,9 @@
   },
   "harry styles": {
     "href": "harry-styles.html",
-    "thumbnail": null,
-    "name": null
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/HarryStylesWembley170623_%2865_of_93%29_%2852982678051%29_%28cropped_2%29.jpg/330px-HarryStylesWembley170623_%2865_of_93%29_%2852982678051%29_%28cropped_2%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "name": "Harry Styles",
+    "thumbChecked": true
   },
   "ella langley": {
     "href": "ella-langley.html",
@@ -311,22 +312,22 @@
     "href": "alyssa-grace.html",
     "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/7f/a7/ef/7fa7ef61-6e22-f30f-441c-e89e7ff4a79a/093624817147.jpg/600x600bb.jpg",
     "name": "Alyssa Grace",
-    "thumbIsCover": true,
-    "thumbChecked": true
+    "thumbChecked": true,
+    "thumbIsCover": true
   },
   "dexter": {
     "href": "dexter.html",
     "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/fd/e7/ef/fde7efaf-0a34-1c0d-a8aa-a0c297916aba/26UMGIM21566.rgb.jpg/600x600bb.jpg",
     "name": "Dexter",
-    "thumbIsCover": true,
-    "thumbChecked": true
+    "thumbChecked": true,
+    "thumbIsCover": true
   },
   "the moonrocks": {
     "href": "the-moonrocks.html",
     "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/fd/e7/ef/fde7efaf-0a34-1c0d-a8aa-a0c297916aba/26UMGIM21566.rgb.jpg/600x600bb.jpg",
     "name": "The Moonrocks",
-    "thumbIsCover": true,
-    "thumbChecked": true
+    "thumbChecked": true,
+    "thumbIsCover": true
   },
   "shaboozey": {
     "href": "shaboozey.html",
@@ -338,8 +339,8 @@
     "href": "vincent-mason.html",
     "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/cb/9d/ba/cb9dba19-0847-164f-3cec-32f337918dda/075679578518.jpg/600x600bb.jpg",
     "name": "Vincent Mason",
-    "thumbIsCover": true,
-    "thumbChecked": true
+    "thumbChecked": true,
+    "thumbIsCover": true
   },
   "sam fender": {
     "href": "sam-fender.html",
@@ -381,8 +382,8 @@
     "href": "f3miii.html",
     "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/24/a4/84/24a48418-e757-949a-2593-76851e0f9c05/196874129104.jpg/600x600bb.jpg",
     "name": "F3miii",
-    "thumbIsCover": true,
-    "thumbChecked": true
+    "thumbChecked": true,
+    "thumbIsCover": true
   },
   "kacey musgraves": {
     "href": "kacey-musgraves.html",
@@ -394,8 +395,8 @@
     "href": "john-morgan.html",
     "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/d2/ae/65/d2ae65e8-9a14-061e-1165-b5351ef994a6/4099964145403.jpg/600x600bb.jpg",
     "name": "John Morgan",
-    "thumbIsCover": true,
-    "thumbChecked": true
+    "thumbChecked": true,
+    "thumbIsCover": true
   },
   "miley": {
     "href": "miley.html",
@@ -413,8 +414,8 @@
     "href": "corey-kent.html",
     "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/bd/79/87/bd7987fa-bb0d-148d-ab35-deece7c24de5/196874101148.jpg/600x600bb.jpg",
     "name": "Corey Kent",
-    "thumbIsCover": true,
-    "thumbChecked": true
+    "thumbChecked": true,
+    "thumbIsCover": true
   },
   "bailey zimmerman": {
     "href": "bailey-zimmerman.html",
@@ -426,15 +427,15 @@
     "href": "babychiefdoit.html",
     "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/35/ce/58/35ce588d-e65d-7e21-30ab-6d28eeb3d3cf/840471815532.png/600x600bb.jpg",
     "name": "BabyChiefDoit",
-    "thumbIsCover": true,
-    "thumbChecked": true
+    "thumbChecked": true,
+    "thumbIsCover": true
   },
   "marshmello": {
     "href": "marshmello.html",
     "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/32/04/31/3204314d-ef6a-532a-be2c-1355ced218cb/26UMGIM76701.rgb.jpg/600x600bb.jpg",
     "name": "Marshmello",
-    "thumbIsCover": true,
-    "thumbChecked": true
+    "thumbChecked": true,
+    "thumbIsCover": true
   },
   "kelsea ballerini": {
     "href": "kelsea-ballerini.html",
@@ -450,99 +451,108 @@
   },
   "zach top": {
     "href": "zach-top.html",
-    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/a0/93/fb/a093fb03-dc1a-2fe6-9700-96291b6d39c6/8721215862598.png/600x600bb.jpg",
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/Zach_top_-_musician_%28cropped%29.webp/330px-Zach_top_-_musician_%28cropped%29.webp?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
     "name": "Zach Top",
-    "thumbIsCover": true
+    "thumbChecked": true
   },
   "tyga": {
     "href": "tyga.html",
-    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/71/5a/90/715a9057-5ed3-26e0-a706-0fc39b1a1a64/26UM1IM17018.rgb.jpg/600x600bb.jpg",
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Tyga_-_Openair_Frauenfeld_2019_02.jpg/330px-Tyga_-_Openair_Frauenfeld_2019_02.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
     "name": "Tyga",
-    "thumbIsCover": true
+    "thumbChecked": true
   },
   "mack geiger": {
     "href": "mack-geiger.html",
     "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/32/a2/9d/32a29dbc-49e3-b6dc-1c3c-89a8c0eda415/196874233788.jpg/600x600bb.jpg",
     "name": "Mack Geiger",
-    "thumbIsCover": true
+    "thumbIsCover": true,
+    "thumbChecked": true
   },
   "karol g": {
     "href": "karol-g.html",
-    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/2b/66/b2/2b66b26c-ab23-faa1-c4ee-06fa2cce8f76/26UM1IM00558.rgb.jpg/600x600bb.jpg",
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/2023-11-16_Gala_de_los_Latin_Grammy%2C_15.jpg/330px-2023-11-16_Gala_de_los_Latin_Grammy%2C_15.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
     "name": "Karol G",
-    "thumbIsCover": true
+    "thumbChecked": true
   },
   "julia wolf": {
     "href": "julia-wolf.html",
     "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/32/ba/d7/32bad7c1-42e3-31fc-e7a8-cdccd9b59f62/193436376150.jpg/600x600bb.jpg",
     "name": "Julia Wolf",
-    "thumbIsCover": true
+    "thumbIsCover": true,
+    "thumbChecked": true
   },
   "hudson westbrook": {
     "href": "hudson-westbrook.html",
-    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/e1/f9/56/e1f95687-e778-ee4b-f6b0-bbc6b293e1bb/093624831686.jpg/600x600bb.jpg",
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/HudsonWestbrook2026.jpg/330px-HudsonWestbrook2026.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
     "name": "Hudson Westbrook",
-    "thumbIsCover": true
+    "thumbChecked": true
   },
   "ashe": {
     "href": "ashe.html",
     "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/b7/55/7a/b7557aef-bb0a-cc57-25bf-979eee194f16/075679571403.jpg/600x600bb.jpg",
     "name": "Ashe",
-    "thumbIsCover": true
+    "thumbIsCover": true,
+    "thumbChecked": true
   },
   "luke bryan": {
     "href": "luke-bryan.html",
-    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/2b/8b/bb/2b8bbb2b-3b10-b142-82e7-aefc9d80466d/26UMGIM24741.rgb.jpg/600x600bb.jpg",
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/2022_Gershwin_Prize_for_Popular_Song_%2851930843770%29_%28cropped%29.jpg/330px-2022_Gershwin_Prize_for_Popular_Song_%2851930843770%29_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
     "name": "Luke Bryan",
-    "thumbIsCover": true
+    "thumbChecked": true
   },
   "jelly roll": {
     "href": "jelly-roll.html",
     "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/26/ae/33/26ae3335-0ef8-4030-3505-89e284f43d26/4099964275186.jpg/600x600bb.jpg",
     "name": "Jelly Roll",
-    "thumbIsCover": true
+    "thumbIsCover": true,
+    "thumbChecked": true
   },
   "zach john king": {
     "href": "zach-john-king.html",
     "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/d0/c3/45/d0c34545-8fc0-8eb9-c229-d44465f3eb8f/196874043448.jpg/600x600bb.jpg",
     "name": "Zach John King",
-    "thumbIsCover": true
+    "thumbIsCover": true,
+    "thumbChecked": true
   },
   "comehelpglo": {
     "href": "comehelpglo.html",
     "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/2c/8d/b6/2c8db615-b3a4-2558-8138-2bf5ec9ef93a/00894096001061.rgb.jpg/600x600bb.jpg",
     "name": "comehelpglo",
-    "thumbIsCover": true
+    "thumbIsCover": true,
+    "thumbChecked": true
   },
   "blake whiten": {
     "href": "blake-whiten.html",
-    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/00/1d/40/001d40eb-679d-05df-f1f2-1d66602ff1f1/093624821267.jpg/600x600bb.jpg",
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/BlakeWhiten.jpg/330px-BlakeWhiten.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
     "name": "Blake Whiten",
-    "thumbIsCover": true
+    "thumbChecked": true
   },
   "future": {
     "href": "future.html",
     "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/79/a1/24/79a1245d-b4f8-0395-0500-e46668801d88/196874590546.jpg/600x600bb.jpg",
     "name": "Future",
-    "thumbIsCover": true
+    "thumbIsCover": true,
+    "thumbChecked": true
   },
   "elevation rhythm": {
     "href": "elevation-rhythm.html",
     "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/9d/7a/d1/9d7ad145-0308-f659-164b-73713709cce3/196873547404.jpg/600x600bb.jpg",
     "name": "ELEVATION RHYTHM",
-    "thumbIsCover": true
+    "thumbIsCover": true,
+    "thumbChecked": true
   },
   "partynextdoor": {
     "href": "partynextdoor.html",
-    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/cd/3c/da/cd3cda94-8f7b-8368-3fa3-53abca7baf6a/808391400252.jpg/600x600bb.jpg",
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/PartyNextDoor_November_2016.jpg/330px-PartyNextDoor_November_2016.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
     "name": "PARTYNEXTDOOR",
-    "thumbIsCover": true
+    "thumbChecked": true
   },
   "robert smith": {
     "href": "robert-smith.html",
     "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/1d/1b/f9/1d1bf9b1-44c6-9a6c-6ffb-c158488c06ce/26UMGIM39303.rgb.jpg/600x600bb.jpg",
     "name": "Robert Smith",
-    "thumbIsCover": true
+    "thumbIsCover": true,
+    "thumbChecked": true
   },
   "featuring chase matthew": {
     "href": "featuring-chase-matthew.html",
@@ -578,7 +588,8 @@
     "href": "chase-matthew.html",
     "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/4d/8e/84/4d8e84c4-20b2-8e41-c93e-e6ccab1110bc/25UMGIM61671.rgb.jpg/600x600bb.jpg",
     "name": "Chase Matthew",
-    "thumbIsCover": true
+    "thumbIsCover": true,
+    "thumbChecked": true
   },
   "corey taylor": {
     "href": "corey-taylor.html",
@@ -599,18 +610,22 @@
     "href": "elevation-worship.html",
     "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/51/42/01/51420110-806a-86c5-7025-5016e5a2bd57/196873750729.jpg/600x600bb.jpg",
     "name": "Elevation Worship",
-    "thumbIsCover": true
+    "thumbIsCover": true,
+    "thumbChecked": true
   },
   "jamie miller": {
     "href": "jamie-miller.html",
-    "thumbnail": null,
-    "name": "Jamie Miller"
+    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/e6/15/d2/e615d28f-70b5-e43a-b3c8-460dca39c9e5/26UMGIM97516.rgb.jpg/600x600bb.jpg",
+    "name": "Jamie Miller",
+    "thumbChecked": true,
+    "thumbIsCover": true
   },
   "boa": {
     "href": "boa.html",
     "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/45/44/15/45441528-0288-eedc-f6fc-93137b8cfe96/067003248969.png/600x600bb.jpg",
     "name": "boa",
-    "thumbIsCover": true
+    "thumbIsCover": true,
+    "thumbChecked": true
   },
   "rod wave": {
     "href": "rod-wave.html",
@@ -626,7 +641,8 @@
     "href": "cameron-whitcomb.html",
     "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/7e/33/73/7e337333-0802-d7b5-8848-d20fdbdf993c/075679584731.jpg/600x600bb.jpg",
     "name": "Cameron Whitcomb",
-    "thumbIsCover": true
+    "thumbIsCover": true,
+    "thumbChecked": true
   },
   "dan": {
     "href": "dan.html",
@@ -640,15 +656,16 @@
   },
   "john mayer": {
     "href": "john-mayer.html",
-    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/43/99/8b/43998b40-7612-a2d7-5a54-da5e7870af99/4099964268270.jpg/600x600bb.jpg",
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/JohnMayerin2019.jpg/330px-JohnMayerin2019.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
     "name": "John Mayer",
-    "thumbIsCover": true
+    "thumbChecked": true
   },
   "chandler moore": {
     "href": "chandler-moore.html",
     "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/51/42/01/51420110-806a-86c5-7025-5016e5a2bd57/196873750729.jpg/600x600bb.jpg",
     "name": "Chandler Moore",
-    "thumbIsCover": true
+    "thumbIsCover": true,
+    "thumbChecked": true
   },
   "ab-soul": {
     "href": "ab-soul.html",
@@ -677,9 +694,10 @@
   },
   "belly gang kushington": {
     "href": "belly-gang-kushington.html",
-    "thumbnail": null,
+    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/48/0b/d7/480bd77f-593f-bba3-40ec-4d1f86cd303b/820233758536.jpg/600x600bb.jpg",
     "name": "Belly Gang Kushington",
-    "thumbChecked": true
+    "thumbChecked": true,
+    "thumbIsCover": true
   },
   "loe shimmy": {
     "href": "loe-shimmy.html",
@@ -725,9 +743,10 @@
   },
   "gunna": {
     "href": "gunna.html",
-    "thumbnail": null,
+    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/7f/c3/77/7fc37797-be3f-ad4e-e374-6dcf3d6f7913/075679559616.jpg/600x600bb.jpg",
     "name": "Gunna",
-    "thumbChecked": true
+    "thumbChecked": true,
+    "thumbIsCover": true
   },
   "chappell roan": {
     "href": "chappell-roan.html",
@@ -737,8 +756,57 @@
   },
   "megan moroney": {
     "href": "megan-moroney.html",
-    "thumbnail": null,
+    "thumbnail": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/6b/d8/9d/6bd89d56-4e31-f431-fb4c-5a81a6441f82/196874133101.jpg/600x600bb.jpg",
     "name": "Megan Moroney",
+    "thumbChecked": true,
+    "thumbIsCover": true
+  },
+  "tate mcrae": {
+    "href": "tate-mcrae.html",
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Tate_McRae_in_Manila_01_%28cropped%29_2.jpg/330px-Tate_McRae_in_Manila_01_%28cropped%29_2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "name": "Tate McRae",
+    "thumbChecked": true
+  },
+  "zach bryan": {
+    "href": "zach-bryan.html",
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/Zach_Bryan_performing_at_Crypto.com_Arena_on_23_Aug_2023_%28cropped%29.jpg/330px-Zach_Bryan_performing_at_Crypto.com_Arena_on_23_Aug_2023_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "name": "Zach Bryan",
+    "thumbChecked": true
+  },
+  "lana del rey": {
+    "href": "lana-del-rey.html",
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/LanaDRPrimavera310524_%2832_of_147%29_%2853765476960%29_%28cropped%29.jpg/330px-LanaDRPrimavera310524_%2832_of_147%29_%2853765476960%29_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "name": "Lana Del Rey",
+    "thumbChecked": true
+  },
+  "turnpike troubadours": {
+    "href": "turnpike-troubadours.html",
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Turnpike_Troubadours_performing_in_Knoxville%2C_TN%2C_2023.jpg/330px-Turnpike_Troubadours_performing_in_Knoxville%2C_TN%2C_2023.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "name": "Turnpike Troubadours",
+    "thumbChecked": true
+  },
+  "sza": {
+    "href": "sza.html",
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/KendrickSZASPurs230725-19_-_54683179509_%28cropped%29_%28cropped%29.jpg/330px-KendrickSZASPurs230725-19_-_54683179509_%28cropped%29_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "name": "SZA",
+    "thumbChecked": true
+  },
+  "king gizzard": {
+    "href": "king-gizzard.html",
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/King_Gizzard_Detroit_2024.jpg/330px-King_Gizzard_Detroit_2024.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "name": "King Gizzard",
+    "thumbChecked": true
+  },
+  "the lizard wizard": {
+    "href": "the-lizard-wizard.html",
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/King_Gizzard_Detroit_2024.jpg/330px-King_Gizzard_Detroit_2024.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "name": "The Lizard Wizard",
+    "thumbChecked": true
+  },
+  "thekidszn": {
+    "href": "thekidszn.html",
+    "thumbnail": null,
+    "name": "Thekidszn",
     "thumbChecked": true
   }
 }
