@@ -1,6 +1,6 @@
 {
-  "chartDate": "2026-11-05",
-  "fetchedAt": "2026-11-05T13:48:24.101196+00:00",
+  "chartDate": "2026-11-07",
+  "fetchedAt": "2026-11-07T12:13:16.024751+00:00",
   "entries": [
     {
       "rank": 1,
@@ -276,7 +276,7 @@
       "movement": "up",
       "spotifyUrl": "https://open.spotify.com/search/Stop%20The%20Wedding%21%20Ashe",
       "slug": "ashe-stop-the-wedding",
-      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/1b/86/c9/1b86c988-03b8-ca21-10a5-0963d09f5bcf/075679561893.jpg/600x600bb.jpg"
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/b7/55/7a/b7557aef-bb0a-cc57-25bf-979eee194f16/075679571403.jpg/600x600bb.jpg"
     },
     {
       "rank": 24,
@@ -504,7 +504,7 @@
       "movement": "up",
       "spotifyUrl": "https://open.spotify.com/search/Take%20Me%20Back%20%28Leave%20Me%20There%29%20Cody%20Johnson",
       "slug": "cody-johnson-take-me-back-leave-me-there",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/e2/d9/7a/e2d97a87-6ec6-99de-9a1f-31b86ce6e7c4/093624826613.jpg/600x600bb.jpg"
     },
     {
       "rank": 43,
@@ -516,7 +516,7 @@
       "movement": "up",
       "spotifyUrl": "https://open.spotify.com/search/Phone%2C%20Keys%2C%20Wallet%20Lainey%20Wilson%20%26%20John%20Mayer",
       "slug": "lainey-wilson-john-mayer-phone-keys-wallet",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/43/99/8b/43998b40-7612-a2d7-5a54-da5e7870af99/4099964268270.jpg/600x600bb.jpg"
     },
     {
       "rank": 44,
@@ -540,7 +540,7 @@
       "movement": "up",
       "spotifyUrl": "https://open.spotify.com/search/WTF%20GOIN%20Belly%20Gang%20Kushington%20%26%2021%20Savage",
       "slug": "belly-gang-kushington-21-savage-wtf-goin",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/48/0b/d7/480bd77f-593f-bba3-40ec-4d1f86cd303b/820233758536.jpg/600x600bb.jpg"
     },
     {
       "rank": 46,
@@ -552,7 +552,7 @@
       "movement": "down",
       "spotifyUrl": "https://open.spotify.com/search/Quebec%20Drake",
       "slug": "drake-quebec",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/62/58/98/62589807-decc-d418-eb07-5060de9a2d3e/26UMGIM63617.rgb.jpg/600x600bb.jpg"
     },
     {
       "rank": 47,
@@ -588,7 +588,7 @@
       "movement": "up",
       "spotifyUrl": "https://open.spotify.com/search/Something%20To%20Lose%20Stella%20Lefty%20With%20Vincent%20Mason",
       "slug": "stella-lefty-with-vincent-mason-something-to-lose",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/cb/9d/ba/cb9dba19-0847-164f-3cec-32f337918dda/075679578518.jpg/600x600bb.jpg"
     },
     {
       "rank": 50,
@@ -600,7 +600,7 @@
       "movement": "up",
       "spotifyUrl": "https://open.spotify.com/search/Think%20As%20You%20Drunk%20Riley%20Green",
       "slug": "riley-green-think-as-you-drunk",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/16/cf/71/16cf71b7-bda7-9916-3d11-3b60539ace2c/26BMR0008042.rgb.jpg/600x600bb.jpg"
     },
     {
       "rank": 51,
@@ -624,7 +624,7 @@
       "movement": "up",
       "spotifyUrl": "https://open.spotify.com/search/Coming%20Up%20Roses%20Harry%20Styles",
       "slug": "harry-styles-coming-up-roses",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/07/41/6a/07416a78-38b9-2d47-7ce8-8a52a44c510f/196874010112.jpg/600x600bb.jpg"
     },
     {
       "rank": 53,
@@ -648,7 +648,7 @@
       "movement": "up",
       "spotifyUrl": "https://open.spotify.com/search/AH%20HA%20Cardi%20B",
       "slug": "cardi-b-ah-ha",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/2e/e4/56/2ee45633-7fbf-9970-18e1-d3c6f9eefc6e/075679562951.jpg/600x600bb.jpg"
     },
     {
       "rank": 55,
@@ -684,7 +684,7 @@
       "movement": "down",
       "spotifyUrl": "https://open.spotify.com/search/Freakin%27%20Out%20Dexter%20And%20The%20Moonrocks",
       "slug": "dexter-and-the-moonrocks-freakin-out",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/fd/e7/ef/fde7efaf-0a34-1c0d-a8aa-a0c297916aba/26UMGIM21566.rgb.jpg/600x600bb.jpg"
     },
     {
       "rank": 58,
@@ -720,7 +720,7 @@
       "movement": "up",
       "spotifyUrl": "https://open.spotify.com/search/The%20Feeling%20Steve%20Lacy",
       "slug": "steve-lacy-the-feeling",
-      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/1c/b2/46/1cb246db-afae-a599-d377-44a7ea7267fa/196874346976.jpg/600x600bb.jpg"
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Video211/v4/82/c5/7c/82c57c7a-f9a9-24cc-cfb9-9a05db902c56/1968743470100101.jpg/600x600bb.jpg"
     },
     {
       "rank": 61,
@@ -732,7 +732,7 @@
       "movement": "up",
       "spotifyUrl": "https://open.spotify.com/search/Get%20To%20Drinkin%27%20Zach%20John%20King",
       "slug": "zach-john-king-get-to-drinkin",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/d0/c3/45/d0c34545-8fc0-8eb9-c229-d44465f3eb8f/196874043448.jpg/600x600bb.jpg"
     },
     {
       "rank": 62,
@@ -792,7 +792,7 @@
       "movement": "up",
       "spotifyUrl": "https://open.spotify.com/search/Sue%20Me%20Audrey%20Hobert",
       "slug": "audrey-hobert-sue-me",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/2c/2c/55/2c2c557a-cec2-c3f1-c48c-b9223442f1fd/196873397825.jpg/600x600bb.jpg"
     },
     {
       "rank": 67,
@@ -816,7 +816,7 @@
       "movement": "new",
       "spotifyUrl": "https://open.spotify.com/search/Thin%20Ice%20Megan%20Thee%20Stallion",
       "slug": "megan-thee-stallion-thin-ice",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/74/c6/7e/74c67e63-c8ff-708f-8622-255851c969fd/26UM1IM36432.rgb.jpg/600x600bb.jpg"
     },
     {
       "rank": 69,
@@ -828,7 +828,7 @@
       "movement": "up",
       "spotifyUrl": "https://open.spotify.com/search/Dolly%20Babe%20Featuring%20Megan%20Thee%20Stallion",
       "slug": "megan-thee-stallion-dolly-babe-featuring",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/ec/f5/45/ecf545c0-24bd-90de-7639-3069e648c51d/075679804938.jpg/600x600bb.jpg"
     },
     {
       "rank": 70,
@@ -840,7 +840,7 @@
       "movement": "new",
       "spotifyUrl": "https://open.spotify.com/search/Angel%20Of%20My%20Dreams%20JADE",
       "slug": "jade-angel-of-my-dreams",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/44/fe/26/44fe26c1-0e3e-2c48-3898-d22eddc8e054/196872245967.jpg/600x600bb.jpg"
     },
     {
       "rank": 71,
@@ -852,7 +852,7 @@
       "movement": "up",
       "spotifyUrl": "https://open.spotify.com/search/Ghetto%20Love%20Story%20BabyChiefDoit",
       "slug": "babychiefdoit-ghetto-love-story",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/35/ce/58/35ce588d-e65d-7e21-30ab-6d28eeb3d3cf/840471815532.png/600x600bb.jpg"
     },
     {
       "rank": 72,
@@ -876,7 +876,7 @@
       "movement": "up",
       "spotifyUrl": "https://open.spotify.com/search/Kid%20Myself%20John%20Morgan",
       "slug": "john-morgan-kid-myself",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/eb/d2/ca/ebd2cac1-d63d-2cf3-51b6-975ef163a7a2/4099964145403.jpg/600x600bb.jpg"
     },
     {
       "rank": 74,
@@ -924,7 +924,7 @@
       "movement": "new",
       "spotifyUrl": "https://open.spotify.com/search/Tom%20And%20Jerry%20John%20Mayer",
       "slug": "john-mayer-tom-and-jerry",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/6c/ac/34/6cac34de-b0cd-d637-fcd7-c6b297dde7b3/26UM1IM34215.rgb.jpg/600x600bb.jpg"
     },
     {
       "rank": 78,
@@ -936,7 +936,7 @@
       "movement": "up",
       "spotifyUrl": "https://open.spotify.com/search/My%20Way%20Riley%20Green",
       "slug": "riley-green-my-way",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/74/60/09/74600943-c67a-5335-4f8c-bad8b3e5d2a8/26BMR0007851.rgb.jpg/600x600bb.jpg"
     },
     {
       "rank": 79,
@@ -948,7 +948,7 @@
       "movement": "down",
       "spotifyUrl": "https://open.spotify.com/search/Robot%20Killed%20The%20Working%20Man%20Zach%20Bryan",
       "slug": "zach-bryan-robot-killed-the-working-man",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/ea/98/f2/ea98f2b8-5131-29ae-2064-997234ef13bc/093624812647.jpg/600x600bb.jpg"
     },
     {
       "rank": 80,
@@ -972,7 +972,7 @@
       "movement": "up",
       "spotifyUrl": "https://open.spotify.com/search/Morning%20Dew%20%28Donk%29%20Beyonce",
       "slug": "beyonce-morning-dew-donk",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/3f/65/3d/3f653d87-197c-084c-dca2-0c6e0ca742c9/196874580721.jpg/600x600bb.jpg"
     },
     {
       "rank": 82,
@@ -984,7 +984,7 @@
       "movement": "up",
       "spotifyUrl": "https://open.spotify.com/search/Bet%20On%20That%20Blake%20Whiten",
       "slug": "blake-whiten-bet-on-that",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/00/1d/40/001d40eb-679d-05df-f1f2-1d66602ff1f1/093624821267.jpg/600x600bb.jpg"
     },
     {
       "rank": 83,
@@ -996,7 +996,7 @@
       "movement": "down",
       "spotifyUrl": "https://open.spotify.com/search/Honeybee%20Olivia%20Rodrigo",
       "slug": "olivia-rodrigo-honeybee",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/1d/1b/f9/1d1bf9b1-44c6-9a6c-6ffb-c158488c06ce/26UMGIM39303.rgb.jpg/600x600bb.jpg"
     },
     {
       "rank": 84,
@@ -1020,7 +1020,7 @@
       "movement": "down",
       "spotifyUrl": "https://open.spotify.com/search/%2C%20SZA%20%26%20King%20Gizzard%20%26%20The%20Lizard%20Wizard",
       "slug": "sza-king-gizzard-the-lizard-wizard-",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/af/23/54/af235448-23b3-a3bf-0738-87f6c44a4bbc/5056556187486_cover.jpg/600x600bb.jpg"
     },
     {
       "rank": 86,
@@ -1044,7 +1044,7 @@
       "movement": "up",
       "spotifyUrl": "https://open.spotify.com/search/Ahi%20Karol%20G%20With%20Drake",
       "slug": "karol-g-with-drake-ahi",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/2b/66/b2/2b66b26c-ab23-faa1-c4ee-06fa2cce8f76/26UM1IM00558.rgb.jpg/600x600bb.jpg"
     },
     {
       "rank": 88,
@@ -1068,7 +1068,7 @@
       "movement": "up",
       "spotifyUrl": "https://open.spotify.com/search/Chevy%20Silverado%20Bailey%20Zimmerman",
       "slug": "bailey-zimmerman-chevy-silverado",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/69/72/3b/69723b10-4255-f36b-6045-fa18f46ea485/093624842132.jpg/600x600bb.jpg"
     },
     {
       "rank": 90,
@@ -1152,7 +1152,7 @@
       "movement": "up",
       "spotifyUrl": "https://open.spotify.com/search/Medicine%20Megan%20Moroney",
       "slug": "megan-moroney-medicine",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/6b/d8/9d/6bd89d56-4e31-f431-fb4c-5a81a6441f82/196874133101.jpg/600x600bb.jpg"
     },
     {
       "rank": 97,
@@ -1200,7 +1200,7 @@
       "movement": "new",
       "spotifyUrl": "https://open.spotify.com/search/Water%20At%20A%20Wedding%20Greylan%20James",
       "slug": "greylan-james-water-at-a-wedding",
-      "coverArt": null
+      "coverArt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/7c/52/85/7c528561-ab1e-47de-26cb-f6ff98991f5c/25BMR0006838.rgb.jpg/600x600bb.jpg"
     }
   ]
 }
